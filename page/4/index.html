@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="AfullA">
-<meta property="og:url" content="https://afulla.github.io/page/2/index.html">
+<meta property="og:url" content="https://afulla.github.io/page/4/index.html">
 <meta property="og:site_name" content="AfullA">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="AfullA">
@@ -124,29 +124,37 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Appium工作原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Python基础记录-6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/01/Appium%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">Appium工作原理</a>
+      <a class="article-title" href="/2019/04/23/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-6/">Python基础记录(6)</a>
     </h1>
   
 
         
-        <a href="/2019/11/01/Appium%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" class="archive-article-date">
-  	<time datetime="2019-11-01T03:48:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
+        <a href="/2019/04/23/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-6/" class="archive-article-date">
+  	<time datetime="2019-04-23T09:17:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Appium是一款开源、跨平台的的测试框架，可以用来测试原生及混合的移动端应用。Appium支持iOS、Android及Windows平台，也支持Safari、Chrome和其他安卓浏览器应用。</p>
+        <h5 id="魔法方法、特性和迭代器"><a href="#魔法方法、特性和迭代器" class="headerlink" title="魔法方法、特性和迭代器"></a>魔法方法、特性和迭代器</h5><p>重写构造函数</p>
+<p>重写是继承机制的一个重要方面，对构造函数来说尤其重要。构造函数用于初始化新建对象。对大多数子类来说，除超类的初始化代码外，还需要有自己的初始化代码。重写构造函数时更有可能遇到 一个特别的问题：重写构造函数时，必须调用超类的构造函数，否则可能无法正确地初始化对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.hungry = <span class="literal">True</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.hungry:</span><br><span class="line">            print(<span class="string">"Ahhh.."</span>)</span><br><span class="line">            self.hungry = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"No,thanks!"</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = Bird()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b.eat()</span><br><span class="line">Ahhh..</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b.eat()</span><br><span class="line">No,thanks!</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SongBird</span><span class="params">(Bird)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().__init__()  //如果没有调用超类的构造函数，将不包含属性hungry，导致调用eat()方法时报错</span><br><span class="line">        self.sound = <span class="string">'Squawk'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sing</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.sound)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = SongBird()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.sing()</span><br><span class="line">Squawk</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.eat()</span><br><span class="line">Ahhh..</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.eat()</span><br><span class="line">No,thanks!</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/11/01/Appium%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/23/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-6/#more">展开全文 >></a>
         
       
 
@@ -160,7 +168,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Appium</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
         		</li>
       		
 		</ul>
@@ -196,35 +204,39 @@
 
 
   
-    <article id="post-Python基础记录-10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Python基础记录-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/31/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-10/">Python基础记录(10)</a>
+      <a class="article-title" href="/2019/04/22/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-5/">Python基础记录(5)</a>
     </h1>
   
 
         
-        <a href="/2019/10/31/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-10/" class="archive-article-date">
-  	<time datetime="2019-10-31T03:35:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
+        <a href="/2019/04/22/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-5/" class="archive-article-date">
+  	<time datetime="2019-04-22T03:21:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong><code>if</code> 语句之外的<code>else</code>块</strong></p>
-<p><code>else</code>子句不仅能在if语句中使用，还能在<code>for</code>、<code>while</code>和<code>try</code>语句中使用</p>
-<p><strong><code>for</code></strong></p>
-<p>仅当 for 循环运行完毕时（即 for 循环没有被 break 语句中止）<br>才运行 else 块  </p>
-<p><strong><code>while</code></strong></p>
-<p>仅当 while 循环因为条件为假值而退出时（即 while 循环没有被<br>break 语句中止） 才运行 else 块  </p>
-<p><strong><code>try</code></strong></p>
-<p>仅当 try 块中没有异常抛出时才运行 else 块，else 子句抛出的异常不会由前面的 except 子句处理  </p>
-<p>在所有情况下，如果异常或者 return、 break 或 continue 语句导致<br>控制权跳到了复合语句的主块之外，else 子句也会被跳过  </p>
+        <h5 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>scope = vars()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>scope[<span class="string">'x'</span>]</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>全局作用域外，每个函数调用都将创建一个作用域。函数内部使用的变量称为局部变量（与之对应的是全局变量）。</p>
+<p><code>globals</code>返回一个包含全局变量的字典，<code>locals</code>返回一个包含局部变量的字典。</p>
+<p>作用域嵌套应用：一个函数位于另一个函数中，而且外面的函数返回里面的函数。闭包：存储其所在作用域的函数。</p>
+<h5 id="面向对象设计"><a href="#面向对象设计" class="headerlink" title="面向对象设计"></a>面向对象设计</h5><p>对象：由属性和方法组成。属性是对象的变量，方法是存储在属性中的函数。与函数相比，关联方法总将其所属的对象作为第一个参数（通常为<code>self</code>）。</p>
+<p>类：表示一组对象，每个对象都属于特定的类。类的主要任务是定义其实例将包含的方法。</p>
+<p>多态：能够同样地对待不同类型的对象，即无需知道对象属于哪个类就可以调用其方法。</p>
+<p>封装：对象可能隐藏其内部状态。在Python中，所有属性都是公有的。（要让方法或属性成为私有，名称前面加<code>__</code>）</p>
+<p>继承：一个类可以是一个或多个类的子类，子类继承超类的所有方法。（内置方法<code>issubclass</code>，特殊属性<code>__bases__</code>）</p>
+<p>抽象基类：使用模块<code>abc</code>可创建抽象基类。抽象基类用于指定子类必须提供哪些功能，却不实现这些功能。最重要特征是不能实例化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> abc <span class="keyword">import</span> ABC, abstractmethod</span><br><span class="line">Class A(ABC):</span><br><span class="line"><span class="meta">    @abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -274,62 +286,104 @@
 
 
   
-    <article id="post-Python基础记录-9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Python基础记录-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-9/">Python基础记录(9)</a>
+      <a class="article-title" href="/2019/04/19/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-4/">Python基础记录(4)</a>
     </h1>
   
 
         
-        <a href="/2019/10/30/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-9/" class="archive-article-date">
-  	<time datetime="2019-10-30T02:13:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
+        <a href="/2019/04/19/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-4/" class="archive-article-date">
+  	<time datetime="2019-04-19T07:07:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>迭代器模式：一种惰性获取数据项的方式，按需一次获取一个数据项</p>
-<p><code>yield</code>关键字用于构建生成器（generator），其作用与迭代器一样，所有生成器都是迭代器，因为生成器完全实现了迭代器接口。Python3中，生成器有广泛的用途，即使是内置的<code>range()</code>函数也返回一个类似生成器的对象，而以前则返回完整的列表。如果一定要让<code>range()</code>函数返回列表，那么必须明确指明</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line">range(<span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(range(<span class="number">1</span>, <span class="number">5</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+        <p>模块导入注意点</p>
+<p>推荐使用<code>import somemodule</code></p>
+<p>仅当确定要导入模块中的一切时，才采用<code>form somemodule import *</code>(避免命名冲突)</p>
+<p>可在末尾添加<code>as</code>子句并指定别名来避免冲突</p>
+<p><code>from module1 import foo as foo1</code></p>
+<p><code>from module2 import foo as foo2</code></p>
 
-<p>在Python中，所有集合都可以迭代。在Python语言内部，迭代器用于支持：</p>
-<ul>
-<li>for循环</li>
-<li>构建和扩展集合类型</li>
-<li>逐行遍历文本文件</li>
-<li>列表推导、字典推导和集合推导</li>
-<li>元组拆包</li>
-<li>调用函数时，使用*拆包实参</li>
-</ul>
-<p><strong>序列可以迭代的原因：<code>iter</code>函数</strong></p>
-<p>解释器需要迭代对象x时，会自动调用iter(x)</p>
-<ul>
-<li>检查对象是否实现了<code>__iter__</code>方法，如果实现了就调用它，获取一个迭代器。</li>
-<li>如果没有实现<code>__iter__</code>方法，但是实现了<code>__getitem__</code>方法，Python会创建一个迭代器，尝试按顺序（从索引0开始）获取元素。</li>
-<li>如果尝试失败，Python抛出TypeError异常，通常会提示“x object is not iterable”</li>
-</ul>
-<p>任何Python序列都可以迭代的原因是，它们都实现了<code>__getitem__</code>方法。</p>
-<p><strong>可迭代对象与迭代器的对比</strong></p>
-<p>可迭代对象：使用<code>iter</code>内置函数可以获取迭代器的对象。如果对象实现了能返回迭代器的<code>__iter__</code>方法，那么对象就是可迭代的。可迭代对象与迭代器的关系：Python从可迭代对象中获取迭代器。标准的迭代器接口有两个方法：</p>
-<ul>
-<li><code>__next__</code>：返回下一个可用元素，如果没有元素了，抛出StopIteration异常</li>
-<li><code>__iter__</code>：返回self，以便在应该使用可迭代对象的地方使用迭代器，例如for循环中</li>
-</ul>
-<p>迭代器：实现了无参数的<code>__next__</code>方法，返回序列中的下一个元素，如果没有元素了，那么抛出StopIteration异常。Python中的迭代器还实现了<code>__iter__</code>方法，因此迭代器也可以迭代。</p>
-<p>可迭代的对象一定不能是自身的迭代器。也就是说，可迭代的对象必须实现<code>__iter__</code>方法，但不能实现<code>__next__</code>方法。另一方面，迭代器应该一直可以迭代，迭代器的<code>__iter__</code>方法应该返回自身</p>
-<p><strong>生成器函数工作原理</strong></p>
-<p>只要Python函数的定义体中有<strong>yield</strong>关键字，该函数就是生成器函数。调用生成器函数时，会返回一个生成器对象。</p>
-<p><strong>生成器表达式</strong></p>
-<p>生成器表达式可以理解为列表推导式的惰性版本：不会迫切地构建列表，而是返回一个生成器，按需惰性生成元素。也就是说列表推导式是制造列表的工厂，那么生成器表达式就是制造生成器的工厂。</p>
-<p><strong>标准库中的生成器函数</strong></p>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
         
-          <a class="article-more-a" href="/2019/10/30/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-9/#more">展开全文 >></a>
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python基础记录-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/19/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-3/">Python基础记录(3)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/19/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-3/" class="archive-article-date">
+  	<time datetime="2019-04-19T03:51:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="序列操作"><a href="#序列操作" class="headerlink" title="序列操作"></a>序列操作</h5><h6 id="切片技巧"><a href="#切片技巧" class="headerlink" title="切片技巧"></a>切片技巧</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>numbers[<span class="number">7</span>:<span class="number">11</span>]</span><br><span class="line">[<span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>numbers[<span class="number">-3</span>:]</span><br><span class="line">[<span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>numbers[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>numbers[:<span class="number">3</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>numbers[:<span class="number">-3</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>numbers[:<span class="number">10</span>:<span class="number">2</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>numbers[<span class="number">3</span>:<span class="number">6</span>:<span class="number">3</span>]</span><br><span class="line">[<span class="number">4</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>numbers[::<span class="number">4</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>numbers[<span class="number">8</span>:<span class="number">3</span>:<span class="number">-2</span>]</span><br><span class="line">[<span class="number">9</span>, <span class="number">7</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/04/19/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-3/#more">展开全文 >></a>
         
       
 
@@ -347,7 +401,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">生成器</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
@@ -383,104 +437,43 @@
 
 
   
-    <article id="post-Windows远程连接Mac" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Python基础记录-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/">Windows远程连接Mac</a>
+      <a class="article-title" href="/2019/04/18/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-2/">Python基础记录(2)</a>
     </h1>
   
 
         
-        <a href="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/" class="archive-article-date">
-  	<time datetime="2019-10-26T03:43:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-26</time>
+        <a href="/2019/04/18/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-2/" class="archive-article-date">
+  	<time datetime="2019-04-18T09:36:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Windows远程连接Mac,主要依赖VNC图形桌面共享系统。Mac系统自带VNC Client，Windows通过安装TightVNC Viewer等客户端来进行连接。</p>
-<ul>
-<li><p>Mac打开“系统偏好设置”–“共享”</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026141739291.png" alt="image-20191026141739291"></p>
-</li>
-<li><p>勾选“屏幕共享”-“电脑设置”</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026142249290.png" alt="image-20191026142249290"></p>
-</li>
-<li><p>Windows下载TightVNV Viewer等客户端进行连接</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026143926119.png" alt="image-20191026143926119"></p>
-</li>
-<li><p>输入设置的屏幕控制密码</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026144015367.png" alt="image-20191026144015367"></p>
-</li>
-<li><p>至此就可以从Windows连接到Mac了</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026144211822.png" alt="image-20191026144211822"></p>
-</li>
-</ul>
+        <h5 id="ASCII，Unicode和UTF-8"><a href="#ASCII，Unicode和UTF-8" class="headerlink" title="ASCII，Unicode和UTF-8"></a>ASCII，Unicode和UTF-8</h5><p>”字符“的最佳定义是Unicode字符。从Python3的str对象中获取的元素是Unicode字符。</p>
+<p>字符的标识，即码位，是0<del>1114111的数字（十进制），在Unicode标准中以4</del>6个十六进制数字表示，而且加前缀“U+”。字符的具体表述取决于所用的编码（在码位和字节序列之间转换时使用的算法）。把码位转换成字节序列的过程是编码，把字节序列转换成码位的过程是解码。</p>
+<p>ASCII码</p>
+<p>内存和磁盘中，对象都是以二进制数字（0和1）表示的（这些数字每8个为一组，即一个字节byte），一个字节一共可以用来表示256种不同状态。ASCII码一共规定了128个字符编码。Python bytes字面量只支持ASCII标准中的128个字符，剩余的必须用转义序列表示，例如，\xf0表示十六进制值0xf0。</p>
+<p>Unocode解决传统字符编码方案的局限性，为每种语言中的每个字符设定统一且唯一的二进制代码，以满足跨语言、跨平台进行文本转换处理的需求。Unicode只是个符号集，规定了符号的二进制代码，却没规定这个二进制代码应该如何存储，会存在字节顺序的问题（怎么知道两个字节表示一个符号，而不是两个符号呢），也会存在空间浪费的问题（英文字母仅需一个字节，若规定两个字节表示，那么必有一字节是0）</p>
+<p>UTF-8</p>
+<p>如果主要处理的是互联网常见语言书写的文本，那么使用变长编码（对于不同字符，使用不同数量的字节进行编码）UTF-8即可。UTF-8编码解读：如果第一个字节的第一位是0，则这个字节单独就是一个字符；如果第一位是1，则连续有多少个1，就表示当前字符占用多少个字节。</p>
+<p>Python3默认编码方式为UTF-8(Unicode实现方式之一)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getdefaultencoding()</span><br><span class="line"><span class="string">'utf-8'</span></span><br></pre></td></tr></table></figure>
 
-      
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name1 = <span class="string">'小美'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(name1)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt;</span></span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<p>str转换成bytes</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name2 = name1.encode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name2</span><br><span class="line"><span class="string">b'\xe5\xb0\x8f\xe7\xbe\x8e'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(name2)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">bytes</span>'&gt;</span></span><br></pre></td></tr></table></figure>
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之禅" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/23/Python%E4%B9%8B%E7%A6%85/">Python之禅</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/23/Python%E4%B9%8B%E7%A6%85/" class="archive-article-date">
-  	<time datetime="2019-10-23T07:10:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是一个彩蛋</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import this</span><br><span class="line">The Zen of Python, by Tim Peters</span><br><span class="line"></span><br><span class="line">Beautiful is better than ugly.</span><br><span class="line">Explicit is better than implicit.</span><br><span class="line">Simple is better than complex.</span><br><span class="line">Complex is better than complicated.</span><br><span class="line">Flat is better than nested.</span><br><span class="line">Sparse is better than dense.</span><br><span class="line">Readability counts.</span><br><span class="line">Special cases aren&#39;t special enough to break the rules.</span><br><span class="line">Although practicality beats purity.</span><br><span class="line">Errors should never pass silently.</span><br><span class="line">Unless explicitly silenced.</span><br><span class="line">In the face of ambiguity, refuse the temptation to guess.</span><br><span class="line">There should be one-- and preferably only one --obvious way to do it.</span><br><span class="line">Although that way may not be obvious at first unless you&#39;re Dutch.</span><br><span class="line">Now is better than never.</span><br><span class="line">Although never is often better than *right* now.</span><br><span class="line">If the implementation is hard to explain, it&#39;s a bad idea.</span><br><span class="line">If the implementation is easy to explain, it may be a good idea.</span><br><span class="line">Namespaces are one honking great idea -- let&#39;s do more of those!</span><br></pre></td></tr></table></figure>
+<p>bytes转换成str</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name3 = name2.decode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name3</span><br><span class="line"><span class="string">'小美'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(name3)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt;</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -497,79 +490,9 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之抽象类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/27/Python%E4%B9%8B%E6%8A%BD%E8%B1%A1%E7%B1%BB/">Python之抽象类</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/27/Python%E4%B9%8B%E6%8A%BD%E8%B1%A1%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2019-09-27T07:53:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>抽象基类（Abstract Base Class），主要定义了基本类和最基本的抽象方法，可以为子类定义共有的API，不需要具体实现。抽象基类可以不实现具体的方法（当然也可以实现，只不过子类如果想调用抽象基类中定义的方法，需要使用super()），而是将其留给派生类实现。从实现角度来看，抽象类与普通类的不同之处在于：抽象类中有抽象方法，该类不能被实例化，只能被继承，且子类必须实现抽象方法。</p>
-<p>Python对于ABC的支持模块是abc模块，常用的：</p>
-<p><code>abc.ABCMeta</code>：用来生成抽象基类的元类</p>
-<p><code>@abc.abstractmethod</code>：定义抽象方法</p>
-<p>具体化抽象类可以有两种方式：一种通过注册，另外一种通过继承。继承时，除非子类实现抽象基类的所有抽象方法，否则子类不能实例化。但将其他的类“注册”到抽象基类下当虚拟子类时，可以只实现抽象基类中的部分API或根本不实现，但是<code>issubclass()</code>， <code>issubinstance()</code>进行判断时仍然返回真值。注册方式的缺点是不能通过<code>super()</code>调用抽象方法。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编码</a>
         		</li>
       		
 		</ul>
@@ -605,169 +528,37 @@
 
 
   
-    <article id="post-Python之面向对象编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Python基础记录-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/10/Python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">Python之面向对象编程</a>
+      <a class="article-title" href="/2019/04/17/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-1/">Python基础记录(1)</a>
     </h1>
   
 
         
-        <a href="/2019/09/10/Python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-09-10T08:44:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+        <a href="/2019/04/17/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-1/" class="archive-article-date">
+  	<time datetime="2019-04-17T09:30:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。</p>
-<p>面向过程编程：数据和处理数据的函数是彼此独立的，我们需要先将数据处理成函数能接受的格式，再调用相关函数处理</p>
-<p>面向对象编程：数据和处理数据的函数都放在一个类中（Class)，通过初始化实例（Instance）传递数据，通过实例调用对象方法或者说叫实例方法。</p>
-<p>数据封装、继承和多态是面向对象的三大特点。</p>
-<ul>
-<li><strong>类(Class):</strong> 用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。对象是类的实例。</li>
-<li><strong>类变量：</strong>类变量在整个实例化的对象中是公用的。类变量定义在类中且在函数体之外。类变量通常不作为实例变量使用。</li>
-<li><strong>数据成员：</strong>类变量或者实例变量, 用于处理类及其实例对象的相关的数据。</li>
-<li><strong>方法重写：</strong>如果从父类继承的方法不能满足子类的需求，可以对其进行改写，这个过程叫方法的覆盖（override），也称为方法的重写。</li>
-<li><strong>局部变量：</strong>定义在方法中的变量，只作用于当前实例的类。</li>
-<li><strong>实例变量：</strong>在类的声明中，属性是用变量来表示的。这种变量就称为实例变量，是在类声明的内部但是在类的其他成员方法之外声明的。</li>
-<li><strong>继承：</strong>即一个派生类（derived class）继承基类（base class）的字段和方法。继承也允许把一个派生类的对象作为一个基类对象对待。例如，有这样一个设计：一个Dog类型的对象派生自Animal类，这是模拟”是一个（is-a）”关系（例图，Dog是一个Animal）。</li>
-<li><strong>实例化：</strong>创建一个类的实例，类的具体对象。</li>
-<li><strong>方法：</strong>类中定义的函数。</li>
-<li><strong>对象：</strong>通过类定义的数据结构实例。对象包括两个数据成员（类变量和实例变量）和方法。</li>
-</ul>
-<p>类是创建实例的模板，而实例则是一个个具体的对象，各个实例拥有的数据互相独立，互不影响。方法就是实例绑定的函数，和普通函数不同，方法可以直接访问实例的数据。通过在实例上调用方法，我们就直接操作了对象内部的数据，但无需知道方法内部的实现细节。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">   <span class="string">'所有员工的基类'</span></span><br><span class="line">   empCount = <span class="number">0</span>    <span class="comment"># 类变量，可通过Employee.empCount访问</span></span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, salary)</span>:</span>  <span class="comment"># self指向创建的实例本身</span></span><br><span class="line">      self.name = name</span><br><span class="line">      self.salary = salary</span><br><span class="line">      Employee.empCount += <span class="number">1</span></span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">displayCount</span><span class="params">(self)</span>:</span> <span class="comment"># 类中定义的函数，第一个参数为实例变量self</span></span><br><span class="line">     <span class="keyword">print</span> <span class="string">"Total Employee %d"</span> % Employee.empCount</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">displayEmployee</span><span class="params">(self)</span>:</span></span><br><span class="line">      <span class="keyword">print</span> <span class="string">"Name : "</span>, self.name,  <span class="string">", Salary: "</span>, self.salary</span><br></pre></td></tr></table></figure>
+        <p>除法运算的结果为浮点数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>/<span class="number">2</span></span><br><span class="line"><span class="number">0.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>/<span class="number">1</span></span><br><span class="line"><span class="number">1.0</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">e = Employee()  <span class="comment"># 创建Employe实例</span></span><br><span class="line">e.empCount <span class="comment"># 输出0，因为实例并没有empCount属性，所以会继续查找class的empCount属性</span></span><br><span class="line">e.empCount = <span class="number">1</span> <span class="comment"># 给实例绑定empCount属性</span></span><br><span class="line">e.empCount <span class="comment"># 输出1， 实例属性优先级高于类属性</span></span><br><span class="line">Employee.empCount <span class="comment"># 输出0，类属性仍存在</span></span><br></pre></td></tr></table></figure>
+<p>如果想要返回整型结果，使用整除运算（//)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>//<span class="number">2</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>//<span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<p>可使用<code>__slots__</code>变量来限制class实例能绑定的属性</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">    __slots__ = (<span class="string">'empCount1'</span>, <span class="string">'empCount2'</span>)</span><br></pre></td></tr></table></figure>
+<p>整除运算结果是向下圆整的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span>//<span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">-10</span>//<span class="number">3</span></span><br><span class="line"><span class="number">-4</span></span><br></pre></td></tr></table></figure>
 
-<p><code>__slots__</code>定义的属性仅对当前类实例起作用，对继承的子类是不起作用的，除非在子类中也定义，子类实例允许定义的属性就是自身的<code>__slots__</code>加上父类的<code>__slots__</code></p>
-<h5 id="Python内置类属性"><a href="#Python内置类属性" class="headerlink" title="Python内置类属性"></a>Python内置类属性</h5><ul>
-<li><code>__dict__</code> : 类的属性（包含一个字典，由类的数据属性组成）</li>
-<li><code>__doc__</code> :类的文档字符串</li>
-<li><code>__name__</code>: 类名</li>
-<li><code>__module__</code>: 类定义所在的模块（类的全名是’<code>__main__.className</code>‘，如果类位于一个导入模块mymod中，那么className.<strong>module</strong> 等于 mymod）</li>
-<li><code>__bases__</code> : 类的所有父类构成元素（包含了一个由所有父类组成的元组）</li>
-</ul>
-<h5 id="单下划线、双下划线、头尾双下划线说明："><a href="#单下划线、双下划线、头尾双下划线说明：" class="headerlink" title="单下划线、双下划线、头尾双下划线说明："></a>单下划线、双下划线、头尾双下划线说明：</h5><ul>
-<li><code>__foo__</code>: 定义的是特殊方法，一般是系统定义名字 ，类似 <code>__init__()</code>之类的。</li>
-<li><code>_foo</code>: 以单下划线开头的表示的是 protected 类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于 <code>from module import *</code></li>
-<li><code>__foo</code>: 双下划线的表示的是私有类型(private)的变量, 只能是允许这个类本身进行访问了。</li>
-</ul>
-<h5 id="获取对象信息"><a href="#获取对象信息" class="headerlink" title="获取对象信息"></a><strong>获取对象信息</strong></h5><ul>
-<li>type()可以检查类型</li>
-<li>isinstance()可以方便对比类型</li>
-<li>dir()可以获得对象的所有属性和方法</li>
-</ul>
-<h5 id="使用-repr-和-str-改变输出"><a href="#使用-repr-和-str-改变输出" class="headerlink" title="使用__repr__ 和 __str__改变输出"></a>使用<code>__repr__</code> 和 <code>__str__</code>改变输出</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">		self.name = name</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(Employee(<span class="string">'test'</span>))</span><br><span class="line">&lt;__main__.Employee object at <span class="number">0x0000000002BBBEF0</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">		self.name = name</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> <span class="string">'Student name is %s'</span> % self.name</span><br><span class="line">	__repr__ = __str__</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(Employee(<span class="string">'test'</span>))</span><br><span class="line">Student name <span class="keyword">is</span> test</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Employee(<span class="string">'test'</span>)</span><br><span class="line">Student name <span class="keyword">is</span> test</span><br></pre></td></tr></table></figure>
-
-<h5 id="使用type-动态创建类"><a href="#使用type-动态创建类" class="headerlink" title="使用type()动态创建类"></a>使用type()动态创建类</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fn</span><span class="params">(self, name=<span class="string">'world'</span>)</span>:</span></span><br><span class="line">    print(<span class="string">'Hello, %s'</span> % name)</span><br><span class="line">Hello = type(<span class="string">'Hello'</span>, (object,), dict(hello=fn))</span><br></pre></td></tr></table></figure>
-
-<p>class的定义是运行时动态创建的，而创建class的方法就是使用type()函数。要创建一个class对象，type()函数依次传入3个参数：</p>
-<ol>
-<li>class的名称</li>
-<li>继承的父类集合</li>
-<li>class的方法名称与函数绑定</li>
-</ol>
-<p>通过type()函数创建的类和直接写class是完全一样的，因为Python解释器遇到class定义时，仅仅是扫描一下class定义的语法，然后调用type()函数创建出class.</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之鸭子类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/09/Python%E4%B9%8B%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B/">Python之鸭子类型</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/09/Python%E4%B9%8B%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2019-09-09T01:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>动态语言与静态语言</strong></p>
-<p>静态类型语言在编译时便已确定变量的类型，而动态语言的变量类型要到程序运行的时候，待变量被赋予某个值之后，才会具有某种类型。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">'hello'</span></span><br><span class="line">    s = <span class="string">'hi'</span></span><br><span class="line">    s = <span class="number">0</span> <span class="comment">//编译时会报错</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'hello'</span></span><br><span class="line">s = <span class="number">0</span></span><br><span class="line">s = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">#可以给变量随意赋值</span></span><br></pre></td></tr></table></figure>
-
-<p>静态类型语言的优点首先是在编译时就能发现类型不匹配的错误，编辑器可以帮助我们提前避免程序在运行期间有可能发生的一些错误；其次，如果在程序中明确地规定了数据类型，编辑器还可以针对这些信息对程序进行一些优化工作，提高程序执行速度。静态类型语言的缺点首先是迫使程序员依照强契约来编写程序，为每个变量规定数据类型，归根结底只是辅助我们编写可靠性高的程序的一种手段，而不是编写程序的目的；其次，类型声明会增加更多的代码，在程序编写过程中，这些细节会让程序员的精力从思考业务逻辑上分散开来。</p>
-<p>动态类型语言的优点是编写的代码数量更少，看起来更加简洁，程序员可以把更多的精力放在业务逻辑上。动态类型语言的缺点是无法保证变量的类型，从而在程序运行期有可能发生跟类型相关的错误。</p>
-<p><strong>鸭子类型</strong></p>
-<p>鸭子类型是动态类型的一种风格。在这种风格中，一个对象有效的语义，不是由继承自特定的类或实现的接口决定，而是由当前方法和属性的集合决定。（当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子）在鸭子类型中，关注的不是对象的类型本身，而是它是如何使用的。例如：在不使用鸭子类型的语言中，我们可以编写一个函数，它接受一个类型为“鸭子”的对象，并调用它的“走”和“叫”方法。在使用鸭子类型的语言中，这样的一个函数可以接受任意类型的对象，并调用它们的“走”和“叫”方法。如果这些需要被调用的方法不存在，那么将引发一个运行时的错误。</p>
-<p>鸭子类型通常得益于不测试方法和函数中参数的类型，而是依赖文档，清晰的代码和测试来确保正确使用。</p>
-<p>利用鸭子类型的思想，能轻松地在动态类型语言中实现一个原则：面向接口编程，而不是面向实现编程。例如：一个对象若有push和pop方法，并且这些方法提供了正确的实现，它就可以被当做栈来使用。</p>
-<p>接口在动态类型语言中是怎么运作的呢？首先，基本的事实是，Python语言没有Interface关键字，而且除了抽象基类，每个类都有接口：类实现或继承的公开属性（方法或数据属性），包括特殊方法，如<strong>getitem</strong>。按照定义，受保护的属性和私有属性不在接口中。关于接口，有个实用的补充定义：对象公开方法的子集，让对象在系统中扮演特定的角色。一个类可能会实现多个接口，从而让实例扮演多个角色。</p>
-<p>鸭子类型：对象的类型无关紧要，只要实现了特定的协议即可。（忽略对象的真正类型，转而关注对象有没有实现所需的方法、签名和语义）</p>
-
+<p>input(…)是以文本或字符串的形式返回</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>number = input(<span class="string">"Ener a number: "</span>)</span><br><span class="line">Ener a number: <span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>number</span><br><span class="line"><span class="string">'5'</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -818,7 +609,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
     </nav>
   
 
