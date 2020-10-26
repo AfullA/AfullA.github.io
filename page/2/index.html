@@ -124,6 +124,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python之协程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/11/Python%E4%B9%8B%E5%8D%8F%E7%A8%8B/">Python之协程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/11/Python%E4%B9%8B%E5%8D%8F%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2019-11-11T09:21:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>并发编程一般使用多线程或者多进程来实现，对于CPU计算密集型任务，由于GIL的存在，通常使用多进程来实现，而对于IO密集型任务，可以通过线程调度来让线程在执行IO任务时让出GIL，从而实现表面上的并发。</p>
+<p>对于IO密集型任务还有一种选择就是协程，是运行在单线程中的“并发”，协程相比多线程的一大优势是省去了多线程之间的切换开销，获得了更高的效率。Python中的异步IO模块asyncio就是基本的协程模块。</p>
+<p>协程的切换不同于线程切换，是由程序自身控制的，没有切换的开销。协程不需要多线程的锁机制，因为都是在同一个线程中运行，所以没有同时访问数据的问题，执行效率比多线程高很多。可以这么简单地理解：进程/线程：操作系统提供的一种并发处理任务的能力；协程：在代码执行流程中人为地实现多任务并发，是单个线程内的任务调度。多线程和多进程体现的是操作系统的能力，协程体现的是程序员的流程控制能力。</p>
+<p><code>yield</code>的语法规则是：在<code>yield</code>这里暂停函数的执行，并返回<code>yield</code>后面表达式的值（默认为None），直到被<code>next()</code>方法再次调用时，从上次暂停的yield代码处继续往下执行。</p>
+<p>每个生成器都可以执行<code>send()</code>方法，为生成器内部的<code>yield</code>语句发送数据。此时yield语句不在只是<u>yield xxx</u>的形式，还可以是<u>var = yield xxx</u>的赋值形式。它同时具备两个功能，一是暂停并返回函数，二是接收外部send()方法发送过来的值，重新激活函数，并将这个值赋值给var变量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">simple_coroutine</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">'-&gt;启动协程'</span>)</span><br><span class="line">	y = <span class="number">10</span></span><br><span class="line">	x = <span class="keyword">yield</span> y</span><br><span class="line">	print(<span class="string">'-&gt;协程接收到了x的值: '</span>, x)</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_coro = simple_coroutine()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret = next(my_coro)</span><br><span class="line">-&gt;启动协程</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(ret)</span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_coro.send(<span class="number">20</span>)</span><br><span class="line">-&gt;协程接收到了x的值:  20</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;pyshell#9&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    my_coro.send(<span class="number">20</span>)</span><br><span class="line">StopIteration</span><br></pre></td></tr></table></figure>
+
+<p>协程可以处于下面四个状态中的一个。当前状态可以导入inspect模块，使用inspect.getgeneratorstate(…)方法查看，该方法返回：</p>
+<ul>
+<li>‘GEN_CREATED’：等待开始执行</li>
+<li>‘GEN_RUNNING’：协程正在执行</li>
+<li>‘GEN_SUSPENDED’：在yield表达式处暂停</li>
+<li>‘GEN_CLOSED’：执行结束</li>
+</ul>
+<p>因为send()方法的参数会成为暂停的yield表达式的值，所以仅当协程处于暂停状态时才能调用send()方法，不过如果协程还没激活（状态是’GEN_CREATED’），就立即把None之外的值发给它，会出现TypeError。因此，始终要先调用<u>next(my_coro)</u>激活协程（也可以调用<u>my_coro.end(None)</u>），这一过程被称作预激活。</p>
+<p>通过<code>asyncio</code>可以轻松实现协程来完成异步IO操作。<code>@asyncio.coroutine</code>，asyncio模块中的装饰器，用于将一个生成器声明为协程。asyncio的使用可分三步走：</p>
+<ol>
+<li>创建事件循环</li>
+<li>指定循环模式并运行</li>
+<li>关闭循环</li>
+</ol>
+<p>通常使用<code>asyncio.get_event_loop()</code>方法创建一个循环。运行循环有两种方法：一是调用<code>run_until_complete()</code>方法，二是调用<code>run_forever()</code>方法。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">协程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Appium工作原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -684,89 +779,6 @@
 <li>class的方法名称与函数绑定</li>
 </ol>
 <p>通过type()函数创建的类和直接写class是完全一样的，因为Python解释器遇到class定义时，仅仅是扫描一下class定义的语法，然后调用type()函数创建出class.</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之鸭子类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/09/Python%E4%B9%8B%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B/">Python之鸭子类型</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/09/Python%E4%B9%8B%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2019-09-09T01:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>动态语言与静态语言</strong></p>
-<p>静态类型语言在编译时便已确定变量的类型，而动态语言的变量类型要到程序运行的时候，待变量被赋予某个值之后，才会具有某种类型。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">'hello'</span></span><br><span class="line">    s = <span class="string">'hi'</span></span><br><span class="line">    s = <span class="number">0</span> <span class="comment">//编译时会报错</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'hello'</span></span><br><span class="line">s = <span class="number">0</span></span><br><span class="line">s = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">#可以给变量随意赋值</span></span><br></pre></td></tr></table></figure>
-
-<p>静态类型语言的优点首先是在编译时就能发现类型不匹配的错误，编辑器可以帮助我们提前避免程序在运行期间有可能发生的一些错误；其次，如果在程序中明确地规定了数据类型，编辑器还可以针对这些信息对程序进行一些优化工作，提高程序执行速度。静态类型语言的缺点首先是迫使程序员依照强契约来编写程序，为每个变量规定数据类型，归根结底只是辅助我们编写可靠性高的程序的一种手段，而不是编写程序的目的；其次，类型声明会增加更多的代码，在程序编写过程中，这些细节会让程序员的精力从思考业务逻辑上分散开来。</p>
-<p>动态类型语言的优点是编写的代码数量更少，看起来更加简洁，程序员可以把更多的精力放在业务逻辑上。动态类型语言的缺点是无法保证变量的类型，从而在程序运行期有可能发生跟类型相关的错误。</p>
-<p><strong>鸭子类型</strong></p>
-<p>鸭子类型是动态类型的一种风格。在这种风格中，一个对象有效的语义，不是由继承自特定的类或实现的接口决定，而是由当前方法和属性的集合决定。（当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子）在鸭子类型中，关注的不是对象的类型本身，而是它是如何使用的。例如：在不使用鸭子类型的语言中，我们可以编写一个函数，它接受一个类型为“鸭子”的对象，并调用它的“走”和“叫”方法。在使用鸭子类型的语言中，这样的一个函数可以接受任意类型的对象，并调用它们的“走”和“叫”方法。如果这些需要被调用的方法不存在，那么将引发一个运行时的错误。</p>
-<p>鸭子类型通常得益于不测试方法和函数中参数的类型，而是依赖文档，清晰的代码和测试来确保正确使用。</p>
-<p>利用鸭子类型的思想，能轻松地在动态类型语言中实现一个原则：面向接口编程，而不是面向实现编程。例如：一个对象若有push和pop方法，并且这些方法提供了正确的实现，它就可以被当做栈来使用。</p>
-<p>接口在动态类型语言中是怎么运作的呢？首先，基本的事实是，Python语言没有Interface关键字，而且除了抽象基类，每个类都有接口：类实现或继承的公开属性（方法或数据属性），包括特殊方法，如<strong>getitem</strong>。按照定义，受保护的属性和私有属性不在接口中。关于接口，有个实用的补充定义：对象公开方法的子集，让对象在系统中扮演特定的角色。一个类可能会实现多个接口，从而让实例扮演多个角色。</p>
-<p>鸭子类型：对象的类型无关紧要，只要实现了特定的协议即可。（忽略对象的真正类型，转而关注对象有没有实现所需的方法、签名和语义）</p>
 
       
 

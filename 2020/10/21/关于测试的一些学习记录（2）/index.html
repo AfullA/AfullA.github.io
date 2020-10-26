@@ -6,15 +6,43 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://afulla.github.io">
-  <title>AfullA</title>
+  <title>关于测试的一些学习记录（2） | AfullA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AfullA">
-<meta property="og:url" content="https://afulla.github.io/page/3/index.html">
+  <meta name="description" content="测试设计：把测试点加工为测试用例，就叫测试设计。如果说测试点还只是一些散乱的测试思路的集合，那测试用例就是一份真正能够指导测试的测试说明书。路径分析法、判定表、正交分析法、等价类、边界值等都是常见的测试设计方法。  在测试设计阶段，保证测试用例的质量，为测试团队提供有效的测试技术支持是重要职责。  建模：研究测试点、分析特征的情况并对其进行归类是必不可少的。可分为四类：流程、参数、数据、组合。对流">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于测试的一些学习记录（2）">
+<meta property="og:url" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/index.html">
 <meta property="og:site_name" content="AfullA">
+<meta property="og:description" content="测试设计：把测试点加工为测试用例，就叫测试设计。如果说测试点还只是一些散乱的测试思路的集合，那测试用例就是一份真正能够指导测试的测试说明书。路径分析法、判定表、正交分析法、等价类、边界值等都是常见的测试设计方法。  在测试设计阶段，保证测试用例的质量，为测试团队提供有效的测试技术支持是重要职责。  建模：研究测试点、分析特征的情况并对其进行归类是必不可少的。可分为四类：流程、参数、数据、组合。对流">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201021164726059.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201021165948266.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022173249440.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022175603679.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022190909328.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022191101344.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201024110616563.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201024112503808.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201024114100472.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201024155934225.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201024161105841.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026155625742.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026161458917.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026162642645.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026163017677.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026163353411.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026163524162.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026163702658.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026164022154.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026164423643.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026181329446.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026181707246.png">
+<meta property="article:published_time" content="2020-10-21T07:58:23.000Z">
+<meta property="article:modified_time" content="2020-10-26T10:34:54.765Z">
 <meta property="article:author" content="AfullA">
+<meta property="article:tag" content="测试">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://afulla.github.io/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201021164726059.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -122,42 +150,120 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Python之鸭子类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-关于测试的一些学习记录（2）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/09/Python%E4%B9%8B%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B/">Python之鸭子类型</a>
+    <h1 class="article-title" itemprop="name">
+      关于测试的一些学习记录（2）
     </h1>
   
 
         
-        <a href="/2019/09/09/Python%E4%B9%8B%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2019-09-09T01:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
+        <a href="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-10-21T07:58:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>动态语言与静态语言</strong></p>
-<p>静态类型语言在编译时便已确定变量的类型，而动态语言的变量类型要到程序运行的时候，待变量被赋予某个值之后，才会具有某种类型。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">'hello'</span></span><br><span class="line">    s = <span class="string">'hi'</span></span><br><span class="line">    s = <span class="number">0</span> <span class="comment">//编译时会报错</span></span><br></pre></td></tr></table></figure>
+        <p>测试设计：把测试点加工为测试用例，就叫测试设计。如果说测试点还只是一些散乱的测试思路的集合，那测试用例就是一份真正能够指导测试的测试说明书。路径分析法、判定表、正交分析法、等价类、边界值等都是常见的测试设计方法。</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201021164726059.png" alt="image-20201021164726059"></p>
+<p>在测试设计阶段，保证测试用例的质量，为测试团队提供有效的测试技术支持是重要职责。</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201021165948266.png" alt="image-20201021165948266"></p>
+<p>建模：研究测试点、分析特征的情况并对其进行归类是必不可少的。可分为四类：流程、参数、数据、组合。对流程类，可以通过绘制“流程图”来建立测试模型；对参数类，可以通过“输入输出表”来建立测试模型；对数据类，可以通过“等价类分析表”来建立测试模型；对组合类，可以通过“因子表”来建立测试模型。</p>
+<p>设计基础测试用例：覆盖模型，得到一些测试条件。</p>
+<p>补充测试数据：为基础测试用例确定测试输入、补充测试数据。</p>
+<p>扩展：根据经验，特别是对系统哪些地方容易发生缺陷的认识，补充一些测试用例，增加系统的有效性。</p>
+<hr>
+<p>流程类测试点，拥有流程方面的一些特征，将测试点分成一些步骤，会因输入的不同而进行不同的处理</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022173249440.png" alt="image-20201022173249440"></p>
+<p>参数类测试点，测试点中主要包含着一些参数，有两个重要的特点：（1）参数值的个数是有限的，可以通过遍历的方式来测试覆盖到；（2）系统会对不同的参数值作出不同的处理和响应</p>
+<p>数据类测试点，测试点中主要包含着一些数据，有两个特点：（1）数据的取值是一个范围，通常不能用遍历的方式来测试覆盖到；（2）系统对允许输入的数据作出的处理或响应往往是一样的</p>
+<p>组合类测试点，测试点可以组合在一起进行测试设计</p>
+<hr>
+<p>流程类测试设计：路径分析法</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022175603679.png" alt="image-20201022175603679"></p>
+<p>对流程类的测试点，建模就是绘制这些测试点代表的业务流程图，需要注意：（1）测试者要充分理解和测试点相关的功能业务流程，确保流程图的正确性；（2）测试者要和产品设计者充分交流，保证绘出的流程图能够正确覆盖产品的设计；（3）如果开发提供了功能流程图，测试者需要仔细审核流程图的正确性，如有必要可以重新绘制</p>
+<a id="more"></a>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'hello'</span></span><br><span class="line">s = <span class="number">0</span></span><br><span class="line">s = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">#可以给变量随意赋值</span></span><br></pre></td></tr></table></figure>
-
-<p>静态类型语言的优点首先是在编译时就能发现类型不匹配的错误，编辑器可以帮助我们提前避免程序在运行期间有可能发生的一些错误；其次，如果在程序中明确地规定了数据类型，编辑器还可以针对这些信息对程序进行一些优化工作，提高程序执行速度。静态类型语言的缺点首先是迫使程序员依照强契约来编写程序，为每个变量规定数据类型，归根结底只是辅助我们编写可靠性高的程序的一种手段，而不是编写程序的目的；其次，类型声明会增加更多的代码，在程序编写过程中，这些细节会让程序员的精力从思考业务逻辑上分散开来。</p>
-<p>动态类型语言的优点是编写的代码数量更少，看起来更加简洁，程序员可以把更多的精力放在业务逻辑上。动态类型语言的缺点是无法保证变量的类型，从而在程序运行期有可能发生跟类型相关的错误。</p>
-<p><strong>鸭子类型</strong></p>
-<p>鸭子类型是动态类型的一种风格。在这种风格中，一个对象有效的语义，不是由继承自特定的类或实现的接口决定，而是由当前方法和属性的集合决定。（当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子）在鸭子类型中，关注的不是对象的类型本身，而是它是如何使用的。例如：在不使用鸭子类型的语言中，我们可以编写一个函数，它接受一个类型为“鸭子”的对象，并调用它的“走”和“叫”方法。在使用鸭子类型的语言中，这样的一个函数可以接受任意类型的对象，并调用它们的“走”和“叫”方法。如果这些需要被调用的方法不存在，那么将引发一个运行时的错误。</p>
-<p>鸭子类型通常得益于不测试方法和函数中参数的类型，而是依赖文档，清晰的代码和测试来确保正确使用。</p>
-<p>利用鸭子类型的思想，能轻松地在动态类型语言中实现一个原则：面向接口编程，而不是面向实现编程。例如：一个对象若有push和pop方法，并且这些方法提供了正确的实现，它就可以被当做栈来使用。</p>
-<p>接口在动态类型语言中是怎么运作的呢？首先，基本的事实是，Python语言没有Interface关键字，而且除了抽象基类，每个类都有接口：类实现或继承的公开属性（方法或数据属性），包括特殊方法，如<strong>getitem</strong>。按照定义，受保护的属性和私有属性不在接口中。关于接口，有个实用的补充定义：对象公开方法的子集，让对象在系统中扮演特定的角色。一个类可能会实现多个接口，从而让实例扮演多个角色。</p>
-<p>鸭子类型：对象的类型无关紧要，只要实现了特定的协议即可。（忽略对象的真正类型，转而关注对象有没有实现所需的方法、签名和语义）</p>
+<p>不同的覆盖策略，能够得到不同的路径集合。常见的覆盖策略有语句覆盖、分支覆盖、全覆盖和最小线性无关覆盖。</p>
+<p>（1）语句覆盖是指覆盖系统中所有判定和过程的最小路径集合</p>
+<p>（2）分支覆盖是指覆盖系统中每个判定的所有分支所需的最小路径数</p>
+<p>（3）全覆盖包含了系统所有可能的路径，覆盖能力一流，但是除非你测的是一个微型的系统，对普通系统来说，随着判定增加而呈指数类型增长的路径数使得需要测试的路径数目非常庞大，完全超出了一个测试团队能够承担的正常工作量，实际执行难度大</p>
+<p>（4）最小线性无关覆盖路径数计算，有两个约定：流程图的入口和出口不作为边数计算；一个流程图只有一个入口和一个出口</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022190909328.png" alt="image-20201022190909328"></p>
+<p>获得路径无关路径的算法：</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022191101344.png" alt="image-20201022191101344"></p>
+<p>一般来说，在单元测试阶段，会主要使用语句覆盖和分支覆盖的方式来设计测试用例；在集成测试和系统测试阶段，会主要使用最小线性无关覆盖；对一些特别重要的部分，使用全覆盖；对一些不那么重要的部分使用语句覆盖或分支覆盖</p>
+<hr>
+<p>参数类测试设计：“输入-输出表”分析法</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201024110616563.png" alt="image-20201024110616563"></p>
+<p>“输入-输出表”是一张分析测试点在某种条件下，特定的“输入”会有怎样“输出”的表</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201024112503808.png" alt="image-20201024112503808"></p>
+<hr>
+<p>数据类测试设计：等价类和边界值分析法</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201024114100472.png" alt="image-20201024114100472"></p>
+<p>等价类是指对输入值按照测试效果进行划分，将测试效果相同的测试数据归为一类，然后在测试时只需要在每类中选择一些测试样本来进行测试。边界值是参数在输入边界上的取值。等价类和边界值常常结合在一起使用，首先对“输入”进行等价类划分，然后再将每个等价类的边界值作为测试的样本点。使用“等价类”和“边界值”来进行测试设计的优势在于，既能控制测试的规模，还能有效发现产品缺陷，但要注意等价类划分的正确性。</p>
+<hr>
+<p>组合类测试设计：正交分析法</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201024155934225.png" alt="image-20201024155934225"></p>
+<p>“因子表”是一张分析测试点需要考虑哪些方面，并且这些方面需要包含哪些内容的表</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201024161105841.png" alt="image-20201024161105841"></p>
+<p>可使用PICT工具来生成测试用例</p>
+<hr>
+<p>控制用例粒度：测试点拆分与组合</p>
+<p>一般来说，用例粒度细的测试用例，更容易发现产品在设计上的问题，但如果整个测试团队的用例粒度都很细，那么需要测试的测试用例就会比较多，给测试进度、测试投入和测试用例的编写与维护等带来不少问题。而用例粗的测试用例，更容易发现产品在系统上、设计上、功能交互上和需求方面的问题，但是如果整个测试团队的用例粒度都很粗，虽然测试用例数目可能会很少，但又可能遗漏掉很多功能设计上的细节问题，影响产品质量。所以，控制用例粒度，是测试设计中非常重要的一项工作：（1）控制测试点不要过粗或过细；（2）不同的用例粒度，能发现产品不同层次的问题（细粒度的用例可能更容易发现产品功能的设计和实现方面的问题，而粗粒度的用例可能更同意从系统的角度去发现一些功能交互或是需求方面的问题）</p>
+<hr>
+<p>错误推断法是错误者根据经验来判断产品在哪块地方容易出现问题，然后针对这些地方来设计测试用例的方法。错误推断法是一种基于经验的测试设计方法，使用错误推断法来设计测试用例，优点是测试用例的有效性会比较高，缺点是这时测试专注于发现缺陷而忽视或遗漏一些基本功能和场景的测试验证。可定期组织缺陷分析活动，并分享经验，扩展思路，增加对缺陷的敏感度，提高测试设计有效性。</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026155625742.png" alt="image-20201026155625742"></p>
+<hr>
+<p>使用探索性测试的优势显而易见：能够更快地进行测试，能够得到更有效的测试点，能够更高效的发现产品缺陷。但是，探索性测试也有一定的局限性：容易将焦点集中在缺陷发现上而偏离对需求的验证，对基本测试点的测试和覆盖容易不足，测试点不易复用，不易积累。探索性测试思维：</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026161458917.png" alt="image-20201026161458917"></p>
+<p>收集：收集所有关于测试对象的信息并去理解这些信息</p>
+<p>划分优先级：对所有需要测试的任务进行优先级划分</p>
+<p>分析调研：对测试的任务进行仔细分析，预测可能输出的结果</p>
+<p>实验：进行测试实验，确认测试结果和预期是否符合</p>
+<p>历史区测试法：针对的是“老代码”，也包括那些用于修复已知缺陷的代码。</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026162642645.png" alt="image-20201026162642645"></p>
+<p>商业区测试法：针对产品的重要功能和特性，是测试时的重点测试对象。</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026163017677.png" alt="image-20201026163017677"></p>
+<p>娱乐区测试法：针对产品不那么重要的功能和特性</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026163353411.png" alt="image-20201026163353411"></p>
+<p>破击区测试法：针对问题高发特性</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026163524162.png" alt="image-20201026163524162"></p>
+<p>旅馆区测试法：针对平台或维护特性，这些特性容易被忽视</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026163702658.png" alt="image-20201026163702658"></p>
+<p>旅游区测试法：关注如何快速访问文件的各种功能</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026164022154.png" alt="image-20201026164022154"></p>
+<p>探索式测试步骤：</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026164423643.png" alt="image-20201026164423643"></p>
+<p>确定探索式测试范围：（1）全局场景探索；（2）特性漫游探索；（3）进行局部功能点探索。全局场景探索就是指准备进行探索的对象是整个系统，特性漫游探索是指准备进行探索的对象是整个特性，局部功能点探索是指准备进行探索的对象是某个具体的功能。根据范围和方法来确定探索式测试的任务，例如，使用xxx测试方法，对xxx场景进行探索式测试。</p>
+<p>设计探索地图并执行探索测试：探索地图就是测试者根据被测对象的特点，使用探索式测试方法分析得到测试点，然后就可以按照测试点对被测对象进行探索式测试并记录测试结果。探索式测试是一边学习、一边设计、一边执行的测试，很多测试点都是我们边测试边确定的，确定后就会立即去执行验证，我们的测试目标是清晰的，即使测试点写的比较粗，也是知道该怎么去测试的，能保证以一个比较合理的顺序执行，这也是探索式测试速度快、效果高的优势所在。另外，探索式测试还有一个优势就是能根据测试结果及时调整测试点，更有效地发现产品缺陷，例如测试者在探索测试时，发现某些探索路径中的功能质量很好，就可以适当减少探索度，相反又可以增进一些探索式测试，增加测试点的有效性。</p>
+<p>探索式测试总结：总结使用哪些方法能够有效发现产品的问题，总结本次探索式测试中的教训。</p>
+<hr>
+<p>自动化测试：（1）自动化测试并不廉价，时间成本、人力成本和技术成本都是自动化需要考虑的成本；（2）自动化脚本往往没有想象中那么可靠；（3）自动化测试并不是单靠测试就能解决的事</p>
+<p>自动化测试的实施成本：前期开发成本包括：（1）人力成本-和自动化开发人员相关的费用成本；（2）时间成本-自动化准备时间、自动化开发时间、调试时间成本；（3）金钱成本：工具购买、开发和维护的费用成本；影响后期维护成本的是：（1）产品变更引起的自动化测试脚本变更的成本；（2）定位修复自动化运行环境引起的脚本健壮性问题的成本；（3）定位修复自动化运行环境的可靠性问题成本；（4）其他未知的引起测试脚本变更的因素引发的成本。</p>
+<hr>
+<p>测试用例模板：</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026181329446.png" alt="image-20201026181329446"></p>
+<p>测试用例编号：测试用例的唯一标记</p>
+<p>用例标题：概述测试用例的主要内容，明确测试用例的意图</p>
+<p>预置条件：测试用例顺利执行的前置条件，如一些基本的配置</p>
+<p>测试数据：测试时使用的测试数据</p>
+<p>测试步骤：如何执行这个测试用例，每步的操作是什么</p>
+<p>预期结果：和测试步骤对应起来，系统系统的返回</p>
+<p>测试用例编写注意点：</p>
+<p>（1）测试用例标题是一个完整的句子，用条件而不是用参数来描述测试用例标题</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201026181707246.png" alt="image-20201026181707246"></p>
+<p>（2）如果一个用例中包含多个参数，用例中应该是每个参数的取值</p>
+<p>（3）不要在测试用例中引用别的测试用例，会在测试用例中引入另一个测试用例，很大程度上是因为用例在执行中存在先后关系，即测试用例2一定会在测试用例1之后执行，这时可以考虑这样编写测试用例：把测试用例1和测试用例2合并成一个大的测试用例  ；把测试用例1的主要内容放到测试用例2的预置条件中  </p>
+<p>（4）避免在测试用例中包含过多的用户接口细节</p>
+<p>（5）明确测试步骤和预期结果的对应关系：例如在预期结果前加上[checkn]</p>
+<p>（6）避免在测试步骤中使用笼统的词，用明确的量词</p>
 
       
 
@@ -171,7 +277,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
         		</li>
       		
 		</ul>
@@ -186,6 +292,18 @@
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/15/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于测试的一些记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -205,586 +323,14 @@
 
 
 
-
-  
-    <article id="post-缓存杂谈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/27/%E7%BC%93%E5%AD%98%E6%9D%82%E8%B0%88/">缓存杂谈</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/27/%E7%BC%93%E5%AD%98%E6%9D%82%E8%B0%88/" class="archive-article-date">
-  	<time datetime="2019-07-27T04:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。</p>
-<h4 id="HTTP缓存"><a href="#HTTP缓存" class="headerlink" title="HTTP缓存"></a>HTTP缓存</h4><h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><p>通过网络获取资源，是一件耗时的操作，较大的资源还会需要客户端和服务端之间进行多次往返通信，这不但增加客户端的响应时间，而且还会增加网络流量。缓存是性能优化的重要方面，合理缓存的好处：（1）缓解服务器压力；（2）加快静态资源加载速度和页面渲染速度；（3）减少带宽消耗</p>
-<p>HTTP协议中，就有对缓存的支持，浏览器也都自带了HTTP缓存实现功能。</p>
-<p>HTTP缓存主要是通过请求和响应报文头中的对应Header信息来控制缓存策略。</p>
-<blockquote>
-<p>一些概念：</p>
-<p><strong>新鲜度（过期机制）</strong>：缓存副本有效期。在该有效期之前，该缓存副本就是新鲜的，当过了有效期后，该缓存副本则变为陈旧的<em>。</em>驱逐算法用于将陈旧的缓存副本替换为新鲜的。当客户端发起一个请求时，缓存检索到已有一个对应的陈旧缓存副本，则缓存会先将此请求附加一个<code>If-None-Match</code>头，然后发给目标服务器，以此来检查该资源副本是否是依然还是算新鲜的，若服务器返回了 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304" target="_blank" rel="noopener"><code>304</code></a> (Not Modified)（该响应不会有带有实体信息），则表示此资源副本是新鲜的，这样一来，可以节省一些带宽。若服务器通过 If-None-Match 或 If-Modified-Since判断后发现已过期，那么会带有该资源的实体内容返回。</p>
-<p><strong>校验值（验证机制）</strong>：服务器返回资源的时候有时在控制头信息带上这个资源的实体标签<code>Etag（Entity Tag）</code>，它可以用来作为浏览器再次请求过程的校验标识。如过发现校验标识不匹配，说明资源已经被修改或过期，浏览器需求重新获取资源内容。</p>
-<p><strong>缓存命中率</strong>：一个缓存的有效性是依照缓存的命中率来度量。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/07/27/%E7%BC%93%E5%AD%98%E6%9D%82%E8%B0%88/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之弱引用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/Python%E4%B9%8B%E5%BC%B1%E5%BC%95%E7%94%A8/">Python之弱引用</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/24/Python%E4%B9%8B%E5%BC%B1%E5%BC%95%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2019-07-24T11:23:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="Python中的垃圾回收"><a href="#Python中的垃圾回收" class="headerlink" title="Python中的垃圾回收"></a>Python中的垃圾回收</h5><p>1.引用计数：CPython中的垃圾回收主要算法，每个对象都会统计有多少引用指向自己，当计数归零时，对象立即销毁。</p>
-<p>2.分代垃圾回收：CPython2.0增加的新算法，用于检测引用循环中涉及的对象群组。</p>
-<p><code>del</code>语句删除的是名称，而不是对象。但是在两种情况下可能导致对象被回收：</p>
-<p>1.删除的变量保存的是对象的最后一个引用。</p>
-<p>2.删除变量后无法得到对象，如两个对象相互引用。</p>
-<p>重新绑定也可能会导致对象的引用数量归零。</p>
-<p>由于一次仅能有一个对象被回收，引用计数无法回收循环引用的对象。一组相互引用的对象若没有被其它对象直接引用，并且不可访问，则会永久存活下来。一个应用程序如果持续地产生这种不可访问的对象群组，就会发生内存泄漏。在对象群组内部使用弱引用（即不会在引用计数中被计数的引用）有时能避免出现引用环，因此弱引用可用于解决循环引用的问题。Python在对象的引用计数为0或只存在对象的弱引用时将回收这个对象。</p>
-        
-          <a class="article-more-a" href="/2019/07/24/Python%E4%B9%8B%E5%BC%B1%E5%BC%95%E7%94%A8/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">垃圾回收</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">弱引用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之装饰器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/17/Python%E4%B9%8B%E8%A3%85%E9%A5%B0%E5%99%A8/">Python之装饰器</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/17/Python%E4%B9%8B%E8%A3%85%E9%A5%B0%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2019-06-17T09:57:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Python中，一切皆为对象，函数也不例外。它可以像整数一样作为其他函数的返回值，也可以像整数一样作为其他函数的参数。由于函数也是一个对象，而且函数对象可以被赋值给变量，所以通过变量也能调用该函数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">now</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">"test!"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = now</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f()</span><br><span class="line">test!</span><br></pre></td></tr></table></figure>
-
-<p>在代码运行期间动态增加功能的方式，称之为装饰器。装饰器本质上是一个函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能。它经常用于有切面需求的场景，比如：插入日志、事务处理、权限校验等。函数装饰器在导入模块时立即执行，而被装饰的函数只在明确调用时运行。</p>
-<p><code>functools.lru_cache</code>实现了备忘录功能，它把耗时的函数的结果保存起来，避免传入相同的参数时重复计算。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之参数传递" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/13/Python%E4%B9%8B%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/">Python之参数传递</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/13/Python%E4%B9%8B%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" class="archive-article-date">
-  	<time datetime="2019-06-13T10:14:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="可接受任意数量参数的函数"><a href="#可接受任意数量参数的函数" class="headerlink" title="可接受任意数量参数的函数"></a>可接受任意数量参数的函数</h5><p>让一个函数接受任意数量的位置参数，可以使用一个<code>*</code>参数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">avg</span><span class="params">(first, *rest)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> (first + sum(rest)) / (<span class="number">1</span>+len(rest))  //rest是由其他元素组成的元组</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">1.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="number">2.5</span></span><br></pre></td></tr></table></figure>
-
-<p>让一个函数接受任意数量的关键字参数，使用一个以<code>**</code>开头的参数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_element</span><span class="params">(name, value, **attrs)</span>:</span></span><br><span class="line">	keyvals = [<span class="string">' %s="%s"'</span> % item <span class="keyword">for</span> item <span class="keyword">in</span> attrs.items()]</span><br><span class="line">	attr_str = <span class="string">''</span>.join(keyvals)</span><br><span class="line">	element = <span class="string">'&lt;&#123;name&#125;&#123;attrs&#125;&gt;&#123;value&#125;&lt;/&#123;name&#125;&gt;'</span>.format(name=name, attrs=attr_str, value=html.escape(value))</span><br><span class="line">	<span class="keyword">return</span> element</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>make_element(<span class="string">'item'</span>, <span class="string">'Albatross'</span>,size=<span class="string">'large'</span>, quantity=<span class="number">6</span>)</span><br><span class="line"><span class="string">'&lt;item size="large"quantity="6"&gt;Albatross&lt;/item&gt;'</span></span><br></pre></td></tr></table></figure>
-
-<p>在这里，attrs是一个包含所有被传入进来的关键字参数的字典。</p>
-        
-          <a class="article-more-a" href="/2019/06/13/Python%E4%B9%8B%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之数据结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/24/Python%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">Python之数据结构</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/24/Python%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="archive-article-date">
-  	<time datetime="2019-05-24T07:47:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="内置序列类型"><a href="#内置序列类型" class="headerlink" title="内置序列类型"></a>内置序列类型</h5><p>容器序列</p>
-<p><code>list</code> <code>tuple</code> <code>collections.deque</code>这些序列能存放不同类型的数据。</p>
-<p>扁平序列</p>
-<p><code>str</code> <code>bytes</code> <code>bytearray</code> <code>memoryview</code> <code>array.array</code>这类序列只能容纳一种类型。</p>
-<p>容器序列存放的是它们所包含的任意类型的对象的引用，而扁平序列里存放的是值而不是引用（一段连续的内存空间）。</p>
-<p>序列类型还可按能否被修改来分类。</p>
-<ul>
-<li><p>可变序列</p>
-<p><code>list</code> <code>bytearray</code> <code>array.array</code> <code>collections.deque</code> <code>memoryview</code></p>
-</li>
-<li><p>不可变序列</p>
-<p><code>tuple</code> <code>str</code> <code>bytes</code></p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/05/24/Python%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之魔法方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/23/Python%E4%B9%8B%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/">Python之魔法方法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/23/Python%E4%B9%8B%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2019-05-23T08:57:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> collections</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Card = collections.namedtuple(<span class="string">'Card'</span>, [<span class="string">'rank'</span>, <span class="string">'suit'</span>])</span><br></pre></td></tr></table></figure>
-
-<p>namedtuple用以构建只有少数属性但是没有方法的对象</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FrenchDeck</span>:</span></span><br><span class="line">    ranks = [str(n) <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">11</span>)] + list(<span class="string">'JQKA'</span>)</span><br><span class="line">	suits = [<span class="string">'spades'</span>, <span class="string">'diamonds'</span>, <span class="string">'clubs'</span>, <span class="string">'hearts'</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">		self._cards = [Card(rank, suit) <span class="keyword">for</span> suit <span class="keyword">in</span> self.suits <span class="keyword">for</span> rank <span class="keyword">in</span> self.ranks]</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> len(self._cards)</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,position)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> self._cards[position]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck = FrenchDeck()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>len(deck)</span><br><span class="line"><span class="number">52</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[<span class="number">4</span>]</span><br><span class="line">Card(rank=<span class="string">'6'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> random <span class="keyword">import</span> choice</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>choice(deck)</span><br><span class="line">Card(rank=<span class="string">'7'</span>, suit=<span class="string">'clubs'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[:<span class="number">3</span>]</span><br><span class="line">[Card(rank=<span class="string">'2'</span>, suit=<span class="string">'spades'</span>), Card(rank=<span class="string">'3'</span>, suit=<span class="string">'spades'</span>), Card(rank=<span class="string">'4'</span>, suit=<span class="string">'spades'</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[<span class="number">12</span>::<span class="number">13</span>]</span><br><span class="line">[Card(rank=<span class="string">'A'</span>, suit=<span class="string">'spades'</span>), Card(rank=<span class="string">'A'</span>, suit=<span class="string">'diamonds'</span>), Card(rank=<span class="string">'A'</span>, suit=<span class="string">'clubs'</span>), Card(rank=<span class="string">'A'</span>, suit=<span class="string">'hearts'</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> card <span class="keyword">in</span> deck:</span><br><span class="line">	print(card)	</span><br><span class="line">Card(rank=<span class="string">'2'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">Card(rank=<span class="string">'3'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">Card(rank=<span class="string">'4'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p>这样处理，不必再去记住标准操作的各式名称（“怎么得到元素总数”是.size()还是.length()还是别的什么）。可以更加方便地利用Python的标准库。</p>
-        
-          <a class="article-more-a" href="/2019/05/23/Python%E4%B9%8B%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据模型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python基础记录-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/">Python基础记录(8)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/" class="archive-article-date">
-  	<time datetime="2019-05-10T03:55:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最简单的服务器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname() //获取当前机器的主机名</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.bind((host, port))</span><br><span class="line">s.listen(<span class="number">5</span>) //最多<span class="number">5</span>个连接在队列中等待接纳，到达这个数量后将开始拒绝连接</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    c, addr = s.accept() //接受客户端连接，c为客户端套接字</span><br><span class="line">    print(<span class="string">'Got connection from'</span>, addr)</span><br><span class="line">    c.send(<span class="string">'Thank you for connecting'</span>)</span><br><span class="line">    c.close()</span><br></pre></td></tr></table></figure>
-
-<p>最简单的客户端</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.connect((host, port))</span><br><span class="line">print(s.recv(<span class="number">1024</span>))</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -807,8 +353,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

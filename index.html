@@ -124,6 +124,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-关于测试的一些学习记录（2）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/">关于测试的一些学习记录（2）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-10-21T07:58:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>测试设计：把测试点加工为测试用例，就叫测试设计。如果说测试点还只是一些散乱的测试思路的集合，那测试用例就是一份真正能够指导测试的测试说明书。路径分析法、判定表、正交分析法、等价类、边界值等都是常见的测试设计方法。</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201021164726059.png" alt="image-20201021164726059"></p>
+<p>在测试设计阶段，保证测试用例的质量，为测试团队提供有效的测试技术支持是重要职责。</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201021165948266.png" alt="image-20201021165948266"></p>
+<p>建模：研究测试点、分析特征的情况并对其进行归类是必不可少的。可分为四类：流程、参数、数据、组合。对流程类，可以通过绘制“流程图”来建立测试模型；对参数类，可以通过“输入输出表”来建立测试模型；对数据类，可以通过“等价类分析表”来建立测试模型；对组合类，可以通过“因子表”来建立测试模型。</p>
+<p>设计基础测试用例：覆盖模型，得到一些测试条件。</p>
+<p>补充测试数据：为基础测试用例确定测试输入、补充测试数据。</p>
+<p>扩展：根据经验，特别是对系统哪些地方容易发生缺陷的认识，补充一些测试用例，增加系统的有效性。</p>
+<hr>
+<p>流程类测试点，拥有流程方面的一些特征，将测试点分成一些步骤，会因输入的不同而进行不同的处理</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022173249440.png" alt="image-20201022173249440"></p>
+<p>参数类测试点，测试点中主要包含着一些参数，有两个重要的特点：（1）参数值的个数是有限的，可以通过遍历的方式来测试覆盖到；（2）系统会对不同的参数值作出不同的处理和响应</p>
+<p>数据类测试点，测试点中主要包含着一些数据，有两个特点：（1）数据的取值是一个范围，通常不能用遍历的方式来测试覆盖到；（2）系统对允许输入的数据作出的处理或响应往往是一样的</p>
+<p>组合类测试点，测试点可以组合在一起进行测试设计</p>
+<hr>
+<p>流程类测试设计：路径分析法</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022175603679.png" alt="image-20201022175603679"></p>
+<p>对流程类的测试点，建模就是绘制这些测试点代表的业务流程图，需要注意：（1）测试者要充分理解和测试点相关的功能业务流程，确保流程图的正确性；（2）测试者要和产品设计者充分交流，保证绘出的流程图能够正确覆盖产品的设计；（3）如果开发提供了功能流程图，测试者需要仔细审核流程图的正确性，如有必要可以重新绘制</p>
+        
+          <a class="article-more-a" href="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-关于测试的一些学习记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -215,6 +304,21 @@
 <p>稳定性测试是在低于性能值的前提下测试的。事实上，用户在使用系统时，也不会时刻让系统在极限状态运行，在测试时，可以控制测试中的负载量，使其和用户的实际情况尽量接近，使得测试更准确和有价值</p>
 <p>压力测试是在高于性能值的前提下进行测试的。虽然测试时负载超过了系统能够处理的最大能力，但并不等于这种情况下系统的功能都会失效，需要根据实际情况来分析系统的表现是否合理，例如系统最多支持100个用户并发登录，当有110个用户同时发起登录时应保证有100个用户可以正常登录</p>
 <p>稳定性测试：多、并、复、异。多：在测试中增加用户对功能的操作数量，测试系统的稳定性；并：在测试中让多个用户同时操作某个功能，也可称为并发测试；复：在测试中反复让一个或多个用户反复进行新建、刷新、删除、同步、备份之类的操作，能够有效地发现系统在资源申请和释放上是否存在问题；异：在测试中让一个或多个用户反复进行异常操作，验证系统是否能够持续作出合理的反应</p>
+<p>压力测试-突发形态的负载模型：在使用突发形态的负载进行压力测试时，希望系统的运行状况是正常的，能够保证规格值之内的业务都被正确处理，而使用持续超过规格的负载进行测试时，系统可能无法保证所有在规格值之内的业务能被正确处理。</p>
+<p><img src="/2020/07/15/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20201019174113120.png" alt="image-20201019174113120"></p>
+<p>恢复测试法是指使用持续超过规格的负载进行了测试之后，再将负载降到规格以内的测试方法。持续进行超过规格的负载测试时，允许规格内的业务不是100%正确，如果产品在可靠性方面要求不高，甚至允许系统出现死机、重启等情况；当负载降到规格值之内后，业务必须能够恢复到100%的正确，换句话说，产品在负载高的情况下出现的死机重启等问题，在负载降低后能够“自愈”。</p>
+<hr>
+<p>在性能测试中，除了确认性能规格是否满足外，还希望能够发现产品的性能瓶颈，并评估产品在用户使用环境中的性能表现</p>
+<p><img src="/2020/07/15/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20201019181751455.png" alt="image-20201019181751455"></p>
+<p>测试出系统最好的性能值：（1） 系统能够正确处理新业务的最大能力系统能够正确处理新业务的最大能力， 可称为“新建”。 例如，系统每秒能够允许多少新用户上线登录、 系统每秒能够主动发起多少新的连接等。针对系统的新建能力进行性能测试， 测试的是系统为一个新业务从分配资源到完成处理流程的速度。 业务处理流程和资源的总量都会影响系统的新建能力。 需要注意的是， 系统不能只“建”不“拆”： 已经完成或异常的业务需要被及时拆除， 占用的资源要能够被回收， 用于新的业务。（2）系统能够正确处理的最大业务能力：系统能够同时正确处理的最大业务能力， 可称为“并发”。 例如， 系统能够支持的最大用户同时在线数、 系统能够同时发起的最大连接数等。  </p>
+<p>以场景为单位来测试性能：场景为单位来进行性能测试， 能够很好地评估产品在用户使用环境中的性能表现， 对用户更有实际意义。  </p>
+<hr>
+<p>易用性测试法：（1）一致性测试法的测试对象是用户界面：风格、布局、元素上是否一致统一，布局的合理性、操作的合理性、提示等是否符合UI设计规范。一致性测试法能够测试到产品在易理解和易用性依从性方面的能力， 但它并不关心产品功能是否正确， 所以可以直接对产品的UI设计原型进行测试， 而无须等待功能全面集成后再进行 。</p>
+<p>一致性测试法是一种“确认”性质的测试， 目的是“证实”  ：a.进入一个用户页面， 确认这个页面是否和产品整体的风格相符。如页面的色彩、 文字大小、 字体等。  b.确认页面的“图标”是否来自产品的“图标库”， 风格是否统一  。c.确认页面的“元素”是否符合产品的UI设计规范， 是否统一  。d.确认“页面布局”是否符合设计规范 。e.确认页面在“操作合理性”上是否符合设计规范 。f.确认页面在“提示”方面， 如确认输入、 错误提示等， 在大小、 格式、 图标上是否符合规范 。</p>
+<p>（2）可用性测试法的测试对象也是用户界面， 但在可用性测试中， 我们关注的是产品提供的功能， 对用户来说是否易于学习理解、 易于使用，所以可用性测试需要和功能测试结合起来， 以场景作为测试粒度， 以用户的视角进行测试。  </p>
+<p>可用性测试操作步骤：a.第一步， 由本功能的测试责任人， 设计可靠性测试场景。 参考产品的典型场景是一条快速有效的途径。b.根据场景， 由本功能的测试责任人来负责确定可用性测试关注点和标准。 有些标准可能会在需求规格中写出了， 有些标准可能需要根据场景来确定，样例：</p>
+<p><img src="/2020/07/15/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20201020185955891.png" alt="image-20201020185955891"></p>
+<p>c.由非本功能的测试责任人（也就是交叉测试者） 来执行这个测试环境 。e.本功能测试责任人和交叉测试者一起对测试结果进行分析， 确认是否存在可用性方面的问题。 确认时， 我们可以对比友商产品（尤其是在易用性方面设计比较佳的友商） 在相同场景下的表现， 作为评判参考和改进意见。 </p>
 
       
 
@@ -783,101 +887,6 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之协程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/11/Python%E4%B9%8B%E5%8D%8F%E7%A8%8B/">Python之协程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/11/Python%E4%B9%8B%E5%8D%8F%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-11-11T09:21:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>并发编程一般使用多线程或者多进程来实现，对于CPU计算密集型任务，由于GIL的存在，通常使用多进程来实现，而对于IO密集型任务，可以通过线程调度来让线程在执行IO任务时让出GIL，从而实现表面上的并发。</p>
-<p>对于IO密集型任务还有一种选择就是协程，是运行在单线程中的“并发”，协程相比多线程的一大优势是省去了多线程之间的切换开销，获得了更高的效率。Python中的异步IO模块asyncio就是基本的协程模块。</p>
-<p>协程的切换不同于线程切换，是由程序自身控制的，没有切换的开销。协程不需要多线程的锁机制，因为都是在同一个线程中运行，所以没有同时访问数据的问题，执行效率比多线程高很多。可以这么简单地理解：进程/线程：操作系统提供的一种并发处理任务的能力；协程：在代码执行流程中人为地实现多任务并发，是单个线程内的任务调度。多线程和多进程体现的是操作系统的能力，协程体现的是程序员的流程控制能力。</p>
-<p><code>yield</code>的语法规则是：在<code>yield</code>这里暂停函数的执行，并返回<code>yield</code>后面表达式的值（默认为None），直到被<code>next()</code>方法再次调用时，从上次暂停的yield代码处继续往下执行。</p>
-<p>每个生成器都可以执行<code>send()</code>方法，为生成器内部的<code>yield</code>语句发送数据。此时yield语句不在只是<u>yield xxx</u>的形式，还可以是<u>var = yield xxx</u>的赋值形式。它同时具备两个功能，一是暂停并返回函数，二是接收外部send()方法发送过来的值，重新激活函数，并将这个值赋值给var变量。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">simple_coroutine</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">'-&gt;启动协程'</span>)</span><br><span class="line">	y = <span class="number">10</span></span><br><span class="line">	x = <span class="keyword">yield</span> y</span><br><span class="line">	print(<span class="string">'-&gt;协程接收到了x的值: '</span>, x)</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_coro = simple_coroutine()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret = next(my_coro)</span><br><span class="line">-&gt;启动协程</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(ret)</span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_coro.send(<span class="number">20</span>)</span><br><span class="line">-&gt;协程接收到了x的值:  20</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;pyshell#9&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    my_coro.send(<span class="number">20</span>)</span><br><span class="line">StopIteration</span><br></pre></td></tr></table></figure>
-
-<p>协程可以处于下面四个状态中的一个。当前状态可以导入inspect模块，使用inspect.getgeneratorstate(…)方法查看，该方法返回：</p>
-<ul>
-<li>‘GEN_CREATED’：等待开始执行</li>
-<li>‘GEN_RUNNING’：协程正在执行</li>
-<li>‘GEN_SUSPENDED’：在yield表达式处暂停</li>
-<li>‘GEN_CLOSED’：执行结束</li>
-</ul>
-<p>因为send()方法的参数会成为暂停的yield表达式的值，所以仅当协程处于暂停状态时才能调用send()方法，不过如果协程还没激活（状态是’GEN_CREATED’），就立即把None之外的值发给它，会出现TypeError。因此，始终要先调用<u>next(my_coro)</u>激活协程（也可以调用<u>my_coro.end(None)</u>），这一过程被称作预激活。</p>
-<p>通过<code>asyncio</code>可以轻松实现协程来完成异步IO操作。<code>@asyncio.coroutine</code>，asyncio模块中的装饰器，用于将一个生成器声明为协程。asyncio的使用可分三步走：</p>
-<ol>
-<li>创建事件循环</li>
-<li>指定循环模式并运行</li>
-<li>关闭循环</li>
-</ol>
-<p>通常使用<code>asyncio.get_event_loop()</code>方法创建一个循环。运行循环有两种方法：一是调用<code>run_until_complete()</code>方法，二是调用<code>run_forever()</code>方法。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">协程</a>
         		</li>
       		
 		</ul>

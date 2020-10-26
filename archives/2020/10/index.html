@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://afulla.github.io">
-  <title>AfullA</title>
+  <title>Archives: 2020/10 | AfullA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="AfullA">
-<meta property="og:url" content="https://afulla.github.io/page/3/index.html">
+<meta property="og:url" content="https://afulla.github.io/archives/2020/10/index.html">
 <meta property="og:site_name" content="AfullA">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="AfullA">
@@ -124,668 +124,58 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Python之鸭子类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-10-21T07:58:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-21</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/09/Python%E4%B9%8B%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B/">Python之鸭子类型</a>
+      <a class="archive-article-title" href="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/">关于测试的一些学习记录（2）</a>
     </h1>
   
 
-        
-        <a href="/2019/09/09/Python%E4%B9%8B%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2019-09-09T01:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>动态语言与静态语言</strong></p>
-<p>静态类型语言在编译时便已确定变量的类型，而动态语言的变量类型要到程序运行的时候，待变量被赋予某个值之后，才会具有某种类型。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">'hello'</span></span><br><span class="line">    s = <span class="string">'hi'</span></span><br><span class="line">    s = <span class="number">0</span> <span class="comment">//编译时会报错</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'hello'</span></span><br><span class="line">s = <span class="number">0</span></span><br><span class="line">s = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">#可以给变量随意赋值</span></span><br></pre></td></tr></table></figure>
-
-<p>静态类型语言的优点首先是在编译时就能发现类型不匹配的错误，编辑器可以帮助我们提前避免程序在运行期间有可能发生的一些错误；其次，如果在程序中明确地规定了数据类型，编辑器还可以针对这些信息对程序进行一些优化工作，提高程序执行速度。静态类型语言的缺点首先是迫使程序员依照强契约来编写程序，为每个变量规定数据类型，归根结底只是辅助我们编写可靠性高的程序的一种手段，而不是编写程序的目的；其次，类型声明会增加更多的代码，在程序编写过程中，这些细节会让程序员的精力从思考业务逻辑上分散开来。</p>
-<p>动态类型语言的优点是编写的代码数量更少，看起来更加简洁，程序员可以把更多的精力放在业务逻辑上。动态类型语言的缺点是无法保证变量的类型，从而在程序运行期有可能发生跟类型相关的错误。</p>
-<p><strong>鸭子类型</strong></p>
-<p>鸭子类型是动态类型的一种风格。在这种风格中，一个对象有效的语义，不是由继承自特定的类或实现的接口决定，而是由当前方法和属性的集合决定。（当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子）在鸭子类型中，关注的不是对象的类型本身，而是它是如何使用的。例如：在不使用鸭子类型的语言中，我们可以编写一个函数，它接受一个类型为“鸭子”的对象，并调用它的“走”和“叫”方法。在使用鸭子类型的语言中，这样的一个函数可以接受任意类型的对象，并调用它们的“走”和“叫”方法。如果这些需要被调用的方法不存在，那么将引发一个运行时的错误。</p>
-<p>鸭子类型通常得益于不测试方法和函数中参数的类型，而是依赖文档，清晰的代码和测试来确保正确使用。</p>
-<p>利用鸭子类型的思想，能轻松地在动态类型语言中实现一个原则：面向接口编程，而不是面向实现编程。例如：一个对象若有push和pop方法，并且这些方法提供了正确的实现，它就可以被当做栈来使用。</p>
-<p>接口在动态类型语言中是怎么运作的呢？首先，基本的事实是，Python语言没有Interface关键字，而且除了抽象基类，每个类都有接口：类实现或继承的公开属性（方法或数据属性），包括特殊方法，如<strong>getitem</strong>。按照定义，受保护的属性和私有属性不在接口中。关于接口，有个实用的补充定义：对象公开方法的子集，让对象在系统中扮演特定的角色。一个类可能会实现多个接口，从而让实例扮演多个角色。</p>
-<p>鸭子类型：对象的类型无关紧要，只要实现了特定的协议即可。（忽略对象的真正类型，转而关注对象有没有实现所需的方法、签名和语义）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-缓存杂谈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/27/%E7%BC%93%E5%AD%98%E6%9D%82%E8%B0%88/">缓存杂谈</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/27/%E7%BC%93%E5%AD%98%E6%9D%82%E8%B0%88/" class="archive-article-date">
-  	<time datetime="2019-07-27T04:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。</p>
-<h4 id="HTTP缓存"><a href="#HTTP缓存" class="headerlink" title="HTTP缓存"></a>HTTP缓存</h4><h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><p>通过网络获取资源，是一件耗时的操作，较大的资源还会需要客户端和服务端之间进行多次往返通信，这不但增加客户端的响应时间，而且还会增加网络流量。缓存是性能优化的重要方面，合理缓存的好处：（1）缓解服务器压力；（2）加快静态资源加载速度和页面渲染速度；（3）减少带宽消耗</p>
-<p>HTTP协议中，就有对缓存的支持，浏览器也都自带了HTTP缓存实现功能。</p>
-<p>HTTP缓存主要是通过请求和响应报文头中的对应Header信息来控制缓存策略。</p>
-<blockquote>
-<p>一些概念：</p>
-<p><strong>新鲜度（过期机制）</strong>：缓存副本有效期。在该有效期之前，该缓存副本就是新鲜的，当过了有效期后，该缓存副本则变为陈旧的<em>。</em>驱逐算法用于将陈旧的缓存副本替换为新鲜的。当客户端发起一个请求时，缓存检索到已有一个对应的陈旧缓存副本，则缓存会先将此请求附加一个<code>If-None-Match</code>头，然后发给目标服务器，以此来检查该资源副本是否是依然还是算新鲜的，若服务器返回了 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304" target="_blank" rel="noopener"><code>304</code></a> (Not Modified)（该响应不会有带有实体信息），则表示此资源副本是新鲜的，这样一来，可以节省一些带宽。若服务器通过 If-None-Match 或 If-Modified-Since判断后发现已过期，那么会带有该资源的实体内容返回。</p>
-<p><strong>校验值（验证机制）</strong>：服务器返回资源的时候有时在控制头信息带上这个资源的实体标签<code>Etag（Entity Tag）</code>，它可以用来作为浏览器再次请求过程的校验标识。如过发现校验标识不匹配，说明资源已经被修改或过期，浏览器需求重新获取资源内容。</p>
-<p><strong>缓存命中率</strong>：一个缓存的有效性是依照缓存的命中率来度量。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/07/27/%E7%BC%93%E5%AD%98%E6%9D%82%E8%B0%88/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之弱引用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/Python%E4%B9%8B%E5%BC%B1%E5%BC%95%E7%94%A8/">Python之弱引用</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/24/Python%E4%B9%8B%E5%BC%B1%E5%BC%95%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2019-07-24T11:23:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="Python中的垃圾回收"><a href="#Python中的垃圾回收" class="headerlink" title="Python中的垃圾回收"></a>Python中的垃圾回收</h5><p>1.引用计数：CPython中的垃圾回收主要算法，每个对象都会统计有多少引用指向自己，当计数归零时，对象立即销毁。</p>
-<p>2.分代垃圾回收：CPython2.0增加的新算法，用于检测引用循环中涉及的对象群组。</p>
-<p><code>del</code>语句删除的是名称，而不是对象。但是在两种情况下可能导致对象被回收：</p>
-<p>1.删除的变量保存的是对象的最后一个引用。</p>
-<p>2.删除变量后无法得到对象，如两个对象相互引用。</p>
-<p>重新绑定也可能会导致对象的引用数量归零。</p>
-<p>由于一次仅能有一个对象被回收，引用计数无法回收循环引用的对象。一组相互引用的对象若没有被其它对象直接引用，并且不可访问，则会永久存活下来。一个应用程序如果持续地产生这种不可访问的对象群组，就会发生内存泄漏。在对象群组内部使用弱引用（即不会在引用计数中被计数的引用）有时能避免出现引用环，因此弱引用可用于解决循环引用的问题。Python在对象的引用计数为0或只存在对象的弱引用时将回收这个对象。</p>
-        
-          <a class="article-more-a" href="/2019/07/24/Python%E4%B9%8B%E5%BC%B1%E5%BC%95%E7%94%A8/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">垃圾回收</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">弱引用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之装饰器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/17/Python%E4%B9%8B%E8%A3%85%E9%A5%B0%E5%99%A8/">Python之装饰器</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/17/Python%E4%B9%8B%E8%A3%85%E9%A5%B0%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2019-06-17T09:57:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Python中，一切皆为对象，函数也不例外。它可以像整数一样作为其他函数的返回值，也可以像整数一样作为其他函数的参数。由于函数也是一个对象，而且函数对象可以被赋值给变量，所以通过变量也能调用该函数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">now</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">"test!"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = now</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f()</span><br><span class="line">test!</span><br></pre></td></tr></table></figure>
-
-<p>在代码运行期间动态增加功能的方式，称之为装饰器。装饰器本质上是一个函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能。它经常用于有切面需求的场景，比如：插入日志、事务处理、权限校验等。函数装饰器在导入模块时立即执行，而被装饰的函数只在明确调用时运行。</p>
-<p><code>functools.lru_cache</code>实现了备忘录功能，它把耗时的函数的结果保存起来，避免传入相同的参数时重复计算。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之参数传递" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/13/Python%E4%B9%8B%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/">Python之参数传递</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/13/Python%E4%B9%8B%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" class="archive-article-date">
-  	<time datetime="2019-06-13T10:14:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="可接受任意数量参数的函数"><a href="#可接受任意数量参数的函数" class="headerlink" title="可接受任意数量参数的函数"></a>可接受任意数量参数的函数</h5><p>让一个函数接受任意数量的位置参数，可以使用一个<code>*</code>参数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">avg</span><span class="params">(first, *rest)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> (first + sum(rest)) / (<span class="number">1</span>+len(rest))  //rest是由其他元素组成的元组</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">1.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="number">2.5</span></span><br></pre></td></tr></table></figure>
-
-<p>让一个函数接受任意数量的关键字参数，使用一个以<code>**</code>开头的参数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_element</span><span class="params">(name, value, **attrs)</span>:</span></span><br><span class="line">	keyvals = [<span class="string">' %s="%s"'</span> % item <span class="keyword">for</span> item <span class="keyword">in</span> attrs.items()]</span><br><span class="line">	attr_str = <span class="string">''</span>.join(keyvals)</span><br><span class="line">	element = <span class="string">'&lt;&#123;name&#125;&#123;attrs&#125;&gt;&#123;value&#125;&lt;/&#123;name&#125;&gt;'</span>.format(name=name, attrs=attr_str, value=html.escape(value))</span><br><span class="line">	<span class="keyword">return</span> element</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>make_element(<span class="string">'item'</span>, <span class="string">'Albatross'</span>,size=<span class="string">'large'</span>, quantity=<span class="number">6</span>)</span><br><span class="line"><span class="string">'&lt;item size="large"quantity="6"&gt;Albatross&lt;/item&gt;'</span></span><br></pre></td></tr></table></figure>
-
-<p>在这里，attrs是一个包含所有被传入进来的关键字参数的字典。</p>
-        
-          <a class="article-more-a" href="/2019/06/13/Python%E4%B9%8B%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之数据结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/24/Python%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">Python之数据结构</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/24/Python%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="archive-article-date">
-  	<time datetime="2019-05-24T07:47:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="内置序列类型"><a href="#内置序列类型" class="headerlink" title="内置序列类型"></a>内置序列类型</h5><p>容器序列</p>
-<p><code>list</code> <code>tuple</code> <code>collections.deque</code>这些序列能存放不同类型的数据。</p>
-<p>扁平序列</p>
-<p><code>str</code> <code>bytes</code> <code>bytearray</code> <code>memoryview</code> <code>array.array</code>这类序列只能容纳一种类型。</p>
-<p>容器序列存放的是它们所包含的任意类型的对象的引用，而扁平序列里存放的是值而不是引用（一段连续的内存空间）。</p>
-<p>序列类型还可按能否被修改来分类。</p>
-<ul>
-<li><p>可变序列</p>
-<p><code>list</code> <code>bytearray</code> <code>array.array</code> <code>collections.deque</code> <code>memoryview</code></p>
-</li>
-<li><p>不可变序列</p>
-<p><code>tuple</code> <code>str</code> <code>bytes</code></p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/05/24/Python%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之魔法方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/23/Python%E4%B9%8B%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/">Python之魔法方法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/23/Python%E4%B9%8B%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2019-05-23T08:57:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> collections</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Card = collections.namedtuple(<span class="string">'Card'</span>, [<span class="string">'rank'</span>, <span class="string">'suit'</span>])</span><br></pre></td></tr></table></figure>
-
-<p>namedtuple用以构建只有少数属性但是没有方法的对象</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FrenchDeck</span>:</span></span><br><span class="line">    ranks = [str(n) <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">11</span>)] + list(<span class="string">'JQKA'</span>)</span><br><span class="line">	suits = [<span class="string">'spades'</span>, <span class="string">'diamonds'</span>, <span class="string">'clubs'</span>, <span class="string">'hearts'</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">		self._cards = [Card(rank, suit) <span class="keyword">for</span> suit <span class="keyword">in</span> self.suits <span class="keyword">for</span> rank <span class="keyword">in</span> self.ranks]</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> len(self._cards)</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,position)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> self._cards[position]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck = FrenchDeck()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>len(deck)</span><br><span class="line"><span class="number">52</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[<span class="number">4</span>]</span><br><span class="line">Card(rank=<span class="string">'6'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> random <span class="keyword">import</span> choice</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>choice(deck)</span><br><span class="line">Card(rank=<span class="string">'7'</span>, suit=<span class="string">'clubs'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[:<span class="number">3</span>]</span><br><span class="line">[Card(rank=<span class="string">'2'</span>, suit=<span class="string">'spades'</span>), Card(rank=<span class="string">'3'</span>, suit=<span class="string">'spades'</span>), Card(rank=<span class="string">'4'</span>, suit=<span class="string">'spades'</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[<span class="number">12</span>::<span class="number">13</span>]</span><br><span class="line">[Card(rank=<span class="string">'A'</span>, suit=<span class="string">'spades'</span>), Card(rank=<span class="string">'A'</span>, suit=<span class="string">'diamonds'</span>), Card(rank=<span class="string">'A'</span>, suit=<span class="string">'clubs'</span>), Card(rank=<span class="string">'A'</span>, suit=<span class="string">'hearts'</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> card <span class="keyword">in</span> deck:</span><br><span class="line">	print(card)	</span><br><span class="line">Card(rank=<span class="string">'2'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">Card(rank=<span class="string">'3'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">Card(rank=<span class="string">'4'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p>这样处理，不必再去记住标准操作的各式名称（“怎么得到元素总数”是.size()还是.length()还是别的什么）。可以更加方便地利用Python的标准库。</p>
-        
-          <a class="article-more-a" href="/2019/05/23/Python%E4%B9%8B%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据模型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python基础记录-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/">Python基础记录(8)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/" class="archive-article-date">
-  	<time datetime="2019-05-10T03:55:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最简单的服务器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname() //获取当前机器的主机名</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.bind((host, port))</span><br><span class="line">s.listen(<span class="number">5</span>) //最多<span class="number">5</span>个连接在队列中等待接纳，到达这个数量后将开始拒绝连接</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    c, addr = s.accept() //接受客户端连接，c为客户端套接字</span><br><span class="line">    print(<span class="string">'Got connection from'</span>, addr)</span><br><span class="line">    c.send(<span class="string">'Thank you for connecting'</span>)</span><br><span class="line">    c.close()</span><br></pre></td></tr></table></figure>
-
-<p>最简单的客户端</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.connect((host, port))</span><br><span class="line">print(s.recv(<span class="number">1024</span>))</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -807,9 +197,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
