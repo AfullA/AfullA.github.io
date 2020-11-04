@@ -124,6 +124,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python基础记录-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/">Python基础记录(8)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/" class="archive-article-date">
+  	<time datetime="2019-05-10T03:55:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最简单的服务器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname() //获取当前机器的主机名</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.bind((host, port))</span><br><span class="line">s.listen(<span class="number">5</span>) //最多<span class="number">5</span>个连接在队列中等待接纳，到达这个数量后将开始拒绝连接</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    c, addr = s.accept() //接受客户端连接，c为客户端套接字</span><br><span class="line">    print(<span class="string">'Got connection from'</span>, addr)</span><br><span class="line">    c.send(<span class="string">'Thank you for connecting'</span>)</span><br><span class="line">    c.close()</span><br></pre></td></tr></table></figure>
+
+<p>最简单的客户端</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.connect((host, port))</span><br><span class="line">print(s.recv(<span class="number">1024</span>))</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python基础记录-7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

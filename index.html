@@ -124,6 +124,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-关于测试的一些学习记录（3）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/">关于测试的一些学习记录（3）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-10-27T07:01:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>测试策略通俗来讲就是“测什么”和“怎么测”：（1）测试对象和范围是什么；（2）测试目标是什么；（3）测试的重点和难点是什么；（4）测试的深度和广度；（5）如何安排各种测试活动，先测什么后测什么；（6）如何评价测试的效果</p>
+<p>测试策略确定测试活动，在测试计划中被拆解为一个个任务，每个任务确定工期、执行先后次序和责任人</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027154622894.png" alt="image-20201027154622894"></p>
+<hr>
+<p>四步测试策略制定法：</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027155225940.png" alt="image-20201027155225940"></p>
+<p>明确产品质量目标：（1）测试目标就是让产品在发布时候能够满足事先约定的质量目标；（2）围绕产品质量目标进行刚刚好的测试；（3）将目标-行为-评估形成闭环</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027161917361.png" alt="image-20201027161917361"></p>
+<p>首先，将产品质量评估模型作用于具体的产品，得到产品质量目标；其次，我们根据产品质量目标来制定测试策略，确定接下来的测试活动；再次，执行各种测试活动；最后，对测试效果进行评估，评估产品的质量目标是否达到。此时，目标、行为和评估会形成一个闭环，一旦发现没有达到产品质量目标，就及时调整测试策略。</p>
+<p>进行风险分析：（1）提前识别到项目中可能存在哪些会阻塞测试的风险，然后基于风险来调整测试策略；（2）基于风险来加强和降低测试投入。老功能在老版本中已经被测试过，质量的起点相比全新开发的功能要高，失效的风险更低，对高风险的部分加强测试投入，对低风险的部分降低测试投入。</p>
+<p>适配“产品研发流程”：（1）按照产品研发流程，根据在哪个阶段项目能够确定到哪种程度的实际情况，来为测试策略设计一个符合这种进程的结构。</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172024702.png" alt="image-20201027172024702"></p>
+<p>（2）根据研发流程来安排测试活动，确保测试和开发的节奏是彼此吻合的</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172432322.png" alt="image-20201027172432322"></p>
+<p>进行测试分层：通过测试分层，能够将一个大的测试目标，分到不同层次中分阶段去完成。</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172726993.png" alt="image-20201027172726993"></p>
+        
+          <a class="article-more-a" href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-关于测试的一些学习记录（2）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -734,107 +821,6 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">描述符</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之并发编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/13/Python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">Python之并发编程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/13/Python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-11-13T06:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>进程</p>
-<ul>
-<li>进程是执行中的程序，也就是说进程是动态的，程序是静态的</li>
-<li>进程是操作系统分配资源的最小单位，一个进程控制块（PCB），有自己唯一的一个进程标志符（PID）</li>
-<li>进程之间相互独立，内存不共享</li>
-<li>每个进程都是一个实体，每个进程都有属于自己的一块内存</li>
-<li>进程的创建、销毁和切换开销较大</li>
-<li>进程只能创建子进程，无法创建平级进程</li>
-</ul>
-<p>线程</p>
-<ul>
-<li>线程是CPU的基本调度单位</li>
-<li>一个进程一般包含多个线程，一个进程下的多个线程共享进程资源</li>
-<li>不同进程之间的线程相互不可见</li>
-<li>线程不能独立执行</li>
-<li>一个线程可以创建和撤销另外一个线程</li>
-</ul>
-<p>一个进程至少有一个线程，进程有自己独立的内存单元，而多个线程共享一个内存单元。</p>
-<p>Python标准库中所有阻塞型I/O函数都会释放GIL，允许其他线程运行。time.sleep()函数也会释放GIL。因此，尽管有GIL，Python线程还是能在I/O密集型应用中发挥作用。</p>
-<p>可使用<code>concurrent.futures</code>模块在CPU密集型作业中绕开GIL。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">协程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">线程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进程</a>
         		</li>
       		
 		</ul>
