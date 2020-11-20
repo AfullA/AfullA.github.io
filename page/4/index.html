@@ -124,6 +124,178 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python之数据结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/24/Python%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">Python之数据结构</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/24/Python%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="archive-article-date">
+  	<time datetime="2019-05-24T07:47:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="内置序列类型"><a href="#内置序列类型" class="headerlink" title="内置序列类型"></a>内置序列类型</h5><p>容器序列</p>
+<p><code>list</code> <code>tuple</code> <code>collections.deque</code>这些序列能存放不同类型的数据。</p>
+<p>扁平序列</p>
+<p><code>str</code> <code>bytes</code> <code>bytearray</code> <code>memoryview</code> <code>array.array</code>这类序列只能容纳一种类型。</p>
+<p>容器序列存放的是它们所包含的任意类型的对象的引用，而扁平序列里存放的是值而不是引用（一段连续的内存空间）。</p>
+<p>序列类型还可按能否被修改来分类。</p>
+<ul>
+<li><p>可变序列</p>
+<p><code>list</code> <code>bytearray</code> <code>array.array</code> <code>collections.deque</code> <code>memoryview</code></p>
+</li>
+<li><p>不可变序列</p>
+<p><code>tuple</code> <code>str</code> <code>bytes</code></p>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/05/24/Python%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python之魔法方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/23/Python%E4%B9%8B%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/">Python之魔法方法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/23/Python%E4%B9%8B%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2019-05-23T08:57:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> collections</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Card = collections.namedtuple(<span class="string">'Card'</span>, [<span class="string">'rank'</span>, <span class="string">'suit'</span>])</span><br></pre></td></tr></table></figure>
+
+<p>namedtuple用以构建只有少数属性但是没有方法的对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FrenchDeck</span>:</span></span><br><span class="line">    ranks = [str(n) <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">11</span>)] + list(<span class="string">'JQKA'</span>)</span><br><span class="line">	suits = [<span class="string">'spades'</span>, <span class="string">'diamonds'</span>, <span class="string">'clubs'</span>, <span class="string">'hearts'</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">		self._cards = [Card(rank, suit) <span class="keyword">for</span> suit <span class="keyword">in</span> self.suits <span class="keyword">for</span> rank <span class="keyword">in</span> self.ranks]</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> len(self._cards)</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,position)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> self._cards[position]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck = FrenchDeck()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>len(deck)</span><br><span class="line"><span class="number">52</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[<span class="number">4</span>]</span><br><span class="line">Card(rank=<span class="string">'6'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> random <span class="keyword">import</span> choice</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>choice(deck)</span><br><span class="line">Card(rank=<span class="string">'7'</span>, suit=<span class="string">'clubs'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[:<span class="number">3</span>]</span><br><span class="line">[Card(rank=<span class="string">'2'</span>, suit=<span class="string">'spades'</span>), Card(rank=<span class="string">'3'</span>, suit=<span class="string">'spades'</span>), Card(rank=<span class="string">'4'</span>, suit=<span class="string">'spades'</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deck[<span class="number">12</span>::<span class="number">13</span>]</span><br><span class="line">[Card(rank=<span class="string">'A'</span>, suit=<span class="string">'spades'</span>), Card(rank=<span class="string">'A'</span>, suit=<span class="string">'diamonds'</span>), Card(rank=<span class="string">'A'</span>, suit=<span class="string">'clubs'</span>), Card(rank=<span class="string">'A'</span>, suit=<span class="string">'hearts'</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> card <span class="keyword">in</span> deck:</span><br><span class="line">	print(card)	</span><br><span class="line">Card(rank=<span class="string">'2'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">Card(rank=<span class="string">'3'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">Card(rank=<span class="string">'4'</span>, suit=<span class="string">'spades'</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>这样处理，不必再去记住标准操作的各式名称（“怎么得到元素总数”是.size()还是.length()还是别的什么）。可以更加方便地利用Python的标准库。</p>
+        
+          <a class="article-more-a" href="/2019/05/23/Python%E4%B9%8B%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础记录</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据模型</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python基础记录-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -585,179 +757,9 @@
 
 
   
-    <article id="post-Python基础记录-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/18/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-2/">Python基础记录(2)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/18/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-2/" class="archive-article-date">
-  	<time datetime="2019-04-18T09:36:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="ASCII，Unicode和UTF-8"><a href="#ASCII，Unicode和UTF-8" class="headerlink" title="ASCII，Unicode和UTF-8"></a>ASCII，Unicode和UTF-8</h5><p>”字符“的最佳定义是Unicode字符。从Python3的str对象中获取的元素是Unicode字符。</p>
-<p>字符的标识，即码位，是0<del>1114111的数字（十进制），在Unicode标准中以4</del>6个十六进制数字表示，而且加前缀“U+”。字符的具体表述取决于所用的编码（在码位和字节序列之间转换时使用的算法）。把码位转换成字节序列的过程是编码，把字节序列转换成码位的过程是解码。</p>
-<p>ASCII码</p>
-<p>内存和磁盘中，对象都是以二进制数字（0和1）表示的（这些数字每8个为一组，即一个字节byte），一个字节一共可以用来表示256种不同状态。ASCII码一共规定了128个字符编码。Python bytes字面量只支持ASCII标准中的128个字符，剩余的必须用转义序列表示，例如，\xf0表示十六进制值0xf0。</p>
-<p>Unocode解决传统字符编码方案的局限性，为每种语言中的每个字符设定统一且唯一的二进制代码，以满足跨语言、跨平台进行文本转换处理的需求。Unicode只是个符号集，规定了符号的二进制代码，却没规定这个二进制代码应该如何存储，会存在字节顺序的问题（怎么知道两个字节表示一个符号，而不是两个符号呢），也会存在空间浪费的问题（英文字母仅需一个字节，若规定两个字节表示，那么必有一字节是0）</p>
-<p>UTF-8</p>
-<p>如果主要处理的是互联网常见语言书写的文本，那么使用变长编码（对于不同字符，使用不同数量的字节进行编码）UTF-8即可。UTF-8编码解读：如果第一个字节的第一位是0，则这个字节单独就是一个字符；如果第一位是1，则连续有多少个1，就表示当前字符占用多少个字节。</p>
-<p>Python3默认编码方式为UTF-8(Unicode实现方式之一)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getdefaultencoding()</span><br><span class="line"><span class="string">'utf-8'</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name1 = <span class="string">'小美'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(name1)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>str转换成bytes</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name2 = name1.encode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name2</span><br><span class="line"><span class="string">b'\xe5\xb0\x8f\xe7\xbe\x8e'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(name2)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">bytes</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>bytes转换成str</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name3 = name2.decode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name3</span><br><span class="line"><span class="string">'小美'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(name3)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python基础记录-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/17/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-1/">Python基础记录(1)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/17/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-1/" class="archive-article-date">
-  	<time datetime="2019-04-17T09:30:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>除法运算的结果为浮点数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>/<span class="number">2</span></span><br><span class="line"><span class="number">0.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>/<span class="number">1</span></span><br><span class="line"><span class="number">1.0</span></span><br></pre></td></tr></table></figure>
-
-<p>如果想要返回整型结果，使用整除运算（//)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>//<span class="number">2</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>//<span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>整除运算结果是向下圆整的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span>//<span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">-10</span>//<span class="number">3</span></span><br><span class="line"><span class="number">-4</span></span><br></pre></td></tr></table></figure>
-
-<p>input(…)是以文本或字符串的形式返回</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>number = input(<span class="string">"Ener a number: "</span>)</span><br><span class="line">Ener a number: <span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>number</span><br><span class="line"><span class="string">'5'</span></span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -942,6 +944,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网络协议</a>
               </li>
             
             <div class="clearfix"></div>
