@@ -124,6 +124,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据结构学习记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">数据结构学习记录</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-03-12T02:31:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>数组与链表</strong></p>
+<p>数组和链表是线性表的两种存储方式</p>
+<p>数组，所有元素都连续存储在一段内存中，且每个元素占用的内存大小相同，这使得数组具备了通过下标快速访问数据的能力。但连续存储的缺点也很明显，增加容量、增删元素的成本很高，时间复杂度均为O(n)。增加数组容量需要先申请一块新的内存，然后复制原有的元素。删除元素时需要移动被删除元素之后的所有元素以保证元素是连续的。</p>
+<p>链表是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存放下一个节点的指针。由于不用按顺序存储，链表在插入的时候可以达到O(1)的复杂程度，但是查找一个节点或者访问特定编号的节点则需要O(N)的时间。</p>
+<p>使用链表结构可以克服数组需要预先知道数据大小的缺点，链表结构可以充分利用计算机内存空间，实现灵活的内存动态管理。但是链表失去了数组随机读取的优点，同时链表由于增加了节点的指针域，空间开销更大。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python日常记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -785,82 +859,6 @@
 
 
   
-    <article id="post-Windows远程连接Mac" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/">Windows远程连接Mac</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/" class="archive-article-date">
-  	<time datetime="2019-10-26T03:43:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Windows远程连接Mac,主要依赖VNC图形桌面共享系统。Mac系统自带VNC Client，Windows通过安装TightVNC Viewer等客户端来进行连接。</p>
-<ul>
-<li><p>Mac打开“系统偏好设置”–“共享”</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026141739291.png" alt="image-20191026141739291"></p>
-</li>
-<li><p>勾选“屏幕共享”-“电脑设置”</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026142249290.png" alt="image-20191026142249290"></p>
-</li>
-<li><p>Windows下载TightVNV Viewer等客户端进行连接</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026143926119.png" alt="image-20191026143926119"></p>
-</li>
-<li><p>输入设置的屏幕控制密码</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026144015367.png" alt="image-20191026144015367"></p>
-</li>
-<li><p>至此就可以从Windows连接到Mac了</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026144211822.png" alt="image-20191026144211822"></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
@@ -1052,6 +1050,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web安全</a>
               </li>
             
             <div class="clearfix"></div>

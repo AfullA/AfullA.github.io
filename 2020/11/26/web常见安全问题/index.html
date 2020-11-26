@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://afulla.github.io">
-  <title>Python基础记录(8) | AfullA</title>
+  <title>web常见安全问题 | AfullA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最简单的服务器 1234567891011import sockets &#x3D; socket.socket()host &#x3D; socket.gethostname() &#x2F;&#x2F;获取当前机器的主机名port &#x3D; 1234s.bind((host, port))s.listen(5) &#x2F;&#x2F;最多5个连接在队列中等待接纳，到达这个数量后将开始拒绝连接while True:    c, addr &#x3D; s.accept">
+  <meta name="description" content="SQL注入 攻击者向服务器提交恶意sql查询代码（通过web表单提交、请求的查询字符串），程序接收后错误的将攻击者的输入作为查询语句的一部分执行，导致原始的查询逻辑被改变。 防御措施： 1.严格限制web应用的数据库操作权限，给此用户提供仅仅能够满足其工作的最低权限，从而最大限度减少注入攻击对数据库的危害 2.后端代码检查输入的数据是否符合预期，严格限制输入类型 3.对进入数据库的特殊字符进行转义">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础记录(8)">
-<meta property="og:url" content="https://afulla.github.io/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/index.html">
+<meta property="og:title" content="web常见安全问题">
+<meta property="og:url" content="https://afulla.github.io/2020/11/26/web%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="AfullA">
-<meta property="og:description" content="最简单的服务器 1234567891011import sockets &#x3D; socket.socket()host &#x3D; socket.gethostname() &#x2F;&#x2F;获取当前机器的主机名port &#x3D; 1234s.bind((host, port))s.listen(5) &#x2F;&#x2F;最多5个连接在队列中等待接纳，到达这个数量后将开始拒绝连接while True:    c, addr &#x3D; s.accept">
+<meta property="og:description" content="SQL注入 攻击者向服务器提交恶意sql查询代码（通过web表单提交、请求的查询字符串），程序接收后错误的将攻击者的输入作为查询语句的一部分执行，导致原始的查询逻辑被改变。 防御措施： 1.严格限制web应用的数据库操作权限，给此用户提供仅仅能够满足其工作的最低权限，从而最大限度减少注入攻击对数据库的危害 2.后端代码检查输入的数据是否符合预期，严格限制输入类型 3.对进入数据库的特殊字符进行转义">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-05-10T03:55:05.000Z">
-<meta property="article:modified_time" content="2020-10-13T10:22:00.000Z">
+<meta property="article:published_time" content="2020-11-26T08:55:03.000Z">
+<meta property="article:modified_time" content="2020-11-26T10:32:55.904Z">
 <meta property="article:author" content="AfullA">
-<meta property="article:tag" content="基础知识">
-<meta property="article:tag" content="网络编程">
+<meta property="article:tag" content="web安全">
 <meta name="twitter:card" content="summary">
   
   
@@ -128,32 +127,96 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python基础记录-8" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-web常见安全问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python基础记录(8)
+      web常见安全问题
     </h1>
   
 
         
-        <a href="/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/" class="archive-article-date">
-  	<time datetime="2019-05-10T03:55:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
+        <a href="/2020/11/26/web%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-11-26T08:55:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最简单的服务器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname() //获取当前机器的主机名</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.bind((host, port))</span><br><span class="line">s.listen(<span class="number">5</span>) //最多<span class="number">5</span>个连接在队列中等待接纳，到达这个数量后将开始拒绝连接</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    c, addr = s.accept() //接受客户端连接，c为客户端套接字</span><br><span class="line">    print(<span class="string">'Got connection from'</span>, addr)</span><br><span class="line">    c.send(<span class="string">'Thank you for connecting'</span>)</span><br><span class="line">    c.close()</span><br></pre></td></tr></table></figure>
+        <p><strong>SQL注入</strong></p>
+<p>攻击者向服务器提交恶意sql查询代码（通过web表单提交、请求的查询字符串），程序接收后错误的将攻击者的输入作为查询语句的一部分执行，导致原始的查询逻辑被改变。</p>
+<p>防御措施：</p>
+<p>1.严格限制web应用的数据库操作权限，给此用户提供仅仅能够满足其工作的最低权限，从而最大限度减少注入攻击对数据库的危害</p>
+<p>2.后端代码检查输入的数据是否符合预期，严格限制输入类型</p>
+<p>3.对进入数据库的特殊字符进行转义处理</p>
+<p>4.所有的查询语句建议使用数据库提供的参数化查询接口，参数化的语句使用参数而不是用户输入嵌入到sql语句中，即不要直接拼接sql语句</p>
+<p>5.用专业的sql注入检测工具进行检测</p>
+<p>6.避免网站打印sql错误信息</p>
+<hr>
+<p><strong>DDos攻击</strong></p>
+<p>利用大量的请求造成资源过载，导致服务不可用</p>
+<p>网络层DDos攻击：SYN Flood、ACK Flood、UDP Flood、ICMP Flood</p>
+<p>SYN Flood：攻击者随意构造源IP去发送SYN包时，服务器返回的SYN + ACK就不能得到应答（因为IP是随意构造的），此时服务器就会尝试重新发送，并且会有至少30s的等待时间，导致资源饱和服务不可用，此攻击属于慢型 DDoS 攻击</p>
+<p>ACK Flood：在TCP连接建立之后，所有的数据传输，TCP报文都是带有ACK标志位的，主机在接收到一个带有ACK标志位的数据包时，需要检查该数据包所表示的连接四元组是否存在，如果存在则检查该数据包所表示的状态是否合法，然后再向应用层传递该数据包。如果在检查中发现该数据包不合法，例如该数据包所指向的目的端口在本机并未开放，则主机操作系统协议栈会回应 RST 包告诉对方此端口不存在</p>
+<p>UDP Flood：攻击者可以伪造大量的源IP地址去发送UDP包，此种攻击属于大流量攻击</p>
+<p>网络层DDos攻击防御措施：</p>
+<ul>
+<li>网络架构上做好优化，采用负载均衡分流</li>
+<li>确保服务器的系统文件是最新的版本，并及时更新系统补丁</li>
+<li>添加抗DDos设备，进行流量清洗</li>
+<li>限制同时打开的 SYN半连接数目，缩短 SYN半连接的Timeout时间</li>
+<li>限制单 IP 请求频率</li>
+<li>防火墙等防护设置禁止ICMP包等</li>
+<li>严格限制对外开放的服务器的向外访问</li>
+<li>运行端口映射程序或端口扫描程序，要认真检查特权端口和非特权端口</li>
+<li>关闭不必要的服务</li>
+<li>认真检查网络设备和主机/服务器系统的日志。只要日志出现漏洞或是时间变更，那这台机器就可能遭到了攻击</li>
+<li>限制在防火墙外与网络文件共享。这样会给黑客截取系统文件的机会，主机的信息暴露给黑客，无疑是给了对方入侵的机会。</li>
+<li>加钱堆机器。。</li>
+</ul>
+<p>应用层DDOs攻击：CC攻击、DNS Flood、HTTP慢速连接攻击</p>
+<p>CC攻击：针对消耗资源比较大的页面不断发起不正常的请求，导致资源耗尽</p>
+<p>DNS Flood：向被攻击的服务器发送大量的域名解析请求，通常请求解析的域名是随机生成或者是网络世界上根本不存在的域名，被攻击的DNS服务器在接收到域名解析请求的时候首先会在服务器上查找是否有对应的缓存，如果查找不到并且该域名无法直接由服务器解析的时候，DNS服务器会向其上层DNS服务器递归查询域名信息。域名解析的过程给服务器带来了很大的负载，每秒钟域名解析请求超过一定的数量就会造成DNS服务器解析域名超时</p>
+<p>HTTP慢速连接攻击：攻击者发送POST请求，自行构造报文向服务器提交数据，将报文长度设置一个很大的值，且在随后每次发送中，每次只发送一个很小的报文，这样导致服务器一直等待数据，连接始终一直被占用</p>
+<p>应用层DDos攻击防御措施：</p>
+<ul>
+<li>判断 User-Agent 字段（不可靠，因为可以随意构造）</li>
+<li>针对 IP + cookie，限制访问频率（由于 cookie可以更改，IP 可以使用代理，也不可靠)</li>
+<li>关闭服务器最大连接数等，合理配置中间件，缓解 DDoS 攻击</li>
+<li>请求中添加验证码，比如请求中有数据库操作的时候</li>
+<li>编写代码时，尽量实现优化，并合理使用缓存技术，减少数据库的读取操作。</li>
+<li>加钱堆机器。。</li>
+</ul>
+<hr>
+<p><strong>XSS</strong>跨站脚本攻击，攻击者往web页面里插入恶意可执行的脚本代码，当用户浏览该页面时，嵌入其中的脚本代码被执行，从而可以达到攻击者盗取用户信息或者侵犯用户安全隐私的目的</p>
+<ul>
+<li>利用虚假输入表单骗取用户个人信息。</li>
+<li>利用脚本窃取用户的Cookie值，被害者在不知情的情况下，帮助攻击者发送恶意请求。</li>
+<li>显示伪造的文章或图片</li>
+</ul>
+<p>防御措施：</p>
+<p>1.字符转义</p>
+<p>2.CSP（Content Security Policy)，设置允许浏览器加载哪些外部资源</p>
+<hr>
+<p><strong>CSRF</strong>跨站脚本攻击，在用户不知情情况下，以用户名义完成非法操作，借助cookie特性</p>
+<p>防御措施：</p>
+<p>1.GET请求不对数据进行修改</p>
+<p>2.不让第三方网站访问到用户cookie</p>
+<p>3.阻止第三方网站请求接口</p>
+<p>4.请求时附带验证信息，比如验证码或者token</p>
+<hr>
+<p><strong>流量劫持</strong>：DNS劫持、HTTP劫持（HTTPS可以很好防御HTTP劫持）</p>
+<p><strong>服务器漏洞</strong>：越权操作漏洞、目录遍历漏洞、物理路径泄露、源码暴露漏洞</p>
+<p>越权操作漏洞：可以理解为用户A能看到或操作用户B的隐私内容</p>
+<p>目录遍历漏洞：通过在 URL 或参数中构造 <code>../</code>，<code>./</code> 和类似的跨父目录字符串的ASCII编码、unicode编码等，完成目录跳转，读取操作系统各个目录下的敏感文件，也可以称作任意文件读取漏洞。程序没有充分过滤用户输入的 <code>../</code> 之类的目录跳转符，导致用户可以通过提交目录跳转来遍历服务器上的任意文件。使用多个<code>..</code> 符号，不断向上跳转，最终停留在根 <code>/</code>，通过绝对路径去读取任意文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 借助 %00 空字符截断是一个比较经典的攻击手法</span><br><span class="line">http:&#x2F;&#x2F;somehost.com&#x2F;some&#x2F;path?file&#x3D;..&#x2F;..&#x2F;Windows&#x2F;system.ini%00.js</span><br></pre></td></tr></table></figure>
 
-<p>最简单的客户端</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.connect((host, port))</span><br><span class="line">print(s.recv(<span class="number">1024</span>))</span><br></pre></td></tr></table></figure>
-
+<p>物理路径泄露：通常都是系统500的错误信息直接返回到页面可见导致的漏洞</p>
+<p>源码暴露漏洞：攻击者可以通过请求直接获取到你站点的后端源代码，服务器可以设置哪些路径的文件才可以被直接访问，认真检查服务器配置</p>
 
       
 
@@ -167,11 +230,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
         		</li>
       		
 		</ul>
@@ -190,18 +249,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/23/Python%E4%B9%8B%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Python之魔法方法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/05/09/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Python基础记录(7)</div>
+    <a href="/2020/11/26/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网络协议小记</div>
       <i class="icon-circle-right"></i>
     </a>
   
