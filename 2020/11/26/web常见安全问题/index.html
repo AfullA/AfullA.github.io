@@ -16,7 +16,7 @@
 <meta property="og:description" content="SQL注入 攻击者向服务器提交恶意sql查询代码（通过web表单提交、请求的查询字符串），程序接收后错误的将攻击者的输入作为查询语句的一部分执行，导致原始的查询逻辑被改变。 防御措施： 1.严格限制web应用的数据库操作权限，给此用户提供仅仅能够满足其工作的最低权限，从而最大限度减少注入攻击对数据库的危害 2.后端代码检查输入的数据是否符合预期，严格限制输入类型 3.对进入数据库的特殊字符进行转义">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-26T08:55:03.000Z">
-<meta property="article:modified_time" content="2020-11-26T10:32:55.904Z">
+<meta property="article:modified_time" content="2020-11-26T10:37:29.560Z">
 <meta property="article:author" content="AfullA">
 <meta property="article:tag" content="web安全">
 <meta name="twitter:card" content="summary">
@@ -202,7 +202,7 @@
 <p>1.字符转义</p>
 <p>2.CSP（Content Security Policy)，设置允许浏览器加载哪些外部资源</p>
 <hr>
-<p><strong>CSRF</strong>跨站脚本攻击，在用户不知情情况下，以用户名义完成非法操作，借助cookie特性</p>
+<p><strong>CSRF</strong>跨站请求伪造，在用户不知情情况下，以用户名义完成非法操作，借助cookie特性</p>
 <p>防御措施：</p>
 <p>1.GET请求不对数据进行修改</p>
 <p>2.不让第三方网站访问到用户cookie</p>
