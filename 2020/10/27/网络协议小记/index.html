@@ -11,25 +11,28 @@
   <meta name="description" content="OSI参考模型：  OSI参考模型各层作用：  应用层：为应用程序提供服务并规定应用程序中通信相关的细节。包括文件传输、电子邮件、远程登录（虚拟终端）等协议。 表示层：将应用处理的信息转换为适合网络传输的格式，或将来自下一层的数据转换为上层能够处理的格式，主要负责数据格式的转换。 会话层：负责建立和断开连接（数据流动的逻辑通路），以及数据的分割等数据传输相关的管理。 传输层：起着可靠传输的作用。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络协议小记">
-<meta property="og:url" content="https://afulla.github.io/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/index.html">
+<meta property="og:url" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="AfullA">
 <meta property="og:description" content="OSI参考模型：  OSI参考模型各层作用：  应用层：为应用程序提供服务并规定应用程序中通信相关的细节。包括文件传输、电子邮件、远程登录（虚拟终端）等协议。 表示层：将应用处理的信息转换为适合网络传输的格式，或将来自下一层的数据转换为上层能够处理的格式，主要负责数据格式的转换。 会话层：负责建立和断开连接（数据流动的逻辑通路），以及数据的分割等数据传输相关的管理。 传输层：起着可靠传输的作用。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://afulla.github.io/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109154917964.png">
-<meta property="og:image" content="https://afulla.github.io/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109155558526.png">
-<meta property="og:image" content="https://afulla.github.io/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201110172236845.png">
-<meta property="og:image" content="https://afulla.github.io/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201110174053848.png">
-<meta property="og:image" content="https://afulla.github.io/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/tcpip.png">
-<meta property="og:image" content="https://afulla.github.io/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201111161317185.png">
-<meta property="og:image" content="https://afulla.github.io/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201111174720941.png">
-<meta property="og:image" content="https://afulla.github.io/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201112113633101.png">
-<meta property="og:image" content="https://afulla.github.io/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201112181353195.png">
-<meta property="article:published_time" content="2020-11-09T07:31:33.000Z">
-<meta property="article:modified_time" content="2020-11-20T11:35:50.836Z">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109154917964.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109155558526.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201110172236845.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201110174053848.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/tcpip.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201111161317185.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201111174720941.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201112113633101.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201112181353195.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201123164444747.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201123165312542.png">
+<meta property="og:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201124181141047.png">
+<meta property="article:published_time" content="2020-10-27T04:01:23.000Z">
+<meta property="article:modified_time" content="2020-11-26T08:37:08.296Z">
 <meta property="article:author" content="AfullA">
-<meta property="article:tag" content="网络协议">
+<meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://afulla.github.io/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109154917964.png">
+<meta name="twitter:image" content="https://afulla.github.io/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109154917964.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -149,8 +152,8 @@
   
 
         
-        <a href="/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-11-09T07:31:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
+        <a href="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-10-27T04:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-27</time>
 </a>
         
       </header>
@@ -158,9 +161,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>OSI参考模型：</p>
-<p><img src="/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109154917964.png" alt="image-20201109154917964"></p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109154917964.png" alt="image-20201109154917964"></p>
 <p>OSI参考模型各层作用：</p>
-<p><img src="/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109155558526.png" alt="image-20201109155558526"></p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109155558526.png" alt="image-20201109155558526"></p>
 <p>应用层：为应用程序提供服务并规定应用程序中通信相关的细节。包括文件传输、电子邮件、远程登录（虚拟终端）等协议。</p>
 <p>表示层：将应用处理的信息转换为适合网络传输的格式，或将来自下一层的数据转换为上层能够处理的格式，主要负责数据格式的转换。</p>
 <p>会话层：负责建立和断开连接（数据流动的逻辑通路），以及数据的分割等数据传输相关的管理。</p>
@@ -170,21 +173,62 @@
 <p>物理层：负责0、1比特流与电压的高低、光的闪灭之间的互换。</p>
 <p>在应用层写入的数据会经由表示层格式化编码、再由会话层标记发送顺序后发送出去。</p>
 <p>网络层负责将整个数据发送给最终目标地址，而数据链路层则只负责一个分段内的数据。</p>
+<a id="more"></a>
+
 <hr>
 <p>通过网络发送数据，大致可以分为面向连接与面向无连接两种类型。面向有连接的方式下，必须在通信传输前后，专门进行建立和断开连接的处理。</p>
-<p><img src="/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201110172236845.png" alt="image-20201110172236845"></p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201110172236845.png" alt="image-20201110172236845"></p>
 <hr>
-<p><img src="/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201110174053848.png" alt="image-20201110174053848"></p>
-<p><img src="/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/tcpip.png" alt="tcpip and osi"></p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201110174053848.png" alt="image-20201110174053848"></p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/tcpip.png" alt="tcpip and osi"></p>
 <p>IP：跨越网络传送数据包，使整个互联网都能收到数据的协议。IP协议使数据能够发送到地球另一端，这期间它使用IP地址作为主机的标识</p>
 <p>ICMP：IP数据包在发送途中一旦发生异常导致无法到达对端 目标地址时，需要给发送端发送一个发生异常的通知。ICMP就是为这一功能而定制的</p>
 <p>ARP：从分组数据包的IP地址中解析出物理地址的一种协议</p>
 <p>TCP/IP传输层最主要的功能就是能够让应用程序之间实现通信。计算机内部，通常同一时间运行着多个程序。为此，必须分清是哪些程序与哪些程序正在进行通信。识别这些应用程序的是端口号。</p>
 <p>TCP是一种面向有连接的传输层协议。它可以保证两端通信主机之间的通信可达。TCP能够正确处理在传输过程中丢包、传输顺序乱掉等异常情况。此外，TCP还能够有效利用带宽，缓解网络拥堵。然而，为了建立和断开连接，有时它需要至少7次的发包收包，导致网络流量的浪费。</p>
 <p>TCP特性总结：1.TCP提供面向连接的、可靠的字节流服务；2.上层应用数据被TCP分割为TCP认为合适的报文段；3.TCP使用超时重传机制，接收到一个TCP数据后需要发送一个确认应答；4.TCP使用包含了首部和数据的校验和来检查数据是否在传输过程中发生了差错；5.TCP可以将失序的报文重新排序；6.TCP连接的每一端都有固定大小的缓冲区，只允许另一端发送接收缓冲区所能接纳的数据；7.TCP提供面向字节流的服务，不在字节流中插入记录标识符，也不对字节流的内容作任何解释（由上层应用解释）</p>
+<p>TCP拥塞控制：慢开始、拥塞避免、快重传、快恢复</p>
 <p>UDP有别于TCP，它是一种面向无连接的传输层协议。UDP不会关注对端是否真的收到了传送过去的数据。</p>
-<a id="more"></a>
-
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">UDP</th>
+<th>TCP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">是否连接</td>
+<td align="left">无连接</td>
+<td>面向连接</td>
+</tr>
+<tr>
+<td align="left">是否可靠</td>
+<td align="left">不可靠传输，不使用流量控制和拥塞控制</td>
+<td>可靠传输，使用流量控制和拥塞控制</td>
+</tr>
+<tr>
+<td align="left">连接对象个数</td>
+<td align="left">支持一对一，一对多，多对一和多对多交互通信</td>
+<td>只能是一对一通信</td>
+</tr>
+<tr>
+<td align="left">传输方式</td>
+<td align="left">面向报文</td>
+<td>面向字节流</td>
+</tr>
+<tr>
+<td align="left">首部开销</td>
+<td align="left">首部开销小，仅8字节</td>
+<td>首部最小20字节，最大60字节</td>
+</tr>
+<tr>
+<td align="left">适用场景</td>
+<td align="left">适用于实时应用（IP电话、视频会议、直播等）</td>
+<td>适用于要求可靠传输的应用，例如文件传输</td>
+</tr>
+</tbody></table>
+<p> 1.基于连接与无连接<br> 2.TCP要求系统资源较多，UDP较少<br> 3.UDP程序结构较简单<br> 4.流模式（TCP）与数据报模式(UDP)<br> 5.TCP保证数据正确性，UDP可能丢包<br> 6.TCP保证数据顺序，UDP不保证 </p>
 <hr>
 <p>每个分层中，都会对所发送的数据附加一个首部，在这个首部中包含了该层必要的信息，如发送的目标地址以及协议相关的信息。</p>
 <p>包可以说是全能性述语，帧用于表示数据链路层中包的单位，而数据包是IP和UDP等网络层以上的分层中包的单位，段则表示TCP数据流中的信息，消息是指应用协议中数据的单位。</p>
@@ -195,7 +239,7 @@
 <p>（4）网络接口的处理：从IP传过来的IP包，对于以太网驱动来说不过就是数据。给这数据附加上以太网首部并进行发送处理。以太网首部中包含接收端MAC地址、发送端MAC地址以及标志以太网类型的以太网数据的协议。根据上述信息产生的以太网数据包将通过物理层传输给接收端。</p>
 <hr>
 <p>每个包首部中至少都包含两个信息：一个是发送端和接收端地址，另一个是上一层的协议类型。经过每个协议分层时，都必须有识别包发送端和接收端的信息。以太网会用MAC地址、IP会用IP地址，而TCP/UDP则会用端口号作为识别两端主机的地址。</p>
-<p><img src="/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201111161317185.png" alt="image-20201111161317185"></p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201111161317185.png" alt="image-20201111161317185"></p>
 <p>TCP/IP通信接收数据包过程：</p>
 <p>（1）网络接口的处理：首先从以太网的包首部找到MAC地址判断是否为发给自己的包，如果不是就丢弃数据，如果是就查找以太网首部中的类型域从而确定以太网协议所传送过来的数据类型</p>
 <p>（2）IP模块的处理：判断包首部IP地址与自己的IP地址是否匹配，如果匹配则可接收数据并从中查找上一层的协议。如果上一层是TCP就将IP包首部之后的部分传给TCP处理，如果是UDP则将IP包首部后面的部分传给UDP处理</p>
@@ -207,17 +251,17 @@
 <p>在TCP/IP中能够实现传输层功能的、具有代表性的协议是TCP和UDP。</p>
 <p>TCP：面向连接的、可靠的流协议（流是指不间断的数据结构），为提供可靠性传输，实行“顺序控制”或“重发控制”机制，此外还具有“流量控制”、“拥塞控制”、提高网络利用率等功能。TCP通过校验和、序列号、确认应答、重发控制、连接管理以及窗口控制等实现可靠性传输。</p>
 <p>TCP首部发送一个SYN包作为建立连接的请求等待对方确认应答，如果对端发来确认应答，则可以认为可以进行数据通信，如果对端的确认应答未能到达，就不会进行数据通信，此外通信结束时会进行断开连接的处理（FIN包）。一个连接的建立与断开，正常过程至少需要来回发送7个包才能完成。</p>
-<p><img src="/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201111174720941.png" alt="image-20201111174720941"></p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201111174720941.png" alt="image-20201111174720941"></p>
 <p>UDP：不具可靠性的数据报协议，细节处理会交由上层的应用去完成，用于对高速传输和时效性有要求的通信或广播通信。比如包总量较少的通信（DNS等）、视频音频等多媒体通信（即使通信）、限定于LAN等特定网络中的应用通信、广播通信（广播、多播）</p>
 <hr>
 <p>TCP三次握手：</p>
-<p><img src="/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201112113633101.png" alt="image-20201112113633101"></p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201112113633101.png" alt="image-20201112113633101"></p>
 <p>客户端将标志位SYN置为1，随机产生一个值seq=J，并将该数据包发送给服务端，客户端进入SYN_SENT状态，等待服务端确认</p>
 <p>服务端收到数据包后由标志位SYN=1知道客户端请求建立连接，服务端将标志位SYN和ACK都置为1，ack=J+1，随机产生一个值seq=K，并将该数据包发送给客户端以确认连接请求，服务端请求进入SYN_RCVD状态</p>
 <p>客户端收到确认后，检查ack是否为J+1，ACK是否为1，如果正确则将标志位ACK置为1，ack=K+1，并将数据包发送给服务端，服务端检查ack是否为k+1，ACK是否为1，如果正确则连接建立成功，服务端和客户端进入ESTABLISHED状态，完成三次握手</p>
 <hr>
 <p>TCP四次挥手：</p>
-<p><img src="/2020/11/09/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201112181353195.png" alt="image-20201112181353195"></p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201112181353195.png" alt="image-20201112181353195"></p>
 <p>客户端发送一个FIN=M，用来关闭客户端到服务端的数据传送，客户端进入FIN_WAIT_1状态</p>
 <p>服务端收到FIN后，先发送ack=M+1，告诉客户端，你的请求我收到了，但是我还没准备好，请继续等我的消息，这个时候客户端进入FIN_WAIT_2状态，继续等服务端的FIN报文</p>
 <p>当服务端确定数据已发送完毕，则向客户端发送FIN=N报文，告诉客户端，我这边数据发完了准备关闭连接了，服务端进入LAST_ACK状态</p>
@@ -248,6 +292,240 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nap | grep SYN_RECV</span><br></pre></td></tr></table></figure>
 
 <p>常见的防御SYN攻击有：缩短超时时间；增加最大半连接数；过滤网关保护；SYN cookies技术</p>
+<hr>
+<p>CLOSE_WAIT过多怎么处理？</p>
+<p>1.使用完socket调用close方法；</p>
+<p>2.socket读控制：当读取长度为0时，close；当read方法返回负数时，检查error返回码，如果不是AGAIN，close</p>
+<hr>
+<p>HTTP主要特点：（1）简单快速—客户端向服务端请求服务时，只需传送请求方法和路径。HTTP协议简单，通信速度快。（2）灵活—HTTP允许传输任意类型的数据对象，由content-type加以标记。（3）无连接—每次连接只处理一个请求。（4）无状态—对于事务处理没有记忆能力。</p>
+<p>HTTP URL：HTTP使用统一资源标识符（URI，用来唯一的标识一个资源）来传输数据和建立连接。URL是一种特殊类型的URI。一个完整URL包括以下几部分：（1）协议部分；（2）域名部分；（3）端口部分；（4）虚拟目录部分；（5）文件名部分；（6）锚部分；（7）参数部分。URI组成：（1）访问资源的机制（http、ftp等）；</p>
+<p>HTTP请求由三部分组成，分别是：请求行（Request Line）、请求头（Request Header）、请求正文（Request Body）</p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201123164444747.png" alt="image-20201123164444747"></p>
+<table>
+<thead>
+<tr>
+<th>GET</th>
+<th>请求获取Request-URI所标识的资源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>POST</td>
+<td>在Request-URI所标识的资源后附加新的数据</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>请求获取由Request-URI所标识的资源的响应消息报头</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>请求服务器存储一个资源，并用Request-URI作为其标识</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>请求服务器删除Request-URI所标识的资源</td>
+</tr>
+<tr>
+<td>TRACE</td>
+<td>请求服务器回送收到的请求信息，主要用于测试或诊断</td>
+</tr>
+<tr>
+<td>CONNECT</td>
+<td>保留将来使用</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>请求查询服务器的性能，或者查询与资源相关的选项和需求</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;请求行，请求行以一个方法符号开头（GET、POST、PUT等），以空格分开，后面跟着请求的URI和协议的版本</span><br><span class="line">GET &#x2F;p&#x2F;q81RER HTTP&#x2F;1.1</span><br><span class="line">&#x2F;&#x2F;请求头，由一些键值对组成</span><br><span class="line">Host: www.jianshu.com</span><br><span class="line">Accept: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,*&#x2F;*;q&#x3D;0.8</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">Cookie: _session_id&#x3D;xxxxx; remember_user_token&#x3D;xxx; Hm_lpvt_0c0e9d9b1e7d617b3e6842e85b9fb068&#x3D;1493626002; Hm_lvt_0c0e9d9b1e7d617b3e6842e85b9fb068&#x3D;1493550585,1493622639,1493623143,1493625980; _ga&#x3D;GA1.2.487162296.1493344586; _gat&#x3D;1</span><br><span class="line">User-Agent: Mozilla&#x2F;5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit&#x2F;603.1.30 (KHTML, like Gecko) Version&#x2F;10.1 Safari&#x2F;603.1.30</span><br><span class="line">Accept-Language: zh-cn</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: keep-alive</span><br><span class="line">&#x2F;&#x2F;请求体</span><br><span class="line">Method&#x3D;GET，body可以不存在，header最后的两个CRLF就标识着请求的结尾。请求的业务参数通过request line中的URI中的query string来传递，如UIR: &#x2F;p&#x2F;q81RER?t&#x3D;aa&amp;t1&#x3D;bb，query string部分t&#x3D;aa&amp;t1&#x3D;bb体现了业务参数，这部分也同样是以键值对的形式存在的。</span><br><span class="line">Method&#x3D;POST，body体一般不为空，我们实际的业务数据都存放于body当中，数据在body体中是以何种形式存在</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>HTTP响应内容组成部分：响应行（Response Line）、响应头（Response Header）、响应体（Response Body)</p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201123165312542.png" alt="image-20201123165312542"></p>
+<p>HTTP响应状态码</p>
+<p>1XX—指示信息，表示请求已接收，继续处理；</p>
+<p>2XX—成功，表示请求已被成功接收、理解、接受；</p>
+<p>3XX—重定向，要完成请求必须进行更进一步的操作；</p>
+<p>4XX—客户端错误，请求有语法错误或请求无法实现；</p>
+<p>5XX—服务端错误，服务器未能实现合法的请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">200 OK                        &#x2F;&#x2F;客户端请求成功</span><br><span class="line">400 Bad Request               &#x2F;&#x2F;客户端请求有语法错误，不能被服务器所理解</span><br><span class="line">401 Unauthorized              &#x2F;&#x2F;请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用 </span><br><span class="line">403 Forbidden                 &#x2F;&#x2F;服务器收到请求，但是拒绝提供服务</span><br><span class="line">404 Not Found                 &#x2F;&#x2F;请求资源不存在，eg：输入了错误的URL</span><br><span class="line">500 Internal Server Error     &#x2F;&#x2F;服务器发生不可预期的错误</span><br><span class="line">503 Server Unavailable        &#x2F;&#x2F;服务器当前不能处理客户端的请求，一段时间后可能恢复正常</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>在浏览器中输入网址后的流程</p>
+<p>1.浏览器发起DNS查询请求</p>
+<p>DNS查找过程：浏览器缓存-&gt;系统缓存-&gt;路由器缓存-&gt;ISP DNS缓存-&gt;递归搜索（递归搜索过程为：从根域名到顶级域名到所查询的域名服务器）</p>
+<p>2.根据域名对应的IP地址建立TCP连接</p>
+<p>3.浏览器向服务器发送HTTP请求</p>
+<p>4.web服务器根据HTTP请求头信息，得到响应数据返回给浏览器</p>
+<p>5.浏览器解析html代码，并请求代码中的资源</p>
+<p>解析html代码，遇到js/css/image等静态资源时，就向服务端请求下载，keep-alive特性可以建立一次HTTP请求多个资源</p>
+<p>6.浏览器对页面进行渲染呈现给用户</p>
+<p>渲染过程：解析HTML，构建DOM树；解析CSS，生成CSS规则树；合并DOM树和CSS规则，生成render树；4.布局render树，负责各元素尺寸位置的计算；绘制render树，绘制页面像素信息；浏览器会将各层的信息发送给GPU，GPU会将各层合成显示在屏幕上。</p>
+<p>如果在解析的过程中遇到script的时候，文档的解析将会停止下来，立即解析执行脚本，如果脚本是外部的，则会等待请求完成并解析执行。所以，为了不阻塞页面地呈现，一般会把script脚本放在文档的最后。</p>
+<p>过程中用到的协议：</p>
+<ul>
+<li>域名解析用到DNS协议</li>
+<li>DNS服务器是基于UDP的，因此会用到UDP协议</li>
+<li>得到IP地址后，浏览器会与服务器建立HTTP连接，用到HTTP协议</li>
+<li>HTTP协议生成GET请求报文，将该报文传给TCP层处理，用到了TCP协议</li>
+<li>如果用到了HTTPS协议还会对HTTP协议内容进行加密</li>
+<li>TCP层若有需要会对HTTP数据报分片，分片依据路径MTU和MSS</li>
+<li>TCP的数据报会发送给IP层，用到IP协议</li>
+<li>IP层通过路由选择，将数据发送给目的端口</li>
+<li>以太网协议需要知道目的IP的物理地址，需要用到ARP协议</li>
+</ul>
+<hr>
+<p>GET和POST的区别</p>
+<table>
+<thead>
+<tr>
+<th align="left">分类</th>
+<th align="left">GET</th>
+<th align="left">POST</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">后退按钮/刷新</td>
+<td align="left">无害</td>
+<td align="left">数据会被重新提交（浏览器应该告知用户数据会被重新提交）。</td>
+</tr>
+<tr>
+<td align="left">书签</td>
+<td align="left">可收藏为书签</td>
+<td align="left">不可收藏为书签</td>
+</tr>
+<tr>
+<td align="left">缓存</td>
+<td align="left">能被缓存</td>
+<td align="left">不能缓存</td>
+</tr>
+<tr>
+<td align="left">编码类型</td>
+<td align="left">application/x-www-form-urlencoded</td>
+<td align="left">application/x-www-form-urlencoded 或 multipart/form-data。为二进制数据使用多重编码。</td>
+</tr>
+<tr>
+<td align="left">历史</td>
+<td align="left">参数保留在浏览器历史中。</td>
+<td align="left">参数不会保存在浏览器历史中。</td>
+</tr>
+<tr>
+<td align="left">对数据长度的限制</td>
+<td align="left">是的。当发送数据时，GET 方法向 URL 添加数据；URL 的长度是受限制的（URL 的最大长度是 2048 个字符）。</td>
+<td align="left">无限制。</td>
+</tr>
+<tr>
+<td align="left">对数据类型的限制</td>
+<td align="left">只允许 ASCII 字符。</td>
+<td align="left">没有限制。也允许二进制数据。</td>
+</tr>
+<tr>
+<td align="left">安全性</td>
+<td align="left">与 POST 相比，GET 的安全性较差，因为所发送的数据是 URL 的一部分。在发送密码或其他敏感信息时绝不要使用 GET ！</td>
+<td align="left">POST 比 GET 更安全，因为参数不会被保存在浏览器历史或 web 服务器日志中。</td>
+</tr>
+<tr>
+<td align="left">可见性</td>
+<td align="left">数据在 URL 中对所有人都是可见的。</td>
+<td align="left">数据不会显示在 URL 中。</td>
+</tr>
+</tbody></table>
+<ul>
+<li>GET 用于获取信息，是无副作用的，是幂等的，且可缓存</li>
+<li>POST 用于修改服务器上的数据，有副作用，非幂等，不可缓存</li>
+</ul>
+<p>HTTP 在网络上是明文传输的，要想安全传输，就只有加密，也就是 HTTPS</p>
+<p>HTTP 协议没有 Body 和 URL 的长度限制，对 URL 限制的大多是浏览器和服务器的原因，服务器是因为处理长 URL 要消耗比较多的资源，为了性能和安全（防止恶意构造长 URL 来攻击）考虑，会给 URL 长度加限制</p>
+<p>HTTP幂等方法，是指无论调用这个URL多少次，都不会有不同的结果的HTTP方法。幂等性指的是作用于结果而非资源本身。可能某个方法可能每次会得到不同的返回内容，但并不影响资源，这样的也满足幂等性。</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>区别</th>
+<th>HTTP</th>
+<th>HTTPS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>协议</td>
+<td>运行在 TCP 之上，明文传输，<strong>客户端与服务器端都无法验证对方的身份</strong></td>
+<td>身披 SSL( Secure Socket Layer )外壳的 HTTP，运行于 SSL 上，SSL 运行于 TCP 之上， <strong>是添加了加密和认证机制的 HTTP</strong>。</td>
+</tr>
+<tr>
+<td>端口</td>
+<td>80</td>
+<td>443</td>
+</tr>
+<tr>
+<td>资源消耗</td>
+<td>较少</td>
+<td>由于加解密处理，会消耗更多的 CPU 和内存资源</td>
+</tr>
+<tr>
+<td>开销</td>
+<td>无需证书</td>
+<td>需要证书，而证书一般需要向认证机构购买</td>
+</tr>
+<tr>
+<td>加密机制</td>
+<td>无</td>
+<td>共享密钥加密和公开密钥加密并用的混合加密机制</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>弱</td>
+<td>由于加密机制，安全性强</td>
+</tr>
+</tbody></table>
+<p>HTTPS特点：1.内容加密，采用混合加密技术，中间者无法直接查看明文内容；2.验证身份，确认网站真实性；3.保护数据完整性，防止传输的内容被中间人冒充或篡改</p>
+<p>HTTPS优点：1.可认证用户和服务器，保证数据发送到正确的客户端和服务器；2.由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比HTTP安全，可防止数据在传输过程中被窃取、改变，确保数据完整</p>
+<p>HTTPS缺点：（1）SSL 证书费用很高，以及其在服务器上的部署、更新维护非常繁琐；（2）HTTPS 降低用户访问速度（多次握手）；（3）网站改用HTTPS 以后，由HTTP 跳转到 HTTPS 的方式增加了用户访问耗时（多数网站采用302跳转）；（4）HTTPS 涉及到的安全算法会消耗 CPU 资源，需要增加大量机器（https访问过程需要加解密）</p>
+<hr>
+<p>HTTPS工作原理</p>
+<p>1.客户端使用HTTPS的URL访问web服务器（443端口），要求与web服务器建立SSL连接</p>
+<p>2.web服务器收到请求，选择浏览器支持的加密算法和哈希算法</p>
+<p>3.web服务器收到客户端请求后，会将网站的证书信息（证书中包含公钥）传送一份给客户端</p>
+<p>4.浏览器进入数字证书认证环节，这一部分是浏览器内置的 TSL 完成的：</p>
+<ul>
+<li>4.1 首先浏览器会从内置的证书列表中索引，找到服务器下发证书对应的机构，如果没有找到，此时就会提示用户该证书是不是由权威机构颁发，是不可信任的。如果查到了对应的机构，则取出该机构颁发的公钥。</li>
+<li>4.2 用机构的证书公钥解密得到证书的内容和证书签名，内容包括网站的网址、网站的公钥、证书的有效期等。浏览器会先验证证书签名的合法性。签名通过后，浏览器验证证书记录的网址是否和当前网址是一致的，不一致会提示用户。如果网址一致会检查证书有效期，证书过期了也会提示用户。这些都通过认证时，浏览器就可以安全使用证书中的网站公钥了。</li>
+<li>4.3 浏览器生成一个随机数R（加密所使用的对称密钥），并使用网站公钥对R进行加密。</li>
+</ul>
+<p>5.浏览器将会话密钥发送给web服务器</p>
+<p>6.web服务器用自己的私钥解密得到R，<strong>至此一个非对称加密的过程结束，TLS利用非对称加密实现了身份认证和密钥协商</strong>，然后把内容通过R值进行对称加密</p>
+<p>7.传输加密后的信息</p>
+<p>8.浏览器以R值解密服务端传送过来的信息，获得解密后的内容，<strong>至此一个对称加密的过程结束，看到对称加密是用于对服务器待传送给客户端的数据进行加密用的</strong></p>
+<p><img src="/2020/10/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201124181141047.png" alt="image-20201124181141047"></p>
+<hr>
+<p><strong>对称加密</strong>就是加密和解密使用同一个密钥的加密技术</p>
+<p><strong>非对称加密</strong>也成为公开密钥加密技术，就是使用不同密钥进行通信的加密技术（RSA、ECC)</p>
+<p><strong>数字签名</strong>，将报文按双方约定的HASH算法计算得到一个固定位数的报文摘要，可防止报文被篡改</p>
+<p><strong>数字证书</strong>是由权威机构给某网站颁发的一种认可凭证。它主要包含一些认证信息，比如：对象的名称（服务器、组织、个人等）、过期时间、证书颁发者、来自证书发布者的数字签名</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th align="left">cookie</th>
+<th align="left">sessioon</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">位置——存放在客户端</td>
+<td align="left">服务器端</td>
+</tr>
+<tr>
+<td align="left">储存大小——不超过4K</td>
+<td align="left">理论上没有限制</td>
+</tr>
+<tr>
+<td align="left">安全问题——不安全</td>
+<td align="left">安全</td>
+</tr>
+<tr>
+<td align="left">保存数据——只能保存字符串类型的数据</td>
+<td align="left">任意类型的数据</td>
+</tr>
+</tbody></table>
 
       
 
@@ -261,7 +539,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络协议</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
         		</li>
       		
 		</ul>
@@ -280,9 +558,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          关于测试的一些学习记录（3）
+        
+      </div>
+    </a>
   
-    <a href="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">关于测试的一些学习记录（4）</div>
+  
+    <a href="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于测试的一些学习记录（2）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -425,14 +712,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">协程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Appium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">属性</a>
               </li>
              
@@ -457,19 +736,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">协程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Appium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,7 +756,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">生成器</a>
+                <a href="javascript:void(0)" class="js-tag color4">-测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,7 +768,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+                <a href="javascript:void(0)" class="js-tag color4">生成器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -497,11 +780,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络协议</a>
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
             
             <div class="clearfix"></div>
