@@ -124,6 +124,115 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python基础记录-9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/30/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-9/">Python基础记录(9)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/30/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-9/" class="archive-article-date">
+  	<time datetime="2019-10-30T02:13:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>迭代器模式：一种惰性获取数据项的方式，按需一次获取一个数据项</p>
+<p><code>yield</code>关键字用于构建生成器（generator），其作用与迭代器一样，所有生成器都是迭代器，因为生成器完全实现了迭代器接口。Python3中，生成器有广泛的用途，即使是内置的<code>range()</code>函数也返回一个类似生成器的对象，而以前则返回完整的列表。如果一定要让<code>range()</code>函数返回列表，那么必须明确指明</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line">range(<span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(range(<span class="number">1</span>, <span class="number">5</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+<p>在Python中，所有集合都可以迭代。在Python语言内部，迭代器用于支持：</p>
+<ul>
+<li>for循环</li>
+<li>构建和扩展集合类型</li>
+<li>逐行遍历文本文件</li>
+<li>列表推导、字典推导和集合推导</li>
+<li>元组拆包</li>
+<li>调用函数时，使用*拆包实参</li>
+</ul>
+<p><strong>序列可以迭代的原因：<code>iter</code>函数</strong></p>
+<p>解释器需要迭代对象x时，会自动调用iter(x)</p>
+<ul>
+<li>检查对象是否实现了<code>__iter__</code>方法，如果实现了就调用它，获取一个迭代器。</li>
+<li>如果没有实现<code>__iter__</code>方法，但是实现了<code>__getitem__</code>方法，Python会创建一个迭代器，尝试按顺序（从索引0开始）获取元素。</li>
+<li>如果尝试失败，Python抛出TypeError异常，通常会提示“x object is not iterable”</li>
+</ul>
+<p>任何Python序列都可以迭代的原因是，它们都实现了<code>__getitem__</code>方法。</p>
+<p><strong>可迭代对象与迭代器的对比</strong></p>
+<p>可迭代对象：使用<code>iter</code>内置函数可以获取迭代器的对象。如果对象实现了能返回迭代器的<code>__iter__</code>方法，那么对象就是可迭代的。可迭代对象与迭代器的关系：Python从可迭代对象中获取迭代器。标准的迭代器接口有两个方法：</p>
+<ul>
+<li><code>__next__</code>：返回下一个可用元素，如果没有元素了，抛出StopIteration异常</li>
+<li><code>__iter__</code>：返回self，以便在应该使用可迭代对象的地方使用迭代器，例如for循环中</li>
+</ul>
+<p>迭代器：实现了无参数的<code>__next__</code>方法，返回序列中的下一个元素，如果没有元素了，那么抛出StopIteration异常。Python中的迭代器还实现了<code>__iter__</code>方法，因此迭代器也可以迭代。</p>
+<p>可迭代的对象一定不能是自身的迭代器。也就是说，可迭代的对象必须实现<code>__iter__</code>方法，但不能实现<code>__next__</code>方法。另一方面，迭代器应该一直可以迭代，迭代器的<code>__iter__</code>方法应该返回自身</p>
+<p><strong>生成器函数工作原理</strong></p>
+<p>只要Python函数的定义体中有<strong>yield</strong>关键字，该函数就是生成器函数。调用生成器函数时，会返回一个生成器对象。</p>
+<p><strong>生成器表达式</strong></p>
+<p>生成器表达式可以理解为列表推导式的惰性版本：不会迫切地构建列表，而是返回一个生成器，按需惰性生成元素。也就是说列表推导式是制造列表的工厂，那么生成器表达式就是制造生成器的工厂。</p>
+<p><strong>标准库中的生成器函数</strong></p>
+        
+          <a class="article-more-a" href="/2019/10/30/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-9/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">生成器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Windows远程连接Mac" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -724,80 +833,6 @@
 
 
   
-    <article id="post-Python之装饰器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/17/Python%E4%B9%8B%E8%A3%85%E9%A5%B0%E5%99%A8/">Python之装饰器</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/17/Python%E4%B9%8B%E8%A3%85%E9%A5%B0%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2019-06-17T09:57:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Python中，一切皆为对象，函数也不例外。它可以像整数一样作为其他函数的返回值，也可以像整数一样作为其他函数的参数。由于函数也是一个对象，而且函数对象可以被赋值给变量，所以通过变量也能调用该函数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">now</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">"test!"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = now</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f()</span><br><span class="line">test!</span><br></pre></td></tr></table></figure>
-
-<p>在代码运行期间动态增加功能的方式，称之为装饰器。装饰器本质上是一个函数或类，它可以让其他函数或类在不需要做任何代码修改的前提下增加额外功能。它经常用于有切面需求的场景，比如：插入日志、事务处理、权限校验等。函数装饰器在导入模块时立即执行，而被装饰的函数只在明确调用时运行。</p>
-<p><code>functools.lru_cache</code>实现了备忘录功能，它把耗时的函数的结果保存起来，避免传入相同的参数时重复计算。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
@@ -993,6 +1028,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
             
             <div class="clearfix"></div>
