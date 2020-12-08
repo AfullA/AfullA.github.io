@@ -124,6 +124,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python基础记录-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/22/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-5/">Python基础记录(5)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/22/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-5/" class="archive-article-date">
+  	<time datetime="2019-04-22T03:21:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>scope = vars()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>scope[<span class="string">'x'</span>]</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>全局作用域外，每个函数调用都将创建一个作用域。函数内部使用的变量称为局部变量（与之对应的是全局变量）。</p>
+<p><code>globals</code>返回一个包含全局变量的字典，<code>locals</code>返回一个包含局部变量的字典。</p>
+<p>作用域嵌套应用：一个函数位于另一个函数中，而且外面的函数返回里面的函数。闭包：存储其所在作用域的函数。</p>
+<h5 id="面向对象设计"><a href="#面向对象设计" class="headerlink" title="面向对象设计"></a>面向对象设计</h5><p>对象：由属性和方法组成。属性是对象的变量，方法是存储在属性中的函数。与函数相比，关联方法总将其所属的对象作为第一个参数（通常为<code>self</code>）。</p>
+<p>类：表示一组对象，每个对象都属于特定的类。类的主要任务是定义其实例将包含的方法。</p>
+<p>多态：能够同样地对待不同类型的对象，即无需知道对象属于哪个类就可以调用其方法。</p>
+<p>封装：对象可能隐藏其内部状态。在Python中，所有属性都是公有的。（要让方法或属性成为私有，名称前面加<code>__</code>）</p>
+<p>继承：一个类可以是一个或多个类的子类，子类继承超类的所有方法。（内置方法<code>issubclass</code>，特殊属性<code>__bases__</code>）</p>
+<p>抽象基类：使用模块<code>abc</code>可创建抽象基类。抽象基类用于指定子类必须提供哪些功能，却不实现这些功能。最重要特征是不能实例化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> abc <span class="keyword">import</span> ABC, abstractmethod</span><br><span class="line">Class A(ABC):</span><br><span class="line"><span class="meta">    @abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python基础记录-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -644,6 +726,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
             
             <div class="clearfix"></div>

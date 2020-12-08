@@ -124,6 +124,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python基础记录-10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/31/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-10/">Python基础记录(10)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/31/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-10/" class="archive-article-date">
+  	<time datetime="2019-10-31T03:35:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><code>if</code> 语句之外的<code>else</code>块</strong></p>
+<p><code>else</code>子句不仅能在if语句中使用，还能在<code>for</code>、<code>while</code>和<code>try</code>语句中使用</p>
+<p><strong><code>for</code></strong></p>
+<p>仅当 for 循环运行完毕时（即 for 循环没有被 break 语句中止）<br>才运行 else 块  </p>
+<p><strong><code>while</code></strong></p>
+<p>仅当 while 循环因为条件为假值而退出时（即 while 循环没有被<br>break 语句中止） 才运行 else 块  </p>
+<p><strong><code>try</code></strong></p>
+<p>仅当 try 块中没有异常抛出时才运行 else 块，else 子句抛出的异常不会由前面的 except 子句处理  </p>
+<p>在所有情况下，如果异常或者 return、 break 或 continue 语句导致<br>控制权跳到了复合语句的主块之外，else 子句也会被跳过  </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python基础记录-9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -747,92 +825,6 @@
 
 
   
-    <article id="post-Python之弱引用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/Python%E4%B9%8B%E5%BC%B1%E5%BC%95%E7%94%A8/">Python之弱引用</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/24/Python%E4%B9%8B%E5%BC%B1%E5%BC%95%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2019-07-24T11:23:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="Python中的垃圾回收"><a href="#Python中的垃圾回收" class="headerlink" title="Python中的垃圾回收"></a>Python中的垃圾回收</h5><p>1.引用计数：CPython中的垃圾回收主要算法，每个对象都会统计有多少引用指向自己，当计数归零时，对象立即销毁。</p>
-<p>2.分代垃圾回收：CPython2.0增加的新算法，用于检测引用循环中涉及的对象群组。</p>
-<p><code>del</code>语句删除的是名称，而不是对象。但是在两种情况下可能导致对象被回收：</p>
-<p>1.删除的变量保存的是对象的最后一个引用。</p>
-<p>2.删除变量后无法得到对象，如两个对象相互引用。</p>
-<p>重新绑定也可能会导致对象的引用数量归零。</p>
-<p>由于一次仅能有一个对象被回收，引用计数无法回收循环引用的对象。一组相互引用的对象若没有被其它对象直接引用，并且不可访问，则会永久存活下来。一个应用程序如果持续地产生这种不可访问的对象群组，就会发生内存泄漏。在对象群组内部使用弱引用（即不会在引用计数中被计数的引用）有时能避免出现引用环，因此弱引用可用于解决循环引用的问题。Python在对象的引用计数为0或只存在对象的弱引用时将回收这个对象。</p>
-        
-          <a class="article-more-a" href="/2019/07/24/Python%E4%B9%8B%E5%BC%B1%E5%BC%95%E7%94%A8/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">垃圾回收</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">弱引用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
@@ -1032,6 +1024,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
             
             <div class="clearfix"></div>
