@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://afulla.github.io">
-  <title>Python基础记录(1) | AfullA</title>
+  <title>Tag: MySQL | AfullA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="除法运算的结果为浮点数 1234&gt;&gt;&gt; 1&#x2F;20.5&gt;&gt;&gt; 1&#x2F;11.0  如果想要返回整型结果，使用整除运算（&#x2F;&#x2F;) 1234&gt;&gt;&gt; 1&#x2F;&#x2F;20&gt;&gt;&gt; 1&#x2F;&#x2F;11  整除运算结果是向下圆整的 1234&gt;&gt;&gt; 10&#x2F;&#x2F;33&gt;&gt;&gt; -10&#x2F;&#x2F;3-4  input(…)是以文本或字符串的形式返回">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python基础记录(1)">
-<meta property="og:url" content="https://afulla.github.io/2019/04/17/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-1/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="AfullA">
+<meta property="og:url" content="https://afulla.github.io/tags/MySQL/index.html">
 <meta property="og:site_name" content="AfullA">
-<meta property="og:description" content="除法运算的结果为浮点数 1234&gt;&gt;&gt; 1&#x2F;20.5&gt;&gt;&gt; 1&#x2F;11.0  如果想要返回整型结果，使用整除运算（&#x2F;&#x2F;) 1234&gt;&gt;&gt; 1&#x2F;&#x2F;20&gt;&gt;&gt; 1&#x2F;&#x2F;11  整除运算结果是向下圆整的 1234&gt;&gt;&gt; 10&#x2F;&#x2F;33&gt;&gt;&gt; -10&#x2F;&#x2F;3-4  input(…)是以文本或字符串的形式返回">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-04-17T09:30:20.000Z">
-<meta property="article:modified_time" content="2020-10-13T10:22:00.000Z">
 <meta property="article:author" content="AfullA">
-<meta property="article:tag" content="基础知识">
 <meta name="twitter:card" content="summary">
   
   
@@ -127,108 +122,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python基础记录-1" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Python基础记录(1)
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B0%8F%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-12-09T08:56:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-09</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B0%8F%E8%AE%B0/">数据库小记</a>
     </h1>
   
 
-        
-        <a href="/2019/04/17/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-1/" class="archive-article-date">
-  	<time datetime="2019-04-17T09:30:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>除法运算的结果为浮点数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>/<span class="number">2</span></span><br><span class="line"><span class="number">0.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>/<span class="number">1</span></span><br><span class="line"><span class="number">1.0</span></span><br></pre></td></tr></table></figure>
-
-<p>如果想要返回整型结果，使用整除运算（//)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>//<span class="number">2</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>//<span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>整除运算结果是向下圆整的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span>//<span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">-10</span>//<span class="number">3</span></span><br><span class="line"><span class="number">-4</span></span><br></pre></td></tr></table></figure>
-
-<p>input(…)是以文本或字符串的形式返回</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>number = input(<span class="string">"Ener a number: "</span>)</span><br><span class="line">Ener a number: <span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>number</span><br><span class="line"><span class="string">'5'</span></span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/04/18/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Python基础记录(2)
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -251,9 +198,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

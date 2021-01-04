@@ -124,6 +124,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Appium工作原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/01/Appium%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">Appium工作原理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/01/Appium%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" class="archive-article-date">
+  	<time datetime="2019-11-01T03:48:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Appium是一款开源、跨平台的的测试框架，可以用来测试原生及混合的移动端应用。Appium支持iOS、Android及Windows平台，也支持Safari、Chrome和其他安卓浏览器应用。</p>
+        
+          <a class="article-more-a" href="/2019/11/01/Appium%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Appium</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python基础记录-10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -744,87 +816,6 @@
 
 
   
-    <article id="post-缓存杂谈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/27/%E7%BC%93%E5%AD%98%E6%9D%82%E8%B0%88/">缓存杂谈</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/27/%E7%BC%93%E5%AD%98%E6%9D%82%E8%B0%88/" class="archive-article-date">
-  	<time datetime="2019-07-27T04:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。</p>
-<h4 id="HTTP缓存"><a href="#HTTP缓存" class="headerlink" title="HTTP缓存"></a>HTTP缓存</h4><h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><p>通过网络获取资源，是一件耗时的操作，较大的资源还会需要客户端和服务端之间进行多次往返通信，这不但增加客户端的响应时间，而且还会增加网络流量。缓存是性能优化的重要方面，合理缓存的好处：（1）缓解服务器压力；（2）加快静态资源加载速度和页面渲染速度；（3）减少带宽消耗</p>
-<p>HTTP协议中，就有对缓存的支持，浏览器也都自带了HTTP缓存实现功能。</p>
-<p>HTTP缓存主要是通过请求和响应报文头中的对应Header信息来控制缓存策略。</p>
-<blockquote>
-<p>一些概念：</p>
-<p><strong>新鲜度（过期机制）</strong>：缓存副本有效期。在该有效期之前，该缓存副本就是新鲜的，当过了有效期后，该缓存副本则变为陈旧的<em>。</em>驱逐算法用于将陈旧的缓存副本替换为新鲜的。当客户端发起一个请求时，缓存检索到已有一个对应的陈旧缓存副本，则缓存会先将此请求附加一个<code>If-None-Match</code>头，然后发给目标服务器，以此来检查该资源副本是否是依然还是算新鲜的，若服务器返回了 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304" target="_blank" rel="noopener"><code>304</code></a> (Not Modified)（该响应不会有带有实体信息），则表示此资源副本是新鲜的，这样一来，可以节省一些带宽。若服务器通过 If-None-Match 或 If-Modified-Since判断后发现已过期，那么会带有该资源的实体内容返回。</p>
-<p><strong>校验值（验证机制）</strong>：服务器返回资源的时候有时在控制头信息带上这个资源的实体标签<code>Etag（Entity Tag）</code>，它可以用来作为浏览器再次请求过程的校验标识。如过发现校验标识不匹配，说明资源已经被修改或过期，浏览器需求重新获取资源内容。</p>
-<p><strong>缓存命中率</strong>：一个缓存的有效性是依照缓存的命中率来度量。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/07/27/%E7%BC%93%E5%AD%98%E6%9D%82%E8%B0%88/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
@@ -839,7 +830,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 AfullA
+    		&copy; 2021 AfullA
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1028,6 +1019,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
             
             <div class="clearfix"></div>

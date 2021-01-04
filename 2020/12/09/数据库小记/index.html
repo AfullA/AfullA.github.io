@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://afulla.github.io">
-  <title>Python基础记录(1) | AfullA</title>
+  <title>数据库小记 | AfullA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="除法运算的结果为浮点数 1234&gt;&gt;&gt; 1&#x2F;20.5&gt;&gt;&gt; 1&#x2F;11.0  如果想要返回整型结果，使用整除运算（&#x2F;&#x2F;) 1234&gt;&gt;&gt; 1&#x2F;&#x2F;20&gt;&gt;&gt; 1&#x2F;&#x2F;11  整除运算结果是向下圆整的 1234&gt;&gt;&gt; 10&#x2F;&#x2F;33&gt;&gt;&gt; -10&#x2F;&#x2F;3-4  input(…)是以文本或字符串的形式返回">
+  <meta name="description" content="MySQL常用存储引擎：  Innodb引擎：Innodb引擎提供了对数据库ACID（原子性、一致性、隔离性、持久性）事务的支持，并且还提供了行级锁和外键的约束。它的设计的目标就是处理大数据容量的数据库系统 MyISAM引擎：不提供事务的支持，也不支持行级锁和外键 MEMORY引擎：所有的数据都在内存中，数据的处理速度快，但是安全性不高  事务四大特性 原子性：事务是最小的执行单位，不允许分割。事">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础记录(1)">
-<meta property="og:url" content="https://afulla.github.io/2019/04/17/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-1/index.html">
+<meta property="og:title" content="数据库小记">
+<meta property="og:url" content="https://afulla.github.io/2020/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B0%8F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="AfullA">
-<meta property="og:description" content="除法运算的结果为浮点数 1234&gt;&gt;&gt; 1&#x2F;20.5&gt;&gt;&gt; 1&#x2F;11.0  如果想要返回整型结果，使用整除运算（&#x2F;&#x2F;) 1234&gt;&gt;&gt; 1&#x2F;&#x2F;20&gt;&gt;&gt; 1&#x2F;&#x2F;11  整除运算结果是向下圆整的 1234&gt;&gt;&gt; 10&#x2F;&#x2F;33&gt;&gt;&gt; -10&#x2F;&#x2F;3-4  input(…)是以文本或字符串的形式返回">
+<meta property="og:description" content="MySQL常用存储引擎：  Innodb引擎：Innodb引擎提供了对数据库ACID（原子性、一致性、隔离性、持久性）事务的支持，并且还提供了行级锁和外键的约束。它的设计的目标就是处理大数据容量的数据库系统 MyISAM引擎：不提供事务的支持，也不支持行级锁和外键 MEMORY引擎：所有的数据都在内存中，数据的处理速度快，但是安全性不高  事务四大特性 原子性：事务是最小的执行单位，不允许分割。事">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-04-17T09:30:20.000Z">
-<meta property="article:modified_time" content="2020-10-13T10:22:00.000Z">
+<meta property="article:published_time" content="2020-12-09T08:56:13.000Z">
+<meta property="article:modified_time" content="2021-01-04T08:25:57.510Z">
 <meta property="article:author" content="AfullA">
-<meta property="article:tag" content="基础知识">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
   
   
@@ -127,37 +127,364 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python基础记录-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据库小记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python基础记录(1)
+      数据库小记
     </h1>
   
 
         
-        <a href="/2019/04/17/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-1/" class="archive-article-date">
-  	<time datetime="2019-04-17T09:30:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
+        <a href="/2020/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B0%8F%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-12-09T08:56:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>除法运算的结果为浮点数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>/<span class="number">2</span></span><br><span class="line"><span class="number">0.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>/<span class="number">1</span></span><br><span class="line"><span class="number">1.0</span></span><br></pre></td></tr></table></figure>
+        <p><strong>MySQL常用存储引擎：</strong></p>
+<ul>
+<li>Innodb引擎：Innodb引擎提供了对数据库ACID（原子性、一致性、隔离性、持久性）事务的支持，并且还提供了行级锁和外键的约束。它的设计的目标就是处理大数据容量的数据库系统</li>
+<li>MyISAM引擎：不提供事务的支持，也不支持行级锁和外键</li>
+<li>MEMORY引擎：所有的数据都在内存中，数据的处理速度快，但是安全性不高</li>
+</ul>
+<p><strong>事务四大特性</strong></p>
+<p>原子性：事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用</p>
+<p>一致性：执行事务前后，数据保持一致，多个事务对同一数据读取的结果是相同的</p>
+<p>隔离性：并发访问数据库时，一个用户的事务不被其他事务所干扰，各并发事务之间相互隔离</p>
+<p>持久性：一个事务被提交之后，它对数据库中的数据的改变是持久的，即使数据库发生故障也不应对其有任何影响</p>
+<p><strong>MyISAM和Innodb的区别</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MyISAM</th>
+<th>Innodb</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>存储结构</td>
+<td>每张表被存放在三个文件：frm-表格定义、MYD(MYData)-数据文件、MYI(MYIndex)-索引文件</td>
+<td>所有的表都保存在同一个数据文件中（也可能是多个文件，或者是独立的表空间文件），InnoDB表的大小只受限于操作系统文件的大小，一般为2GB</td>
+</tr>
+<tr>
+<td>存储空间</td>
+<td>MyISAM可被压缩，存储空间较小</td>
+<td>InnoDB的表需要更多的内存和存储，它会在主内存中建立其专用的缓冲池用于高速缓冲数据和索引</td>
+</tr>
+<tr>
+<td>可移植性、备份及恢复</td>
+<td>由于MyISAM的数据是以文件的形式存储，所以在跨平台的数据转移中会很方便。在备份和恢复时可单独针对某个表进行操作</td>
+<td>免费的方案可以是拷贝数据文件、备份 binlog，或者用 mysqldump，在数据量达到几十G的时候就相对痛苦了</td>
+</tr>
+<tr>
+<td>文件格式</td>
+<td>数据和索引是分别存储的，数据<code>.MYD</code>，索引<code>.MYI</code></td>
+<td>数据和索引是集中存储的，<code>.ibd</code></td>
+</tr>
+<tr>
+<td>记录存储顺序</td>
+<td>按记录插入顺序保存</td>
+<td>按主键大小有序插入</td>
+</tr>
+<tr>
+<td>外键</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>事务</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>锁支持（锁是避免资源争用的一个机制，MySQL锁对用户几乎是透明的）</td>
+<td>表级锁定</td>
+<td>行级锁定、表级锁定，锁定力度小并发能力高</td>
+</tr>
+<tr>
+<td>SELECT</td>
+<td>MyISAM更优</td>
+<td></td>
+</tr>
+<tr>
+<td>INSERT、UPDATE、DELETE</td>
+<td></td>
+<td>InnoDB更优</td>
+</tr>
+<tr>
+<td>select count(*)</td>
+<td>myisam更快，因为myisam内部维护了一个计数器，可以直接调取。</td>
+<td></td>
+</tr>
+<tr>
+<td>索引的实现方式</td>
+<td>B+树索引，myisam 是堆表</td>
+<td>B+树索引，Innodb 是索引组织表</td>
+</tr>
+<tr>
+<td>哈希索引</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>全文索引</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+</tbody></table>
+<a id="more"></a>
 
-<p>如果想要返回整型结果，使用整除运算（//)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>//<span class="number">2</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span>//<span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>MyISAM索引和Innodb索引的区别</strong></p>
+<ul>
+<li>Innodb索引是聚族索引，MyISAM索引是非聚族索引</li>
+<li>Innodb的主键索引的叶子节点存储着行数据，因此主键索引非常高效</li>
+<li>MyISAM索引的叶子节点存储的是行数据地址，需要再寻址一次才能得到数据</li>
+<li>Innodb非主键索引的叶子节点存储的是主键和其他带索引列的数据，因此查询时做到覆盖索引会非常高效</li>
+</ul>
+<p><strong>Innodb引擎四大特性</strong></p>
+<p>插入缓冲、二次写、自适应哈希索引、预读</p>
+<hr>
+<p><strong>索引</strong></p>
+<p>索引是一种特殊的文件(InnoDB数据表上的索引是表空间的一个组成部分)，它们包含着对数据表里所有记录的引用指针</p>
+<p>索引是一种数据结构。数据库索引，是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据，索引的实现通常使用B树及其变种B+树</p>
+<p>更通俗的说，索引就相当于目录。为了方便查找书中的内容，通过对内容建立索引形成目录。索引是一个文件，它是要占据物理空间的</p>
+<p><strong>索引的优点</strong></p>
+<ul>
+<li>可以加快数据的检索速度</li>
+<li>通过使用索引，可以在查询的过程中，使用优化隐藏器（优化隐藏就是指在执行查询语句、使用多表连接检索或者指定查询语句操作对象表时，明确地指出应该使用的查询方法、连接算法或者对表的操作方式。当使用优化隐藏时，一定要认真考虑优化隐藏对性能的影响。在SQL Server 7.0中，提供了三种类型的优化隐藏，即查询优化隐藏、连接优化隐藏和表优化隐藏），提高系统的性能</li>
+</ul>
+<p><strong>索引的缺点</strong></p>
+<ul>
+<li>时间方面：创建索引和维护索引要耗费时间，具体地，当对表中的数据进行增加、删除和修改的时候，索引也要动态的维护，会降低增/改/删的执行效率</li>
+<li>空间方面：索引需要占物理空间</li>
+</ul>
+<hr>
+<p><strong>索引使用场景</strong></p>
+<ul>
+<li>where</li>
+<li>order by</li>
+<li>join：对<code>join</code>语句匹配关系（<code>on</code>）涉及的字段建立索引能够提高效率</li>
+</ul>
+<p>索引覆盖：如果要查询的字段都建立过索引，那么引擎会直接在索引表中查询而不会访问原始数据（否则只要有一个字段没有建立索引就会做全表扫描），这叫索引覆盖。因此我们需要尽可能的在<code>select</code>后只写必要的查询字段，以增加索引覆盖的几率</p>
+<hr>
+<p><strong>索引类型</strong></p>
+<p>主键索引： 数据列不允许重复，不允许为NULL，一个表只能有一个主键</p>
+<p>唯一索引：数据列不允许重复，允许为NULL值，一个表允许多个列创建唯一索引</p>
+<p>普通索引：基本的索引类型，没有唯一性的限制，允许为NULL值</p>
+<p>全文索引：是目前搜索引擎使用的一种关键技术</p>
+<hr>
+<p><strong>索引设计原则</strong></p>
+<p>1.适合索引的列是出现在where子句中的列，order by子句中的列，或者连接子句中指定的列</p>
+<p>2.如果对长字符串列进行索引，使用短索引，指定前缀长度，能够节省大量索引空间</p>
+<p>3.较频繁作为查询条件的字段才去创建索引</p>
+<p>4.更新频繁字段不适合创建索引</p>
+<p>5.若是不能有效区分数据的列不适合做索引列(如性别，男女未知，最多也就三种，区分度实在太低)</p>
+<p>6.尽量的扩展索引，不要新建索引。比如表中已经有a的索引，现在要加(a,b)的索引，那么只需要修改原来的索引即可</p>
+<p>7.定义有外键的数据列一定要建立索引</p>
+<p>8.对于那些查询中很少涉及的列，重复值比较多的列不要建立索引</p>
+<p>9.对于定义为text、image和bit的数据类型的列不要建立索引</p>
+<hr>
+<p><strong>B树及B+树</strong></p>
+<p>哈希虽然能够提供 <code>O(1)</code> 的单数据行操作性能，但是对于范围查询和排序却无法很好地支持，最终导致全表扫描</p>
+<p>B 树能够在非叶节点中存储数据，但是这也导致在查询连续数据时可能会带来更多的随机 I/O，而 B+ 树的所有叶节点可以通过指针相互连接，能够减少顺序遍历时产生的额外随机 I/O</p>
+<p>在B树中，你可以将键和值存放在内部节点和叶子节点；但在B+树中，内部节点都是键，没有值，叶子节点同时存放键和值</p>
+<p>B+树的叶子节点有一条链相连，而B树的叶子节点各自独立</p>
+<p>B树可以在内部节点同时存储键和值，因此，把频繁访问的数据放在靠近根节点的地方将会大大提高热点数据的查询效率，这种特性使得B树在特定数据重复多次查询的场景中更加高效</p>
+<p>由于B+树的内部节点只存放键，不存放值，因此，一次读取可以在内存页中获取更多的键，有利于更快地缩小查找范围。 B+树的叶节点由一条链相连，因此，当需要进行一次全数据遍历的时候，B+树只需要使用O(logN)时间找到最小的一个节点，然后通过链进行O(N)的顺序遍历即可</p>
+<p><strong>B+树优点</strong></p>
+<ul>
+<li>B树只适合随机检索，而B+树同时支持随机检索和顺序检索</li>
+<li>B+树空间利用率更高，可减少I/O次数，磁盘读写代价更低</li>
+<li>B+树的查询效率更加稳定。B树搜索有可能会在非叶子结点结束，越靠近根节点的记录查找时间越短，只要找到关键字即可确定记录的存在，其性能等价于在关键字全集内做一次二分查找。而在B+树中，任何关键字的查找都必须走一条从根节点到叶节点的路，所有关键字的查找路径长度相同</li>
+<li>遍历效率高，从符合条件的某个叶子节点开始遍历即可</li>
+</ul>
+<p><strong>B+树缺点</strong></p>
+<p>B+树最大的性能问题在于会产生大量的随机IO，主要存在以下两种情况：</p>
+<ol>
+<li>主键不是有序递增的，导致每次插入数据产生大量的数据迁移和空间碎片；</li>
+<li>即使主键是有序递增的，大量随机写请求会产生大量的随机写IO</li>
+</ol>
+<hr>
+<p>脏读：某个事务已更新一份数据，另一个事务此时读取了同一份数据，由于某些原因前一个回滚了操作，则后一个事务所读取的数据就会是不正确的</p>
+<p>不可重复读：在一个事务两次查询之中数据不一致，这可能是两次查询过程中间插入了一个事务更新了原有的数据</p>
+<p>幻读：它发生在一个事务读取了几行数据，接着另一个并发事务插入了一些数据时，在随后查询中，第一个事务就会发现多了一些原本不存在的记录</p>
+<p>不可重复读的重点是修改，幻读的重点在于新增或者删除</p>
+<p>SQL标准定义了四个隔离级别：</p>
+<ul>
+<li><strong>READ-UNCOMMITTED(读取未提交)：</strong>最低的隔离级别，允许读取尚未提交的数据变更，可能会导致脏读、幻读或不可重复读</li>
+<li><strong>READ-COMMITTED(读取已提交)：</strong> 允许读取并发事务已经提交的数据，<strong>可以阻止脏读，但是幻读或不可重复读仍有可能发生</strong></li>
+<li><strong>REPEATABLE-READ(可重复读，MySQL默认隔离级别)：</strong> 对同一字段的多次读取结果都是一致的，除非数据是被本身事务自己所修改，<strong>可以阻止脏读和不可重复读，但幻读仍有可能发生</strong></li>
+<li><strong>SERIALIZABLE(可串行化)：</strong> 最高的隔离级别，完全服从ACID的隔离级别。所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，<strong>该级别可以防止脏读、不可重复读以及幻读</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻影读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>READ-UNCOMMITTED</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>READ-COMMITTED</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>REPEATABLE-READ</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+</tr>
+<tr>
+<td>SERIALIZABLE</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody></table>
+<hr>
+<hr>
+<p><strong>隔离级别与锁的关系</strong></p>
+<p>在Read Uncommitted级别下，读取数据不需要加共享锁</p>
+<p>在Read Committed级别下，读操作需要加共享锁，但是在读操作执行完以后就释放共享锁</p>
+<p>在Repeatable Read级别下，读操作需要加共享锁，但是在事务提交之前并不释放共享锁，也就是必须等待事务执行完毕以后才释放共享锁（提交或回滚）</p>
+<p>SERIALIZABLE 是限制性最强的隔离级别，因为该级别<strong>锁定整个范围的键</strong>，并一直持有锁，直到事务完成</p>
+<hr>
+<p>在关系数据库中，可以<strong>按照锁的粒度</strong>把数据库锁分为行级锁（Innodb引擎）、表级锁（MyISAM引擎）和页级锁（BDB引擎）</p>
+<p><strong>行级锁</strong>：行级锁是MySQL中锁定粒度最细的一种锁，表示只针对当前操作的行进行加锁。行级锁能大大减少数据库操作的冲突。其加锁粒度最小，但加锁的开销也最大。行级锁分为共享锁和排它锁。</p>
+<p>特点：开销大、加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概率最低，并发度也最高</p>
+<p><strong>表级锁</strong>：表级锁是MySQL中锁定粒度最大的一种锁，表示对当前操作的整张表加锁，它实现简单，资源消耗较少，被大部分MySQL引擎支持。表级锁分为表共享读锁和表独占写锁</p>
+<p>特点：开销小，加锁快；不会出现死锁；锁定粒度大，发生锁冲突的概率最高，并发度最低</p>
+<p><strong>页级锁</strong>：页级锁是MySQL中锁定粒度介于行级锁和表级锁中间的一种锁。表级锁速度快，但冲突多，行级冲突少，但速度慢，所以取了折中的页级，一次锁定相邻的一组记录。</p>
+<p>特点：开销和加锁速度介于行级锁和表级锁之间；会出现死锁；锁定粒度介于表级锁和行级锁之间，并发度一般</p>
+<p><strong>从锁的类别上</strong>讲有共享锁和排他锁：</p>
+<p>共享锁—又叫读锁，当用户进行数据读取时，对数据加上共享锁，共享锁可以同时加上多个</p>
+<p>排他锁：又叫写锁，当用户进行数据写入时，对数据加上排他锁，排他锁只可以加一个，他和其他的排他锁、共享锁都相斥</p>
+<hr>
+<p><strong>死锁</strong>：是指两个或多个事务在同一资源上相互占用，并请求锁定对方资源（我等待你的资源，你却等待我的资源，我们都相互等待，谁也不释放自己占有的资源），从而导致恶性循环的现象</p>
+<p>死锁常见解决办法：</p>
+<p>1.如果不同程序会并发存取多个表，尽量约定以相同的顺序访问表，可以大大降低死锁机会</p>
+<p>2.尽量保持事务简短，大事务更倾向于死锁，如果业务允许，将大事务拆小</p>
+<p>3.在同一个事务中，尽可能做到一次锁定所需要的所有资源，减少死锁产生概率</p>
+<p>4.降低隔离级别，如果业务允许，将隔离级别调低也是比较好的选择，比如将隔离级别从RR调整为RC</p>
+<p>5.对于非常容易产生死锁的业务部分，可以尝试使用升级锁定颗粒度，通过表级锁定减少死锁产生概率</p>
+<hr>
+<p><strong>悲观锁</strong></p>
+<p>总是假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会阻塞直到它拿到锁（<strong>共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程</strong>）。传统的关系型数据库里边就用到了很多这种锁机制，比如行锁，表锁等，读锁，写锁等，都是在做操作之前先上锁</p>
+<p><strong>乐观锁</strong></p>
+<p>总是假设最好的情况，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据，可以使用版本号机制和CAS算法实现。<strong>乐观锁适用于多读的应用类型，这样可以提高吞吐量</strong></p>
+<hr>
+<p><strong>视图</strong>是基于SQL语句的结果集的可视化的表，即视图是一个虚拟存在的表，可以包含表的全部或者部分记录，也可以由一个表或者多个表来创建</p>
+<p>视图使用场景：</p>
+<ul>
+<li>重用SQL语句</li>
+<li>简化复杂的SQL操作，在编写查询后，可以方便地重用它而不必知道它的基本查询细节</li>
+<li>使用表的组成部分而不是整个表</li>
+<li>保护数据，可以给用户授予表的特定部分的访问权限而不是整个表的访问权限</li>
+<li>更改数据格式和表示，视图可返回与底层表的表示和格式不同的数据</li>
+</ul>
+<p>视图的优点：</p>
+<ul>
+<li>数据库视图允许简化复杂查询：数据库视图由与许多基础表相关联的SQL语句定义。通过数据库视图，只需使用简单的SQL语句，而不是使用具有多个连接的复杂的SQL语句</li>
+<li>数据库视图有助于限制对特定用户的数据访问</li>
+<li>数据库视图提供额外的安全层，数据库视图允许创建只读视图，以将只读数据公开给特定用户，用户只能以只读视图检索数据，但无法更新</li>
+<li>数据库视图启用计算列</li>
+<li>数据库视图实现向后兼容</li>
+</ul>
+<p>视图的缺点：</p>
+<ul>
+<li>性能：数据库必须把视图的查询转化成对基本表的查询，当视图是由一个复杂的多表查询所定义时，即使是视图的一个简单查询也会很慢</li>
+<li>表依赖关系：将根据数据库的基础表创建一个视图，每当更改与其相关联的表的结构时，都必须更改视图</li>
+</ul>
+<hr>
+<p><strong>游标</strong>是系统为用户开设的一个数据缓冲区，存放SQL语句的执行结果，每个游标区都有一个名字。用户可以通过游标逐一获取记录并赋给主变量，交由主语言进一步处</p>
+<hr>
+<p><strong>存储过程</strong></p>
+<p>存储过程是一个预编译的SQL语句，优点是允许模块化的设计，就是说只需要创建一次，以后在该程序中就可以调用多次。如果某次操作需要执行多次SQL，使用存储过程比单纯SQL语句执行要快</p>
+<p>存储过程优点：</p>
+<ul>
+<li>通常存储过程有助于提高应用程序的性能，存储过程是预编译过的，执行效率高</li>
+<li>存储过程有助于减少应用程序和数据库服务器之间的流量，通过存储过程名直接调用</li>
+<li>存储程序对任何应用程序都是可重用和透明的</li>
+<li>安全性高，数据库管理员可以向访问数据库中存储过程的应用程序授予适当的权限，而不向基础数据库表提供任何权限</li>
+</ul>
+<p>存储过程缺点：</p>
+<ul>
+<li>如果使用大量存储过程，那么使用这些存储过程的每个连接的内存使用量将会大大增加。此外，如果在存储过程中过度使用大量逻辑操作，则CPU使用率也会增加</li>
+<li>存储过程的构造使得开发具有复杂业务逻辑的存储过程变得更加困难</li>
+<li>很难调试存储过程</li>
+<li>开发和维护存储过程并不容易</li>
+</ul>
+<hr>
+<p><strong>触发器</strong></p>
+<p>触发器是用户定义在关系表上的一类由事件驱动的特殊的存储过程。触发器是指一段代码，当触发某个事件时，自动执行这些代码</p>
+<p>使用场景：</p>
+<ul>
+<li>在BEFORE触发器中进行一些数据的校验工作（大小写、数据类型、格式等）</li>
+<li>在AFTER触发器中进行一些后续的统计工作（行数、总数、平均值等）</li>
+</ul>
+<p>在MySQL数据库中有如下六种触发器：</p>
+<ul>
+<li>Before Insert</li>
+<li>After Insert</li>
+<li>Before Update</li>
+<li>After Update</li>
+<li>Before Delete</li>
+<li>After Delete</li>
+</ul>
+<hr>
+<p><strong>MySQL关联查询</strong></p>
+<p>内连接查询：是指所有查询出的结果都是能够在连接的表中有对应记录的</p>
+<p>左外连接查询：指以左边的表的数据为基准，去匹配右边的表的数据，如果匹配到就显示，匹配不到就显示为null。关键字是<code>left outer join</code>，等效于<code>left join</code></p>
+<p>右外连接：以右表的数据去匹配左表</p>
+<p>全外连接：把两张表的字段都查出来，没有对应的值就显示null，MySQL是没有全外连接的，想要达到全外连接的效果，可以使用<code>union</code>关键字连接左外连接和右外连接</p>
+<p>自连接查询：自连接查询就是当前表与自身的连接查询</p>
+<hr>
+<p><strong>MySQL中<code>in</code>和<code>exists</code>区别</strong></p>
+<p>MySQL中的<code>in</code>语句是把外表和内表作hash连接，先查询内表，再把内表结果与外表匹配，对外表使用索引（外表效率高，可用大表），故外表大的使用in，可加快效率</p>
+<p>MySQL中的<code>exists</code>语句是对外表作loop循环，每次loop循环再对内表进行查询，因为对内表的查询使用索引（内表效率高，故可用大表），故内表大的使用exists，可加快效率</p>
+<p><code>not in</code> 和<code>not exists</code>：如果查询语句使用了<code>not in</code>，那么内外表都进行全表扫描，没有用到索引；而<code>not extsts</code>的子查询依然能用到表上的索引，所以无论内表外表哪个表大，用<code>not exists</code>都比<code>not in</code>要快</p>
+<hr>
+<p>SQL语句优化的一些方法</p>
+<ul>
+<li><p>考虑在where、order by涉及的列上建立索引</p>
+</li>
+<li><p>尽量避免在where子句中对字段进行null值判断</p>
+</li>
+<li><p>尽量避免在where子句中使用!=或&lt;&gt;操作符</p>
+</li>
+<li><p>尽量避免在where子句中使用or来连接条件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span>=<span class="number">10</span> <span class="keyword">or</span> <span class="keyword">num</span>=<span class="number">20</span></span><br><span class="line"><span class="comment">-- 可以这样查询：</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span>=<span class="number">10</span> <span class="keyword">union</span> <span class="keyword">all</span> <span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span>=<span class="number">20</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>in和not in慎用</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> <span class="keyword">in</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) </span><br><span class="line"><span class="comment">-- 对于连续的数值，能用 between 就不要用 in 了：</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> <span class="keyword">between</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下面的查询也将导致全表扫描，若要提高效率，可以考虑全文检索</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> ‘%李%’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果在where子句中使用参数，也会导致全表扫描</p>
+</li>
+<li><p>尽量避免在where子句中对字段进行表达式操作</p>
+</li>
+<li><p>尽量避免在where子句中对字段进行函数操作</p>
+</li>
+</ul>
+<hr>
 
-<p>整除运算结果是向下圆整的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span>//<span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">-10</span>//<span class="number">3</span></span><br><span class="line"><span class="number">-4</span></span><br></pre></td></tr></table></figure>
-
-<p>input(…)是以文本或字符串的形式返回</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>number = input(<span class="string">"Ener a number: "</span>)</span><br><span class="line">Ener a number: <span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>number</span><br><span class="line"><span class="string">'5'</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -170,7 +497,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
         		</li>
       		
 		</ul>
@@ -189,15 +516,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/18/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Python基础记录(2)
-        
-      </div>
-    </a>
   
+    <a href="/2020/12/08/linux%E5%B0%8F%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">linux小记</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
