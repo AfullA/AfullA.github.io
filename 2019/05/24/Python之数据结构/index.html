@@ -16,7 +16,7 @@
 <meta property="og:description" content="内置序列类型容器序列 list tuple collections.deque这些序列能存放不同类型的数据。 扁平序列 str bytes bytearray memoryview array.array这类序列只能容纳一种类型。 容器序列存放的是它们所包含的任意类型的对象的引用，而扁平序列里存放的是值而不是引用（一段连续的内存空间）。 序列类型还可按能否被修改来分类。  可变序列 list by">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-05-24T07:47:05.000Z">
-<meta property="article:modified_time" content="2020-10-13T10:22:00.000Z">
+<meta property="article:modified_time" content="2021-02-07T10:41:46.233Z">
 <meta property="article:author" content="AfullA">
 <meta property="article:tag" content="基础知识">
 <meta property="article:tag" content="数据结构">
@@ -178,6 +178,9 @@
 <p>返回给定键的值，如果键不存在，则返回该键设置的值（改变了字典）</p>
 <p><code>collections.defaultdict([default_factory[, ...]])</code></p>
 <p>属于collections模块下的一个工厂函数，用于构建字典对象，使用<code>default_factory</code>给所有key对应的value赋初始值。</p>
+<hr>
+<p>如果你想在一个集合中查找最小或者最大的N个元素，并且N小于集合元素数量，那<code>heapq</code>提供了很好的性能。因为在底层实现里面，首先会先将集合数据进行堆排序后放入一个列表中。堆数据结构最重要的特征是<code>heap[0]</code>永远是最小的元素，并且剩余的元素可以很容易地通过调用<code>heapq.heappop()</code>方法得到，该方法会先将第一个元素弹出来，然后用下一个最小的元素来取代被弹出元素（这种操作时间复杂度仅仅是O(logN)，N是堆大小）。如果你仅仅想查找唯一的最小或者最大的元素，那么使用<code>min()</code>和<code>max()</code>函数更快些。</p>
+<p><code>OrderedDict</code>内部维护着一个根据键插入顺序排序的双向链表，每次当一个新的元素插入进来的时候，它会被放到链表的尾部，对于一个已经存在的键的重复赋值不会改变键的顺序，一个<code>OrderedDict</code>的大小是一个普通字典的两倍，数据量大的时候要考虑内存的消耗</p>
 
       
 
@@ -417,10 +420,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-测试</a>
               </li>
              
               <li class="article-tag-list-item">

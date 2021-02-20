@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://afulla.github.io">
   <title>Python基础记录(7) | AfullA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Python代码覆盖率检查单元测试unittest框架代码检查PyLint性能分析profile与cProfile">
+  <meta name="description" content="Python代码覆盖率检查 单元测试unittest框架在unittest中有四个重要概念：Test Case、Test Suite、Test Runner、Test Fixture Test Case：最小的测试单元，用于检查特定输入集合的特定返回值，unittest提供了TestCase基类，我们创建的测试类需要继承该基类，它可以用来创建新的测试用例 Test Suite：测试套件是测试用例、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础记录(7)">
 <meta property="og:url" content="https://afulla.github.io/2019/05/09/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-7/index.html">
 <meta property="og:site_name" content="AfullA">
-<meta property="og:description" content="Python代码覆盖率检查单元测试unittest框架代码检查PyLint性能分析profile与cProfile">
+<meta property="og:description" content="Python代码覆盖率检查 单元测试unittest框架在unittest中有四个重要概念：Test Case、Test Suite、Test Runner、Test Fixture Test Case：最小的测试单元，用于检查特定输入集合的特定返回值，unittest提供了TestCase基类，我们创建的测试类需要继承该基类，它可以用来创建新的测试用例 Test Suite：测试套件是测试用例、">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-05-09T09:50:09.000Z">
-<meta property="article:modified_time" content="2020-10-13T10:22:00.000Z">
+<meta property="article:modified_time" content="2021-01-25T10:04:15.540Z">
 <meta property="article:author" content="AfullA">
-<meta property="article:tag" content="-测试">
+<meta property="article:tag" content="测试">
 <meta name="twitter:card" content="summary">
   
   
@@ -147,7 +147,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h6 id="Python代码覆盖率检查"><a href="#Python代码覆盖率检查" class="headerlink" title="Python代码覆盖率检查"></a>Python代码覆盖率检查</h6><h6 id="单元测试unittest框架"><a href="#单元测试unittest框架" class="headerlink" title="单元测试unittest框架"></a>单元测试unittest框架</h6><h6 id="代码检查PyLint"><a href="#代码检查PyLint" class="headerlink" title="代码检查PyLint"></a>代码检查PyLint</h6><h6 id="性能分析profile与cProfile"><a href="#性能分析profile与cProfile" class="headerlink" title="性能分析profile与cProfile"></a>性能分析profile与cProfile</h6>
+        <h6 id="Python代码覆盖率检查"><a href="#Python代码覆盖率检查" class="headerlink" title="Python代码覆盖率检查"></a>Python代码覆盖率检查</h6><hr>
+<h6 id="单元测试unittest框架"><a href="#单元测试unittest框架" class="headerlink" title="单元测试unittest框架"></a>单元测试unittest框架</h6><p>在unittest中有四个重要概念：Test Case、Test Suite、Test Runner、Test Fixture</p>
+<p>Test Case：最小的测试单元，用于检查特定输入集合的特定返回值，unittest提供了TestCase基类，我们创建的测试类需要继承该基类，它可以用来创建新的测试用例</p>
+<p>Test Suite：测试套件是测试用例、测试套件或两者的集合。用于组装一组要运行的测试。unittest提供了TestSuite类来创建测试套件</p>
+<p>Test Runner：Test Runner是一个组件，用于协调测试的执行并向用户提供结果。Test Runner可以使用图形界面、文本界面或返回特殊值来展示执行测试的结果。unittest提供了TextTestRunner类运行测试用例，为了生成HTML格式的测试报告，后面会选择使用HTMLTestRunner类</p>
+<p>Test Fixture：Test Fixture代表执行一个或多个测试所需的环境准备，以及关联的清理动作。例如，创建临时或代理数据库、目录，或启动服务器进程。unittest中提供了setUp()/tearDown()、setUpClass()/tearDownClass()等方法来完成这些操作</p>
+<ul>
+<li>setUpModule/tearDownModule：在整个模块的开始与结束时被执行</li>
+<li>setUpClass/tearDownClass：在测试类的开始与结束时被执行</li>
+<li>setUp/tearDown：在测试用例的开始与结束时被执行</li>
+</ul>
+<hr>
+<p>unittest默认根据ASCII码的顺序加载测试用例（数字与字母的顺序为0<del>9，A</del>Z，a~z），除了在命名上加以控制，也可以声明测试套件TestSuite类，通过addTest()方法按照一定的顺序来加载测试用例</p>
+<p>DDT（<a href="https://github.com/datadriventests/ddt），是针对" target="_blank" rel="noopener">https://github.com/datadriventests/ddt），是针对</a> unittest 单元测试框架设计的扩展库。允许使用不同的测试数据来运行一个测试用例，并将其展示为多个测试用例  </p>
+<h6 id="代码检查PyLint"><a href="#代码检查PyLint" class="headerlink" title="代码检查PyLint"></a>代码检查PyLint</h6><h6 id="性能分析profile与cProfile"><a href="#性能分析profile与cProfile" class="headerlink" title="性能分析profile与cProfile"></a>性能分析profile与cProfile</h6>
       
 
       
@@ -160,7 +174,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-测试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
         		</li>
       		
 		</ul>
@@ -382,10 +396,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-测试</a>
               </li>
              
               <li class="article-tag-list-item">
