@@ -124,6 +124,576 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-关于H5测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/10/%E5%85%B3%E4%BA%8EH5%E6%B5%8B%E8%AF%95/">关于H5测试</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/10/%E5%85%B3%E4%BA%8EH5%E6%B5%8B%E8%AF%95/" class="archive-article-date">
+  	<time datetime="2021-03-10T10:19:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2021/03/10/%E5%85%B3%E4%BA%8EH5%E6%B5%8B%E8%AF%95/H5%E6%B5%8B%E8%AF%95.png" alt="H5测试"></p>
+<p><strong>H5性能测试关注点</strong></p>
+<ul>
+<li>http请求个数 eg.雪碧图、js和css小文件合并</li>
+<li>组件是否压缩：Content-Encoding:gzip</li>
+<li>图片格式大小是否合适</li>
+<li>css放顶部，js放底部</li>
+<li>js、css压缩</li>
+<li>是否添加缓存：Cache-Control:no-cache、no-store、Expires    <meta http-equiv="Cache-Control" content="max-age=7200"><meta http-equiv="Expires" content="Mon, 20 Jul 2016 23:00:00 GMT"></li>
+<li>避免非200返回值</li>
+<li>使用cdn</li>
+<li>时间相关：白屏时间（用户首次看到网页有内容的时间）、首屏时间、首资源下载时间、总资源下载时间、用户可操作时间（从页面开始加载到用户操作可响应时间）</li>
+<li>移动端：</li>
+</ul>
+<p>​    内存：可间接反应资源数量和大小</p>
+<p>​    CPU：H5绘制质量，如果长期处于高占用率，可考虑降低高计算量的视觉效果等手段</p>
+<p>​    FPS：帧率在有视频或动画效果的H5页面中要重点关注，防止严重的卡顿</p>
+<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8EH5%E6%B5%8B%E8%AF%95/image-20210310182108052.png" alt="image-20210310182108052"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于WebPagetest" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/10/%E5%85%B3%E4%BA%8EWebPagetest/">关于WebPagetest</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/10/%E5%85%B3%E4%BA%8EWebPagetest/" class="archive-article-date">
+  	<time datetime="2021-03-10T10:08:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>WebPagetest Window部署</strong></p>
+<p>使用WampServer集成环境</p>
+<p><strong>1.下载WebPagetest压缩包</strong></p>
+<p>下载地址：<a href="https://github.com/WPO-Foundation/webpagetest/releases" target="_blank" rel="noopener">https://github.com/WPO-Foundation/webpagetest/releases</a></p>
+<p><strong>2.配置Apache环境</strong></p>
+<p>修改httpd.conf文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">去掉Include conf&#x2F;extra&#x2F;httpd-vhosts.conf前面的注释符#</span><br><span class="line">去掉LoadModule filter_module modules&#x2F;mod_filter.so前面的注释符#</span><br></pre></td></tr></table></figure>
+
+<p>修改httpd-vhosts.conf文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">添加：</span><br><span class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></span><br><span class="line">    DocumentRoot "D:/wamp/www/webpagetest_3.0/www"    （webpagetest存放路径）</span><br><span class="line">    ServerName my.webpagetest.com    （自定义域名）</span><br><span class="line">    ErrorLog "logs/webpagetest.log"</span><br><span class="line">    <span class="tag">&lt;<span class="name">Directory</span> "<span class="attr">D:</span>/<span class="attr">wamp</span>/<span class="attr">www</span>/<span class="attr">webpagetest_3.0</span>/<span class="attr">www</span>"&gt;</span>   （一些权限设置）</span><br><span class="line">        AllowOverride all</span><br><span class="line">        Order allow,deny</span><br><span class="line">        Allow from all</span><br><span class="line">    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>修改后，直接localhost访问会有问题，继续添加</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></span><br><span class="line">    DocumentRoot "D:/wamp/www"</span><br><span class="line">    ServerName localhost</span><br><span class="line">    <span class="tag">&lt;<span class="name">Directory</span> "<span class="attr">D:</span>/<span class="attr">wamp</span>/<span class="attr">www</span>"&gt;</span></span><br><span class="line">        AllowOverride all</span><br><span class="line">        Order allow,deny</span><br><span class="line">        Allow from all</span><br><span class="line">    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>修改hosts文件</p>
+<p>添加新host：127.0.0.1  <a href="http://my.webpagetest.com/" target="_blank" rel="noopener">my.webpagetest.com</a></p>
+<p><strong>3.完成后，即可本地访问</strong></p>
+<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8EWebPagetest/image-20210310181224142.png" alt="image-20210310181224142"></p>
+<p><strong>4.访问<a href="http://my.webpagetest.com/" target="_blank" rel="noopener">my.webpagetest.com</a>/install查看未下载项，将未下载的安装完成</strong></p>
+<p>修改php.ini文件中的“memory_limit”</p>
+<p>安装APC：<a href="http://pecl.php.net/package/APCu" target="_blank" rel="noopener">http://pecl.php.net/package/APCu</a></p>
+<p>将下载的dll文件放入php/ext中，并在php.ini中添加扩展</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extension&#x3D;php_apcu.dll</span><br></pre></td></tr></table></figure>
+
+<p>下载ffmpeg，将存放路径添加到Path</p>
+<p><a href="https://ffmpeg.zeranoe.com/builds/" target="_blank" rel="noopener">https://ffmpeg.zeranoe.com/builds/</a></p>
+<p>下载imagemagick</p>
+<p><a href="https://www.imagemagick.org/script/download.php" target="_blank" rel="noopener">https://www.imagemagick.org/script/download.php</a></p>
+<p>下载exiftool</p>
+<p><a href="https://sno.phy.queensu.ca/~phil/exiftool/" target="_blank" rel="noopener">https://sno.phy.queensu.ca/~phil/exiftool/</a></p>
+<p><strong>5.桌面测试代理</strong></p>
+<p>代理相关软件和文件都在agent文件夹内</p>
+<p>打开控制面板 - 网络共享中心 - 更改适配器 - 右键本地连接  - 属性</p>
+<p>Microsoft网络客户端 - 安装 - 服务 - 添加 - 从磁盘安装 - 选择dummynet - 确定安装</p>
+<p><strong>6.配置地理位置locations.ini</strong></p>
+<p>在www/setting中有个“location.ini.sample”文件，这里面是示例，将后缀“sample”去除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">[locations]</span><br><span class="line">1&#x3D;Test_loc</span><br><span class="line">;2&#x3D;Public_Dulles</span><br><span class="line">default&#x3D;Test_loc</span><br><span class="line">;</span><br><span class="line">; These are the top-level locations that are listed in the location dropdown</span><br><span class="line">; Each one points to one or more browser configurations</span><br><span class="line">;</span><br><span class="line">[Test_loc]</span><br><span class="line">1&#x3D;IE</span><br><span class="line">2&#x3D;Test</span><br><span class="line">label&#x3D;Test Location</span><br><span class="line">group&#x3D;Desktop</span><br><span class="line">;[Public_Dulles]</span><br><span class="line">;1&#x3D;WPT_Dulles_IE8</span><br><span class="line">;label&#x3D;&quot;WebPagetest.org - Dulles, VA&quot;</span><br><span class="line">;group&#x3D;Public</span><br><span class="line">;</span><br><span class="line">; Tese are the browser-specific configurations that match the configurations</span><br><span class="line">; defined in the top-level locations.  Each one of these MUST match the location</span><br><span class="line">; name configured on the test agent (urlblast.ini or wptdriver.ini)</span><br><span class="line">;</span><br><span class="line">[IE]</span><br><span class="line">browser&#x3D;IE9</span><br><span class="line">;latency&#x3D;0</span><br><span class="line">label&#x3D;&quot;Test Location - IE 9&quot;</span><br><span class="line">;browserExe&#x3D;pagetest.exe</span><br><span class="line">;key&#x3D;TestKey123</span><br><span class="line">;</span><br><span class="line">; For a wptdriver configuration (chrome, firefox), the browser labels here</span><br><span class="line">; MUST match the labels used in wptdriver.ini</span><br><span class="line">;</span><br><span class="line">[Test]</span><br><span class="line">browser&#x3D;Chrome,Firefox</span><br><span class="line">label&#x3D;&quot;Test Location&quot;</span><br><span class="line">;</span><br><span class="line">; This is an exaple of a &quot;remote&quot; configuration where tests can be proxied to a remote</span><br><span class="line">; webpagetest instance.  The test will be run by the remote server but the results</span><br><span class="line">; will be downloaded to the local server and deleted from the remote agent</span><br><span class="line">;</span><br><span class="line">; Each location that you want to use from the remote server needs to be configured</span><br><span class="line">; individually on the local configuration (location names do not need to match)</span><br><span class="line">;</span><br><span class="line">; To use the public webpagetest.org instance you will need an API key</span><br><span class="line">;</span><br><span class="line">;[WPT_Dulles_IE8]</span><br><span class="line">;browser&#x3D;IE 8</span><br><span class="line">;label&#x3D;&quot;WebPagetest.org Dulles, VA - IE8&quot;</span><br><span class="line">;relayServer&#x3D;&quot;https:&#x2F;&#x2F;www.webpagetest.org&#x2F;&quot;;</span><br><span class="line">;relayKey&#x3D;&lt;your API key&gt;</span><br><span class="line">;relayLocation&#x3D;Dulles_IE8</span><br></pre></td></tr></table></figure>
+
+<p><strong>7.配置wptdriver.ini</strong></p>
+<p>在agent文件夹中有个“wptdriver.ini.sample”文件，同样去掉sample后缀，并注释掉installer，software条目，增加debug防止浏览器闪退</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[WebPagetest]</span><br><span class="line">url&#x3D;http:&#x2F;&#x2F;my.webpagetest.com&#x2F;</span><br><span class="line">location&#x3D;IE,Test</span><br><span class="line">debug&#x3D;1</span><br><span class="line">;browser&#x3D;chrome</span><br><span class="line">;Time Limit&#x3D;120</span><br><span class="line">;key&#x3D;TestKey123</span><br><span class="line">;Automatically install and update support software (Flash, Silverlight, etc)</span><br><span class="line">;software&#x3D;http:&#x2F;&#x2F;www.webpagetest.org&#x2F;installers&#x2F;software.dat</span><br><span class="line">[Chrome]</span><br><span class="line">exe&#x3D;&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot;</span><br><span class="line">options&#x3D;&#39;--load-extension&#x3D;&quot;%WPTDIR%\extension&quot; --user-data-dir&#x3D;&quot;%PROFILE%&quot; --no-proxy-server&#39;</span><br><span class="line">;installer&#x3D;http:&#x2F;&#x2F;www.webpagetest.org&#x2F;installers&#x2F;browsers&#x2F;chrome.dat</span><br><span class="line">[Firefox]</span><br><span class="line">exe&#x3D;&quot;C:\Program Files (x86)\Mozilla Firefox\firefox.exe&quot;</span><br><span class="line">options&#x3D;&#39;-profile &quot;%PROFILE%&quot; -no-remote&#39;</span><br><span class="line">;installer&#x3D;http:&#x2F;&#x2F;www.webpagetest.org&#x2F;installers&#x2F;browsers&#x2F;firefox.dat</span><br><span class="line">template&#x3D;firefox</span><br><span class="line">;[Safari]</span><br><span class="line">;exe&#x3D;&quot;C:\Program Files\Safari\Safari.exe&quot;</span><br><span class="line">[IE9]</span><br><span class="line">exe&#x3D;&quot;C:\Program Files\Internet Explorer\iexplore.exe&quot;</span><br></pre></td></tr></table></figure>
+
+<p>执行wptdriver.exe，就绪状态</p>
+<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8EWebPagetest/image-20210310181519204.png" alt="image-20210310181519204"></p>
+<p><strong>8.重新打开WebPagetest页面，显示了Test Location和Browser选项</strong></p>
+<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8EWebPagetest/image-20210310181547660.png" alt="image-20210310181547660"></p>
+<p><a href="https://github.com/pwstrick/WebPagetest-Docs/blob/master/Private-Instances/private-instances.md#51-配置" target="_blank" rel="noopener">https://github.com/pwstrick/WebPagetest-Docs/blob/master/Private-Instances/private-instances.md#51-%E9%85%8D%E7%BD%AE</a></p>
+<p><a href="https://www.webpagetest.org/forums/showthread.php?tid=456" target="_blank" rel="noopener">https://www.webpagetest.org/forums/showthread.php?tid=456</a></p>
+<p><a href="https://github.com/pwstrick/WebPagetest-Docs/blob/master/Using-WebPagetest/quick-start-guide.md" target="_blank" rel="noopener">https://github.com/pwstrick/WebPagetest-Docs/blob/master/Using-WebPagetest/quick-start-guide.md</a></p>
+<p><strong>结果分析</strong></p>
+<p>阻塞时间（First Byte Time）</p>
+<p>首字节时间是指浏览器收到HTML内容的第一个字节时间，包括DNS查找、TCP连接、SSL协商等</p>
+<p>长连接已启动（Keep-alive Enabled）</p>
+<p>请求网页上的内容（图像、JavaScript、CSS等）需要与web服务器建立连接。每次都重新连接会耗费一些时间，所以最好复用连接，keep-alive实现了这个方法，通常可以将加载页面的时间减少40%-50%</p>
+<p>压缩文本（Compress Text）</p>
+<p>除了图片或视频，剩余的都是某种类型的文本（html、JavaScript、css等）。http提供了一种以压缩形式传输文件的方法。由于文本资源通常在页面开头下载，提供文本资源的快慢很影响用户体验。</p>
+<p>压缩图片（Compress Images）</p>
+<p>图像压缩检查仅查看照片图像，确保质量不会设置得太高。JEPG图片可以在不降低视觉质量的情况下压缩</p>
+<p>缓存静态内容（Cache Static Content）</p>
+<p>静态内容是网页上不经常更改的内容（图片、JavaScript、css等）。可以配置它们，以便用户的浏览器将它们缓存起来，浏览器决定一个资源被缓存多久取决于2个因素：缓存寿命和过期时间。资源的寿命可以通过2个标签配置：实体标签（ETags）和首部标签（Last-Modified）。过期时间是根据2个TTL首部标签：Cache-Control的max-age属性和Expires Header。</p>
+<p>合并JS/CSS文件（Combine JS/CSS File）</p>
+<p>提高性能通常意味着减少请求数，最简单的方法之一是减少页面开头加载的css\js文件数量。一个简单的实现方法是将JavaScript和css分别合并到一个文件中（CSS最好在JS之前加载）。减少用户从屏幕看到东西的等待时间，对用户体验有极大的影响。</p>
+<p>使用CSN(Use of CDN）</p>
+<p>每个内容的请求都是从用户的浏览器到web服务器再返回。随着距离越来越远，这样一个往返可能消耗很多时间，把你的服务器建立在离用户比较近的地方就能解决这个问题，这正是内容分发网络的作用。</p>
+<p>首次视图（First View）</p>
+<p>首次视图的测试，将会把浏览器的缓存和Cookie清除，表示访问者第一次访问该页面的情况</p>
+<p>重复视图（Repeat View）</p>
+<p>重复视图会在首次视图测试后立即执行，不会清除任何内容。重复视图测试模拟的是用户离开页面后马上进入此页面的情况。</p>
+<p>文档加载完毕（Document Completed）</p>
+<p>从初始化请求到加载所有静态内容，但可能不包括由JavaScript执行触发的内容，可以理解为开始执行window.onload</p>
+<p>页面所有元素加载时间（Fully Loaded）</p>
+<p>从初始化请求到Document Complete后，2秒内没有网络活动的时间，这包括在主网页加载后由JavaScript触发的任何活动</p>
+<p>整页加载时间（Load Time）</p>
+<p>与Document Complete中的时间属性相同</p>
+<p>第一个字节加载时间（First Byte）</p>
+<p>这个时间表示从初始化请求到服务端响应后，接收到第一个字节的时间。此时的大部分时间为“后端时间”，服务器为用户构建页面的时间量</p>
+<p>页面渲染时间（Start Render）</p>
+<p>渲染时间表示屏幕上显示东西的第一个时间点，在这个时间点之前用户看到是一个空白页</p>
+<p>DOM元素数量（DOM Elements）</p>
+<p>HTTP请求数（Requests）</p>
+<p>传输的字节量（Bytes In）</p>
+<p>浏览器加载页面下载的数据量，通常也被称为“页面大小”</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于H5性能测试平台的一些思路" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/10/%E5%85%B3%E4%BA%8EH5%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%B7%AF/">关于H5性能测试平台的一些思路</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/10/%E5%85%B3%E4%BA%8EH5%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%B7%AF/" class="archive-article-date">
+  	<time datetime="2021-03-10T10:00:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://cloud.tencent.com/developer/news/54260" target="_blank" rel="noopener">https://cloud.tencent.com/developer/news/54260</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于adb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/10/%E5%85%B3%E4%BA%8Eadb/">关于adb</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/10/%E5%85%B3%E4%BA%8Eadb/" class="archive-article-date">
+  	<time datetime="2021-03-10T09:50:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>ReactNative log信息</strong></p>
+<p>adb logcat *:S ReactNative:V ReactNativeJS:V</p>
+<p><strong>内存数据</strong></p>
+<p>adb shell dumpsys meminfo packagename or pid</p>
+<p>Native Heap : JNI层的内存</p>
+<p>Dalvik Heap ： Java层的内存分配情况，常说的堆内存，不能超过最大限制</p>
+<p>Total PSS : 应用真正占据的内存大小</p>
+<p><strong>cpu数据</strong></p>
+<p>adb shell dumpsys cpuinfo packagename</p>
+<p>adb shell top -m 10 -s cpu</p>
+<p>adb shell top |findstr com.sy4399.h5 </p>
+<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8Eadb/image-20210310175352413.png" alt="image-20210310175352413"></p>
+<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8Eadb/image-20210310175438692.png" alt="image-20210310175438692"></p>
+<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8Eadb/image-20210310175504493.png" alt="image-20210310175504493"></p>
+<p><strong>电量数据</strong></p>
+<p>收集电池的历史数据</p>
+<p>adb shell dumpsys batterystats –enable full-wake-hostory</p>
+<p>重置电池数据</p>
+<p>adb shell dumpsys batterystats –reset</p>
+<p>拔掉数据线，操作app</p>
+<p>获取电量报告</p>
+<p>adb bugreport &gt; bugreport.txt</p>
+<p>安装docker，安装battery historian工具</p>
+<p>docker run -d -p <port>:9999 gcr.io/android-battery-historian/stable:3.0</port></p>
+<p>电量优化：<a href="https://www.jianshu.com/p/5d83d8649c98" target="_blank" rel="noopener">https://www.jianshu.com/p/5d83d8649c98</a></p>
+<p><strong>流量数据</strong></p>
+<p>adb shell ps找到应用对应pid</p>
+<p>adb shell cat /proc/pid/net/dev</p>
+<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8Eadb/image-20210310175700376.png" alt="image-20210310175700376"></p>
+<p>启动飞行模式再关闭，wlan0清零</p>
+<p><a href="https://testerhome.com/topics/2643" target="_blank" rel="noopener">https://testerhome.com/topics/2643</a></p>
+<p><a href="https://testerhome.com/topics/12208" target="_blank" rel="noopener">https://testerhome.com/topics/12208</a></p>
+<p><a href="https://testerhome.com/topics/11488" target="_blank" rel="noopener">https://testerhome.com/topics/11488</a></p>
+<p><a href="http://www.10tiao.com/html/179/201605/2652313673/1.html" target="_blank" rel="noopener">http://www.10tiao.com/html/179/201605/2652313673/1.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/01/%E5%85%B3%E4%BA%8Eredis/">关于redis</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/01/%E5%85%B3%E4%BA%8Eredis/" class="archive-article-date">
+  	<time datetime="2021-03-01T09:40:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> redis是一个基于内存的高性能key-value数据库</p>
+<p><strong>redis和memcached相比的优势</strong></p>
+<p>1.支持丰富的数据类型；2.支持数据备份（master-slave模式）；3.支持数据持久化；4.性能高</p>
+<p>在高并发场景的压力下，多线程非阻塞式IO的memcached表现会更加优异</p>
+<p><img src="/2021/03/01/%E5%85%B3%E4%BA%8Eredis/image-20210302175508854.png" alt="image-20210302175508854"></p>
+<ul>
+<li>memcached不支持内存数据持久化操作，所有数据以in-memory的形式存储</li>
+<li>key不能超过250个字节</li>
+<li>value不能超过1M字节</li>
+<li>key的最大失效时间是30天</li>
+</ul>
+<hr>
+<p><strong>redis持久化与高可用</strong></p>
+<p>redis提供了RDB和AOF两种持久化方式，RDB是把内存中的数据集以快照形式写入磁盘，AOF是以文本日志的形式记录redis处理的每一个写入或删除操作</p>
+<p>RDB把整个redis数据保存在单一文件中，比较适合用来做灾备，但缺点是快照保存完成之前如果宕机，这段时间的数据将会丢失，另外保存快照时可能导致服务短时间不可用</p>
+<p>AOF对日志文件的写入操作使用追加模式，有灵活的同步策略，支持每秒同步、每次修改同步和不同步，缺点就是相同规模的数据集，AOF要大于RDB，AOF在运行效率上往往会慢于RDB，AOF的数据比RDB更完整</p>
+<p>AOF和RDB最好同时使用，单独使用RDB会丢失很多数据，而单独使用AOF数据恢复没有RDB快，因此第一时间使用RDB恢复数据，然后AOF补全</p>
+<p>redis哨兵：</p>
+<ul>
+<li>集群监控：负责监控redis master和slave进程是否正常工作</li>
+<li>消息通知：如果某个redis实例有故障，那么哨兵负责发送消息作为报警通知给管理员</li>
+<li>故障转移：如果master node挂掉了，会自动转移到slave node上</li>
+<li>配置中心：如果故障转移发生了，通知client客户端新的master地址</li>
+</ul>
+<hr>
+<p><strong>单线程的redis为什么快</strong></p>
+<p>redis的IO多路复用技术：redis采用网络IO多路复用技术来保证在多连接的时候系统的高吞吐量</p>
+<p>多路指的是多个socket连接，复用指的是复用一个线程（epoll），采用多路I/O复用技术可以让单个线程高效地处理多个连接请求，且redis在内存中操作数据的速度非常快，所以redis具有很高的吞吐量</p>
+<p>redis单线程的优势：1.代码更清晰，处理逻辑更简单；2.不用去考虑各种锁的问题，不存在加锁释放锁操作，没有因为可能出现死锁而导致的性能消耗；3.不存在多进程或者多线程切换而消耗CPU</p>
+<p>使用单线程的原因：基于内存操作，CPU不是redis的性能瓶颈，redis的瓶颈最有可能是机器内存的大小或者网络带宽（如果CPU成为redis瓶颈，可考虑多起几个redis进程；使用集群部署方式可以解决单机瓶颈的问题：主从同步读写分离，redis cluster支撑N个redis master node，每个master node可以挂载多个slave node，实现redis的横向扩展）</p>
+<p>1.redis是纯内存数据库，一般都是简单的存取操作</p>
+<p>2.redis使用的是非阻塞IO，IO多路复用，使用了单线程，减少了线程切换时上下文的切换和竞争</p>
+<p>3.redis的存储数据结构</p>
+<hr>
+<p><strong>redis常见性能问题</strong></p>
+<ol>
+<li>master写内存快照，会阻塞主线程的工作，当快照比较大时对性能影响比较大，会间断性暂停服务，所以master最好不要写内存快照</li>
+<li>master AOF持久化，如果不重写AOF文件，这个持久化方式对性能影响是最小的，但AOF文件不断增大，AOF文件过大会影响master重启恢复速度。master最好不要做任何持久化工作，包括内存快照和AOF日志文件</li>
+<li>master调用BGREWRITEAOF重写AOF文件，AOF在重写时会占用CPU和内存资源，导致服务load过高，出现短暂服务暂停现象</li>
+<li>redis主从复制的性能问题，为了主从复制的速度和连接的稳定性，master和slave最好在同一局域网</li>
+</ol>
+<hr>
+<p><strong>redis主从复制好处</strong></p>
+<ul>
+<li>数据冗余，实现数据的热备份</li>
+<li>故障恢复，避免单点故障带来的服务不可用</li>
+<li>读写分离，负载均衡</li>
+<li>高可用基础，是哨兵机制和集群实现的基础</li>
+</ul>
+<p><strong>redis主从复制原理</strong></p>
+<ol>
+<li><p>建立连接（从服务器可以使用ping命令确认与主服务器的连通性）</p>
+</li>
+<li><p>数据复制（完整复制、部分复制）</p>
+<p>完整复制：执行BGSAVE命令生成RDB文件并使用内存缓冲区记录此后执行的所有写命令；执行完成后，向从服务器发送快照文件，并在发送期间继续记录被执行的所写命令；从服务器收到快照文件后丢弃所有旧数据，载入收到的快照；主服务器快照发送完毕后开始向从服务器发送缓冲区中的写命令；从服务器完成对快照的载入，开始接收命令请求，并执行来自主服务器缓冲区的写命令</p>
+</li>
+<li><p>命令传播</p>
+</li>
+</ol>
+<hr>
+<p><strong>redis事务</strong></p>
+<ul>
+<li>事务是一个单独的隔离操作：事务中的所有命令都会被序列化，按顺序地执行。事务在执行过程中，不会被其他客户端发送过来的命令请求所打断</li>
+<li>没有隔离级别的概念：队列中的命令在事务没有被提交之前不会被实际执行</li>
+<li>不保证原子性：redis的一个事务中如果存在命令执行失败，其他命令依然会被执行，没有回滚机制</li>
+</ul>
+<hr>
+<p>redis使用场景：会话缓存、消息队列、排行榜/计数器、发布/订阅等</p>
+<p>redis五种数据结构：1.string（字符串）；2.list（列表）；3.hash（字典）；4.set（集合）；5.zset（有序集合）</p>
+<p>redis过期键删除策略：定期删除、惰性删除</p>
+<p>redis六种内存淘汰策略：1.no-enviction：不删除策略，达到最大内存限制时，如果需要更多内存，直接返回错误信息；2.allkeys-lru：所有key通用，优先删除最近最少使用的key；3.volatile-lru：只限于设置了expire的部分，优先删除最近最少使用的key；4.allkeys-random：所有key通用，随机删除一部分key；5.volatile-random：只限于设置了expire的部分，随机删除一部分key；6.volatile-ttl：只限设置了expire的部分，优先删除剩余时间短的key</p>
+<hr>
+<p>缓存穿透：产生这个问题的原因可能是外部恶意攻击，例如，对用户信息进行了缓存，但恶意攻击者使用不存在的用户id频繁请求接口，导致查询缓存不命中，然后穿透DB查询依然不命中，这时会有大量请求穿透缓存访问到DB</p>
+<p>解决办法：1.对不存在的用户，在缓存中保存一个空对象进行标记，防止相同ID再次访问DB，不过有时这个方法不能很好解决问题，可能导致缓存中存储大量无用数据；2.使用BloomFilter过滤器，BloomFilter的特点是存在性检测，如果BloomFilter中不存在，那么数据一定不存在，如果BloomFilter中存在，实际数据也有可能会不存在</p>
+<p>缓存击穿：就是某个热点数据失效时，大量针对这个数据的请求会穿透到数据源</p>
+<p>解决办法：1.可以使用互斥锁更新，保证同一个进程中针对同一个数据不会并发请求到DB，减小DB压力；2.设置热点数据永不过期；3.定时更新热点数据</p>
+<p>缓存雪崩：产生的原因是缓存挂掉，这时所有的请求都会穿透到 DB</p>
+<p>解决办法：1.使用快速失败的熔断策略，减少DB瞬间压力；2.使用主从模式和集群模式来尽量保证缓存服务的高可用</p>
+<hr>
+<p><strong>redis发布订阅</strong></p>
+<p>redis提供了发布订阅功能，可用于消息的传输，redis发布订阅机制包括三个部分：发布者、订阅者和channel</p>
+<p>发布者和订阅者都是redis客户端，channel则为redis服务器端，发布者将消息发送到某个频道，订阅了这个频道的订阅者就能接收到这条消息</p>
+<p><img src="/2021/03/01/%E5%85%B3%E4%BA%8Eredis/image-20210310170518704.png" alt="image-20210310170518704"></p>
+<ol>
+<li>发送消息：PUBLISH命令发送消息，其返回值为接收到该消息的订阅者的数量</li>
+<li>订阅某个频道：SUBSCRIBE命令订阅某个频道，其返回值包括客户端订阅的频道，目前已订阅的频道数量，以及接收到的消息，subscribe表示已经成功订阅了某个频道</li>
+<li>模式匹配：PSUBSCRIBE订阅符合某个模式所有频道</li>
+<li>取消订阅：UNSUBSCRIBE和PUNSUBSCRIBE命令取消订阅，其返回值与订阅类似。 由于Redis的订阅操作是阻塞式的，因此一旦客户端订阅了某个频道或模式，就将会一直处于订阅状态直到退出。在SUBSCRIBE，PSUBSCRIBE，UNSUBSCRIBE和PUNSUBSCRIBE命令中，其返回值都包含了该客户端当前订阅的频道和模式的数量，当这个数量变为0时，该客户端会自动退出订阅状态</li>
+</ol>
+<p><a href="https://juejin.cn/post/6844903879251869703#heading-6" target="_blank" rel="noopener">https://juejin.cn/post/6844903879251869703#heading-6</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-关于Fiddler" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -457,519 +1027,9 @@
 
 
   
-    <article id="post-操作系统小记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0/">操作系统小记</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-11-27T03:55:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>线程与进程的区别</strong></p>
-<p>（1）线程是进程的一个实体，一个进程可以拥有多个线程，多个线程也可以并发执行。一个没有线程的进程也可以看做是单线程的，同样线程也经常被看作是一种轻量级的进程。进程可以不依赖线程单独存在，而线程则不然。</p>
-<p>（2）进程是并发程序在一个数据集合上的一次执行过程，进程是系统进行资源分配和调度的独立单位，线程是进程的实体，它是比进程更小的能够独立执行的基本单元，线程自己不拥有任何系统资源，但是它可以访问其隶属进程的全部资源。</p>
-<p>（3）与进程的控制表PCB相似，线程也有自己的控制表TCB，但TCB中保存的线程状态比PCB表少得多。</p>
-<p>进程的作用：为了提高CPU的执行率，为了避免等待而造成CPU空转以及其他计算机硬件资源的浪费</p>
-<p>线程的作用：为了减少进程切换和创建带来的开销，提高执行效率和节省资源</p>
-<p>为什么引入线程？</p>
-<p>（1）进程的切换开销大</p>
-<p>（2）一个进程内也需要并发执行多个程序，实现不同的功能</p>
-<p>（3）进程有时候性能比较低</p>
-<p>进程与线程的区别总结：</p>
-<table>
-<thead>
-<tr>
-<th>比较</th>
-<th>进程</th>
-<th>线程</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>活泼性</td>
-<td>不活泼（只是线程的容器）</td>
-<td>活泼</td>
-</tr>
-<tr>
-<td>地址空间</td>
-<td>系统赋予独立的<strong>虚拟地址空间</strong></td>
-<td>在进程的地址空间执行代码。线程只有一个内核对象和一个堆栈，保留的记录很少，因此所需要的内存也很少。因此线程需要的<strong>开销比进程少</strong></td>
-</tr>
-<tr>
-<td>调度</td>
-<td>仅是操作系统<strong>资源分配</strong>的基本单位</td>
-<td>处理器<strong>独立调度、分派</strong>的基本单位</td>
-</tr>
-<tr>
-<td>并发性</td>
-<td>仅进程间并发（传统OS）</td>
-<td>进程间、线程间并发</td>
-</tr>
-<tr>
-<td>拥有资源</td>
-<td>资源拥有的基本单位</td>
-<td>基本上不拥有资源</td>
-</tr>
-<tr>
-<td>系统开销</td>
-<td>创建、撤销、切换开销大</td>
-<td>仅保存少量寄存器内容，开销小</td>
-</tr>
-</tbody></table>
-<hr>
-<p><strong>进程常见状态</strong></p>
-<ul>
-<li>就绪：进程已处于准备好运行的状态，即进程已分配到除CPU外的所有必要资源后，只要再获得CPU，便可立即执行。</li>
-<li>执行：进程已经获得CPU，程序正在执行状态。</li>
-<li>阻塞：正在执行的进程由于发生某事件（如I/O请求、申请缓冲区失败等）暂时无法继续执行的状态。</li>
-</ul>
-<p><img src="/2020/11/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0/image-20201127173711484.png" alt="image-20201127173711484"></p>
-<hr>
-<p>所谓<strong>同步</strong>，是指散步在不同进程之间的若干程序片断，它们的运行必须严格按照规定的某种先后次序来运行，这种先后次序依赖于要完成的特定的任务。如果<strong>用对资源的访问来定义的话，同步是指在互斥的基础上（大多数情况），通过其它机制实现访问者对资源的有序访问。在大多数情况下，同步已经实现了互斥，特别是所有写入资源的情况必定是互斥的。少数情况是指可以允许多个访问者同时访问资源。</strong></p>
-<p>所谓<strong>互斥</strong>，是指散布在不同进程之间的若干程序片断，当某个进程运行其中一个程序片段时，其它进程就不能运行它们之中的任一程序片段，只能等到该进程运行完这个程序片段后才可以运行。如果<strong>用对资源的访问来定义的话，互斥是指某一资源同时只允许一个访问者对其进行访问，具有唯一性和排它性。但互斥无法限制访问者对资源的访问顺序，即访问是无序的。</strong></p>
-<p><strong>线程同步方式</strong></p>
-<p>互斥量：采用互斥对象机制，只有拥有互斥对象的线程才有访问公共资源的权限。因为互斥对象只有一个，所以可以保证公共资源不会被多个线程同时访问</p>
-<p>信号量：它允许同一时刻多个线程访问同一资源，但是需要控制同一时刻访问此资源的最大线程数量</p>
-<p>事件：通过通知操作的方式来保持多线程同步，还可以方便实现多线程优先级的比较操作</p>
-<p><strong>进程同步</strong></p>
-<p>进程同步的主要任务：是对多个相关进程在执行次序上进行协调，以使并发执行的诸进程之间能有效地共享资源和相互合作，同步机制遵循的原则：</p>
-<ul>
-<li>空闲让进：当没有进程处于临界区的时候，应该许可其他进程进入临界区的申请</li>
-<li>忙则等待：当前如果有进程处于临界区，如果有其他进程申请进入，则必须等待，保证对临界区的互斥访问</li>
-<li>有限等待：对要求访问临界资源的进程，需要在有限时间内进入临界区，防止出现死等状态</li>
-<li>让权等待：进程不能进入自己的临界区时，应该释放处理机，以免陷入忙等状态</li>
-</ul>
-<p>进程间同步的主要方法有<strong>原子操作、信号量机制、自旋锁、管程、会合、分布式系统</strong>等</p>
-<hr>
-<p><strong>进程通信方式</strong></p>
-<p>1.管道：管道是单向的、先进先出的、无结构的、固定大小的字节流，无名管道只能实现父子或者兄弟进程之间的通信，有名管道可以实现互不相关的两个进程之间的通信</p>
-<p>2.信号量：信号量是一个计数器，可以用来控制多个进程对共享资源的访问，常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源，因此主要作为进程间以及同一进程内不同线程之间的同步手段</p>
-<p>3.消息队列：是一个在系统内核中用来保存消息的队列，它在系统内核中是以消息链表的形式出现的。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点</p>
-<p>4.共享内存：共享内存就是映射一段能被其它进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的IPC方式，它是针对其它进程间通信方式运行效率低而专门设计的。它往往与其它通信机制（如信号量）配合使用，来实现进程间的同步和通信</p>
-<p>5.套接字：套接字也是一种进程间通信机制，与其它通信机制不同的是，它可用于不同机器间的进程通信</p>
-<p>高级通信机制可以归结为三类：</p>
-<ul>
-<li>共享存储器系统：（存储器中划分的共享存储区）：实际操作中对应的是“剪贴板”（剪贴板实际上是系统维护管理的一块内存区域）的通信方式，比如举例如下：word进程按下ctrl+c，在ppt进程按下ctrl+v，即完成了word进程和ppt进程之间的通信，复制时将数据放入到剪贴板，粘贴时从剪贴板中取出数据，然后显示在ppt窗口上</li>
-<li>消息传递系统（进程间的数据交换以消息（message）为单位，当今最流行的微内核操作系统中，微内核与服务器之间的通信，无一例外地都采用了消息传递机制。应用举例：邮槽（MailSlot）是基于广播通信体系设计出来的，它采用无连接的不可靠的数据传输。邮槽是一种单向通信机制，创建邮槽的服务器进程读取数据，打开邮槽的客户机进程写入数据</li>
-<li>管道通信系统（管道即连接读写进程以实现他们之间通信的共享文件（pipe文件，类似先进先出的队列，由一个进程写，另一进程读））。实际操作中，管道分为：匿名管道、命名管道。匿名管道是一个未命名的、单向管道，通过父进程和一个子进程之间传输数据。匿名管道只能实现本地机器上两个进程之间的通信，而不能实现跨网络的通信。命名管道不仅可以在本机上实现两个进程间的通信，还可以跨网络实现两个进程间的通信。</li>
-</ul>
-<p><strong>信号量、消息传递（管道、消息队列、套接字）和共享内存</strong></p>
-        
-          <a class="article-more-a" href="/2020/11/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-web常见安全问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/26/web%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/">web常见安全问题</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/26/web%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-11-26T08:55:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>SQL注入</strong></p>
-<p>攻击者向服务器提交恶意sql查询代码（通过web表单提交、请求的查询字符串），程序接收后错误的将攻击者的输入作为查询语句的一部分执行，导致原始的查询逻辑被改变。</p>
-<p>防御措施：</p>
-<p>1.严格限制web应用的数据库操作权限，给此用户提供仅仅能够满足其工作的最低权限，从而最大限度减少注入攻击对数据库的危害</p>
-<p>2.后端代码检查输入的数据是否符合预期，严格限制输入类型</p>
-<p>3.对进入数据库的特殊字符进行转义处理</p>
-<p>4.所有的查询语句建议使用数据库提供的参数化查询接口，参数化的语句使用参数而不是用户输入嵌入到sql语句中，即不要直接拼接sql语句</p>
-<p>5.用专业的sql注入检测工具进行检测</p>
-<p>6.避免网站打印sql错误信息</p>
-        
-          <a class="article-more-a" href="/2020/11/26/web%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-网络协议小记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/26/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/">网络协议小记</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/26/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-11-26T08:46:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>OSI参考模型</strong>：</p>
-<p><img src="/2020/11/26/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109154917964.png" alt="image-20201109154917964"></p>
-<p><strong>OSI参考模型各层作用</strong>：</p>
-<p><img src="/2020/11/26/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109155558526.png" alt="image-20201109155558526"></p>
-<p>应用层：为应用程序提供服务并规定应用程序中通信相关的细节。包括文件传输、电子邮件、远程登录（虚拟终端）等协议。</p>
-<p>表示层：将应用处理的信息转换为适合网络传输的格式，或将来自下一层的数据转换为上层能够处理的格式，主要负责数据格式的转换。</p>
-<p>会话层：负责建立和断开连接（数据流动的逻辑通路），以及数据的分割等数据传输相关的管理。</p>
-<p>传输层：起着可靠传输的作用。</p>
-<p>网络层：将数据传输到目标地址，目标地址可以是多个网络通过路由器连接而成的一个地址，负责寻址和路由选择。</p>
-<p>数据链路层：负责物理层面上互连的、节点之间的通信传输，例如与一个以太网相连的2个节点之间的通信。将0、1序列划分为具有意义的数据帧传送给对端（数据帧的生成与接收）。</p>
-<p>物理层：负责0、1比特流与电压的高低、光的闪灭之间的互换。</p>
-<p>在应用层写入的数据会经由表示层格式化编码、再由会话层标记发送顺序后发送出去。</p>
-<p>网络层负责将整个数据发送给最终目标地址，而数据链路层则只负责一个分段内的数据。</p>
-        
-          <a class="article-more-a" href="/2020/11/26/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于测试的一些学习记录（4）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/">关于测试的一些学习记录（4）</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-11-05T09:27:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用”测试分析设计表“来保证测试设计符合测试策略，”测试分析设计表“是对每个功能或特性进行测试设计的辅助工具，使用测试分析表的好处是：可以通过该表来控制测试设计深度；方便记录测试分析过程；测试设计评审时容易看出设计者考虑了哪些地方没有考虑哪些地方。由3张表构成：测试分析准备表、测试类型分析表、功能交互分析表</p>
-<p>测试分析准备表：为被测对象配置在测试设计中需要考虑哪些“测试类型”（可以理解为测试方法，包括功能和非功能方面）和“功能交互”（可以理解为需要将哪些功能放在一起考虑，它们是否需要进行多运行相互作用和多运行顺序执行）</p>
-<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106155347716.png" alt="image-20201106155347716"></p>
-<p>测试类型分析表的使用方法是，对待分析的每一条需求，逐一分析在这些测试类型下是否有测试点</p>
-<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106155438900.png" alt="image-20201106155438900"></p>
-<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106155603284.png" alt="image-20201106155603284"></p>
-<hr>
-<p>集成测试需要测试的内容包括：使用黑盒测试的方法来确认新合入的功能是否正确；验证功能集成后系统功能的正确性；确认原来的系统功能没有被合入的新功能所破坏</p>
-<p>集成测试主要是针对功能的，无法对被测对象的其他非功能方面的质量进行测试验证。系统测试主要内容包括：从系统角度验证测试功能的正确性；从系统角度来验证各种非功能的质量的正确性</p>
-<p>验收测试的对象是需求，需要基于用户场景来测试，有alpha测试和beta测试。</p>
-<p>对于版本测试目标，比较好的描述方式是：对某个功能（测试对象），进行哪些测试（测试方法），发现产品哪些方面的缺陷（测试结果）。每个版本测试策略中都要注明哪些是需要重点关注的内容，确定需要测试的功能的优先级。</p>
-<p>接收测试是指开发人员将版本转给测试人员时，测试人员先对这个版本进行一次测试，确认版本没有阻塞测试的问题。</p>
-<p>跟踪测试执行目的：确保测试团队是按照测试策略来执行测试的；实时关注缺陷，通过缺陷分析来确认测试策略是否合适，是否需要调整；关注项目中的实时风险，基于风险来调整测试策略。</p>
-<p>确保测试团队按照测试策略来执行测试，需要保证以下三点：测试内容和测试策略中确定的范围、深度和广度一致；测试执行顺序和测试策略一致；计划测试的内容能够被顺利执行。</p>
-<p>每日缺陷跟踪：缺陷的趋势是否正常？是否存在因为缺陷修改引入的缺陷？在本版本中必须解决哪些缺陷？在本版本中需要解决哪些缺陷？……判断“哪些缺陷必须在本版本中解决”的标准只有一个，就是“会不会对后续的测试造成阻塞”。缺陷严重程度越高，修复它的优先级应该越高，但是“严重”或“致命”的缺陷，不一定会让测试用例发生“阻塞”。</p>
-<p>在版本中优先解决：缺陷改动越大，越需要尽早解决；如果缺陷涉及需求、方案、设计，需要尽早解决；优先解决缺陷严重程度为“致命”和“严重”的缺陷</p>
-<p>版本质量评估：</p>
-<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106173414259.png" alt="image-20201106173414259"></p>
-<p>版本特性质量：</p>
-<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106173619228.png" alt="image-20201106173619228"></p>
-<hr>
-<p>回归测试目标：</p>
-<p>缺陷回归：确认测试中发现的缺陷被开发人员正确修复了</p>
-<p>功能回归：确认老功能不会因为新合入的功能而失效</p>
-<p>阶段回归：确认产品当前质量达到该阶段的质量目标</p>
-<hr>
-<p>质量评估项目总结：</p>
-<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106175817073.png" alt="image-20201106175817073"></p>
-<hr>
-<p>进行缺陷遗留分析需要考虑的主要内容包括：缺陷对用户的影响程度；缺陷发生的概率；缺陷风险评估和规避措施</p>
-<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106180700565.png" alt="image-20201106180700565"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于测试的一些学习记录（3）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/">关于测试的一些学习记录（3）</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-10-27T07:01:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>测试策略通俗来讲就是“测什么”和“怎么测”：（1）测试对象和范围是什么；（2）测试目标是什么；（3）测试的重点和难点是什么；（4）测试的深度和广度；（5）如何安排各种测试活动，先测什么后测什么；（6）如何评价测试的效果</p>
-<p>测试策略确定测试活动，在测试计划中被拆解为一个个任务，每个任务确定工期、执行先后次序和责任人</p>
-<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027154622894.png" alt="image-20201027154622894"></p>
-<hr>
-<p>四步测试策略制定法：</p>
-<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027155225940.png" alt="image-20201027155225940"></p>
-<p>明确产品质量目标：（1）测试目标就是让产品在发布时候能够满足事先约定的质量目标；（2）围绕产品质量目标进行刚刚好的测试；（3）将目标-行为-评估形成闭环</p>
-<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027161917361.png" alt="image-20201027161917361"></p>
-<p>首先，将产品质量评估模型作用于具体的产品，得到产品质量目标；其次，我们根据产品质量目标来制定测试策略，确定接下来的测试活动；再次，执行各种测试活动；最后，对测试效果进行评估，评估产品的质量目标是否达到。此时，目标、行为和评估会形成一个闭环，一旦发现没有达到产品质量目标，就及时调整测试策略。</p>
-<p>进行风险分析：（1）提前识别到项目中可能存在哪些会阻塞测试的风险，然后基于风险来调整测试策略；（2）基于风险来加强和降低测试投入。老功能在老版本中已经被测试过，质量的起点相比全新开发的功能要高，失效的风险更低，对高风险的部分加强测试投入，对低风险的部分降低测试投入。</p>
-<p>适配“产品研发流程”：（1）按照产品研发流程，根据在哪个阶段项目能够确定到哪种程度的实际情况，来为测试策略设计一个符合这种进程的结构。</p>
-<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172024702.png" alt="image-20201027172024702"></p>
-<p>（2）根据研发流程来安排测试活动，确保测试和开发的节奏是彼此吻合的</p>
-<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172432322.png" alt="image-20201027172432322"></p>
-<p>进行测试分层：通过测试分层，能够将一个大的测试目标，分到不同层次中分阶段去完成。</p>
-<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172726993.png" alt="image-20201027172726993"></p>
-        
-          <a class="article-more-a" href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
     </nav>
   
 
@@ -1174,6 +1234,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">抓包工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
             
             <div class="clearfix"></div>

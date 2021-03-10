@@ -124,6 +124,478 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-测试日常记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/28/%E6%B5%8B%E8%AF%95%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/">测试日常记录</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/28/%E6%B5%8B%E8%AF%95%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-03-28T07:07:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>针对以下程序编写用例</p>
+<blockquote>
+<p>这个程序从一个输入对话框中读取三个整数值，这三个整数值代表了三角形三条边的长度。程序显示提示信息，指出该三角形是何种三角形：不规则三角形、等腰三角形、等边三角形</p>
+</blockquote>
+<p>输入值用例角度：</p>
+<p>1.是否有这样的测试用例，代表了 一个有效的不规则三角形</p>
+<p>2.是否有这样的测试用例，代表一个有效的等边三角形</p>
+<p>3.是否有这样的测试用例，代表一个有效的等腰三角形</p>
+<p>4.是否至少有三个这样的测试用例，代表有效的等腰三角形，从而可以测试到两等边的所有三种情况（3，3，4；3，4，3；4，3，3）</p>
+<p>5.是否有这样的测试用例，某变长等于0</p>
+<p>6.是否有这样的测试用例，某变长等于负数</p>
+<p>7.是否有这样的测试用例，三个整数皆大于0，其中两边长的和等于第三边？（如果程序判断1，2，3是一个有效的不规则三角形，则说明程序存在缺陷）</p>
+<p>8.是否至少有三个第7类用例，列举一边等于另两边之和的所有情况</p>
+<p>9.是否有这样的测试用例，三个整数皆大于0，其中两边之和小于第三边</p>
+<p>10.是否至少有三个第9类测试用例，列举了一边大于另外两边的全部可能情况</p>
+<p>11.是否有这样的测试用例，三边长皆为0</p>
+<p>12.是否有这样的测试用例，输入的边长为非整数值</p>
+<p>13.是否有这样的测试用例，输入的边长个数不对</p>
+<hr>
+<p>用于代码检查的错误列表</p>
+        
+          <a class="article-more-a" href="/2020/03/28/%E6%B5%8B%E8%AF%95%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数据结构学习记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">数据结构学习记录</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-03-12T02:31:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>数组与链表</strong></p>
+<p>数组和链表是线性表的两种存储方式</p>
+<p>数组，所有元素都连续存储在一段内存中，且每个元素占用的内存大小相同，这使得数组具备了通过下标快速访问数据的能力。但连续存储的缺点也很明显，增加容量、增删元素的成本很高，时间复杂度均为O(n)。增加数组容量需要先申请一块新的内存，然后复制原有的元素。删除元素时需要移动被删除元素之后的所有元素以保证元素是连续的。</p>
+<p>链表是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存放下一个节点的指针。由于不用按顺序存储，链表在插入的时候可以达到O(1)的复杂程度，但是查找一个节点或者访问特定编号的节点则需要O(N)的时间。</p>
+<p>使用链表结构可以克服数组需要预先知道数据大小的缺点，链表结构可以充分利用计算机内存空间，实现灵活的内存动态管理。但是链表失去了数组随机读取的优点，同时链表由于增加了节点的指针域，空间开销更大。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python日常记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/25/Python%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/">Python日常记录</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/25/Python%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-02-25T09:30:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Python中的index()、find()方法</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.index(str, beg=<span class="number">0</span>, end=len(string))</span><br></pre></td></tr></table></figure>
+
+<p>参数</p>
+<ul>
+<li>str – 指定检索的字符串</li>
+<li>beg – 开始索引，默认为0。</li>
+<li>end – 结束索引，默认为字符串的长度。</li>
+</ul>
+<p>返回值</p>
+<p>如果包含子字符串返回开始的索引值，否则抛出异常。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.find(str, beg=<span class="number">0</span>, end=len(string))</span><br></pre></td></tr></table></figure>
+
+<p>参数</p>
+<ul>
+<li>str – 指定检索的字符串</li>
+<li>beg – 开始索引，默认为0。</li>
+<li>end – 结束索引，默认为字符串的长度。</li>
+</ul>
+<p>返回值</p>
+<p>如果包含子字符串返回开始的索引值，否则返回-1。</p>
+<p><u>find不能用于list</u></p>
+<p><strong>Pthon中的list.sort()、sorted()方法</strong></p>
+<p>Python 列表有一个内置的<code>list.sort()</code>可以直接修改列表。还有一个<code>sorted()</code>内置函数，它会从一个可迭代对象构建一个新的排序列表。<code>list.sort()</code>方法，它会直接修改原列表（并返回 <code>None</code> 以避免混淆），通常来说它不如 <code>sorted()</code>方便 但如果你不需要原列表，它会更有效率。二者都有一个 <em>key</em> 形参来指定在进行比较之前要在每个列表元素上进行调用的函数，接受布尔值的 <em>reverse</em> 参数，这用于标记降序排序。</p>
+        
+          <a class="article-more-a" href="/2020/02/25/Python%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">日常记录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python之属性描述符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/06/Python%E4%B9%8B%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6/">Python之属性描述符</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/06/Python%E4%B9%8B%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6/" class="archive-article-date">
+  	<time datetime="2020-01-06T09:58:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>仅当无法使用常规的方式获取属性（即在实例、类或超类中找不到指定的属性），解释器才会调用特殊的<code>__getattr__</code>方法</p>
+<p>用于构建实例的是特殊方法<code>__new__</code>：这个是类方法，必须返回一个实例。返回的实例作为第一个参数（即<code>__self__</code>）传给<code>__init__</code>方法。因为调用<code>__init__</code>方法时要传入实例，而且禁止返回任何值，所以<code>__init__</code>方法其实是“初始化方法，真正的构造方法是<code>__new__</code></p>
+<p>去除重复的方法是抽象，抽象特性的定义有两种方式：使用特性工厂函数，或者使用描述符类。其实，特性本身就是使用描述符类实现的。</p>
+<p>特性都是类属性，但是特性管理的其实是实例属性的存取。如果实例和所属的类有同名数据属性，那么实例属性会覆盖类属性。</p>
+<p><code>obj.attr</code>这样的表达式不会从obj开始寻找attr，而是从<code>obj.__calss__</code>开始，而且，仅当类中没有名为attr的特性时，Python才会在obj实例中寻找。</p>
+<p><strong>影响属性处理方式的特殊属性</strong></p>
+<p><code>__class__</code></p>
+<p>对象所属类的引用（即<code>obj.__class__</code>与<code>type(obj)</code>的作用相同）。Python的某些特殊方法，如<code>__getattr__</code>，只在对象的类中寻找，而不在实例中寻找。</p>
+<p><code>__dict__</code></p>
+<p>一个映射，存储对象或类的可写属性。有<code>__dict__</code>属性的对象，任何时候都能随意设置新属性。</p>
+<p><code>__slots__</code></p>
+<p>类可以定义这个属性，限制实例能有哪些属性。<code>__slots__</code>属性的值是一个字符串组成的元组，指明允许有的属性。如果<code>__slots__</code>中没有<code>__dict__</code>，那么该类的实例没有<code>__dict__</code>属性，实例只允许有指定名称的属性。</p>
+<p><strong>处理属性的内置函数</strong></p>
+<p><code>dir([object])</code></p>
+<p>列出对象的大多数属性</p>
+<p><code>getattr(object, name[, default])</code>  </p>
+<p>从object对象中获取name字符串对应的属性。获取的属性可能来自对象所属的类或超类。如果没有指定的属性，getattr函数抛出AttributeError异常，或者返回default参数的值。</p>
+<p><code>hasattr(object, name)</code>  </p>
+<p>如果object对象中存在指定的属性，或者能以某种方式（例如继承）通过object对象获取指定的属性，返回True</p>
+<p><code>setattr(object, name, value)</code>  </p>
+<p>把object对象指定属性的值设为value，前提是object对象能接受那个值。这个函数可能会创建一个新属性，或者覆盖现有属性。</p>
+<p><code>vars([object])</code>  </p>
+<p>返回object对象的<code>__dict__</code>属性；如果实例所属的类定义了<code>__slots__</code>属性，实例没有<code>__dict__</code>属性，那么vars函数不能处理那个实例（相反，dir函数能处理这样的实例）。如果没有指定参数，那么vars()函数的作用与locals()函数一样：返回表示本地作用域的字典。</p>
+<p><strong>处理属性的特殊方法</strong></p>
+<p>使用点号或内置的getattr、hasattr和setattr函数存取属性都会触发下述列表中的相应特殊方法。但是，直接通过实例的<code>__dict__</code>属性读写属性不会触发这些特殊方法</p>
+<p><code>__delattr__(self, name)</code>  </p>
+<p>只要使用del语句删除属性，就会调用这个方法</p>
+<p><code>__dir__(self)</code>  </p>
+<p>把对象传给dir函数时调用，列出属性。</p>
+<p><code>__getattr__(self, name)</code>  </p>
+<p>仅当获取指定的属性失败，搜索过obj、Class和超类之后调用。表达式 <code>obj.no_such_attr</code>、 <code>getattr(obj, &#39;no_such_attr&#39;)</code> 和<code>hasattr(obj, &#39;no_such_attr&#39;)</code> 可能会触发<code>Class.__getattr__(obj, &#39;no_such_attr&#39;)</code> 方法， 但是， 仅当在obj、 Class 和超类中找不到指定的属性时才会触发。  </p>
+<p><code>__getattribute__(self, name)</code>  </p>
+<p>尝试获取指定的属性时总会调用这个方法，不过，寻找的属性是特殊属性或特殊方法时除外。点号与getattr和hasattr内置函数会触发这个方法。调用<code>__getattribute__</code>方法且抛出AttributeError异常时，才会调用<code>__getattr__</code>方法。为了在获取obj实例的属性时不导致无限递归，<code>__getattribute__</code>方法的实现要使用<code>super().__getattribute__(obj,name)</code></p>
+<p><code>__setattr__(self, name, value)</code>  </p>
+<p>尝试设置指定的属性时总会调用这个方法。点号和setattr内置函数会触发这个方法。</p>
+<p>其实特殊方法<code>__getattribute__</code>和<code>__setattr__</code>不管怎样都会调用，几乎影响每一次属性存取。</p>
+<p><strong>扩展</strong></p>
+<p>在导入时，解释器会从上到下一次性解析完.py模块的源码，然后生成用于执行的字节码。如果句法有错误，就在此报告。如果本地的<strong>pycache</strong>文件夹中有最新的.pyc文件，解释器会跳过上述步骤。import语句不只声明，在进程中首次导入模块时，还会运行所导入模块中的全部顶层代码，以后导入相同模块则使用缓存，只做名称绑定。解释器会编译函数的定义体（首次导入模块时），把函数对象绑定到对应的全局名称上，但是不会执行函数的定义体。这通常意味着解释器在导入时定义顶层函数，但是仅当在运行时调用函数时才会执行函数的定义体。对类来说，情况不同。在导入时，解释器会执行每个类的定义体。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">属性</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">描述符</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python之并发编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/Python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">Python之并发编程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/13/Python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2019-11-13T06:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>进程</p>
+<ul>
+<li>进程是执行中的程序，也就是说进程是动态的，程序是静态的</li>
+<li>进程是操作系统分配资源的最小单位，一个进程控制块（PCB），有自己唯一的一个进程标志符（PID）</li>
+<li>进程之间相互独立，内存不共享</li>
+<li>每个进程都是一个实体，每个进程都有属于自己的一块内存</li>
+<li>进程的创建、销毁和切换开销较大</li>
+<li>进程只能创建子进程，无法创建平级进程</li>
+</ul>
+<p>线程</p>
+<ul>
+<li>线程是CPU的基本调度单位</li>
+<li>一个进程一般包含多个线程，一个进程下的多个线程共享进程资源</li>
+<li>不同进程之间的线程相互不可见</li>
+<li>线程不能独立执行</li>
+<li>一个线程可以创建和撤销另外一个线程</li>
+</ul>
+<p>一个进程至少有一个线程，进程有自己独立的内存单元，而多个线程共享一个内存单元。</p>
+<p>Python标准库中所有阻塞型I/O函数都会释放GIL，允许其他线程运行。time.sleep()函数也会释放GIL。因此，尽管有GIL，Python线程还是能在I/O密集型应用中发挥作用。</p>
+<p>可使用<code>concurrent.futures</code>模块在CPU密集型作业中绕开GIL。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">协程</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">线程</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python之协程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -369,468 +841,9 @@
 
 
   
-    <article id="post-Python基础记录-9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-9/">Python基础记录(9)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/30/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-9/" class="archive-article-date">
-  	<time datetime="2019-10-30T02:13:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>迭代器模式：一种惰性获取数据项的方式，按需一次获取一个数据项</p>
-<p><code>yield</code>关键字用于构建生成器（generator），其作用与迭代器一样，所有生成器都是迭代器，因为生成器完全实现了迭代器接口。Python3中，生成器有广泛的用途，即使是内置的<code>range()</code>函数也返回一个类似生成器的对象，而以前则返回完整的列表。如果一定要让<code>range()</code>函数返回列表，那么必须明确指明</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line">range(<span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(range(<span class="number">1</span>, <span class="number">5</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
-
-<p>在Python中，所有集合都可以迭代。在Python语言内部，迭代器用于支持：</p>
-<ul>
-<li>for循环</li>
-<li>构建和扩展集合类型</li>
-<li>逐行遍历文本文件</li>
-<li>列表推导、字典推导和集合推导</li>
-<li>元组拆包</li>
-<li>调用函数时，使用*拆包实参</li>
-</ul>
-<p><strong>序列可以迭代的原因：<code>iter</code>函数</strong></p>
-<p>解释器需要迭代对象x时，会自动调用iter(x)</p>
-<ul>
-<li>检查对象是否实现了<code>__iter__</code>方法，如果实现了就调用它，获取一个迭代器。</li>
-<li>如果没有实现<code>__iter__</code>方法，但是实现了<code>__getitem__</code>方法，Python会创建一个迭代器，尝试按顺序（从索引0开始）获取元素。</li>
-<li>如果尝试失败，Python抛出TypeError异常，通常会提示“x object is not iterable”</li>
-</ul>
-<p>任何Python序列都可以迭代的原因是，它们都实现了<code>__getitem__</code>方法。</p>
-<p><strong>可迭代对象与迭代器的对比</strong></p>
-<p>可迭代对象：使用<code>iter</code>内置函数可以获取迭代器的对象。如果对象实现了能返回迭代器的<code>__iter__</code>方法，那么对象就是可迭代的。可迭代对象与迭代器的关系：Python从可迭代对象中获取迭代器。标准的迭代器接口有两个方法：</p>
-<ul>
-<li><code>__next__</code>：返回下一个可用元素，如果没有元素了，抛出StopIteration异常</li>
-<li><code>__iter__</code>：返回self，以便在应该使用可迭代对象的地方使用迭代器，例如for循环中</li>
-</ul>
-<p>迭代器：实现了无参数的<code>__next__</code>方法，返回序列中的下一个元素，如果没有元素了，那么抛出StopIteration异常。Python中的迭代器还实现了<code>__iter__</code>方法，因此迭代器也可以迭代。</p>
-<p>可迭代的对象一定不能是自身的迭代器。也就是说，可迭代的对象必须实现<code>__iter__</code>方法，但不能实现<code>__next__</code>方法。另一方面，迭代器应该一直可以迭代，迭代器的<code>__iter__</code>方法应该返回自身</p>
-<p><strong>生成器函数工作原理</strong></p>
-<p>只要Python函数的定义体中有<strong>yield</strong>关键字，该函数就是生成器函数。调用生成器函数时，会返回一个生成器对象。</p>
-<p><strong>生成器表达式</strong></p>
-<p>生成器表达式可以理解为列表推导式的惰性版本：不会迫切地构建列表，而是返回一个生成器，按需惰性生成元素。也就是说列表推导式是制造列表的工厂，那么生成器表达式就是制造生成器的工厂。</p>
-<p><strong>标准库中的生成器函数</strong></p>
-        
-          <a class="article-more-a" href="/2019/10/30/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-9/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">生成器</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Windows远程连接Mac" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/">Windows远程连接Mac</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/" class="archive-article-date">
-  	<time datetime="2019-10-26T03:43:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Windows远程连接Mac,主要依赖VNC图形桌面共享系统。Mac系统自带VNC Client，Windows通过安装TightVNC Viewer等客户端来进行连接。</p>
-<ul>
-<li><p>Mac打开“系统偏好设置”–“共享”</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026141739291.png" alt="image-20191026141739291"></p>
-</li>
-<li><p>勾选“屏幕共享”-“电脑设置”</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026142249290.png" alt="image-20191026142249290"></p>
-</li>
-<li><p>Windows下载TightVNV Viewer等客户端进行连接</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026143926119.png" alt="image-20191026143926119"></p>
-</li>
-<li><p>输入设置的屏幕控制密码</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026144015367.png" alt="image-20191026144015367"></p>
-</li>
-<li><p>至此就可以从Windows连接到Mac了</p>
-<p><img src="/2019/10/26/Windows%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mac/image-20191026144211822.png" alt="image-20191026144211822"></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之禅" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/23/Python%E4%B9%8B%E7%A6%85/">Python之禅</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/23/Python%E4%B9%8B%E7%A6%85/" class="archive-article-date">
-  	<time datetime="2019-10-23T07:10:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是一个彩蛋</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import this</span><br><span class="line">The Zen of Python, by Tim Peters</span><br><span class="line"></span><br><span class="line">Beautiful is better than ugly.</span><br><span class="line">Explicit is better than implicit.</span><br><span class="line">Simple is better than complex.</span><br><span class="line">Complex is better than complicated.</span><br><span class="line">Flat is better than nested.</span><br><span class="line">Sparse is better than dense.</span><br><span class="line">Readability counts.</span><br><span class="line">Special cases aren&#39;t special enough to break the rules.</span><br><span class="line">Although practicality beats purity.</span><br><span class="line">Errors should never pass silently.</span><br><span class="line">Unless explicitly silenced.</span><br><span class="line">In the face of ambiguity, refuse the temptation to guess.</span><br><span class="line">There should be one-- and preferably only one --obvious way to do it.</span><br><span class="line">Although that way may not be obvious at first unless you&#39;re Dutch.</span><br><span class="line">Now is better than never.</span><br><span class="line">Although never is often better than *right* now.</span><br><span class="line">If the implementation is hard to explain, it&#39;s a bad idea.</span><br><span class="line">If the implementation is easy to explain, it may be a good idea.</span><br><span class="line">Namespaces are one honking great idea -- let&#39;s do more of those!</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之抽象类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/27/Python%E4%B9%8B%E6%8A%BD%E8%B1%A1%E7%B1%BB/">Python之抽象类</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/27/Python%E4%B9%8B%E6%8A%BD%E8%B1%A1%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2019-09-27T07:53:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>抽象基类（Abstract Base Class），主要定义了基本类和最基本的抽象方法，可以为子类定义共有的API，不需要具体实现。抽象基类可以不实现具体的方法（当然也可以实现，只不过子类如果想调用抽象基类中定义的方法，需要使用super()），而是将其留给派生类实现。从实现角度来看，抽象类与普通类的不同之处在于：抽象类中有抽象方法，该类不能被实例化，只能被继承，且子类必须实现抽象方法。</p>
-<p>Python对于ABC的支持模块是abc模块，常用的：</p>
-<p><code>abc.ABCMeta</code>：用来生成抽象基类的元类</p>
-<p><code>@abc.abstractmethod</code>：定义抽象方法</p>
-<p>具体化抽象类可以有两种方式：一种通过注册，另外一种通过继承。继承时，除非子类实现抽象基类的所有抽象方法，否则子类不能实例化。但将其他的类“注册”到抽象基类下当虚拟子类时，可以只实现抽象基类中的部分API或根本不实现，但是<code>issubclass()</code>， <code>issubinstance()</code>进行判断时仍然返回真值。注册方式的缺点是不能通过<code>super()</code>调用抽象方法。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之面向对象编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/10/Python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">Python之面向对象编程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/10/Python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-09-10T08:44:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。</p>
-<p>面向过程编程：数据和处理数据的函数是彼此独立的，我们需要先将数据处理成函数能接受的格式，再调用相关函数处理</p>
-<p>面向对象编程：数据和处理数据的函数都放在一个类中（Class)，通过初始化实例（Instance）传递数据，通过实例调用对象方法或者说叫实例方法。</p>
-<p>数据封装、继承和多态是面向对象的三大特点。</p>
-<ul>
-<li><strong>类(Class):</strong> 用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。对象是类的实例。</li>
-<li><strong>类变量：</strong>类变量在整个实例化的对象中是公用的。类变量定义在类中且在函数体之外。类变量通常不作为实例变量使用。</li>
-<li><strong>数据成员：</strong>类变量或者实例变量, 用于处理类及其实例对象的相关的数据。</li>
-<li><strong>方法重写：</strong>如果从父类继承的方法不能满足子类的需求，可以对其进行改写，这个过程叫方法的覆盖（override），也称为方法的重写。</li>
-<li><strong>局部变量：</strong>定义在方法中的变量，只作用于当前实例的类。</li>
-<li><strong>实例变量：</strong>在类的声明中，属性是用变量来表示的。这种变量就称为实例变量，是在类声明的内部但是在类的其他成员方法之外声明的。</li>
-<li><strong>继承：</strong>即一个派生类（derived class）继承基类（base class）的字段和方法。继承也允许把一个派生类的对象作为一个基类对象对待。例如，有这样一个设计：一个Dog类型的对象派生自Animal类，这是模拟”是一个（is-a）”关系（例图，Dog是一个Animal）。</li>
-<li><strong>实例化：</strong>创建一个类的实例，类的具体对象。</li>
-<li><strong>方法：</strong>类中定义的函数。</li>
-<li><strong>对象：</strong>通过类定义的数据结构实例。对象包括两个数据成员（类变量和实例变量）和方法。</li>
-</ul>
-<p>类是创建实例的模板，而实例则是一个个具体的对象，各个实例拥有的数据互相独立，互不影响。方法就是实例绑定的函数，和普通函数不同，方法可以直接访问实例的数据。通过在实例上调用方法，我们就直接操作了对象内部的数据，但无需知道方法内部的实现细节。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">   <span class="string">'所有员工的基类'</span></span><br><span class="line">   empCount = <span class="number">0</span>    <span class="comment"># 类变量，可通过Employee.empCount访问</span></span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, salary)</span>:</span>  <span class="comment"># self指向创建的实例本身</span></span><br><span class="line">      self.name = name</span><br><span class="line">      self.salary = salary</span><br><span class="line">      Employee.empCount += <span class="number">1</span></span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">displayCount</span><span class="params">(self)</span>:</span> <span class="comment"># 类中定义的函数，第一个参数为实例变量self</span></span><br><span class="line">     <span class="keyword">print</span> <span class="string">"Total Employee %d"</span> % Employee.empCount</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">displayEmployee</span><span class="params">(self)</span>:</span></span><br><span class="line">      <span class="keyword">print</span> <span class="string">"Name : "</span>, self.name,  <span class="string">", Salary: "</span>, self.salary</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">e = Employee()  <span class="comment"># 创建Employe实例</span></span><br><span class="line">e.empCount <span class="comment"># 输出0，因为实例并没有empCount属性，所以会继续查找class的empCount属性</span></span><br><span class="line">e.empCount = <span class="number">1</span> <span class="comment"># 给实例绑定empCount属性</span></span><br><span class="line">e.empCount <span class="comment"># 输出1， 实例属性优先级高于类属性</span></span><br><span class="line">Employee.empCount <span class="comment"># 输出0，类属性仍存在</span></span><br></pre></td></tr></table></figure>
-
-<p>可使用<code>__slots__</code>变量来限制class实例能绑定的属性</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">    __slots__ = (<span class="string">'empCount1'</span>, <span class="string">'empCount2'</span>)</span><br></pre></td></tr></table></figure>
-
-<p><code>__slots__</code>定义的属性仅对当前类实例起作用，对继承的子类是不起作用的，除非在子类中也定义，子类实例允许定义的属性就是自身的<code>__slots__</code>加上父类的<code>__slots__</code></p>
-<h5 id="Python内置类属性"><a href="#Python内置类属性" class="headerlink" title="Python内置类属性"></a>Python内置类属性</h5><ul>
-<li><code>__dict__</code> : 类的属性（包含一个字典，由类的数据属性组成）</li>
-<li><code>__doc__</code> :类的文档字符串</li>
-<li><code>__name__</code>: 类名</li>
-<li><code>__module__</code>: 类定义所在的模块（类的全名是’<code>__main__.className</code>‘，如果类位于一个导入模块mymod中，那么className.<strong>module</strong> 等于 mymod）</li>
-<li><code>__bases__</code> : 类的所有父类构成元素（包含了一个由所有父类组成的元组）</li>
-</ul>
-<h5 id="单下划线、双下划线、头尾双下划线说明："><a href="#单下划线、双下划线、头尾双下划线说明：" class="headerlink" title="单下划线、双下划线、头尾双下划线说明："></a>单下划线、双下划线、头尾双下划线说明：</h5><ul>
-<li><code>__foo__</code>: 定义的是特殊方法，一般是系统定义名字 ，类似 <code>__init__()</code>之类的。</li>
-<li><code>_foo</code>: 以单下划线开头的表示的是 protected 类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于 <code>from module import *</code></li>
-<li><code>__foo</code>: 双下划线的表示的是私有类型(private)的变量, 只能是允许这个类本身进行访问了。</li>
-</ul>
-<h5 id="获取对象信息"><a href="#获取对象信息" class="headerlink" title="获取对象信息"></a><strong>获取对象信息</strong></h5><ul>
-<li>type()可以检查类型</li>
-<li>isinstance()可以方便对比类型</li>
-<li>dir()可以获得对象的所有属性和方法</li>
-</ul>
-<h5 id="使用-repr-和-str-改变输出"><a href="#使用-repr-和-str-改变输出" class="headerlink" title="使用__repr__ 和 __str__改变输出"></a>使用<code>__repr__</code> 和 <code>__str__</code>改变输出</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">		self.name = name</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(Employee(<span class="string">'test'</span>))</span><br><span class="line">&lt;__main__.Employee object at <span class="number">0x0000000002BBBEF0</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">		self.name = name</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> <span class="string">'Student name is %s'</span> % self.name</span><br><span class="line">	__repr__ = __str__</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(Employee(<span class="string">'test'</span>))</span><br><span class="line">Student name <span class="keyword">is</span> test</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Employee(<span class="string">'test'</span>)</span><br><span class="line">Student name <span class="keyword">is</span> test</span><br></pre></td></tr></table></figure>
-
-<h5 id="使用type-动态创建类"><a href="#使用type-动态创建类" class="headerlink" title="使用type()动态创建类"></a>使用type()动态创建类</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fn</span><span class="params">(self, name=<span class="string">'world'</span>)</span>:</span></span><br><span class="line">    print(<span class="string">'Hello, %s'</span> % name)</span><br><span class="line">Hello = type(<span class="string">'Hello'</span>, (object,), dict(hello=fn))</span><br></pre></td></tr></table></figure>
-
-<p>class的定义是运行时动态创建的，而创建class的方法就是使用type()函数。要创建一个class对象，type()函数依次传入3个参数：</p>
-<ol>
-<li>class的名称</li>
-<li>继承的父类集合</li>
-<li>class的方法名称与函数绑定</li>
-</ol>
-<p>通过type()函数创建的类和直接写class是完全一样的，因为Python解释器遇到class定义时，仅仅是扫描一下class定义的语法，然后调用type()函数创建出class.</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
+      <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
     </nav>
   
 
@@ -1035,6 +1048,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">抓包工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
             
             <div class="clearfix"></div>

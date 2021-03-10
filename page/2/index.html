@@ -124,6 +124,516 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-操作系统小记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0/">操作系统小记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-11-27T03:55:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>线程与进程的区别</strong></p>
+<p>（1）线程是进程的一个实体，一个进程可以拥有多个线程，多个线程也可以并发执行。一个没有线程的进程也可以看做是单线程的，同样线程也经常被看作是一种轻量级的进程。进程可以不依赖线程单独存在，而线程则不然。</p>
+<p>（2）进程是并发程序在一个数据集合上的一次执行过程，进程是系统进行资源分配和调度的独立单位，线程是进程的实体，它是比进程更小的能够独立执行的基本单元，线程自己不拥有任何系统资源，但是它可以访问其隶属进程的全部资源。</p>
+<p>（3）与进程的控制表PCB相似，线程也有自己的控制表TCB，但TCB中保存的线程状态比PCB表少得多。</p>
+<p>进程的作用：为了提高CPU的执行率，为了避免等待而造成CPU空转以及其他计算机硬件资源的浪费</p>
+<p>线程的作用：为了减少进程切换和创建带来的开销，提高执行效率和节省资源</p>
+<p>为什么引入线程？</p>
+<p>（1）进程的切换开销大</p>
+<p>（2）一个进程内也需要并发执行多个程序，实现不同的功能</p>
+<p>（3）进程有时候性能比较低</p>
+<p>进程与线程的区别总结：</p>
+<table>
+<thead>
+<tr>
+<th>比较</th>
+<th>进程</th>
+<th>线程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>活泼性</td>
+<td>不活泼（只是线程的容器）</td>
+<td>活泼</td>
+</tr>
+<tr>
+<td>地址空间</td>
+<td>系统赋予独立的<strong>虚拟地址空间</strong></td>
+<td>在进程的地址空间执行代码。线程只有一个内核对象和一个堆栈，保留的记录很少，因此所需要的内存也很少。因此线程需要的<strong>开销比进程少</strong></td>
+</tr>
+<tr>
+<td>调度</td>
+<td>仅是操作系统<strong>资源分配</strong>的基本单位</td>
+<td>处理器<strong>独立调度、分派</strong>的基本单位</td>
+</tr>
+<tr>
+<td>并发性</td>
+<td>仅进程间并发（传统OS）</td>
+<td>进程间、线程间并发</td>
+</tr>
+<tr>
+<td>拥有资源</td>
+<td>资源拥有的基本单位</td>
+<td>基本上不拥有资源</td>
+</tr>
+<tr>
+<td>系统开销</td>
+<td>创建、撤销、切换开销大</td>
+<td>仅保存少量寄存器内容，开销小</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>进程常见状态</strong></p>
+<ul>
+<li>就绪：进程已处于准备好运行的状态，即进程已分配到除CPU外的所有必要资源后，只要再获得CPU，便可立即执行。</li>
+<li>执行：进程已经获得CPU，程序正在执行状态。</li>
+<li>阻塞：正在执行的进程由于发生某事件（如I/O请求、申请缓冲区失败等）暂时无法继续执行的状态。</li>
+</ul>
+<p><img src="/2020/11/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0/image-20201127173711484.png" alt="image-20201127173711484"></p>
+<hr>
+<p>所谓<strong>同步</strong>，是指散步在不同进程之间的若干程序片断，它们的运行必须严格按照规定的某种先后次序来运行，这种先后次序依赖于要完成的特定的任务。如果<strong>用对资源的访问来定义的话，同步是指在互斥的基础上（大多数情况），通过其它机制实现访问者对资源的有序访问。在大多数情况下，同步已经实现了互斥，特别是所有写入资源的情况必定是互斥的。少数情况是指可以允许多个访问者同时访问资源。</strong></p>
+<p>所谓<strong>互斥</strong>，是指散布在不同进程之间的若干程序片断，当某个进程运行其中一个程序片段时，其它进程就不能运行它们之中的任一程序片段，只能等到该进程运行完这个程序片段后才可以运行。如果<strong>用对资源的访问来定义的话，互斥是指某一资源同时只允许一个访问者对其进行访问，具有唯一性和排它性。但互斥无法限制访问者对资源的访问顺序，即访问是无序的。</strong></p>
+<p><strong>线程同步方式</strong></p>
+<p>互斥量：采用互斥对象机制，只有拥有互斥对象的线程才有访问公共资源的权限。因为互斥对象只有一个，所以可以保证公共资源不会被多个线程同时访问</p>
+<p>信号量：它允许同一时刻多个线程访问同一资源，但是需要控制同一时刻访问此资源的最大线程数量</p>
+<p>事件：通过通知操作的方式来保持多线程同步，还可以方便实现多线程优先级的比较操作</p>
+<p><strong>进程同步</strong></p>
+<p>进程同步的主要任务：是对多个相关进程在执行次序上进行协调，以使并发执行的诸进程之间能有效地共享资源和相互合作，同步机制遵循的原则：</p>
+<ul>
+<li>空闲让进：当没有进程处于临界区的时候，应该许可其他进程进入临界区的申请</li>
+<li>忙则等待：当前如果有进程处于临界区，如果有其他进程申请进入，则必须等待，保证对临界区的互斥访问</li>
+<li>有限等待：对要求访问临界资源的进程，需要在有限时间内进入临界区，防止出现死等状态</li>
+<li>让权等待：进程不能进入自己的临界区时，应该释放处理机，以免陷入忙等状态</li>
+</ul>
+<p>进程间同步的主要方法有<strong>原子操作、信号量机制、自旋锁、管程、会合、分布式系统</strong>等</p>
+<hr>
+<p><strong>进程通信方式</strong></p>
+<p>1.管道：管道是单向的、先进先出的、无结构的、固定大小的字节流，无名管道只能实现父子或者兄弟进程之间的通信，有名管道可以实现互不相关的两个进程之间的通信</p>
+<p>2.信号量：信号量是一个计数器，可以用来控制多个进程对共享资源的访问，常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源，因此主要作为进程间以及同一进程内不同线程之间的同步手段</p>
+<p>3.消息队列：是一个在系统内核中用来保存消息的队列，它在系统内核中是以消息链表的形式出现的。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点</p>
+<p>4.共享内存：共享内存就是映射一段能被其它进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的IPC方式，它是针对其它进程间通信方式运行效率低而专门设计的。它往往与其它通信机制（如信号量）配合使用，来实现进程间的同步和通信</p>
+<p>5.套接字：套接字也是一种进程间通信机制，与其它通信机制不同的是，它可用于不同机器间的进程通信</p>
+<p>高级通信机制可以归结为三类：</p>
+<ul>
+<li>共享存储器系统：（存储器中划分的共享存储区）：实际操作中对应的是“剪贴板”（剪贴板实际上是系统维护管理的一块内存区域）的通信方式，比如举例如下：word进程按下ctrl+c，在ppt进程按下ctrl+v，即完成了word进程和ppt进程之间的通信，复制时将数据放入到剪贴板，粘贴时从剪贴板中取出数据，然后显示在ppt窗口上</li>
+<li>消息传递系统（进程间的数据交换以消息（message）为单位，当今最流行的微内核操作系统中，微内核与服务器之间的通信，无一例外地都采用了消息传递机制。应用举例：邮槽（MailSlot）是基于广播通信体系设计出来的，它采用无连接的不可靠的数据传输。邮槽是一种单向通信机制，创建邮槽的服务器进程读取数据，打开邮槽的客户机进程写入数据</li>
+<li>管道通信系统（管道即连接读写进程以实现他们之间通信的共享文件（pipe文件，类似先进先出的队列，由一个进程写，另一进程读））。实际操作中，管道分为：匿名管道、命名管道。匿名管道是一个未命名的、单向管道，通过父进程和一个子进程之间传输数据。匿名管道只能实现本地机器上两个进程之间的通信，而不能实现跨网络的通信。命名管道不仅可以在本机上实现两个进程间的通信，还可以跨网络实现两个进程间的通信。</li>
+</ul>
+<p><strong>信号量、消息传递（管道、消息队列、套接字）和共享内存</strong></p>
+        
+          <a class="article-more-a" href="/2020/11/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-web常见安全问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/26/web%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/">web常见安全问题</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/26/web%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-11-26T08:55:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>SQL注入</strong></p>
+<p>攻击者向服务器提交恶意sql查询代码（通过web表单提交、请求的查询字符串），程序接收后错误的将攻击者的输入作为查询语句的一部分执行，导致原始的查询逻辑被改变。</p>
+<p>防御措施：</p>
+<p>1.严格限制web应用的数据库操作权限，给此用户提供仅仅能够满足其工作的最低权限，从而最大限度减少注入攻击对数据库的危害</p>
+<p>2.后端代码检查输入的数据是否符合预期，严格限制输入类型</p>
+<p>3.对进入数据库的特殊字符进行转义处理</p>
+<p>4.所有的查询语句建议使用数据库提供的参数化查询接口，参数化的语句使用参数而不是用户输入嵌入到sql语句中，即不要直接拼接sql语句</p>
+<p>5.用专业的sql注入检测工具进行检测</p>
+<p>6.避免网站打印sql错误信息</p>
+        
+          <a class="article-more-a" href="/2020/11/26/web%E5%B8%B8%E8%A7%81%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-网络协议小记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/26/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/">网络协议小记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/26/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-11-26T08:46:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>OSI参考模型</strong>：</p>
+<p><img src="/2020/11/26/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109154917964.png" alt="image-20201109154917964"></p>
+<p><strong>OSI参考模型各层作用</strong>：</p>
+<p><img src="/2020/11/26/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/image-20201109155558526.png" alt="image-20201109155558526"></p>
+<p>应用层：为应用程序提供服务并规定应用程序中通信相关的细节。包括文件传输、电子邮件、远程登录（虚拟终端）等协议。</p>
+<p>表示层：将应用处理的信息转换为适合网络传输的格式，或将来自下一层的数据转换为上层能够处理的格式，主要负责数据格式的转换。</p>
+<p>会话层：负责建立和断开连接（数据流动的逻辑通路），以及数据的分割等数据传输相关的管理。</p>
+<p>传输层：起着可靠传输的作用。</p>
+<p>网络层：将数据传输到目标地址，目标地址可以是多个网络通过路由器连接而成的一个地址，负责寻址和路由选择。</p>
+<p>数据链路层：负责物理层面上互连的、节点之间的通信传输，例如与一个以太网相连的2个节点之间的通信。将0、1序列划分为具有意义的数据帧传送给对端（数据帧的生成与接收）。</p>
+<p>物理层：负责0、1比特流与电压的高低、光的闪灭之间的互换。</p>
+<p>在应用层写入的数据会经由表示层格式化编码、再由会话层标记发送顺序后发送出去。</p>
+<p>网络层负责将整个数据发送给最终目标地址，而数据链路层则只负责一个分段内的数据。</p>
+        
+          <a class="article-more-a" href="/2020/11/26/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%B0%8F%E8%AE%B0/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于测试的一些学习记录（4）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/">关于测试的一些学习记录（4）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-11-05T09:27:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用”测试分析设计表“来保证测试设计符合测试策略，”测试分析设计表“是对每个功能或特性进行测试设计的辅助工具，使用测试分析表的好处是：可以通过该表来控制测试设计深度；方便记录测试分析过程；测试设计评审时容易看出设计者考虑了哪些地方没有考虑哪些地方。由3张表构成：测试分析准备表、测试类型分析表、功能交互分析表</p>
+<p>测试分析准备表：为被测对象配置在测试设计中需要考虑哪些“测试类型”（可以理解为测试方法，包括功能和非功能方面）和“功能交互”（可以理解为需要将哪些功能放在一起考虑，它们是否需要进行多运行相互作用和多运行顺序执行）</p>
+<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106155347716.png" alt="image-20201106155347716"></p>
+<p>测试类型分析表的使用方法是，对待分析的每一条需求，逐一分析在这些测试类型下是否有测试点</p>
+<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106155438900.png" alt="image-20201106155438900"></p>
+<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106155603284.png" alt="image-20201106155603284"></p>
+<hr>
+<p>集成测试需要测试的内容包括：使用黑盒测试的方法来确认新合入的功能是否正确；验证功能集成后系统功能的正确性；确认原来的系统功能没有被合入的新功能所破坏</p>
+<p>集成测试主要是针对功能的，无法对被测对象的其他非功能方面的质量进行测试验证。系统测试主要内容包括：从系统角度验证测试功能的正确性；从系统角度来验证各种非功能的质量的正确性</p>
+<p>验收测试的对象是需求，需要基于用户场景来测试，有alpha测试和beta测试。</p>
+<p>对于版本测试目标，比较好的描述方式是：对某个功能（测试对象），进行哪些测试（测试方法），发现产品哪些方面的缺陷（测试结果）。每个版本测试策略中都要注明哪些是需要重点关注的内容，确定需要测试的功能的优先级。</p>
+<p>接收测试是指开发人员将版本转给测试人员时，测试人员先对这个版本进行一次测试，确认版本没有阻塞测试的问题。</p>
+<p>跟踪测试执行目的：确保测试团队是按照测试策略来执行测试的；实时关注缺陷，通过缺陷分析来确认测试策略是否合适，是否需要调整；关注项目中的实时风险，基于风险来调整测试策略。</p>
+<p>确保测试团队按照测试策略来执行测试，需要保证以下三点：测试内容和测试策略中确定的范围、深度和广度一致；测试执行顺序和测试策略一致；计划测试的内容能够被顺利执行。</p>
+<p>每日缺陷跟踪：缺陷的趋势是否正常？是否存在因为缺陷修改引入的缺陷？在本版本中必须解决哪些缺陷？在本版本中需要解决哪些缺陷？……判断“哪些缺陷必须在本版本中解决”的标准只有一个，就是“会不会对后续的测试造成阻塞”。缺陷严重程度越高，修复它的优先级应该越高，但是“严重”或“致命”的缺陷，不一定会让测试用例发生“阻塞”。</p>
+<p>在版本中优先解决：缺陷改动越大，越需要尽早解决；如果缺陷涉及需求、方案、设计，需要尽早解决；优先解决缺陷严重程度为“致命”和“严重”的缺陷</p>
+<p>版本质量评估：</p>
+<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106173414259.png" alt="image-20201106173414259"></p>
+<p>版本特性质量：</p>
+<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106173619228.png" alt="image-20201106173619228"></p>
+<hr>
+<p>回归测试目标：</p>
+<p>缺陷回归：确认测试中发现的缺陷被开发人员正确修复了</p>
+<p>功能回归：确认老功能不会因为新合入的功能而失效</p>
+<p>阶段回归：确认产品当前质量达到该阶段的质量目标</p>
+<hr>
+<p>质量评估项目总结：</p>
+<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106175817073.png" alt="image-20201106175817073"></p>
+<hr>
+<p>进行缺陷遗留分析需要考虑的主要内容包括：缺陷对用户的影响程度；缺陷发生的概率；缺陷风险评估和规避措施</p>
+<p><img src="/2020/11/05/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%884%EF%BC%89/image-20201106180700565.png" alt="image-20201106180700565"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于测试的一些学习记录（3）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/">关于测试的一些学习记录（3）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-10-27T07:01:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>测试策略通俗来讲就是“测什么”和“怎么测”：（1）测试对象和范围是什么；（2）测试目标是什么；（3）测试的重点和难点是什么；（4）测试的深度和广度；（5）如何安排各种测试活动，先测什么后测什么；（6）如何评价测试的效果</p>
+<p>测试策略确定测试活动，在测试计划中被拆解为一个个任务，每个任务确定工期、执行先后次序和责任人</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027154622894.png" alt="image-20201027154622894"></p>
+<hr>
+<p>四步测试策略制定法：</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027155225940.png" alt="image-20201027155225940"></p>
+<p>明确产品质量目标：（1）测试目标就是让产品在发布时候能够满足事先约定的质量目标；（2）围绕产品质量目标进行刚刚好的测试；（3）将目标-行为-评估形成闭环</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027161917361.png" alt="image-20201027161917361"></p>
+<p>首先，将产品质量评估模型作用于具体的产品，得到产品质量目标；其次，我们根据产品质量目标来制定测试策略，确定接下来的测试活动；再次，执行各种测试活动；最后，对测试效果进行评估，评估产品的质量目标是否达到。此时，目标、行为和评估会形成一个闭环，一旦发现没有达到产品质量目标，就及时调整测试策略。</p>
+<p>进行风险分析：（1）提前识别到项目中可能存在哪些会阻塞测试的风险，然后基于风险来调整测试策略；（2）基于风险来加强和降低测试投入。老功能在老版本中已经被测试过，质量的起点相比全新开发的功能要高，失效的风险更低，对高风险的部分加强测试投入，对低风险的部分降低测试投入。</p>
+<p>适配“产品研发流程”：（1）按照产品研发流程，根据在哪个阶段项目能够确定到哪种程度的实际情况，来为测试策略设计一个符合这种进程的结构。</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172024702.png" alt="image-20201027172024702"></p>
+<p>（2）根据研发流程来安排测试活动，确保测试和开发的节奏是彼此吻合的</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172432322.png" alt="image-20201027172432322"></p>
+<p>进行测试分层：通过测试分层，能够将一个大的测试目标，分到不同层次中分阶段去完成。</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172726993.png" alt="image-20201027172726993"></p>
+        
+          <a class="article-more-a" href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-关于测试的一些学习记录（2）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -398,481 +908,9 @@
 
 
   
-    <article id="post-测试日常记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/28/%E6%B5%8B%E8%AF%95%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/">测试日常记录</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/28/%E6%B5%8B%E8%AF%95%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-03-28T07:07:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>针对以下程序编写用例</p>
-<blockquote>
-<p>这个程序从一个输入对话框中读取三个整数值，这三个整数值代表了三角形三条边的长度。程序显示提示信息，指出该三角形是何种三角形：不规则三角形、等腰三角形、等边三角形</p>
-</blockquote>
-<p>输入值用例角度：</p>
-<p>1.是否有这样的测试用例，代表了 一个有效的不规则三角形</p>
-<p>2.是否有这样的测试用例，代表一个有效的等边三角形</p>
-<p>3.是否有这样的测试用例，代表一个有效的等腰三角形</p>
-<p>4.是否至少有三个这样的测试用例，代表有效的等腰三角形，从而可以测试到两等边的所有三种情况（3，3，4；3，4，3；4，3，3）</p>
-<p>5.是否有这样的测试用例，某变长等于0</p>
-<p>6.是否有这样的测试用例，某变长等于负数</p>
-<p>7.是否有这样的测试用例，三个整数皆大于0，其中两边长的和等于第三边？（如果程序判断1，2，3是一个有效的不规则三角形，则说明程序存在缺陷）</p>
-<p>8.是否至少有三个第7类用例，列举一边等于另两边之和的所有情况</p>
-<p>9.是否有这样的测试用例，三个整数皆大于0，其中两边之和小于第三边</p>
-<p>10.是否至少有三个第9类测试用例，列举了一边大于另外两边的全部可能情况</p>
-<p>11.是否有这样的测试用例，三边长皆为0</p>
-<p>12.是否有这样的测试用例，输入的边长为非整数值</p>
-<p>13.是否有这样的测试用例，输入的边长个数不对</p>
-<hr>
-<p>用于代码检查的错误列表</p>
-        
-          <a class="article-more-a" href="/2020/03/28/%E6%B5%8B%E8%AF%95%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据结构学习记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">数据结构学习记录</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-03-12T02:31:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>数组与链表</strong></p>
-<p>数组和链表是线性表的两种存储方式</p>
-<p>数组，所有元素都连续存储在一段内存中，且每个元素占用的内存大小相同，这使得数组具备了通过下标快速访问数据的能力。但连续存储的缺点也很明显，增加容量、增删元素的成本很高，时间复杂度均为O(n)。增加数组容量需要先申请一块新的内存，然后复制原有的元素。删除元素时需要移动被删除元素之后的所有元素以保证元素是连续的。</p>
-<p>链表是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存放下一个节点的指针。由于不用按顺序存储，链表在插入的时候可以达到O(1)的复杂程度，但是查找一个节点或者访问特定编号的节点则需要O(N)的时间。</p>
-<p>使用链表结构可以克服数组需要预先知道数据大小的缺点，链表结构可以充分利用计算机内存空间，实现灵活的内存动态管理。但是链表失去了数组随机读取的优点，同时链表由于增加了节点的指针域，空间开销更大。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python日常记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/25/Python%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/">Python日常记录</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/25/Python%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-02-25T09:30:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Python中的index()、find()方法</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.index(str, beg=<span class="number">0</span>, end=len(string))</span><br></pre></td></tr></table></figure>
-
-<p>参数</p>
-<ul>
-<li>str – 指定检索的字符串</li>
-<li>beg – 开始索引，默认为0。</li>
-<li>end – 结束索引，默认为字符串的长度。</li>
-</ul>
-<p>返回值</p>
-<p>如果包含子字符串返回开始的索引值，否则抛出异常。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.find(str, beg=<span class="number">0</span>, end=len(string))</span><br></pre></td></tr></table></figure>
-
-<p>参数</p>
-<ul>
-<li>str – 指定检索的字符串</li>
-<li>beg – 开始索引，默认为0。</li>
-<li>end – 结束索引，默认为字符串的长度。</li>
-</ul>
-<p>返回值</p>
-<p>如果包含子字符串返回开始的索引值，否则返回-1。</p>
-<p><u>find不能用于list</u></p>
-<p><strong>Pthon中的list.sort()、sorted()方法</strong></p>
-<p>Python 列表有一个内置的<code>list.sort()</code>可以直接修改列表。还有一个<code>sorted()</code>内置函数，它会从一个可迭代对象构建一个新的排序列表。<code>list.sort()</code>方法，它会直接修改原列表（并返回 <code>None</code> 以避免混淆），通常来说它不如 <code>sorted()</code>方便 但如果你不需要原列表，它会更有效率。二者都有一个 <em>key</em> 形参来指定在进行比较之前要在每个列表元素上进行调用的函数，接受布尔值的 <em>reverse</em> 参数，这用于标记降序排序。</p>
-        
-          <a class="article-more-a" href="/2020/02/25/Python%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">日常记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之属性描述符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/06/Python%E4%B9%8B%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6/">Python之属性描述符</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/06/Python%E4%B9%8B%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6/" class="archive-article-date">
-  	<time datetime="2020-01-06T09:58:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>仅当无法使用常规的方式获取属性（即在实例、类或超类中找不到指定的属性），解释器才会调用特殊的<code>__getattr__</code>方法</p>
-<p>用于构建实例的是特殊方法<code>__new__</code>：这个是类方法，必须返回一个实例。返回的实例作为第一个参数（即<code>__self__</code>）传给<code>__init__</code>方法。因为调用<code>__init__</code>方法时要传入实例，而且禁止返回任何值，所以<code>__init__</code>方法其实是“初始化方法，真正的构造方法是<code>__new__</code></p>
-<p>去除重复的方法是抽象，抽象特性的定义有两种方式：使用特性工厂函数，或者使用描述符类。其实，特性本身就是使用描述符类实现的。</p>
-<p>特性都是类属性，但是特性管理的其实是实例属性的存取。如果实例和所属的类有同名数据属性，那么实例属性会覆盖类属性。</p>
-<p><code>obj.attr</code>这样的表达式不会从obj开始寻找attr，而是从<code>obj.__calss__</code>开始，而且，仅当类中没有名为attr的特性时，Python才会在obj实例中寻找。</p>
-<p><strong>影响属性处理方式的特殊属性</strong></p>
-<p><code>__class__</code></p>
-<p>对象所属类的引用（即<code>obj.__class__</code>与<code>type(obj)</code>的作用相同）。Python的某些特殊方法，如<code>__getattr__</code>，只在对象的类中寻找，而不在实例中寻找。</p>
-<p><code>__dict__</code></p>
-<p>一个映射，存储对象或类的可写属性。有<code>__dict__</code>属性的对象，任何时候都能随意设置新属性。</p>
-<p><code>__slots__</code></p>
-<p>类可以定义这个属性，限制实例能有哪些属性。<code>__slots__</code>属性的值是一个字符串组成的元组，指明允许有的属性。如果<code>__slots__</code>中没有<code>__dict__</code>，那么该类的实例没有<code>__dict__</code>属性，实例只允许有指定名称的属性。</p>
-<p><strong>处理属性的内置函数</strong></p>
-<p><code>dir([object])</code></p>
-<p>列出对象的大多数属性</p>
-<p><code>getattr(object, name[, default])</code>  </p>
-<p>从object对象中获取name字符串对应的属性。获取的属性可能来自对象所属的类或超类。如果没有指定的属性，getattr函数抛出AttributeError异常，或者返回default参数的值。</p>
-<p><code>hasattr(object, name)</code>  </p>
-<p>如果object对象中存在指定的属性，或者能以某种方式（例如继承）通过object对象获取指定的属性，返回True</p>
-<p><code>setattr(object, name, value)</code>  </p>
-<p>把object对象指定属性的值设为value，前提是object对象能接受那个值。这个函数可能会创建一个新属性，或者覆盖现有属性。</p>
-<p><code>vars([object])</code>  </p>
-<p>返回object对象的<code>__dict__</code>属性；如果实例所属的类定义了<code>__slots__</code>属性，实例没有<code>__dict__</code>属性，那么vars函数不能处理那个实例（相反，dir函数能处理这样的实例）。如果没有指定参数，那么vars()函数的作用与locals()函数一样：返回表示本地作用域的字典。</p>
-<p><strong>处理属性的特殊方法</strong></p>
-<p>使用点号或内置的getattr、hasattr和setattr函数存取属性都会触发下述列表中的相应特殊方法。但是，直接通过实例的<code>__dict__</code>属性读写属性不会触发这些特殊方法</p>
-<p><code>__delattr__(self, name)</code>  </p>
-<p>只要使用del语句删除属性，就会调用这个方法</p>
-<p><code>__dir__(self)</code>  </p>
-<p>把对象传给dir函数时调用，列出属性。</p>
-<p><code>__getattr__(self, name)</code>  </p>
-<p>仅当获取指定的属性失败，搜索过obj、Class和超类之后调用。表达式 <code>obj.no_such_attr</code>、 <code>getattr(obj, &#39;no_such_attr&#39;)</code> 和<code>hasattr(obj, &#39;no_such_attr&#39;)</code> 可能会触发<code>Class.__getattr__(obj, &#39;no_such_attr&#39;)</code> 方法， 但是， 仅当在obj、 Class 和超类中找不到指定的属性时才会触发。  </p>
-<p><code>__getattribute__(self, name)</code>  </p>
-<p>尝试获取指定的属性时总会调用这个方法，不过，寻找的属性是特殊属性或特殊方法时除外。点号与getattr和hasattr内置函数会触发这个方法。调用<code>__getattribute__</code>方法且抛出AttributeError异常时，才会调用<code>__getattr__</code>方法。为了在获取obj实例的属性时不导致无限递归，<code>__getattribute__</code>方法的实现要使用<code>super().__getattribute__(obj,name)</code></p>
-<p><code>__setattr__(self, name, value)</code>  </p>
-<p>尝试设置指定的属性时总会调用这个方法。点号和setattr内置函数会触发这个方法。</p>
-<p>其实特殊方法<code>__getattribute__</code>和<code>__setattr__</code>不管怎样都会调用，几乎影响每一次属性存取。</p>
-<p><strong>扩展</strong></p>
-<p>在导入时，解释器会从上到下一次性解析完.py模块的源码，然后生成用于执行的字节码。如果句法有错误，就在此报告。如果本地的<strong>pycache</strong>文件夹中有最新的.pyc文件，解释器会跳过上述步骤。import语句不只声明，在进程中首次导入模块时，还会运行所导入模块中的全部顶层代码，以后导入相同模块则使用缓存，只做名称绑定。解释器会编译函数的定义体（首次导入模块时），把函数对象绑定到对应的全局名称上，但是不会执行函数的定义体。这通常意味着解释器在导入时定义顶层函数，但是仅当在运行时调用函数时才会执行函数的定义体。对类来说，情况不同。在导入时，解释器会执行每个类的定义体。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">属性</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">描述符</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之并发编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/13/Python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">Python之并发编程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/13/Python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-11-13T06:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>进程</p>
-<ul>
-<li>进程是执行中的程序，也就是说进程是动态的，程序是静态的</li>
-<li>进程是操作系统分配资源的最小单位，一个进程控制块（PCB），有自己唯一的一个进程标志符（PID）</li>
-<li>进程之间相互独立，内存不共享</li>
-<li>每个进程都是一个实体，每个进程都有属于自己的一块内存</li>
-<li>进程的创建、销毁和切换开销较大</li>
-<li>进程只能创建子进程，无法创建平级进程</li>
-</ul>
-<p>线程</p>
-<ul>
-<li>线程是CPU的基本调度单位</li>
-<li>一个进程一般包含多个线程，一个进程下的多个线程共享进程资源</li>
-<li>不同进程之间的线程相互不可见</li>
-<li>线程不能独立执行</li>
-<li>一个线程可以创建和撤销另外一个线程</li>
-</ul>
-<p>一个进程至少有一个线程，进程有自己独立的内存单元，而多个线程共享一个内存单元。</p>
-<p>Python标准库中所有阻塞型I/O函数都会释放GIL，允许其他线程运行。time.sleep()函数也会释放GIL。因此，尽管有GIL，Python线程还是能在I/O密集型应用中发挥作用。</p>
-<p>可使用<code>concurrent.futures</code>模块在CPU密集型作业中绕开GIL。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">协程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">线程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+      <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
     </nav>
   
 
@@ -1077,6 +1115,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">抓包工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
             
             <div class="clearfix"></div>
