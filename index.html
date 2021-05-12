@@ -124,6 +124,299 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-一些杂记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/10/%E4%B8%80%E4%BA%9B%E6%9D%82%E8%AE%B0/">一些杂记</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/10/%E4%B8%80%E4%BA%9B%E6%9D%82%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-05-10T09:20:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> <strong>Android Crash分类</strong></p>
+<ul>
+<li>Java crash</li>
+<li>native crash</li>
+</ul>
+<p><strong>常见的Android Crash</strong></p>
+<ul>
+<li>NullPointerException 空指针</li>
+<li>ClassCastException 类型转换异常</li>
+<li>IndexOutOfBoundsException 下标越界异常</li>
+<li>ActivityNotFoundException Activity未找到异常</li>
+<li>IllegalStateException 非法状态异常</li>
+<li>ArrayIndexOutOfBoundsException 数组越界异常</li>
+<li>SecurityException 安全异常</li>
+<li>ClassNotFoundException 类找不到</li>
+<li>OutOfMerroyError 内存溢出</li>
+</ul>
+<p><strong>Android Activity生命周期</strong></p>
+<ul>
+<li>onCreate()</li>
+<li>onStart()</li>
+<li>onRestart()</li>
+<li>onResume()</li>
+<li>onPause()</li>
+<li>onStop()</li>
+<li>onDestory()</li>
+</ul>
+<p><strong>Android六大布局</strong></p>
+<ul>
+<li>LinerLayout 线性布局</li>
+<li>TableLayout 表格布局</li>
+<li>FrameLayout 帧布局</li>
+<li>RelativeLayout 相对布局</li>
+<li>GridLayout 网格布局</li>
+<li>AbsoulteLayout 绝对布局</li>
+</ul>
+<p><strong>Monkey命令</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -p 包名</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -v 最高警告的错误日志才输出</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 500 执行500次</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 日志重定向到 monkey.log</span></span><br><span class="line">adb shell monkey -p &lt;packageName&gt; -v 500 &gt; monkey.log</span><br></pre></td></tr></table></figure>
+
+<p><em>-p</em> 包</p>
+<p><em>-s</em> 设置种子</p>
+<p><em>–ignore-crashes</em> 出现 crash 继续执行</p>
+<p><em>–ignore-timeouts</em> 出现 anr 继续执行</p>
+<p><em>–pct-touch</em> 触摸事件占比（手指放下，抬起）</p>
+<p><em>–pct-motion</em> 动作事件占比（手指放下，移动，抬起）</p>
+<p><em>–pct-trackball</em> 轨迹球事件占比（单纯的move）</p>
+<p><em>–pct-nav</em> 基本导航事件，用于方向输入设备的上下左右操作</p>
+<p><em>–pct-syskeys</em> 系统按键事件</p>
+<p><em>–pct-appswitch</em> 应用启动事件</p>
+<p><em>–pct-anyevent</em> 其他未提及事件</p>
+<p><strong>libimobiledevice常用命令</strong></p>
+<ul>
+<li>brew install libimobiledevice 安装</li>
+<li>brew uninstall libimobiledevice 卸载</li>
+<li>ideviceinstaller -u [uuid] -i [xxx.ipa] 给指定连接的设备安装应用</li>
+<li>ideviceinstaller -u [uuid] -U [bundleId] 给指定连接的设备卸载应用</li>
+<li>ideviceinstaller -u [udid] -l -o list_user 指定设备，查看安装的第三方应用</li>
+<li>ideviceinstaller -u [udid] -l -o list_system 指定设备，查看安装的系统应用</li>
+<li>ideviceinstaller -u [udid] -l -o list_all 指定设备，查看安装的系统应用和第三方应用</li>
+<li>idevice_id -l 查看当前已连接的设备的UUID</li>
+<li>ideviceinfo 获取设备信息</li>
+<li>ideviceinfo -u [udid] 指定设备，获取设备信息</li>
+<li>ideviceinfo -u [udid] -k DeviceName 指定设备，获取设备名称</li>
+<li>ideviceinfo -u [udid] -k ProductVersion 指定设备，获取设备版本</li>
+<li>ideviceinfo -u [udid] -k ProductType  指定设备，获取设备类型</li>
+<li>ideviceinfo -u [udid] -k ProductName 指定设备，获取设备系统名称</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python基础总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/16/Python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/">Python基础总结</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/16/Python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2021-03-16T09:52:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> <strong>Python程序的生命周期</strong></p>
+<ul>
+<li>源码阶段（.py文件）</li>
+<li>编译阶段（PyCodeObject字节码对象）</li>
+<li>运行阶段（Python虚拟机运行字节码指令）</li>
+</ul>
+<p>Python程序的运行依赖Python解释器，执行一个.py文件，首先是将.py文件编译成PyCodeObject字节码对，并存入内存中。接下来，python虚拟机逐条运行字节码指令。当运行完毕后，会生成pyc文件，.pyc文件PyCodeObject字节码对象在硬盘中的表现形式。当下次再运行相同的.py文件时，假如源码没有任何改动，则不会再次将文件编译成PyCodeObject字节码对象，而是优先将.pyc文件载入到内存中去执行相应的字节码指令</p>
+<p><strong>Python中内置的数据结构</strong></p>
+<ul>
+<li>整型int、长整型long、浮点型float、复数complex</li>
+<li>字符串str、列表list、元祖tuple</li>
+<li>字典dict、集合set</li>
+<li>Python3中没有long，只有无线精度的int</li>
+</ul>
+<p>有序序列：列表<code>[]</code>，字符串<code>&#39;&#39;</code>，元祖<code>()</code></p>
+<p>无序序列：集合<code>{}</code>，字典<code>{&quot;key&quot;:&quot;value&quot;}</code></p>
+<p><strong>可变类型和不可变类型</strong></p>
+<ul>
+<li>可变类型有list、dict，不可变类型有string、number、tuple</li>
+<li>当进行修改操作时，可变类型传递的是内存中的地址，也就是说，直接修改内存中的值，并没有开辟新的内存</li>
+<li>不可变类型被修改时，并没有改变原内存地址中的值，而是开辟一块新的内存，将原地址中的值复制过去，对这块新开辟的内存中的值进行操作</li>
+</ul>
+<p><strong>is和==的区别</strong></p>
+<p>is：比较的是两个对象的id值是否相等，也就是比较两对象是否为同一个实例对象，是否指向同一个内存地址</p>
+<p>==：比较的是两个对象的内容/值是否相等，默认会调用对象的eq()方法</p>
+<p><strong>Python中变量的作用域</strong></p>
+<p>L：local函数内部作用域</p>
+<p>E：enclosing函数内部与内嵌函数之间</p>
+<p>G：global全局作用域</p>
+<p>B：build-in内置作用域</p>
+<p><strong>Python内存管理机制与调优手段</strong></p>
+<p>Python GC主要使用引用计数来跟踪和回收垃圾，在引用计数的基础上，通过“标记-清除”解决容器对象可能产生的循环引用的问题，通过“分代回收”以空间换时间的方法提高垃圾回收效率</p>
+<p>万物皆对象是Python的一大特色。在Python中每一个对象的核心就是一个结构体PyObject，其中ob_refcnt就是作为引用计数，当一个对象有新的引用时，它的ob_refcnt就会增加，当引用它的对象被删除时，它的ob_refcnt就会减少，引用计数为0时，该对象生命就结束了。优点：简单、实时性；缺点：维护引用计数消耗资源、循环引用问题。</p>
+<p>标记-清除就是用来解决循环引用的问题，只有容器对象才会出现引用循环，比如字典、列表、自定义类的对象、元组。分为两个阶段：第一阶段是标记阶段，GC会把所有的活动对象打上标记，第二阶段是把那些没有标记的对象进行回收（对象之间通过引用连在一起构成一个有向图，对象构成这个有向图的节点，而引用关系构成这个有向图的边，从根对象出发，沿着有向边遍历对象，可达对象标记为活动对象，不可达对象就是要被清除的非活动对象）</p>
+<p>分代回收是一种以空间换时间的操作方式，Python将内存根据对象的存活时间划分为不同的集合，每个集合称为一个代，Python将内存分为了3“代”，分为年轻代（第0代）、中年代（第一代）、老年代（第2代），他们对应的是3个链表，它们的垃圾收集频率随对象的存活时间的增大而减小。新创建的对象都会分配在年轻代，年轻代链表的总数达到上限时，Python垃圾收集机制就会被触发，把那些可以被回收的对象回收掉，而那些不会回收的对象就会被移入中年代去，以此类推，老年代中的对象是存活时间最久的对象，甚至是存活于整个系统的生命周期内。分代回收是建立在标记清除技术基础之上</p>
+<p><strong>内存泄露</strong>指由于疏忽或错误造成程序未能释放已经不再使用的内存。有<code>__del__()</code>函数的对象间的循环引用是导致内存泄露的主凶。不使用一个对象时使用<code>del object</code>来删除一个对象的引用计数就可以有效防止内存泄露的问题。通过Python扩展模块<code>gc</code>来查看不能回收的对象的详细信息。可以通过<code>sys.getrefcount(obj)</code>来获取对象的引用计数，并根据返回值是否为0判断是否内存泄露</p>
+<p><strong>copy与deepcopy</strong></p>
+<p><code>id()</code> 函数返回对象的内存地址，<code>is</code>用于判断两个变量引用对象是否为同一个，<code>==</code>用于判断引用变量的值是否相等</p>
+<p>变量赋值就是浅拷贝，即两个变量共享同一个内存块，相同的内存地址，一旦值发生改变，另外一个变量的值也会跟随着一起变化</p>
+<p>浅拷贝，重新分配内存，只拷贝父对象，不会拷贝对象内部的子对象</p>
+<p>深拷贝，重新分配内存，拷贝对象及其所有子对象</p>
+<p>如果列表或者字典没有包含子列表或者子字典的话，使用深拷贝或者浅拷贝效果都有一样；如果列表或者字典中存在子类的时候，只有深拷贝才会为所有的子类也重新分配内存，而浅拷贝只负责父对象，不考虑子对象</p>
+<p><strong>面向切面编程AOP和装饰器</strong></p>
+<p>装饰器作为一种设计模式，经常被用于有切面需求的场景，较为经典的有插入日志、性能测试、事务处理等，装饰器的作用就是为已经存在的对象添加额外的功能</p>
+<p><strong>Python中重载</strong></p>
+<p>函数重载主要是为了解决两个问题：1.可变的参数个数（缺省参数）2.可变的参数类型（Python可以接受任何类型的参数）</p>
+<p><strong>新式类和旧式类</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#新式类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="comment">#经典类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dir(C)</span><br><span class="line">[<span class="string">'__class__'</span>, <span class="string">'__delattr__'</span>, <span class="string">'__dict__'</span>, <span class="string">'__dir__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__eq__'</span>, <span class="string">'__format__'</span>, <span class="string">'__ge__'</span>, <span class="string">'__getattribute__'</span>, <span class="string">'__gt__'</span>, <span class="string">'__hash__'</span>, <span class="string">'__init__'</span>, <span class="string">'__init_subclass__'</span>, <span class="string">'__le__'</span>, <span class="string">'__lt__'</span>, <span class="string">'__module__'</span>, <span class="string">'__ne__'</span>, <span class="string">'__new__'</span>, <span class="string">'__reduce__'</span>, <span class="string">'__reduce_ex__'</span>, <span class="string">'__repr__'</span>, <span class="string">'__setattr__'</span>, <span class="string">'__sizeof__'</span>, <span class="string">'__str__'</span>, <span class="string">'__subclasshook__'</span>, <span class="string">'__weakref__'</span>]</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p><code>__new__</code>，<code>__init__</code>方法</p>
+<p>这两个方法是用来创建object的子类对象，静态方法<code>__new__()</code>用来创建类的实例，然后再调用<code>__init__()</code>来初始化实例</p>
+</li>
+<li><p><code>__delattr__</code>, <code>__getattribute__</code>, <code>__setattr__</code>方法</p>
+<p>对象使用这些方法来处理属性的访问</p>
+</li>
+<li><p><code>__hash__</code>, <code>__repr__</code>, <code>__str_</code>_方法</p>
+<p>print()会调用<code>__str__()</code>， 如果<code>__str__</code>没有定义，则会调用<code>__repr__()</code></p>
+</li>
+<li><p><code>__slots__</code>属性</p>
+<p>通常每一个实例x都会有一个<code>__dict__</code>属性，用来记录实例中所有的属性和方法，也是通过这个字典，可以让实例绑定任意的属性。而<code>__slots__</code>属性作用就是，当类C有比较少的变量，而且拥有<code>__slots__</code>属性时，类C的实例 就没有<code>__dict__</code>属性，而是把变量的值存在一个固定的地方。如果试图访问一个<code>__slots__</code>中没有属性，实例就会报错。这样操作有什么好处呢？<code>__slots__</code>属性虽然令实例失去了绑定任意属性的便利，但是因为每一个实例没有<code>__dict__</code>属性，却能有效节省每一个实例的内存消耗，有利于生成小而精干的实例</p>
+</li>
+<li><p><code>__getattribute__</code>方法</p>
+<p>对新式类的实例来说，所有属性和方法的访问操作都是通过<code>__getattribute__</code>完成</p>
+</li>
+</ol>
+<p><strong>Python中的单例模式</strong></p>
+<p>通过单例模式可以保证系统中一个类只有一个实例而且该实例易于外界访问，从而方便对实例个数的控制并节约系统资源</p>
+<p>使用<code>__new__()</code>方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kw)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(cls, <span class="string">'_instance'</span>):</span><br><span class="line">            orig = super(Singleton, cls)</span><br><span class="line">            cls._instance = orig.__new__(cls, *args, **kw)</span><br><span class="line">        <span class="keyword">return</span> cls._instance</span><br></pre></td></tr></table></figure>
+
+<p>共享属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    _state = &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kw)</span>:</span></span><br><span class="line">        ob = super(Singleton, cls).__new__(cls, *args, **kw)</span><br><span class="line">        ob.__dict__ = cls._state</span><br><span class="line">        <span class="keyword">return</span> ob</span><br></pre></td></tr></table></figure>
+
+<p>装饰器版本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    instances = &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getinstance</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> instances:</span><br><span class="line">            instances[cls] = cls(*args, **kw)</span><br><span class="line">        <span class="keyword">return</span> instances[cls]</span><br><span class="line">    <span class="keyword">return</span> getinstance</span><br></pre></td></tr></table></figure>
+
+<p><strong>协程</strong></p>
+<p>协程：又称微线程，协程的作用，是在执行函数A时，可以随时中断，去执行函数B，然后中断继续执行函数A（可以自由切换）。协程由于由程序主动控制切换，没有线程切换的开销，所以执行效率极高。对于IO密集型任务非常适用，如果是cpu密集型，推荐多进程+协程的方式</p>
+<p><strong>闭包</strong></p>
+<p>闭包是函数式编程的重要语法结构，创建一个闭包必须满足以下几点：1.必须有一个内嵌函数；2.内嵌函数必须引用外部函数中的变量；3.外部函数的返回值必须是内嵌函数</p>
+<p><strong>死锁</strong></p>
+<p>原因：1.竞争资源；2.程序推进顺序不当</p>
+<p>必要条件：1.互斥条件；2.请求和保持条件；3.不剥夺条件；4.环路等待条件</p>
+<p>处理死锁的基本方法：1.预防死锁；2.避免死锁（银行家算法）；3.检测死锁（资源分配图）；4.解除死锁（剥夺资源、撤销进程）</p>
+<p><strong>虚拟内存技术</strong></p>
+<p>虚拟存储器是指具有请求调入功能和置换功能，能从逻辑上对内存容量加以扩充的一种存储系统</p>
+<p><strong>分页和分段</strong></p>
+<p>分页：用户程序的地址空间被划分成若干固定大小的区域，称为“页”，相应地，内存空间分成若干个物理块，页和块的大小相等，可将用户程序的任一页放在内存的任一块中，实现离散分配</p>
+<p>分段：将用户程序地址空间分成若干个大小不等的段，每段可以定义一组相对完整的逻辑信息。存储分配时，以段为单位，段与段在内存中可以不相邻接，也实现了离散分配</p>
+<p>分页和分段的主要区别：1.页是信息的物理单位，分页是为了实现非连续分配，以便解决内存碎片的问题，或者说分页是由于系统管理的需要；段是信息的逻辑单位，它含有一组意义相对完整的信息，分段的目的是为了更好地实现共享，满足用户的需要。2.页大小固定，由系统确定，将逻辑地址划分为页号和页内地址是由机器硬件实现的，而段的长度却不固定，决定于用户所编写的程序，通常由编译程序在对源程序进行编译时根据信息的性质来划分。3.分页的作业地址空间是一维的，分段的地址空间是二维的</p>
+<p>页面置换算法：1.最佳置换算法OPT（不可能实现）；2.先进先出FIFO；3.最近最久未使用算法；4.clock算法</p>
+<p><strong>事务</strong></p>
+<p>数据库事务，是指作为单个逻辑工作单元执行的一系列操作，要么完全地执行，要么完全地不执行</p>
+<p><strong>CGI和WSGI</strong></p>
+<p>CGI是通用网关接口，是连接web服务器和应用程序的接口，用户通过CGI来获取动态数据或文件等。 CGI程序是一个独立的程序，它可以用几乎所有语言来写，包括perl，c，lua，python等等。</p>
+<p>WSGI, Web Server Gateway Interface，是Python应用程序或框架和Web服务器之间的一种接口，WSGI的其中一个目的就是让用户可以用统一的语言(Python)编写前后端。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-关于H5测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -452,7 +745,64 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>ReactNative log信息</strong></p>
+        <p> adb是安卓调试桥，用于电脑端与模拟器或真实设备交互</p>
+<p>adb分为三部分：PC上的adb client和adb server以及Android设备上的adb daemon（adbd)</p>
+<p><strong>常用adb命令</strong></p>
+<ul>
+<li><p>adb devices 获取连接状态</p>
+<p><em>device 已经连上</em></p>
+<p><em>offline 未连接成功或者无响应</em></p>
+<p><em>no device 没有设备连接</em></p>
+<p><em>unauthorized 手机没有信任</em></p>
+</li>
+<li><p>adb shell 进入adb命令行</p>
+</li>
+<li><p>adb connect <device-ip> 通过ip地址连接设备</device-ip></p>
+</li>
+<li><p>adb install xxx.apk 安装apk</p>
+</li>
+<li><p>adb install -r xxx.apk 覆盖安装apk</p>
+</li>
+<li><p>adb uninstall -k xxx.apk 卸载应用，-k保留数据和缓存</p>
+</li>
+<li><p>adb logcat | grep xxx 查看端上日志</p>
+</li>
+<li><p>adb logcat -c 清空日志</p>
+</li>
+<li><p>adb logcat -v time *:W 查看warning日志，并且输出时间戳</p>
+</li>
+<li><p>adb shell getprop 获取系统属性</p>
+</li>
+<li><p>adb shell getprop ro.product.model 查看设备型号</p>
+</li>
+<li><p>adb shell getprop ro.build.version.release 查看安卓系统版本</p>
+</li>
+<li><p>adb shell vm size 查看屏幕分辨率</p>
+</li>
+<li><p>adb shell ps 查看进程</p>
+</li>
+<li><p>adb reboot 重启手机</p>
+</li>
+<li><p>adb shell pm list packages 查看所有的应用程序</p>
+</li>
+<li><p>adb shell pm list package -s 只显示系统应用程序</p>
+</li>
+<li><p>adb shell pm list package -3 只显示第三方应用程序</p>
+</li>
+<li><p>adb shell pm clear <packageNmae> 清除应用程序缓存数据</packageNmae></p>
+</li>
+<li><p>adb pull &lt;设备里的文件路径&gt; [电脑的文件路径] 复制文件到电脑</p>
+</li>
+<li><p>adb push &lt;电脑里的文件路径&gt; [设备里的目录] 复制文件到设备</p>
+</li>
+<li><p>adb shell input keyevent  <eventNum> 执行按键操作</eventNum></p>
+</li>
+<li><p>adb shell screencap -p /xxxx/xxx.png 屏幕截图，-p表示以png格式输出</p>
+</li>
+<li><p>adb shell screenrecord /xxx/xxx.mp4 屏幕录制</p>
+</li>
+</ul>
+<p><strong>ReactNative log信息</strong></p>
 <p>adb logcat *:S ReactNative:V ReactNativeJS:V</p>
 <p><strong>内存数据</strong></p>
 <p>adb shell dumpsys meminfo packagename or pid</p>
@@ -770,263 +1120,6 @@
 
 
   
-    <article id="post-数据库小记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B0%8F%E8%AE%B0/">数据库小记</a>
-    </h1>
-  
-
-        
-        <a href="/2020/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B0%8F%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-12-09T08:56:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>MySQL常用存储引擎：</strong></p>
-<ul>
-<li>Innodb引擎：Innodb引擎提供了对数据库ACID（原子性、一致性、隔离性、持久性）事务的支持，并且还提供了行级锁和外键的约束。它的设计的目标就是处理大数据容量的数据库系统</li>
-<li>MyISAM引擎：不提供事务的支持，也不支持行级锁和外键</li>
-<li>MEMORY引擎：所有的数据都在内存中，数据的处理速度快，但是安全性不高</li>
-</ul>
-<p><strong>事务四大特性</strong></p>
-<p>原子性：事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用</p>
-<p>一致性：执行事务前后，数据保持一致，多个事务对同一数据读取的结果是相同的</p>
-<p>隔离性：并发访问数据库时，一个用户的事务不被其他事务所干扰，各并发事务之间相互隔离</p>
-<p>持久性：一个事务被提交之后，它对数据库中的数据的改变是持久的，即使数据库发生故障也不应对其有任何影响</p>
-<p><strong>MyISAM和Innodb的区别</strong></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>MyISAM</th>
-<th>Innodb</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>存储结构</td>
-<td>每张表被存放在三个文件：frm-表格定义、MYD(MYData)-数据文件、MYI(MYIndex)-索引文件</td>
-<td>所有的表都保存在同一个数据文件中（也可能是多个文件，或者是独立的表空间文件），InnoDB表的大小只受限于操作系统文件的大小，一般为2GB</td>
-</tr>
-<tr>
-<td>存储空间</td>
-<td>MyISAM可被压缩，存储空间较小</td>
-<td>InnoDB的表需要更多的内存和存储，它会在主内存中建立其专用的缓冲池用于高速缓冲数据和索引</td>
-</tr>
-<tr>
-<td>可移植性、备份及恢复</td>
-<td>由于MyISAM的数据是以文件的形式存储，所以在跨平台的数据转移中会很方便。在备份和恢复时可单独针对某个表进行操作</td>
-<td>免费的方案可以是拷贝数据文件、备份 binlog，或者用 mysqldump，在数据量达到几十G的时候就相对痛苦了</td>
-</tr>
-<tr>
-<td>文件格式</td>
-<td>数据和索引是分别存储的，数据<code>.MYD</code>，索引<code>.MYI</code></td>
-<td>数据和索引是集中存储的，<code>.ibd</code></td>
-</tr>
-<tr>
-<td>记录存储顺序</td>
-<td>按记录插入顺序保存</td>
-<td>按主键大小有序插入</td>
-</tr>
-<tr>
-<td>外键</td>
-<td>不支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>事务</td>
-<td>不支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>锁支持（锁是避免资源争用的一个机制，MySQL锁对用户几乎是透明的）</td>
-<td>表级锁定</td>
-<td>行级锁定、表级锁定，锁定力度小并发能力高</td>
-</tr>
-<tr>
-<td>SELECT</td>
-<td>MyISAM更优</td>
-<td></td>
-</tr>
-<tr>
-<td>INSERT、UPDATE、DELETE</td>
-<td></td>
-<td>InnoDB更优</td>
-</tr>
-<tr>
-<td>select count(*)</td>
-<td>myisam更快，因为myisam内部维护了一个计数器，可以直接调取。</td>
-<td></td>
-</tr>
-<tr>
-<td>索引的实现方式</td>
-<td>B+树索引，myisam 是堆表</td>
-<td>B+树索引，Innodb 是索引组织表</td>
-</tr>
-<tr>
-<td>哈希索引</td>
-<td>不支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>全文索引</td>
-<td>支持</td>
-<td>不支持</td>
-</tr>
-</tbody></table>
-        
-          <a class="article-more-a" href="/2020/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B0%8F%E8%AE%B0/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-linux小记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/08/linux%E5%B0%8F%E8%AE%B0/">linux小记</a>
-    </h1>
-  
-
-        
-        <a href="/2020/12/08/linux%E5%B0%8F%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-12-08T07:49:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>cat</strong></p>
-<p>一次性显示整个文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat filename</span><br></pre></td></tr></table></figure>
-
-<p>从键盘创建一个文件，只能创建新文件，不能编辑已有文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; filename</span><br></pre></td></tr></table></figure>
-
-<p>将几个文件合并为一个文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat file1 file2 &gt; file</span><br></pre></td></tr></table></figure>
-
-<p><strong>chmod</strong></p>
-<p>linux文件调用权限分为三级：文件拥有者、群组、其他，利用chmod可以控制文件或目录的访问权限，一种是包含字母和操作符表达式的文字设定法，另一种是包含数字的数字设定法</p>
-<p>每一文件或目录的访问权限都有三组，每组用三位表示，分别为文件属主的读、写和执行权限；与属主同组的用户的读、写和执行权限；系统中其他用户的读、写和执行权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r--</span><br></pre></td></tr></table></figure>
-
-<p>如果第一个字符是横线，表示是一个非目录的文件，如果是d，表示是一个目录</p>
-<p>权限字符用横线代表空许可，r 代表只读，w 代表写，x 代表可执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod a+x t.log</span><br></pre></td></tr></table></figure>
-
-<p>权限范围：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">u ：目录或者文件的当前用户</span><br><span class="line">g ：目录或者文件的当前群组</span><br><span class="line">o ：除了目录或者文件的当前用户或群组之外的用户或者群组</span><br><span class="line">a ：所有的用户及群组</span><br></pre></td></tr></table></figure>
-
-<p>权限代号：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">r ：读权限，用数字4表示</span><br><span class="line">w ：写权限，用数字2表示</span><br><span class="line">x ：执行权限，用数字1表示</span><br><span class="line">- ：删除权限，用数字0表示</span><br><span class="line">s ：特殊权限</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/08/linux%E5%B0%8F%E8%AE%B0/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
@@ -1242,6 +1335,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>
