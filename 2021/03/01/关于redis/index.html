@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://afulla.github.io/2021/03/01/%E5%85%B3%E4%BA%8Eredis/image-20210302175508854.png">
 <meta property="og:image" content="https://afulla.github.io/2021/03/01/%E5%85%B3%E4%BA%8Eredis/image-20210310170518704.png">
 <meta property="article:published_time" content="2021-03-01T09:40:11.000Z">
-<meta property="article:modified_time" content="2021-03-10T09:58:12.860Z">
+<meta property="article:modified_time" content="2021-05-12T10:11:44.854Z">
 <meta property="article:author" content="AfullA">
 <meta property="article:tag" content="redis">
 <meta name="twitter:card" content="summary">
@@ -162,6 +162,8 @@
 <li>key的最大失效时间是30天</li>
 </ul>
 <hr>
+<a id="more"></a>
+
 <p><strong>redis持久化与高可用</strong></p>
 <p>redis提供了RDB和AOF两种持久化方式，RDB是把内存中的数据集以快照形式写入磁盘，AOF是以文本日志的形式记录redis处理的每一个写入或删除操作</p>
 <p>RDB把整个redis数据保存在单一文件中，比较适合用来做灾备，但缺点是快照保存完成之前如果宕机，这段时间的数据将会丢失，另外保存快照时可能导致服务短时间不可用</p>

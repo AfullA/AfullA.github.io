@@ -438,24 +438,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/2021/03/10/%E5%85%B3%E4%BA%8EH5%E6%B5%8B%E8%AF%95/H5%E6%B5%8B%E8%AF%95.png" alt="H5测试"></p>
-<p><strong>H5性能测试关注点</strong></p>
-<ul>
-<li>http请求个数 eg.雪碧图、js和css小文件合并</li>
-<li>组件是否压缩：Content-Encoding:gzip</li>
-<li>图片格式大小是否合适</li>
-<li>css放顶部，js放底部</li>
-<li>js、css压缩</li>
-<li>是否添加缓存：Cache-Control:no-cache、no-store、Expires    <meta http-equiv="Cache-Control" content="max-age=7200"><meta http-equiv="Expires" content="Mon, 20 Jul 2016 23:00:00 GMT"></li>
-<li>避免非200返回值</li>
-<li>使用cdn</li>
-<li>时间相关：白屏时间（用户首次看到网页有内容的时间）、首屏时间、首资源下载时间、总资源下载时间、用户可操作时间（从页面开始加载到用户操作可响应时间）</li>
-<li>移动端：</li>
-</ul>
-<p>​    内存：可间接反应资源数量和大小</p>
-<p>​    CPU：H5绘制质量，如果长期处于高占用率，可考虑降低高计算量的视觉效果等手段</p>
-<p>​    FPS：帧率在有视频或动画效果的H5页面中要重点关注，防止严重的卡顿</p>
-<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8EH5%E6%B5%8B%E8%AF%95/image-20210310182108052.png" alt="image-20210310182108052"></p>
-
+        
+          <a class="article-more-a" href="/2021/03/10/%E5%85%B3%E4%BA%8EH5%E6%B5%8B%E8%AF%95/#more">展开全文 >></a>
+        
       
 
       
@@ -747,96 +732,9 @@
       
         <p> adb是安卓调试桥，用于电脑端与模拟器或真实设备交互</p>
 <p>adb分为三部分：PC上的adb client和adb server以及Android设备上的adb daemon（adbd)</p>
-<p><strong>常用adb命令</strong></p>
-<ul>
-<li><p>adb devices 获取连接状态</p>
-<p><em>device 已经连上</em></p>
-<p><em>offline 未连接成功或者无响应</em></p>
-<p><em>no device 没有设备连接</em></p>
-<p><em>unauthorized 手机没有信任</em></p>
-</li>
-<li><p>adb shell 进入adb命令行</p>
-</li>
-<li><p>adb connect <device-ip> 通过ip地址连接设备</device-ip></p>
-</li>
-<li><p>adb install xxx.apk 安装apk</p>
-</li>
-<li><p>adb install -r xxx.apk 覆盖安装apk</p>
-</li>
-<li><p>adb uninstall -k xxx.apk 卸载应用，-k保留数据和缓存</p>
-</li>
-<li><p>adb logcat | grep xxx 查看端上日志</p>
-</li>
-<li><p>adb logcat -c 清空日志</p>
-</li>
-<li><p>adb logcat -v time *:W 查看warning日志，并且输出时间戳</p>
-</li>
-<li><p>adb shell getprop 获取系统属性</p>
-</li>
-<li><p>adb shell getprop ro.product.model 查看设备型号</p>
-</li>
-<li><p>adb shell getprop ro.build.version.release 查看安卓系统版本</p>
-</li>
-<li><p>adb shell vm size 查看屏幕分辨率</p>
-</li>
-<li><p>adb shell ps 查看进程</p>
-</li>
-<li><p>adb reboot 重启手机</p>
-</li>
-<li><p>adb shell pm list packages 查看所有的应用程序</p>
-</li>
-<li><p>adb shell pm list package -s 只显示系统应用程序</p>
-</li>
-<li><p>adb shell pm list package -3 只显示第三方应用程序</p>
-</li>
-<li><p>adb shell pm clear <packageNmae> 清除应用程序缓存数据</packageNmae></p>
-</li>
-<li><p>adb pull &lt;设备里的文件路径&gt; [电脑的文件路径] 复制文件到电脑</p>
-</li>
-<li><p>adb push &lt;电脑里的文件路径&gt; [设备里的目录] 复制文件到设备</p>
-</li>
-<li><p>adb shell input keyevent  <eventNum> 执行按键操作</eventNum></p>
-</li>
-<li><p>adb shell screencap -p /xxxx/xxx.png 屏幕截图，-p表示以png格式输出</p>
-</li>
-<li><p>adb shell screenrecord /xxx/xxx.mp4 屏幕录制</p>
-</li>
-</ul>
-<p><strong>ReactNative log信息</strong></p>
-<p>adb logcat *:S ReactNative:V ReactNativeJS:V</p>
-<p><strong>内存数据</strong></p>
-<p>adb shell dumpsys meminfo packagename or pid</p>
-<p>Native Heap : JNI层的内存</p>
-<p>Dalvik Heap ： Java层的内存分配情况，常说的堆内存，不能超过最大限制</p>
-<p>Total PSS : 应用真正占据的内存大小</p>
-<p><strong>cpu数据</strong></p>
-<p>adb shell dumpsys cpuinfo packagename</p>
-<p>adb shell top -m 10 -s cpu</p>
-<p>adb shell top |findstr com.sy4399.h5 </p>
-<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8Eadb/image-20210310175352413.png" alt="image-20210310175352413"></p>
-<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8Eadb/image-20210310175438692.png" alt="image-20210310175438692"></p>
-<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8Eadb/image-20210310175504493.png" alt="image-20210310175504493"></p>
-<p><strong>电量数据</strong></p>
-<p>收集电池的历史数据</p>
-<p>adb shell dumpsys batterystats –enable full-wake-hostory</p>
-<p>重置电池数据</p>
-<p>adb shell dumpsys batterystats –reset</p>
-<p>拔掉数据线，操作app</p>
-<p>获取电量报告</p>
-<p>adb bugreport &gt; bugreport.txt</p>
-<p>安装docker，安装battery historian工具</p>
-<p>docker run -d -p <port>:9999 gcr.io/android-battery-historian/stable:3.0</port></p>
-<p>电量优化：<a href="https://www.jianshu.com/p/5d83d8649c98" target="_blank" rel="noopener">https://www.jianshu.com/p/5d83d8649c98</a></p>
-<p><strong>流量数据</strong></p>
-<p>adb shell ps找到应用对应pid</p>
-<p>adb shell cat /proc/pid/net/dev</p>
-<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8Eadb/image-20210310175700376.png" alt="image-20210310175700376"></p>
-<p>启动飞行模式再关闭，wlan0清零</p>
-<p><a href="https://testerhome.com/topics/2643" target="_blank" rel="noopener">https://testerhome.com/topics/2643</a></p>
-<p><a href="https://testerhome.com/topics/12208" target="_blank" rel="noopener">https://testerhome.com/topics/12208</a></p>
-<p><a href="https://testerhome.com/topics/11488" target="_blank" rel="noopener">https://testerhome.com/topics/11488</a></p>
-<p><a href="http://www.10tiao.com/html/179/201605/2652313673/1.html" target="_blank" rel="noopener">http://www.10tiao.com/html/179/201605/2652313673/1.html</a></p>
-
+        
+          <a class="article-more-a" href="/2021/03/10/%E5%85%B3%E4%BA%8Eadb/#more">展开全文 >></a>
+        
       
 
       
@@ -917,85 +815,9 @@
 <li>key的最大失效时间是30天</li>
 </ul>
 <hr>
-<p><strong>redis持久化与高可用</strong></p>
-<p>redis提供了RDB和AOF两种持久化方式，RDB是把内存中的数据集以快照形式写入磁盘，AOF是以文本日志的形式记录redis处理的每一个写入或删除操作</p>
-<p>RDB把整个redis数据保存在单一文件中，比较适合用来做灾备，但缺点是快照保存完成之前如果宕机，这段时间的数据将会丢失，另外保存快照时可能导致服务短时间不可用</p>
-<p>AOF对日志文件的写入操作使用追加模式，有灵活的同步策略，支持每秒同步、每次修改同步和不同步，缺点就是相同规模的数据集，AOF要大于RDB，AOF在运行效率上往往会慢于RDB，AOF的数据比RDB更完整</p>
-<p>AOF和RDB最好同时使用，单独使用RDB会丢失很多数据，而单独使用AOF数据恢复没有RDB快，因此第一时间使用RDB恢复数据，然后AOF补全</p>
-<p>redis哨兵：</p>
-<ul>
-<li>集群监控：负责监控redis master和slave进程是否正常工作</li>
-<li>消息通知：如果某个redis实例有故障，那么哨兵负责发送消息作为报警通知给管理员</li>
-<li>故障转移：如果master node挂掉了，会自动转移到slave node上</li>
-<li>配置中心：如果故障转移发生了，通知client客户端新的master地址</li>
-</ul>
-<hr>
-<p><strong>单线程的redis为什么快</strong></p>
-<p>redis的IO多路复用技术：redis采用网络IO多路复用技术来保证在多连接的时候系统的高吞吐量</p>
-<p>多路指的是多个socket连接，复用指的是复用一个线程（epoll），采用多路I/O复用技术可以让单个线程高效地处理多个连接请求，且redis在内存中操作数据的速度非常快，所以redis具有很高的吞吐量</p>
-<p>redis单线程的优势：1.代码更清晰，处理逻辑更简单；2.不用去考虑各种锁的问题，不存在加锁释放锁操作，没有因为可能出现死锁而导致的性能消耗；3.不存在多进程或者多线程切换而消耗CPU</p>
-<p>使用单线程的原因：基于内存操作，CPU不是redis的性能瓶颈，redis的瓶颈最有可能是机器内存的大小或者网络带宽（如果CPU成为redis瓶颈，可考虑多起几个redis进程；使用集群部署方式可以解决单机瓶颈的问题：主从同步读写分离，redis cluster支撑N个redis master node，每个master node可以挂载多个slave node，实现redis的横向扩展）</p>
-<p>1.redis是纯内存数据库，一般都是简单的存取操作</p>
-<p>2.redis使用的是非阻塞IO，IO多路复用，使用了单线程，减少了线程切换时上下文的切换和竞争</p>
-<p>3.redis的存储数据结构</p>
-<hr>
-<p><strong>redis常见性能问题</strong></p>
-<ol>
-<li>master写内存快照，会阻塞主线程的工作，当快照比较大时对性能影响比较大，会间断性暂停服务，所以master最好不要写内存快照</li>
-<li>master AOF持久化，如果不重写AOF文件，这个持久化方式对性能影响是最小的，但AOF文件不断增大，AOF文件过大会影响master重启恢复速度。master最好不要做任何持久化工作，包括内存快照和AOF日志文件</li>
-<li>master调用BGREWRITEAOF重写AOF文件，AOF在重写时会占用CPU和内存资源，导致服务load过高，出现短暂服务暂停现象</li>
-<li>redis主从复制的性能问题，为了主从复制的速度和连接的稳定性，master和slave最好在同一局域网</li>
-</ol>
-<hr>
-<p><strong>redis主从复制好处</strong></p>
-<ul>
-<li>数据冗余，实现数据的热备份</li>
-<li>故障恢复，避免单点故障带来的服务不可用</li>
-<li>读写分离，负载均衡</li>
-<li>高可用基础，是哨兵机制和集群实现的基础</li>
-</ul>
-<p><strong>redis主从复制原理</strong></p>
-<ol>
-<li><p>建立连接（从服务器可以使用ping命令确认与主服务器的连通性）</p>
-</li>
-<li><p>数据复制（完整复制、部分复制）</p>
-<p>完整复制：执行BGSAVE命令生成RDB文件并使用内存缓冲区记录此后执行的所有写命令；执行完成后，向从服务器发送快照文件，并在发送期间继续记录被执行的所写命令；从服务器收到快照文件后丢弃所有旧数据，载入收到的快照；主服务器快照发送完毕后开始向从服务器发送缓冲区中的写命令；从服务器完成对快照的载入，开始接收命令请求，并执行来自主服务器缓冲区的写命令</p>
-</li>
-<li><p>命令传播</p>
-</li>
-</ol>
-<hr>
-<p><strong>redis事务</strong></p>
-<ul>
-<li>事务是一个单独的隔离操作：事务中的所有命令都会被序列化，按顺序地执行。事务在执行过程中，不会被其他客户端发送过来的命令请求所打断</li>
-<li>没有隔离级别的概念：队列中的命令在事务没有被提交之前不会被实际执行</li>
-<li>不保证原子性：redis的一个事务中如果存在命令执行失败，其他命令依然会被执行，没有回滚机制</li>
-</ul>
-<hr>
-<p>redis使用场景：会话缓存、消息队列、排行榜/计数器、发布/订阅等</p>
-<p>redis五种数据结构：1.string（字符串）；2.list（列表）；3.hash（字典）；4.set（集合）；5.zset（有序集合）</p>
-<p>redis过期键删除策略：定期删除、惰性删除</p>
-<p>redis六种内存淘汰策略：1.no-enviction：不删除策略，达到最大内存限制时，如果需要更多内存，直接返回错误信息；2.allkeys-lru：所有key通用，优先删除最近最少使用的key；3.volatile-lru：只限于设置了expire的部分，优先删除最近最少使用的key；4.allkeys-random：所有key通用，随机删除一部分key；5.volatile-random：只限于设置了expire的部分，随机删除一部分key；6.volatile-ttl：只限设置了expire的部分，优先删除剩余时间短的key</p>
-<hr>
-<p>缓存穿透：产生这个问题的原因可能是外部恶意攻击，例如，对用户信息进行了缓存，但恶意攻击者使用不存在的用户id频繁请求接口，导致查询缓存不命中，然后穿透DB查询依然不命中，这时会有大量请求穿透缓存访问到DB</p>
-<p>解决办法：1.对不存在的用户，在缓存中保存一个空对象进行标记，防止相同ID再次访问DB，不过有时这个方法不能很好解决问题，可能导致缓存中存储大量无用数据；2.使用BloomFilter过滤器，BloomFilter的特点是存在性检测，如果BloomFilter中不存在，那么数据一定不存在，如果BloomFilter中存在，实际数据也有可能会不存在</p>
-<p>缓存击穿：就是某个热点数据失效时，大量针对这个数据的请求会穿透到数据源</p>
-<p>解决办法：1.可以使用互斥锁更新，保证同一个进程中针对同一个数据不会并发请求到DB，减小DB压力；2.设置热点数据永不过期；3.定时更新热点数据</p>
-<p>缓存雪崩：产生的原因是缓存挂掉，这时所有的请求都会穿透到 DB</p>
-<p>解决办法：1.使用快速失败的熔断策略，减少DB瞬间压力；2.使用主从模式和集群模式来尽量保证缓存服务的高可用</p>
-<hr>
-<p><strong>redis发布订阅</strong></p>
-<p>redis提供了发布订阅功能，可用于消息的传输，redis发布订阅机制包括三个部分：发布者、订阅者和channel</p>
-<p>发布者和订阅者都是redis客户端，channel则为redis服务器端，发布者将消息发送到某个频道，订阅了这个频道的订阅者就能接收到这条消息</p>
-<p><img src="/2021/03/01/%E5%85%B3%E4%BA%8Eredis/image-20210310170518704.png" alt="image-20210310170518704"></p>
-<ol>
-<li>发送消息：PUBLISH命令发送消息，其返回值为接收到该消息的订阅者的数量</li>
-<li>订阅某个频道：SUBSCRIBE命令订阅某个频道，其返回值包括客户端订阅的频道，目前已订阅的频道数量，以及接收到的消息，subscribe表示已经成功订阅了某个频道</li>
-<li>模式匹配：PSUBSCRIBE订阅符合某个模式所有频道</li>
-<li>取消订阅：UNSUBSCRIBE和PUNSUBSCRIBE命令取消订阅，其返回值与订阅类似。 由于Redis的订阅操作是阻塞式的，因此一旦客户端订阅了某个频道或模式，就将会一直处于订阅状态直到退出。在SUBSCRIBE，PSUBSCRIBE，UNSUBSCRIBE和PUNSUBSCRIBE命令中，其返回值都包含了该客户端当前订阅的频道和模式的数量，当这个数量变为0时，该客户端会自动退出订阅状态</li>
-</ol>
-<p><a href="https://juejin.cn/post/6844903879251869703#heading-6" target="_blank" rel="noopener">https://juejin.cn/post/6844903879251869703#heading-6</a></p>
-
+        
+          <a class="article-more-a" href="/2021/03/01/%E5%85%B3%E4%BA%8Eredis/#more">展开全文 >></a>
+        
       
 
       
