@@ -124,6 +124,217 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python之面向对象编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/10/Python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">Python之面向对象编程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/10/Python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2019-09-10T08:44:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。</p>
+<p>面向过程编程：数据和处理数据的函数是彼此独立的，我们需要先将数据处理成函数能接受的格式，再调用相关函数处理</p>
+<p>面向对象编程：数据和处理数据的函数都放在一个类中（Class)，通过初始化实例（Instance）传递数据，通过实例调用对象方法或者说叫实例方法。</p>
+<p>数据封装、继承和多态是面向对象的三大特点。</p>
+<ul>
+<li><strong>类(Class):</strong> 用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。对象是类的实例。</li>
+<li><strong>类变量：</strong>类变量在整个实例化的对象中是公用的。类变量定义在类中且在函数体之外。类变量通常不作为实例变量使用。</li>
+<li><strong>数据成员：</strong>类变量或者实例变量, 用于处理类及其实例对象的相关的数据。</li>
+<li><strong>方法重写：</strong>如果从父类继承的方法不能满足子类的需求，可以对其进行改写，这个过程叫方法的覆盖（override），也称为方法的重写。</li>
+<li><strong>局部变量：</strong>定义在方法中的变量，只作用于当前实例的类。</li>
+<li><strong>实例变量：</strong>在类的声明中，属性是用变量来表示的。这种变量就称为实例变量，是在类声明的内部但是在类的其他成员方法之外声明的。</li>
+<li><strong>继承：</strong>即一个派生类（derived class）继承基类（base class）的字段和方法。继承也允许把一个派生类的对象作为一个基类对象对待。例如，有这样一个设计：一个Dog类型的对象派生自Animal类，这是模拟”是一个（is-a）”关系（例图，Dog是一个Animal）。</li>
+<li><strong>实例化：</strong>创建一个类的实例，类的具体对象。</li>
+<li><strong>方法：</strong>类中定义的函数。</li>
+<li><strong>对象：</strong>通过类定义的数据结构实例。对象包括两个数据成员（类变量和实例变量）和方法。</li>
+</ul>
+<p>类是创建实例的模板，而实例则是一个个具体的对象，各个实例拥有的数据互相独立，互不影响。方法就是实例绑定的函数，和普通函数不同，方法可以直接访问实例的数据。通过在实例上调用方法，我们就直接操作了对象内部的数据，但无需知道方法内部的实现细节。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">   <span class="string">'所有员工的基类'</span></span><br><span class="line">   empCount = <span class="number">0</span>    <span class="comment"># 类变量，可通过Employee.empCount访问</span></span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, salary)</span>:</span>  <span class="comment"># self指向创建的实例本身</span></span><br><span class="line">      self.name = name</span><br><span class="line">      self.salary = salary</span><br><span class="line">      Employee.empCount += <span class="number">1</span></span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">displayCount</span><span class="params">(self)</span>:</span> <span class="comment"># 类中定义的函数，第一个参数为实例变量self</span></span><br><span class="line">     <span class="keyword">print</span> <span class="string">"Total Employee %d"</span> % Employee.empCount</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">displayEmployee</span><span class="params">(self)</span>:</span></span><br><span class="line">      <span class="keyword">print</span> <span class="string">"Name : "</span>, self.name,  <span class="string">", Salary: "</span>, self.salary</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">e = Employee()  <span class="comment"># 创建Employe实例</span></span><br><span class="line">e.empCount <span class="comment"># 输出0，因为实例并没有empCount属性，所以会继续查找class的empCount属性</span></span><br><span class="line">e.empCount = <span class="number">1</span> <span class="comment"># 给实例绑定empCount属性</span></span><br><span class="line">e.empCount <span class="comment"># 输出1， 实例属性优先级高于类属性</span></span><br><span class="line">Employee.empCount <span class="comment"># 输出0，类属性仍存在</span></span><br></pre></td></tr></table></figure>
+
+<p>可使用<code>__slots__</code>变量来限制class实例能绑定的属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">    __slots__ = (<span class="string">'empCount1'</span>, <span class="string">'empCount2'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>__slots__</code>定义的属性仅对当前类实例起作用，对继承的子类是不起作用的，除非在子类中也定义，子类实例允许定义的属性就是自身的<code>__slots__</code>加上父类的<code>__slots__</code></p>
+<h5 id="Python内置类属性"><a href="#Python内置类属性" class="headerlink" title="Python内置类属性"></a>Python内置类属性</h5><ul>
+<li><code>__dict__</code> : 类的属性（包含一个字典，由类的数据属性组成）</li>
+<li><code>__doc__</code> :类的文档字符串</li>
+<li><code>__name__</code>: 类名</li>
+<li><code>__module__</code>: 类定义所在的模块（类的全名是’<code>__main__.className</code>‘，如果类位于一个导入模块mymod中，那么className.<strong>module</strong> 等于 mymod）</li>
+<li><code>__bases__</code> : 类的所有父类构成元素（包含了一个由所有父类组成的元组）</li>
+</ul>
+<h5 id="单下划线、双下划线、头尾双下划线说明："><a href="#单下划线、双下划线、头尾双下划线说明：" class="headerlink" title="单下划线、双下划线、头尾双下划线说明："></a>单下划线、双下划线、头尾双下划线说明：</h5><ul>
+<li><code>__foo__</code>: 定义的是特殊方法，一般是系统定义名字 ，类似 <code>__init__()</code>之类的。</li>
+<li><code>_foo</code>: 以单下划线开头的表示的是 protected 类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于 <code>from module import *</code></li>
+<li><code>__foo</code>: 双下划线的表示的是私有类型(private)的变量, 只能是允许这个类本身进行访问了。</li>
+</ul>
+<h5 id="获取对象信息"><a href="#获取对象信息" class="headerlink" title="获取对象信息"></a><strong>获取对象信息</strong></h5><ul>
+<li>type()可以检查类型</li>
+<li>isinstance()可以方便对比类型</li>
+<li>dir()可以获得对象的所有属性和方法</li>
+</ul>
+<h5 id="使用-repr-和-str-改变输出"><a href="#使用-repr-和-str-改变输出" class="headerlink" title="使用__repr__ 和 __str__改变输出"></a>使用<code>__repr__</code> 和 <code>__str__</code>改变输出</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">		self.name = name</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(Employee(<span class="string">'test'</span>))</span><br><span class="line">&lt;__main__.Employee object at <span class="number">0x0000000002BBBEF0</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">		self.name = name</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> <span class="string">'Student name is %s'</span> % self.name</span><br><span class="line">	__repr__ = __str__</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(Employee(<span class="string">'test'</span>))</span><br><span class="line">Student name <span class="keyword">is</span> test</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Employee(<span class="string">'test'</span>)</span><br><span class="line">Student name <span class="keyword">is</span> test</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用type-动态创建类"><a href="#使用type-动态创建类" class="headerlink" title="使用type()动态创建类"></a>使用type()动态创建类</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fn</span><span class="params">(self, name=<span class="string">'world'</span>)</span>:</span></span><br><span class="line">    print(<span class="string">'Hello, %s'</span> % name)</span><br><span class="line">Hello = type(<span class="string">'Hello'</span>, (object,), dict(hello=fn))</span><br></pre></td></tr></table></figure>
+
+<p>class的定义是运行时动态创建的，而创建class的方法就是使用type()函数。要创建一个class对象，type()函数依次传入3个参数：</p>
+<ol>
+<li>class的名称</li>
+<li>继承的父类集合</li>
+<li>class的方法名称与函数绑定</li>
+</ol>
+<p>通过type()函数创建的类和直接写class是完全一样的，因为Python解释器遇到class定义时，仅仅是扫描一下class定义的语法，然后调用type()函数创建出class.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python之鸭子类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/09/Python%E4%B9%8B%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B/">Python之鸭子类型</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/09/Python%E4%B9%8B%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
+  	<time datetime="2019-09-09T01:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>动态语言与静态语言</strong></p>
+<p>静态类型语言在编译时便已确定变量的类型，而动态语言的变量类型要到程序运行的时候，待变量被赋予某个值之后，才会具有某种类型。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">'hello'</span></span><br><span class="line">    s = <span class="string">'hi'</span></span><br><span class="line">    s = <span class="number">0</span> <span class="comment">//编译时会报错</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'hello'</span></span><br><span class="line">s = <span class="number">0</span></span><br><span class="line">s = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">#可以给变量随意赋值</span></span><br></pre></td></tr></table></figure>
+
+<p>静态类型语言的优点首先是在编译时就能发现类型不匹配的错误，编辑器可以帮助我们提前避免程序在运行期间有可能发生的一些错误；其次，如果在程序中明确地规定了数据类型，编辑器还可以针对这些信息对程序进行一些优化工作，提高程序执行速度。静态类型语言的缺点首先是迫使程序员依照强契约来编写程序，为每个变量规定数据类型，归根结底只是辅助我们编写可靠性高的程序的一种手段，而不是编写程序的目的；其次，类型声明会增加更多的代码，在程序编写过程中，这些细节会让程序员的精力从思考业务逻辑上分散开来。</p>
+<p>动态类型语言的优点是编写的代码数量更少，看起来更加简洁，程序员可以把更多的精力放在业务逻辑上。动态类型语言的缺点是无法保证变量的类型，从而在程序运行期有可能发生跟类型相关的错误。</p>
+<p><strong>鸭子类型</strong></p>
+<p>鸭子类型是动态类型的一种风格。在这种风格中，一个对象有效的语义，不是由继承自特定的类或实现的接口决定，而是由当前方法和属性的集合决定。（当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子）在鸭子类型中，关注的不是对象的类型本身，而是它是如何使用的。例如：在不使用鸭子类型的语言中，我们可以编写一个函数，它接受一个类型为“鸭子”的对象，并调用它的“走”和“叫”方法。在使用鸭子类型的语言中，这样的一个函数可以接受任意类型的对象，并调用它们的“走”和“叫”方法。如果这些需要被调用的方法不存在，那么将引发一个运行时的错误。</p>
+<p>鸭子类型通常得益于不测试方法和函数中参数的类型，而是依赖文档，清晰的代码和测试来确保正确使用。</p>
+<p>利用鸭子类型的思想，能轻松地在动态类型语言中实现一个原则：面向接口编程，而不是面向实现编程。例如：一个对象若有push和pop方法，并且这些方法提供了正确的实现，它就可以被当做栈来使用。</p>
+<p>接口在动态类型语言中是怎么运作的呢？首先，基本的事实是，Python语言没有Interface关键字，而且除了抽象基类，每个类都有接口：类实现或继承的公开属性（方法或数据属性），包括特殊方法，如<strong>getitem</strong>。按照定义，受保护的属性和私有属性不在接口中。关于接口，有个实用的补充定义：对象公开方法的子集，让对象在系统中扮演特定的角色。一个类可能会实现多个接口，从而让实例扮演多个角色。</p>
+<p>鸭子类型：对象的类型无关紧要，只要实现了特定的协议即可。（忽略对象的真正类型，转而关注对象有没有实现所需的方法、签名和语义）</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-缓存杂谈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -619,168 +830,6 @@
 
 
   
-    <article id="post-Python基础记录-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/">Python基础记录(8)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/" class="archive-article-date">
-  	<time datetime="2019-05-10T03:55:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最简单的服务器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname() //获取当前机器的主机名</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.bind((host, port))</span><br><span class="line">s.listen(<span class="number">5</span>) //最多<span class="number">5</span>个连接在队列中等待接纳，到达这个数量后将开始拒绝连接</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    c, addr = s.accept() //接受客户端连接，c为客户端套接字</span><br><span class="line">    print(<span class="string">'Got connection from'</span>, addr)</span><br><span class="line">    c.send(<span class="string">'Thank you for connecting'</span>)</span><br><span class="line">    c.close()</span><br></pre></td></tr></table></figure>
-
-<p>最简单的客户端</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.connect((host, port))</span><br><span class="line">print(s.recv(<span class="number">1024</span>))</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python基础记录-7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/09/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-7/">Python基础记录(7)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/09/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-7/" class="archive-article-date">
-  	<time datetime="2019-05-09T09:50:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="Python代码覆盖率检查"><a href="#Python代码覆盖率检查" class="headerlink" title="Python代码覆盖率检查"></a>Python代码覆盖率检查</h6><hr>
-<h6 id="单元测试unittest框架"><a href="#单元测试unittest框架" class="headerlink" title="单元测试unittest框架"></a>单元测试unittest框架</h6><p>在unittest中有四个重要概念：Test Case、Test Suite、Test Runner、Test Fixture</p>
-<p>Test Case：最小的测试单元，用于检查特定输入集合的特定返回值，unittest提供了TestCase基类，我们创建的测试类需要继承该基类，它可以用来创建新的测试用例</p>
-<p>Test Suite：测试套件是测试用例、测试套件或两者的集合。用于组装一组要运行的测试。unittest提供了TestSuite类来创建测试套件</p>
-<p>Test Runner：Test Runner是一个组件，用于协调测试的执行并向用户提供结果。Test Runner可以使用图形界面、文本界面或返回特殊值来展示执行测试的结果。unittest提供了TextTestRunner类运行测试用例，为了生成HTML格式的测试报告，后面会选择使用HTMLTestRunner类</p>
-<p>Test Fixture：Test Fixture代表执行一个或多个测试所需的环境准备，以及关联的清理动作。例如，创建临时或代理数据库、目录，或启动服务器进程。unittest中提供了setUp()/tearDown()、setUpClass()/tearDownClass()等方法来完成这些操作</p>
-<ul>
-<li>setUpModule/tearDownModule：在整个模块的开始与结束时被执行</li>
-<li>setUpClass/tearDownClass：在测试类的开始与结束时被执行</li>
-<li>setUp/tearDown：在测试用例的开始与结束时被执行</li>
-</ul>
-<hr>
-<p>unittest默认根据ASCII码的顺序加载测试用例（数字与字母的顺序为0<del>9，A</del>Z，a~z），除了在命名上加以控制，也可以声明测试套件TestSuite类，通过addTest()方法按照一定的顺序来加载测试用例</p>
-<p>DDT（<a href="https://github.com/datadriventests/ddt），是针对" target="_blank" rel="noopener">https://github.com/datadriventests/ddt），是针对</a> unittest 单元测试框架设计的扩展库。允许使用不同的测试数据来运行一个测试用例，并将其展示为多个测试用例  </p>
-<h6 id="代码检查PyLint"><a href="#代码检查PyLint" class="headerlink" title="代码检查PyLint"></a>代码检查PyLint</h6><h6 id="性能分析profile与cProfile"><a href="#性能分析profile与cProfile" class="headerlink" title="性能分析profile与cProfile"></a>性能分析profile与cProfile</h6>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">下一页</a>
@@ -1000,6 +1049,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
             
             <div class="clearfix"></div>

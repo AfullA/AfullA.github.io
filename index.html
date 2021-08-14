@@ -124,6 +124,140 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-基础必知" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/09/%E5%9F%BA%E7%A1%80%E5%BF%85%E7%9F%A5/">基础必知</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/09/%E5%9F%BA%E7%A1%80%E5%BF%85%E7%9F%A5/" class="archive-article-date">
+  	<time datetime="2021-07-09T10:18:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于Django" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/18/%E5%85%B3%E4%BA%8EDjango/">关于Django</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/18/%E5%85%B3%E4%BA%8EDjango/" class="archive-article-date">
+  	<time datetime="2021-05-18T09:00:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Django功能完备，开发速度快，它的MTV框架，自带的ORM，admin后台管理，自带的sqlite数据库和开发测试用的服务器给开发者大大提高了开发效率</p>
+<p><strong>WSGI</strong></p>
+<p>WSGI，描述web server如何与web application通信的一种规范</p>
+<p>WSGI协议主要包括server和application两部分：WSGI server负责从客户端接收请求，将request转发给application，将application返回的response返回给客户端，WSGI application接收由server转发的request，处理请求，并将处理结果返回给server</p>
+<p>application中可以包括多个栈式的中间件，这些中间件需要同时实现server和application，因此可以在WSGI服务器与WSGI应用之间起调节作用：对服务器来说，中间件扮演应用程序，对应用程序来说 ，中间件扮演服务器</p>
+        
+          <a class="article-more-a" href="/2021/05/18/%E5%85%B3%E4%BA%8EDjango/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-一些杂记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -276,99 +410,15 @@
 <li>运行阶段（Python虚拟机运行字节码指令）</li>
 </ul>
 <p>Python程序的运行依赖Python解释器，执行一个.py文件，首先是将.py文件编译成PyCodeObject字节码对，并存入内存中。接下来，python虚拟机逐条运行字节码指令。当运行完毕后，会生成pyc文件，.pyc文件PyCodeObject字节码对象在硬盘中的表现形式。当下次再运行相同的.py文件时，假如源码没有任何改动，则不会再次将文件编译成PyCodeObject字节码对象，而是优先将.pyc文件载入到内存中去执行相应的字节码指令</p>
-<p><strong>Python中内置的数据结构</strong></p>
-<ul>
-<li>整型int、长整型long、浮点型float、复数complex</li>
-<li>字符串str、列表list、元祖tuple</li>
-<li>字典dict、集合set</li>
-<li>Python3中没有long，只有无线精度的int</li>
-</ul>
-<p>有序序列：列表<code>[]</code>，字符串<code>&#39;&#39;</code>，元祖<code>()</code></p>
-<p>无序序列：集合<code>{}</code>，字典<code>{&quot;key&quot;:&quot;value&quot;}</code></p>
-<p><strong>可变类型和不可变类型</strong></p>
-<ul>
-<li>可变类型有list、dict，不可变类型有string、number、tuple</li>
-<li>当进行修改操作时，可变类型传递的是内存中的地址，也就是说，直接修改内存中的值，并没有开辟新的内存</li>
-<li>不可变类型被修改时，并没有改变原内存地址中的值，而是开辟一块新的内存，将原地址中的值复制过去，对这块新开辟的内存中的值进行操作</li>
-</ul>
-<p><strong>is和==的区别</strong></p>
-<p>is：比较的是两个对象的id值是否相等，也就是比较两对象是否为同一个实例对象，是否指向同一个内存地址</p>
-<p>==：比较的是两个对象的内容/值是否相等，默认会调用对象的eq()方法</p>
-<p><strong>Python中变量的作用域</strong></p>
-<p>L：local函数内部作用域</p>
-<p>E：enclosing函数内部与内嵌函数之间</p>
-<p>G：global全局作用域</p>
-<p>B：build-in内置作用域</p>
-<p><strong>Python内存管理机制与调优手段</strong></p>
-<p>Python GC主要使用引用计数来跟踪和回收垃圾，在引用计数的基础上，通过“标记-清除”解决容器对象可能产生的循环引用的问题，通过“分代回收”以空间换时间的方法提高垃圾回收效率</p>
-<p>万物皆对象是Python的一大特色。在Python中每一个对象的核心就是一个结构体PyObject，其中ob_refcnt就是作为引用计数，当一个对象有新的引用时，它的ob_refcnt就会增加，当引用它的对象被删除时，它的ob_refcnt就会减少，引用计数为0时，该对象生命就结束了。优点：简单、实时性；缺点：维护引用计数消耗资源、循环引用问题。</p>
-<p>标记-清除就是用来解决循环引用的问题，只有容器对象才会出现引用循环，比如字典、列表、自定义类的对象、元组。分为两个阶段：第一阶段是标记阶段，GC会把所有的活动对象打上标记，第二阶段是把那些没有标记的对象进行回收（对象之间通过引用连在一起构成一个有向图，对象构成这个有向图的节点，而引用关系构成这个有向图的边，从根对象出发，沿着有向边遍历对象，可达对象标记为活动对象，不可达对象就是要被清除的非活动对象）</p>
-<p>分代回收是一种以空间换时间的操作方式，Python将内存根据对象的存活时间划分为不同的集合，每个集合称为一个代，Python将内存分为了3“代”，分为年轻代（第0代）、中年代（第一代）、老年代（第2代），他们对应的是3个链表，它们的垃圾收集频率随对象的存活时间的增大而减小。新创建的对象都会分配在年轻代，年轻代链表的总数达到上限时，Python垃圾收集机制就会被触发，把那些可以被回收的对象回收掉，而那些不会回收的对象就会被移入中年代去，以此类推，老年代中的对象是存活时间最久的对象，甚至是存活于整个系统的生命周期内。分代回收是建立在标记清除技术基础之上</p>
-<p><strong>内存泄露</strong>指由于疏忽或错误造成程序未能释放已经不再使用的内存。有<code>__del__()</code>函数的对象间的循环引用是导致内存泄露的主凶。不使用一个对象时使用<code>del object</code>来删除一个对象的引用计数就可以有效防止内存泄露的问题。通过Python扩展模块<code>gc</code>来查看不能回收的对象的详细信息。可以通过<code>sys.getrefcount(obj)</code>来获取对象的引用计数，并根据返回值是否为0判断是否内存泄露</p>
-<p><strong>copy与deepcopy</strong></p>
-<p><code>id()</code> 函数返回对象的内存地址，<code>is</code>用于判断两个变量引用对象是否为同一个，<code>==</code>用于判断引用变量的值是否相等</p>
-<p>变量赋值就是浅拷贝，即两个变量共享同一个内存块，相同的内存地址，一旦值发生改变，另外一个变量的值也会跟随着一起变化</p>
-<p>浅拷贝，重新分配内存，只拷贝父对象，不会拷贝对象内部的子对象</p>
-<p>深拷贝，重新分配内存，拷贝对象及其所有子对象</p>
-<p>如果列表或者字典没有包含子列表或者子字典的话，使用深拷贝或者浅拷贝效果都有一样；如果列表或者字典中存在子类的时候，只有深拷贝才会为所有的子类也重新分配内存，而浅拷贝只负责父对象，不考虑子对象</p>
-<p><strong>面向切面编程AOP和装饰器</strong></p>
-<p>装饰器作为一种设计模式，经常被用于有切面需求的场景，较为经典的有插入日志、性能测试、事务处理等，装饰器的作用就是为已经存在的对象添加额外的功能</p>
-<p><strong>Python中重载</strong></p>
-<p>函数重载主要是为了解决两个问题：1.可变的参数个数（缺省参数）2.可变的参数类型（Python可以接受任何类型的参数）</p>
-<p><strong>新式类和旧式类</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#新式类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="comment">#经典类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dir(C)</span><br><span class="line">[<span class="string">'__class__'</span>, <span class="string">'__delattr__'</span>, <span class="string">'__dict__'</span>, <span class="string">'__dir__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__eq__'</span>, <span class="string">'__format__'</span>, <span class="string">'__ge__'</span>, <span class="string">'__getattribute__'</span>, <span class="string">'__gt__'</span>, <span class="string">'__hash__'</span>, <span class="string">'__init__'</span>, <span class="string">'__init_subclass__'</span>, <span class="string">'__le__'</span>, <span class="string">'__lt__'</span>, <span class="string">'__module__'</span>, <span class="string">'__ne__'</span>, <span class="string">'__new__'</span>, <span class="string">'__reduce__'</span>, <span class="string">'__reduce_ex__'</span>, <span class="string">'__repr__'</span>, <span class="string">'__setattr__'</span>, <span class="string">'__sizeof__'</span>, <span class="string">'__str__'</span>, <span class="string">'__subclasshook__'</span>, <span class="string">'__weakref__'</span>]</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p><code>__new__</code>，<code>__init__</code>方法</p>
-<p>这两个方法是用来创建object的子类对象，静态方法<code>__new__()</code>用来创建类的实例，然后再调用<code>__init__()</code>来初始化实例</p>
-</li>
-<li><p><code>__delattr__</code>, <code>__getattribute__</code>, <code>__setattr__</code>方法</p>
-<p>对象使用这些方法来处理属性的访问</p>
-</li>
-<li><p><code>__hash__</code>, <code>__repr__</code>, <code>__str_</code>_方法</p>
-<p>print()会调用<code>__str__()</code>， 如果<code>__str__</code>没有定义，则会调用<code>__repr__()</code></p>
-</li>
-<li><p><code>__slots__</code>属性</p>
-<p>通常每一个实例x都会有一个<code>__dict__</code>属性，用来记录实例中所有的属性和方法，也是通过这个字典，可以让实例绑定任意的属性。而<code>__slots__</code>属性作用就是，当类C有比较少的变量，而且拥有<code>__slots__</code>属性时，类C的实例 就没有<code>__dict__</code>属性，而是把变量的值存在一个固定的地方。如果试图访问一个<code>__slots__</code>中没有属性，实例就会报错。这样操作有什么好处呢？<code>__slots__</code>属性虽然令实例失去了绑定任意属性的便利，但是因为每一个实例没有<code>__dict__</code>属性，却能有效节省每一个实例的内存消耗，有利于生成小而精干的实例</p>
-</li>
-<li><p><code>__getattribute__</code>方法</p>
-<p>对新式类的实例来说，所有属性和方法的访问操作都是通过<code>__getattribute__</code>完成</p>
-</li>
-</ol>
-<p><strong>Python中的单例模式</strong></p>
-<p>通过单例模式可以保证系统中一个类只有一个实例而且该实例易于外界访问，从而方便对实例个数的控制并节约系统资源</p>
-<p>使用<code>__new__()</code>方法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kw)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(cls, <span class="string">'_instance'</span>):</span><br><span class="line">            orig = super(Singleton, cls)</span><br><span class="line">            cls._instance = orig.__new__(cls, *args, **kw)</span><br><span class="line">        <span class="keyword">return</span> cls._instance</span><br></pre></td></tr></table></figure>
-
-<p>共享属性</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    _state = &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kw)</span>:</span></span><br><span class="line">        ob = super(Singleton, cls).__new__(cls, *args, **kw)</span><br><span class="line">        ob.__dict__ = cls._state</span><br><span class="line">        <span class="keyword">return</span> ob</span><br></pre></td></tr></table></figure>
-
-<p>装饰器版本</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    instances = &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getinstance</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> instances:</span><br><span class="line">            instances[cls] = cls(*args, **kw)</span><br><span class="line">        <span class="keyword">return</span> instances[cls]</span><br><span class="line">    <span class="keyword">return</span> getinstance</span><br></pre></td></tr></table></figure>
-
-<p><strong>协程</strong></p>
-<p>协程：又称微线程，协程的作用，是在执行函数A时，可以随时中断，去执行函数B，然后中断继续执行函数A（可以自由切换）。协程由于由程序主动控制切换，没有线程切换的开销，所以执行效率极高。对于IO密集型任务非常适用，如果是cpu密集型，推荐多进程+协程的方式</p>
-<p><strong>闭包</strong></p>
-<p>闭包是函数式编程的重要语法结构，创建一个闭包必须满足以下几点：1.必须有一个内嵌函数；2.内嵌函数必须引用外部函数中的变量；3.外部函数的返回值必须是内嵌函数</p>
-<p><strong>死锁</strong></p>
-<p>原因：1.竞争资源；2.程序推进顺序不当</p>
-<p>必要条件：1.互斥条件；2.请求和保持条件；3.不剥夺条件；4.环路等待条件</p>
-<p>处理死锁的基本方法：1.预防死锁；2.避免死锁（银行家算法）；3.检测死锁（资源分配图）；4.解除死锁（剥夺资源、撤销进程）</p>
-<p><strong>虚拟内存技术</strong></p>
-<p>虚拟存储器是指具有请求调入功能和置换功能，能从逻辑上对内存容量加以扩充的一种存储系统</p>
-<p><strong>分页和分段</strong></p>
-<p>分页：用户程序的地址空间被划分成若干固定大小的区域，称为“页”，相应地，内存空间分成若干个物理块，页和块的大小相等，可将用户程序的任一页放在内存的任一块中，实现离散分配</p>
-<p>分段：将用户程序地址空间分成若干个大小不等的段，每段可以定义一组相对完整的逻辑信息。存储分配时，以段为单位，段与段在内存中可以不相邻接，也实现了离散分配</p>
-<p>分页和分段的主要区别：1.页是信息的物理单位，分页是为了实现非连续分配，以便解决内存碎片的问题，或者说分页是由于系统管理的需要；段是信息的逻辑单位，它含有一组意义相对完整的信息，分段的目的是为了更好地实现共享，满足用户的需要。2.页大小固定，由系统确定，将逻辑地址划分为页号和页内地址是由机器硬件实现的，而段的长度却不固定，决定于用户所编写的程序，通常由编译程序在对源程序进行编译时根据信息的性质来划分。3.分页的作业地址空间是一维的，分段的地址空间是二维的</p>
-<p>页面置换算法：1.最佳置换算法OPT（不可能实现）；2.先进先出FIFO；3.最近最久未使用算法；4.clock算法</p>
-<p><strong>事务</strong></p>
-<p>数据库事务，是指作为单个逻辑工作单元执行的一系列操作，要么完全地执行，要么完全地不执行</p>
-<p><strong>CGI和WSGI</strong></p>
-<p>CGI是通用网关接口，是连接web服务器和应用程序的接口，用户通过CGI来获取动态数据或文件等。 CGI程序是一个独立的程序，它可以用几乎所有语言来写，包括perl，c，lua，python等等。</p>
-<p>WSGI, Web Server Gateway Interface，是Python应用程序或框架和Web服务器之间的一种接口，WSGI的其中一个目的就是让用户可以用统一的语言(Python)编写前后端。</p>
-
+<p><strong>进程、线程和协程</strong></p>
+<p>进程是系统进行资源分配和调度的一个独立单位，一个程序至少有一个进程，一个进程至少有一个线程</p>
+<p>线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位，线程不拥有系统资源，只拥有一点在运行中必不可少的资源，但它可与同属一个进程的其他线程共享资源</p>
+<p>协程是一种比线程更加轻量级的存在，一个线程可以用多个协程</p>
+<p>进程切换需要的资源较大，效率相对低；线程切换需要的资源一般，效率比进程高；协程切换需要的资源很小，三者中效率最高</p>
+<p>计算密集型：用进程；IO密集型：用线程或协程  </p>
+        
+          <a class="article-more-a" href="/2021/03/16/Python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/#more">展开全文 >></a>
+        
       
 
       
@@ -513,85 +563,9 @@
 <p>使用WampServer集成环境</p>
 <p><strong>1.下载WebPagetest压缩包</strong></p>
 <p>下载地址：<a href="https://github.com/WPO-Foundation/webpagetest/releases" target="_blank" rel="noopener">https://github.com/WPO-Foundation/webpagetest/releases</a></p>
-<p><strong>2.配置Apache环境</strong></p>
-<p>修改httpd.conf文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">去掉Include conf&#x2F;extra&#x2F;httpd-vhosts.conf前面的注释符#</span><br><span class="line">去掉LoadModule filter_module modules&#x2F;mod_filter.so前面的注释符#</span><br></pre></td></tr></table></figure>
-
-<p>修改httpd-vhosts.conf文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">添加：</span><br><span class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></span><br><span class="line">    DocumentRoot "D:/wamp/www/webpagetest_3.0/www"    （webpagetest存放路径）</span><br><span class="line">    ServerName my.webpagetest.com    （自定义域名）</span><br><span class="line">    ErrorLog "logs/webpagetest.log"</span><br><span class="line">    <span class="tag">&lt;<span class="name">Directory</span> "<span class="attr">D:</span>/<span class="attr">wamp</span>/<span class="attr">www</span>/<span class="attr">webpagetest_3.0</span>/<span class="attr">www</span>"&gt;</span>   （一些权限设置）</span><br><span class="line">        AllowOverride all</span><br><span class="line">        Order allow,deny</span><br><span class="line">        Allow from all</span><br><span class="line">    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>修改后，直接localhost访问会有问题，继续添加</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></span><br><span class="line">    DocumentRoot "D:/wamp/www"</span><br><span class="line">    ServerName localhost</span><br><span class="line">    <span class="tag">&lt;<span class="name">Directory</span> "<span class="attr">D:</span>/<span class="attr">wamp</span>/<span class="attr">www</span>"&gt;</span></span><br><span class="line">        AllowOverride all</span><br><span class="line">        Order allow,deny</span><br><span class="line">        Allow from all</span><br><span class="line">    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>修改hosts文件</p>
-<p>添加新host：127.0.0.1  <a href="http://my.webpagetest.com/" target="_blank" rel="noopener">my.webpagetest.com</a></p>
-<p><strong>3.完成后，即可本地访问</strong></p>
-<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8EWebPagetest/image-20210310181224142.png" alt="image-20210310181224142"></p>
-<p><strong>4.访问<a href="http://my.webpagetest.com/" target="_blank" rel="noopener">my.webpagetest.com</a>/install查看未下载项，将未下载的安装完成</strong></p>
-<p>修改php.ini文件中的“memory_limit”</p>
-<p>安装APC：<a href="http://pecl.php.net/package/APCu" target="_blank" rel="noopener">http://pecl.php.net/package/APCu</a></p>
-<p>将下载的dll文件放入php/ext中，并在php.ini中添加扩展</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extension&#x3D;php_apcu.dll</span><br></pre></td></tr></table></figure>
-
-<p>下载ffmpeg，将存放路径添加到Path</p>
-<p><a href="https://ffmpeg.zeranoe.com/builds/" target="_blank" rel="noopener">https://ffmpeg.zeranoe.com/builds/</a></p>
-<p>下载imagemagick</p>
-<p><a href="https://www.imagemagick.org/script/download.php" target="_blank" rel="noopener">https://www.imagemagick.org/script/download.php</a></p>
-<p>下载exiftool</p>
-<p><a href="https://sno.phy.queensu.ca/~phil/exiftool/" target="_blank" rel="noopener">https://sno.phy.queensu.ca/~phil/exiftool/</a></p>
-<p><strong>5.桌面测试代理</strong></p>
-<p>代理相关软件和文件都在agent文件夹内</p>
-<p>打开控制面板 - 网络共享中心 - 更改适配器 - 右键本地连接  - 属性</p>
-<p>Microsoft网络客户端 - 安装 - 服务 - 添加 - 从磁盘安装 - 选择dummynet - 确定安装</p>
-<p><strong>6.配置地理位置locations.ini</strong></p>
-<p>在www/setting中有个“location.ini.sample”文件，这里面是示例，将后缀“sample”去除</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">[locations]</span><br><span class="line">1&#x3D;Test_loc</span><br><span class="line">;2&#x3D;Public_Dulles</span><br><span class="line">default&#x3D;Test_loc</span><br><span class="line">;</span><br><span class="line">; These are the top-level locations that are listed in the location dropdown</span><br><span class="line">; Each one points to one or more browser configurations</span><br><span class="line">;</span><br><span class="line">[Test_loc]</span><br><span class="line">1&#x3D;IE</span><br><span class="line">2&#x3D;Test</span><br><span class="line">label&#x3D;Test Location</span><br><span class="line">group&#x3D;Desktop</span><br><span class="line">;[Public_Dulles]</span><br><span class="line">;1&#x3D;WPT_Dulles_IE8</span><br><span class="line">;label&#x3D;&quot;WebPagetest.org - Dulles, VA&quot;</span><br><span class="line">;group&#x3D;Public</span><br><span class="line">;</span><br><span class="line">; Tese are the browser-specific configurations that match the configurations</span><br><span class="line">; defined in the top-level locations.  Each one of these MUST match the location</span><br><span class="line">; name configured on the test agent (urlblast.ini or wptdriver.ini)</span><br><span class="line">;</span><br><span class="line">[IE]</span><br><span class="line">browser&#x3D;IE9</span><br><span class="line">;latency&#x3D;0</span><br><span class="line">label&#x3D;&quot;Test Location - IE 9&quot;</span><br><span class="line">;browserExe&#x3D;pagetest.exe</span><br><span class="line">;key&#x3D;TestKey123</span><br><span class="line">;</span><br><span class="line">; For a wptdriver configuration (chrome, firefox), the browser labels here</span><br><span class="line">; MUST match the labels used in wptdriver.ini</span><br><span class="line">;</span><br><span class="line">[Test]</span><br><span class="line">browser&#x3D;Chrome,Firefox</span><br><span class="line">label&#x3D;&quot;Test Location&quot;</span><br><span class="line">;</span><br><span class="line">; This is an exaple of a &quot;remote&quot; configuration where tests can be proxied to a remote</span><br><span class="line">; webpagetest instance.  The test will be run by the remote server but the results</span><br><span class="line">; will be downloaded to the local server and deleted from the remote agent</span><br><span class="line">;</span><br><span class="line">; Each location that you want to use from the remote server needs to be configured</span><br><span class="line">; individually on the local configuration (location names do not need to match)</span><br><span class="line">;</span><br><span class="line">; To use the public webpagetest.org instance you will need an API key</span><br><span class="line">;</span><br><span class="line">;[WPT_Dulles_IE8]</span><br><span class="line">;browser&#x3D;IE 8</span><br><span class="line">;label&#x3D;&quot;WebPagetest.org Dulles, VA - IE8&quot;</span><br><span class="line">;relayServer&#x3D;&quot;https:&#x2F;&#x2F;www.webpagetest.org&#x2F;&quot;;</span><br><span class="line">;relayKey&#x3D;&lt;your API key&gt;</span><br><span class="line">;relayLocation&#x3D;Dulles_IE8</span><br></pre></td></tr></table></figure>
-
-<p><strong>7.配置wptdriver.ini</strong></p>
-<p>在agent文件夹中有个“wptdriver.ini.sample”文件，同样去掉sample后缀，并注释掉installer，software条目，增加debug防止浏览器闪退</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[WebPagetest]</span><br><span class="line">url&#x3D;http:&#x2F;&#x2F;my.webpagetest.com&#x2F;</span><br><span class="line">location&#x3D;IE,Test</span><br><span class="line">debug&#x3D;1</span><br><span class="line">;browser&#x3D;chrome</span><br><span class="line">;Time Limit&#x3D;120</span><br><span class="line">;key&#x3D;TestKey123</span><br><span class="line">;Automatically install and update support software (Flash, Silverlight, etc)</span><br><span class="line">;software&#x3D;http:&#x2F;&#x2F;www.webpagetest.org&#x2F;installers&#x2F;software.dat</span><br><span class="line">[Chrome]</span><br><span class="line">exe&#x3D;&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot;</span><br><span class="line">options&#x3D;&#39;--load-extension&#x3D;&quot;%WPTDIR%\extension&quot; --user-data-dir&#x3D;&quot;%PROFILE%&quot; --no-proxy-server&#39;</span><br><span class="line">;installer&#x3D;http:&#x2F;&#x2F;www.webpagetest.org&#x2F;installers&#x2F;browsers&#x2F;chrome.dat</span><br><span class="line">[Firefox]</span><br><span class="line">exe&#x3D;&quot;C:\Program Files (x86)\Mozilla Firefox\firefox.exe&quot;</span><br><span class="line">options&#x3D;&#39;-profile &quot;%PROFILE%&quot; -no-remote&#39;</span><br><span class="line">;installer&#x3D;http:&#x2F;&#x2F;www.webpagetest.org&#x2F;installers&#x2F;browsers&#x2F;firefox.dat</span><br><span class="line">template&#x3D;firefox</span><br><span class="line">;[Safari]</span><br><span class="line">;exe&#x3D;&quot;C:\Program Files\Safari\Safari.exe&quot;</span><br><span class="line">[IE9]</span><br><span class="line">exe&#x3D;&quot;C:\Program Files\Internet Explorer\iexplore.exe&quot;</span><br></pre></td></tr></table></figure>
-
-<p>执行wptdriver.exe，就绪状态</p>
-<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8EWebPagetest/image-20210310181519204.png" alt="image-20210310181519204"></p>
-<p><strong>8.重新打开WebPagetest页面，显示了Test Location和Browser选项</strong></p>
-<p><img src="/2021/03/10/%E5%85%B3%E4%BA%8EWebPagetest/image-20210310181547660.png" alt="image-20210310181547660"></p>
-<p><a href="https://github.com/pwstrick/WebPagetest-Docs/blob/master/Private-Instances/private-instances.md#51-配置" target="_blank" rel="noopener">https://github.com/pwstrick/WebPagetest-Docs/blob/master/Private-Instances/private-instances.md#51-%E9%85%8D%E7%BD%AE</a></p>
-<p><a href="https://www.webpagetest.org/forums/showthread.php?tid=456" target="_blank" rel="noopener">https://www.webpagetest.org/forums/showthread.php?tid=456</a></p>
-<p><a href="https://github.com/pwstrick/WebPagetest-Docs/blob/master/Using-WebPagetest/quick-start-guide.md" target="_blank" rel="noopener">https://github.com/pwstrick/WebPagetest-Docs/blob/master/Using-WebPagetest/quick-start-guide.md</a></p>
-<p><strong>结果分析</strong></p>
-<p>阻塞时间（First Byte Time）</p>
-<p>首字节时间是指浏览器收到HTML内容的第一个字节时间，包括DNS查找、TCP连接、SSL协商等</p>
-<p>长连接已启动（Keep-alive Enabled）</p>
-<p>请求网页上的内容（图像、JavaScript、CSS等）需要与web服务器建立连接。每次都重新连接会耗费一些时间，所以最好复用连接，keep-alive实现了这个方法，通常可以将加载页面的时间减少40%-50%</p>
-<p>压缩文本（Compress Text）</p>
-<p>除了图片或视频，剩余的都是某种类型的文本（html、JavaScript、css等）。http提供了一种以压缩形式传输文件的方法。由于文本资源通常在页面开头下载，提供文本资源的快慢很影响用户体验。</p>
-<p>压缩图片（Compress Images）</p>
-<p>图像压缩检查仅查看照片图像，确保质量不会设置得太高。JEPG图片可以在不降低视觉质量的情况下压缩</p>
-<p>缓存静态内容（Cache Static Content）</p>
-<p>静态内容是网页上不经常更改的内容（图片、JavaScript、css等）。可以配置它们，以便用户的浏览器将它们缓存起来，浏览器决定一个资源被缓存多久取决于2个因素：缓存寿命和过期时间。资源的寿命可以通过2个标签配置：实体标签（ETags）和首部标签（Last-Modified）。过期时间是根据2个TTL首部标签：Cache-Control的max-age属性和Expires Header。</p>
-<p>合并JS/CSS文件（Combine JS/CSS File）</p>
-<p>提高性能通常意味着减少请求数，最简单的方法之一是减少页面开头加载的css\js文件数量。一个简单的实现方法是将JavaScript和css分别合并到一个文件中（CSS最好在JS之前加载）。减少用户从屏幕看到东西的等待时间，对用户体验有极大的影响。</p>
-<p>使用CSN(Use of CDN）</p>
-<p>每个内容的请求都是从用户的浏览器到web服务器再返回。随着距离越来越远，这样一个往返可能消耗很多时间，把你的服务器建立在离用户比较近的地方就能解决这个问题，这正是内容分发网络的作用。</p>
-<p>首次视图（First View）</p>
-<p>首次视图的测试，将会把浏览器的缓存和Cookie清除，表示访问者第一次访问该页面的情况</p>
-<p>重复视图（Repeat View）</p>
-<p>重复视图会在首次视图测试后立即执行，不会清除任何内容。重复视图测试模拟的是用户离开页面后马上进入此页面的情况。</p>
-<p>文档加载完毕（Document Completed）</p>
-<p>从初始化请求到加载所有静态内容，但可能不包括由JavaScript执行触发的内容，可以理解为开始执行window.onload</p>
-<p>页面所有元素加载时间（Fully Loaded）</p>
-<p>从初始化请求到Document Complete后，2秒内没有网络活动的时间，这包括在主网页加载后由JavaScript触发的任何活动</p>
-<p>整页加载时间（Load Time）</p>
-<p>与Document Complete中的时间属性相同</p>
-<p>第一个字节加载时间（First Byte）</p>
-<p>这个时间表示从初始化请求到服务端响应后，接收到第一个字节的时间。此时的大部分时间为“后端时间”，服务器为用户构建页面的时间量</p>
-<p>页面渲染时间（Start Render）</p>
-<p>渲染时间表示屏幕上显示东西的第一个时间点，在这个时间点之前用户看到是一个空白页</p>
-<p>DOM元素数量（DOM Elements）</p>
-<p>HTTP请求数（Requests）</p>
-<p>传输的字节量（Bytes In）</p>
-<p>浏览器加载页面下载的数据量，通常也被称为“页面大小”</p>
-
+        
+          <a class="article-more-a" href="/2021/03/10/%E5%85%B3%E4%BA%8EWebPagetest/#more">展开全文 >></a>
+        
       
 
       
@@ -748,165 +722,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/01/%E5%85%B3%E4%BA%8Eredis/">关于redis</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/01/%E5%85%B3%E4%BA%8Eredis/" class="archive-article-date">
-  	<time datetime="2021-03-01T09:40:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> redis是一个基于内存的高性能key-value数据库</p>
-<p><strong>redis和memcached相比的优势</strong></p>
-<p>1.支持丰富的数据类型；2.支持数据备份（master-slave模式）；3.支持数据持久化；4.性能高</p>
-<p>在高并发场景的压力下，多线程非阻塞式IO的memcached表现会更加优异</p>
-<p><img src="/2021/03/01/%E5%85%B3%E4%BA%8Eredis/image-20210302175508854.png" alt="image-20210302175508854"></p>
-<ul>
-<li>memcached不支持内存数据持久化操作，所有数据以in-memory的形式存储</li>
-<li>key不能超过250个字节</li>
-<li>value不能超过1M字节</li>
-<li>key的最大失效时间是30天</li>
-</ul>
-<hr>
-        
-          <a class="article-more-a" href="/2021/03/01/%E5%85%B3%E4%BA%8Eredis/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于Fiddler" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/04/%E5%85%B3%E4%BA%8EFiddler/">关于Fiddler</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/04/%E5%85%B3%E4%BA%8EFiddler/" class="archive-article-date">
-  	<time datetime="2021-01-04T08:29:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Fiddler工作原理</strong></p>
-<p>Fiddler工作于OSI七层模型中的应用层，Fiddler在客户端与服务端之间建立一个代理服务器，能够捕获通过的http(s)请求。</p>
-<p><img src="/2021/01/04/%E5%85%B3%E4%BA%8EFiddler/image-20210104175201663.png" alt="image-20210104175201663"></p>
-<p>简单来说，本来是客户端直接向服务端进行请求的，但是中间加了Fiddler代理进行拦截，将客户端的请求获取下来，通过代理地址127.0.0.1:8888，再次向服务端进行请求，并将返回结果传给客户端展示</p>
-<hr>
-        
-          <a class="article-more-a" href="/2021/01/04/%E5%85%B3%E4%BA%8EFiddler/#more">展开全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">抓包工具</a>
         		</li>
       		
 		</ul>
@@ -1161,6 +976,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
             
             <div class="clearfix"></div>

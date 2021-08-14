@@ -16,7 +16,7 @@
 <meta property="og:description" content="Python程序的生命周期  源码阶段（.py文件） 编译阶段（PyCodeObject字节码对象） 运行阶段（Python虚拟机运行字节码指令）  Python程序的运行依赖Python解释器，执行一个.py文件，首先是将.py文件编译成PyCodeObject字节码对，并存入内存中。接下来，python虚拟机逐条运行字节码指令。当运行完毕后，会生成pyc文件，.pyc文件PyCodeObje">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-16T09:52:47.000Z">
-<meta property="article:modified_time" content="2021-05-11T10:43:47.054Z">
+<meta property="article:modified_time" content="2021-07-09T10:16:01.484Z">
 <meta property="article:author" content="AfullA">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -154,6 +154,27 @@
 <li>运行阶段（Python虚拟机运行字节码指令）</li>
 </ul>
 <p>Python程序的运行依赖Python解释器，执行一个.py文件，首先是将.py文件编译成PyCodeObject字节码对，并存入内存中。接下来，python虚拟机逐条运行字节码指令。当运行完毕后，会生成pyc文件，.pyc文件PyCodeObject字节码对象在硬盘中的表现形式。当下次再运行相同的.py文件时，假如源码没有任何改动，则不会再次将文件编译成PyCodeObject字节码对象，而是优先将.pyc文件载入到内存中去执行相应的字节码指令</p>
+<p><strong>进程、线程和协程</strong></p>
+<p>进程是系统进行资源分配和调度的一个独立单位，一个程序至少有一个进程，一个进程至少有一个线程</p>
+<p>线程是进程的一个实体，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位，线程不拥有系统资源，只拥有一点在运行中必不可少的资源，但它可与同属一个进程的其他线程共享资源</p>
+<p>协程是一种比线程更加轻量级的存在，一个线程可以用多个协程</p>
+<p>进程切换需要的资源较大，效率相对低；线程切换需要的资源一般，效率比进程高；协程切换需要的资源很小，三者中效率最高</p>
+<p>计算密集型：用进程；IO密集型：用线程或协程  </p>
+<a id="more"></a>
+
+<p><strong>迭代器与生成器</strong></p>
+<p>能使用for遍历的就叫可迭代对象，能使用next方法的就是迭代器，生成器是特殊的迭代器，使用生成器表达式取代列表解析可以节省内存空间</p>
+<p><strong>GIL</strong></p>
+<p>GIL是Python中的全局解释器锁，是不可控的，同一个进程中，假如有多个线程在运行，那么其中一个线程在运行的时候就会占用GIL锁，使得其他线程无法运行，等该线程运行结束以后其他线程才能进行。如果线程中遇到耗时操作，则GIL锁会解开使得其他线程运行，所以说在多线程中，线程的运行仍然是有先后顺序的并不是同时进行</p>
+<p>GIL锁释放：时间片耗尽（cpu时间）；任务遇到I/O等待时；执行任务结束；执行字节码阈值时</p>
+<p>GIL锁与互斥锁的区别：互斥锁是在多线程的情况下，确保当前线程执行完成后执行下一个任务，当前任务没有结束下一个任务就会被阻塞；GIL是保证同一时间只有一个线程在执行，但是该线程让出GIL锁时，有可能并没有完成该线程的任务</p>
+<p><strong>几种设计模式</strong></p>
+<ul>
+<li>单例模式：保证一个类仅有一个实例，并提供一个访问它的全局访问点，例如框架中的数据库连接</li>
+<li>装饰器模式：不修改元类代码和继承的情况下动态拓展类的功能</li>
+<li>迭代器模式：提供一个方法顺序访问一个聚合对象中的各个元素</li>
+<li>命令模式：目的是解除调用者类与接受者类之间的耦合，命令模式支持操作的取消和重做（<a href="https://l1nwatch.gitbook.io/python-design-mode/di-san-bu-fen-hang-wei-xing-mo-shi/di-11-zhang-ming-ling-mo-shi）" target="_blank" rel="noopener">https://l1nwatch.gitbook.io/python-design-mode/di-san-bu-fen-hang-wei-xing-mo-shi/di-11-zhang-ming-ling-mo-shi）</a></li>
+</ul>
 <p><strong>Python中内置的数据结构</strong></p>
 <ul>
 <li>整型int、长整型long、浮点型float、复数complex</li>
@@ -168,6 +189,28 @@
 <li>可变类型有list、dict，不可变类型有string、number、tuple</li>
 <li>当进行修改操作时，可变类型传递的是内存中的地址，也就是说，直接修改内存中的值，并没有开辟新的内存</li>
 <li>不可变类型被修改时，并没有改变原内存地址中的值，而是开辟一块新的内存，将原地址中的值复制过去，对这块新开辟的内存中的值进行操作</li>
+</ul>
+<p><strong>Python常用标准库</strong></p>
+<ul>
+<li>os：提供不少与操作系统相关联的函数</li>
+<li>sys：通常用于命令行参数</li>
+<li>datetime</li>
+<li>re</li>
+<li>math</li>
+<li>…..</li>
+</ul>
+<p><strong>深拷贝与浅拷贝</strong></p>
+<ul>
+<li>浅拷贝是对一个对象父级（外层）的拷贝，并不会拷贝子级（内部）<ol>
+<li>如果最外层的数据类型是可变的，比如说列表，字典等，浅拷贝会开启新的地址空间去存放。</li>
+<li>如果最外层的数据类型是不可变的，比如元组，字符串等，浅拷贝对象的时候，还是引用对象的地址空间</li>
+</ol>
+</li>
+<li>深拷贝对一个对象是所有层次的拷贝（递归），内部和外部都会被拷贝过来<ol>
+<li>最外层数据类型可变，这个时候，内部和外部的都会拷贝过来。</li>
+<li>外层数据类型不可变，如果里面是可变数据类型，会新开辟地址空间存放。如果内部数据类型不可变，才会如同浅拷贝一样，是对地址的引用</li>
+</ol>
+</li>
 </ul>
 <p><strong>is和==的区别</strong></p>
 <p>is：比较的是两个对象的id值是否相等，也就是比较两对象是否为同一个实例对象，是否指向同一个内存地址</p>
@@ -537,6 +580,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
             
             <div class="clearfix"></div>

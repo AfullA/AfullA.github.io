@@ -124,6 +124,182 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-关于测试的一些学习记录（3）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/">关于测试的一些学习记录（3）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-10-27T07:01:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>测试策略通俗来讲就是“测什么”和“怎么测”：（1）测试对象和范围是什么；（2）测试目标是什么；（3）测试的重点和难点是什么；（4）测试的深度和广度；（5）如何安排各种测试活动，先测什么后测什么；（6）如何评价测试的效果</p>
+<p>测试策略确定测试活动，在测试计划中被拆解为一个个任务，每个任务确定工期、执行先后次序和责任人</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027154622894.png" alt="image-20201027154622894"></p>
+<hr>
+<p>四步测试策略制定法：</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027155225940.png" alt="image-20201027155225940"></p>
+<p>明确产品质量目标：（1）测试目标就是让产品在发布时候能够满足事先约定的质量目标；（2）围绕产品质量目标进行刚刚好的测试；（3）将目标-行为-评估形成闭环</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027161917361.png" alt="image-20201027161917361"></p>
+<p>首先，将产品质量评估模型作用于具体的产品，得到产品质量目标；其次，我们根据产品质量目标来制定测试策略，确定接下来的测试活动；再次，执行各种测试活动；最后，对测试效果进行评估，评估产品的质量目标是否达到。此时，目标、行为和评估会形成一个闭环，一旦发现没有达到产品质量目标，就及时调整测试策略。</p>
+<p>进行风险分析：（1）提前识别到项目中可能存在哪些会阻塞测试的风险，然后基于风险来调整测试策略；（2）基于风险来加强和降低测试投入。老功能在老版本中已经被测试过，质量的起点相比全新开发的功能要高，失效的风险更低，对高风险的部分加强测试投入，对低风险的部分降低测试投入。</p>
+<p>适配“产品研发流程”：（1）按照产品研发流程，根据在哪个阶段项目能够确定到哪种程度的实际情况，来为测试策略设计一个符合这种进程的结构。</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172024702.png" alt="image-20201027172024702"></p>
+<p>（2）根据研发流程来安排测试活动，确保测试和开发的节奏是彼此吻合的</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172432322.png" alt="image-20201027172432322"></p>
+<p>进行测试分层：通过测试分层，能够将一个大的测试目标，分到不同层次中分阶段去完成。</p>
+<p><img src="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/image-20201027172726993.png" alt="image-20201027172726993"></p>
+        
+          <a class="article-more-a" href="/2020/10/27/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于测试的一些学习记录（2）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/">关于测试的一些学习记录（2）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-10-21T07:58:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>测试设计：把测试点加工为测试用例，就叫测试设计。如果说测试点还只是一些散乱的测试思路的集合，那测试用例就是一份真正能够指导测试的测试说明书。路径分析法、判定表、正交分析法、等价类、边界值等都是常见的测试设计方法。</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201021164726059.png" alt="image-20201021164726059"></p>
+<p>在测试设计阶段，保证测试用例的质量，为测试团队提供有效的测试技术支持是重要职责。</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201021165948266.png" alt="image-20201021165948266"></p>
+<p>建模：研究测试点、分析特征的情况并对其进行归类是必不可少的。可分为四类：流程、参数、数据、组合。对流程类，可以通过绘制“流程图”来建立测试模型；对参数类，可以通过“输入输出表”来建立测试模型；对数据类，可以通过“等价类分析表”来建立测试模型；对组合类，可以通过“因子表”来建立测试模型。</p>
+<p>设计基础测试用例：覆盖模型，得到一些测试条件。</p>
+<p>补充测试数据：为基础测试用例确定测试输入、补充测试数据。</p>
+<p>扩展：根据经验，特别是对系统哪些地方容易发生缺陷的认识，补充一些测试用例，增加系统的有效性。</p>
+<hr>
+<p>流程类测试点，拥有流程方面的一些特征，将测试点分成一些步骤，会因输入的不同而进行不同的处理</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022173249440.png" alt="image-20201022173249440"></p>
+<p>参数类测试点，测试点中主要包含着一些参数，有两个重要的特点：（1）参数值的个数是有限的，可以通过遍历的方式来测试覆盖到；（2）系统会对不同的参数值作出不同的处理和响应</p>
+<p>数据类测试点，测试点中主要包含着一些数据，有两个特点：（1）数据的取值是一个范围，通常不能用遍历的方式来测试覆盖到；（2）系统对允许输入的数据作出的处理或响应往往是一样的</p>
+<p>组合类测试点，测试点可以组合在一起进行测试设计</p>
+<hr>
+<p>流程类测试设计：路径分析法</p>
+<p><img src="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/image-20201022175603679.png" alt="image-20201022175603679"></p>
+<p>对流程类的测试点，建模就是绘制这些测试点代表的业务流程图，需要注意：（1）测试者要充分理解和测试点相关的功能业务流程，确保流程图的正确性；（2）测试者要和产品设计者充分交流，保证绘出的流程图能够正确覆盖产品的设计；（3）如果开发提供了功能流程图，测试者需要仔细审核流程图的正确性，如有必要可以重新绘制</p>
+        
+          <a class="article-more-a" href="/2020/10/21/%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89/#more">展开全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-关于测试的一些学习记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -425,6 +601,14 @@
 <p>数组，所有元素都连续存储在一段内存中，且每个元素占用的内存大小相同，这使得数组具备了通过下标快速访问数据的能力。但连续存储的缺点也很明显，增加容量、增删元素的成本很高，时间复杂度均为O(n)。增加数组容量需要先申请一块新的内存，然后复制原有的元素。删除元素时需要移动被删除元素之后的所有元素以保证元素是连续的。</p>
 <p>链表是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存放下一个节点的指针。由于不用按顺序存储，链表在插入的时候可以达到O(1)的复杂程度，但是查找一个节点或者访问特定编号的节点则需要O(N)的时间。</p>
 <p>使用链表结构可以克服数组需要预先知道数据大小的缺点，链表结构可以充分利用计算机内存空间，实现灵活的内存动态管理。但是链表失去了数组随机读取的优点，同时链表由于增加了节点的指针域，空间开销更大。</p>
+<p><strong>栈和堆的区别</strong></p>
+<ol>
+<li>申请方式不同：栈由系统自动分配，而堆是人为申请开辟</li>
+<li>申请大小不同：栈获得的空间比较小，而堆获得空间比较大</li>
+<li>申请效率不同：栈速度较快，堆速度较慢</li>
+<li>底层不同：栈是连续的空间，堆是不连续的空间（完全二叉树）</li>
+<li>存储内容不同：栈在函数调用时，第一个进栈的是主函数中的下一条指令的地址，然后是函数的各个参数， 在大多数C编译器中，参数是由右向左入栈的，然后是函数中的局部变量，注意静态变量是不入栈的， 静态变量存储在静态存储区。当本次函数调用结束后，局部变量先出栈，然后是参数，最后栈顶指针指向最开始存的地址，也就是主函数中的下一条指令，程序由该点继续运行；堆一般是在堆的头部用一个字节存放堆的大小。堆中的具体内容由程序员安排</li>
+</ol>
 
       
 
@@ -680,202 +864,6 @@
 
 
   
-    <article id="post-Python之并发编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/13/Python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">Python之并发编程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/13/Python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-11-13T06:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>进程</p>
-<ul>
-<li>进程是执行中的程序，也就是说进程是动态的，程序是静态的</li>
-<li>进程是操作系统分配资源的最小单位，一个进程控制块（PCB），有自己唯一的一个进程标志符（PID）</li>
-<li>进程之间相互独立，内存不共享</li>
-<li>每个进程都是一个实体，每个进程都有属于自己的一块内存</li>
-<li>进程的创建、销毁和切换开销较大</li>
-<li>进程只能创建子进程，无法创建平级进程</li>
-</ul>
-<p>线程</p>
-<ul>
-<li>线程是CPU的基本调度单位</li>
-<li>一个进程一般包含多个线程，一个进程下的多个线程共享进程资源</li>
-<li>不同进程之间的线程相互不可见</li>
-<li>线程不能独立执行</li>
-<li>一个线程可以创建和撤销另外一个线程</li>
-</ul>
-<p>一个进程至少有一个线程，进程有自己独立的内存单元，而多个线程共享一个内存单元。</p>
-<p>Python标准库中所有阻塞型I/O函数都会释放GIL，允许其他线程运行。time.sleep()函数也会释放GIL。因此，尽管有GIL，Python线程还是能在I/O密集型应用中发挥作用。</p>
-<p>可使用<code>concurrent.futures</code>模块在CPU密集型作业中绕开GIL。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">协程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">线程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">进程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python之协程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/11/Python%E4%B9%8B%E5%8D%8F%E7%A8%8B/">Python之协程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/11/Python%E4%B9%8B%E5%8D%8F%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-11-11T09:21:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>并发编程一般使用多线程或者多进程来实现，对于CPU计算密集型任务，由于GIL的存在，通常使用多进程来实现，而对于IO密集型任务，可以通过线程调度来让线程在执行IO任务时让出GIL，从而实现表面上的并发。</p>
-<p>对于IO密集型任务还有一种选择就是协程，是运行在单线程中的“并发”，协程相比多线程的一大优势是省去了多线程之间的切换开销，获得了更高的效率。Python中的异步IO模块asyncio就是基本的协程模块。</p>
-<p>协程的切换不同于线程切换，是由程序自身控制的，没有切换的开销。协程不需要多线程的锁机制，因为都是在同一个线程中运行，所以没有同时访问数据的问题，执行效率比多线程高很多。可以这么简单地理解：进程/线程：操作系统提供的一种并发处理任务的能力；协程：在代码执行流程中人为地实现多任务并发，是单个线程内的任务调度。多线程和多进程体现的是操作系统的能力，协程体现的是程序员的流程控制能力。</p>
-<p><code>yield</code>的语法规则是：在<code>yield</code>这里暂停函数的执行，并返回<code>yield</code>后面表达式的值（默认为None），直到被<code>next()</code>方法再次调用时，从上次暂停的yield代码处继续往下执行。</p>
-<p>每个生成器都可以执行<code>send()</code>方法，为生成器内部的<code>yield</code>语句发送数据。此时yield语句不在只是<u>yield xxx</u>的形式，还可以是<u>var = yield xxx</u>的赋值形式。它同时具备两个功能，一是暂停并返回函数，二是接收外部send()方法发送过来的值，重新激活函数，并将这个值赋值给var变量。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">simple_coroutine</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">'-&gt;启动协程'</span>)</span><br><span class="line">	y = <span class="number">10</span></span><br><span class="line">	x = <span class="keyword">yield</span> y</span><br><span class="line">	print(<span class="string">'-&gt;协程接收到了x的值: '</span>, x)</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_coro = simple_coroutine()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret = next(my_coro)</span><br><span class="line">-&gt;启动协程</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(ret)</span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_coro.send(<span class="number">20</span>)</span><br><span class="line">-&gt;协程接收到了x的值:  20</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;pyshell#9&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    my_coro.send(<span class="number">20</span>)</span><br><span class="line">StopIteration</span><br></pre></td></tr></table></figure>
-
-<p>协程可以处于下面四个状态中的一个。当前状态可以导入inspect模块，使用inspect.getgeneratorstate(…)方法查看，该方法返回：</p>
-<ul>
-<li>‘GEN_CREATED’：等待开始执行</li>
-<li>‘GEN_RUNNING’：协程正在执行</li>
-<li>‘GEN_SUSPENDED’：在yield表达式处暂停</li>
-<li>‘GEN_CLOSED’：执行结束</li>
-</ul>
-<p>因为send()方法的参数会成为暂停的yield表达式的值，所以仅当协程处于暂停状态时才能调用send()方法，不过如果协程还没激活（状态是’GEN_CREATED’），就立即把None之外的值发给它，会出现TypeError。因此，始终要先调用<u>next(my_coro)</u>激活协程（也可以调用<u>my_coro.end(None)</u>），这一过程被称作预激活。</p>
-<p>通过<code>asyncio</code>可以轻松实现协程来完成异步IO操作。<code>@asyncio.coroutine</code>，asyncio模块中的装饰器，用于将一个生成器声明为协程。asyncio的使用可分三步走：</p>
-<ol>
-<li>创建事件循环</li>
-<li>指定循环模式并运行</li>
-<li>关闭循环</li>
-</ol>
-<p>通常使用<code>asyncio.get_event_loop()</code>方法创建一个循环。运行循环有两种方法：一是调用<code>run_until_complete()</code>方法，二是调用<code>run_forever()</code>方法。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">协程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
@@ -1095,6 +1083,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
             
             <div class="clearfix"></div>

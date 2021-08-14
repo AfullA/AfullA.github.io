@@ -124,6 +124,168 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python基础记录-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/">Python基础记录(8)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/10/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-8/" class="archive-article-date">
+  	<time datetime="2019-05-10T03:55:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最简单的服务器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname() //获取当前机器的主机名</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.bind((host, port))</span><br><span class="line">s.listen(<span class="number">5</span>) //最多<span class="number">5</span>个连接在队列中等待接纳，到达这个数量后将开始拒绝连接</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    c, addr = s.accept() //接受客户端连接，c为客户端套接字</span><br><span class="line">    print(<span class="string">'Got connection from'</span>, addr)</span><br><span class="line">    c.send(<span class="string">'Thank you for connecting'</span>)</span><br><span class="line">    c.close()</span><br></pre></td></tr></table></figure>
+
+<p>最简单的客户端</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">s = socket.socket()</span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">1234</span></span><br><span class="line">s.connect((host, port))</span><br><span class="line">print(s.recv(<span class="number">1024</span>))</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Python基础记录-7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/09/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-7/">Python基础记录(7)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/09/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-7/" class="archive-article-date">
+  	<time datetime="2019-05-09T09:50:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="Python代码覆盖率检查"><a href="#Python代码覆盖率检查" class="headerlink" title="Python代码覆盖率检查"></a>Python代码覆盖率检查</h6><hr>
+<h6 id="单元测试unittest框架"><a href="#单元测试unittest框架" class="headerlink" title="单元测试unittest框架"></a>单元测试unittest框架</h6><p>在unittest中有四个重要概念：Test Case、Test Suite、Test Runner、Test Fixture</p>
+<p>Test Case：最小的测试单元，用于检查特定输入集合的特定返回值，unittest提供了TestCase基类，我们创建的测试类需要继承该基类，它可以用来创建新的测试用例</p>
+<p>Test Suite：测试套件是测试用例、测试套件或两者的集合。用于组装一组要运行的测试。unittest提供了TestSuite类来创建测试套件</p>
+<p>Test Runner：Test Runner是一个组件，用于协调测试的执行并向用户提供结果。Test Runner可以使用图形界面、文本界面或返回特殊值来展示执行测试的结果。unittest提供了TextTestRunner类运行测试用例，为了生成HTML格式的测试报告，后面会选择使用HTMLTestRunner类</p>
+<p>Test Fixture：Test Fixture代表执行一个或多个测试所需的环境准备，以及关联的清理动作。例如，创建临时或代理数据库、目录，或启动服务器进程。unittest中提供了setUp()/tearDown()、setUpClass()/tearDownClass()等方法来完成这些操作</p>
+<ul>
+<li>setUpModule/tearDownModule：在整个模块的开始与结束时被执行</li>
+<li>setUpClass/tearDownClass：在测试类的开始与结束时被执行</li>
+<li>setUp/tearDown：在测试用例的开始与结束时被执行</li>
+</ul>
+<hr>
+<p>unittest默认根据ASCII码的顺序加载测试用例（数字与字母的顺序为0<del>9，A</del>Z，a~z），除了在命名上加以控制，也可以声明测试套件TestSuite类，通过addTest()方法按照一定的顺序来加载测试用例</p>
+<p>DDT（<a href="https://github.com/datadriventests/ddt），是针对" target="_blank" rel="noopener">https://github.com/datadriventests/ddt），是针对</a> unittest 单元测试框架设计的扩展库。允许使用不同的测试数据来运行一个测试用例，并将其展示为多个测试用例  </p>
+<h6 id="代码检查PyLint"><a href="#代码检查PyLint" class="headerlink" title="代码检查PyLint"></a>代码检查PyLint</h6><h6 id="性能分析profile与cProfile"><a href="#性能分析profile与cProfile" class="headerlink" title="性能分析profile与cProfile"></a>性能分析profile与cProfile</h6>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python基础记录-6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -826,6 +988,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
             
             <div class="clearfix"></div>
