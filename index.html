@@ -295,57 +295,9 @@
 <li>ClassNotFoundException 类找不到</li>
 <li>OutOfMerroyError 内存溢出</li>
 </ul>
-<p><strong>Android Activity生命周期</strong></p>
-<ul>
-<li>onCreate()</li>
-<li>onStart()</li>
-<li>onRestart()</li>
-<li>onResume()</li>
-<li>onPause()</li>
-<li>onStop()</li>
-<li>onDestory()</li>
-</ul>
-<p><strong>Android六大布局</strong></p>
-<ul>
-<li>LinerLayout 线性布局</li>
-<li>TableLayout 表格布局</li>
-<li>FrameLayout 帧布局</li>
-<li>RelativeLayout 相对布局</li>
-<li>GridLayout 网格布局</li>
-<li>AbsoulteLayout 绝对布局</li>
-</ul>
-<p><strong>Monkey命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -p 包名</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -v 最高警告的错误日志才输出</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 500 执行500次</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 日志重定向到 monkey.log</span></span><br><span class="line">adb shell monkey -p &lt;packageName&gt; -v 500 &gt; monkey.log</span><br></pre></td></tr></table></figure>
-
-<p><em>-p</em> 包</p>
-<p><em>-s</em> 设置种子</p>
-<p><em>–ignore-crashes</em> 出现 crash 继续执行</p>
-<p><em>–ignore-timeouts</em> 出现 anr 继续执行</p>
-<p><em>–pct-touch</em> 触摸事件占比（手指放下，抬起）</p>
-<p><em>–pct-motion</em> 动作事件占比（手指放下，移动，抬起）</p>
-<p><em>–pct-trackball</em> 轨迹球事件占比（单纯的move）</p>
-<p><em>–pct-nav</em> 基本导航事件，用于方向输入设备的上下左右操作</p>
-<p><em>–pct-syskeys</em> 系统按键事件</p>
-<p><em>–pct-appswitch</em> 应用启动事件</p>
-<p><em>–pct-anyevent</em> 其他未提及事件</p>
-<p><strong>libimobiledevice常用命令</strong></p>
-<ul>
-<li>brew install libimobiledevice 安装</li>
-<li>brew uninstall libimobiledevice 卸载</li>
-<li>ideviceinstaller -u [uuid] -i [xxx.ipa] 给指定连接的设备安装应用</li>
-<li>ideviceinstaller -u [uuid] -U [bundleId] 给指定连接的设备卸载应用</li>
-<li>ideviceinstaller -u [udid] -l -o list_user 指定设备，查看安装的第三方应用</li>
-<li>ideviceinstaller -u [udid] -l -o list_system 指定设备，查看安装的系统应用</li>
-<li>ideviceinstaller -u [udid] -l -o list_all 指定设备，查看安装的系统应用和第三方应用</li>
-<li>idevice_id -l 查看当前已连接的设备的UUID</li>
-<li>ideviceinfo 获取设备信息</li>
-<li>ideviceinfo -u [udid] 指定设备，获取设备信息</li>
-<li>ideviceinfo -u [udid] -k DeviceName 指定设备，获取设备名称</li>
-<li>ideviceinfo -u [udid] -k ProductVersion 指定设备，获取设备版本</li>
-<li>ideviceinfo -u [udid] -k ProductType  指定设备，获取设备类型</li>
-<li>ideviceinfo -u [udid] -k ProductName 指定设备，获取设备系统名称</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2021/05/10/%E4%B8%80%E4%BA%9B%E6%9D%82%E8%AE%B0/#more">展开全文 >></a>
+        
       
 
       

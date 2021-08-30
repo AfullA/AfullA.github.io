@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://afulla.github.io">
   <title>Python之鸭子类型 | AfullA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="动态语言与静态语言 静态类型语言在编译时便已确定变量的类型，而动态语言的变量类型要到程序运行的时候，待变量被赋予某个值之后，才会具有某种类型。 123String s &#x3D; &#39;hello&#39;    s &#x3D; &#39;hi&#39;    s &#x3D; 0 &#x2F;&#x2F;编译时会报错  123s &#x3D; &#39;hello&#39;s &#x3D; 0s &#x3D; [1, 2, 3] #可以给变量随意赋值  静态类型语言的优点首先是在编译时就能发现类型不匹配的错误，编">
+  <meta name="description" content="动态语言与静态语言 静态类型语言在编译时便已确定变量的类型，而动态语言的变量类型要到程序运行的时候，待变量被赋予某个值之后，才会具有某种类型。 123String s &#x3D; &#39;hello&#39;    s &#x3D; &#39;hi&#39;    s &#x3D; 0 &#x2F;&#x2F;编译时会报错  123s &#x3D; &#39;hello&#39;s &#x3D; 0s &#x3D; [1, 2, 3] #可以给变量随意赋值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python之鸭子类型">
 <meta property="og:url" content="https://afulla.github.io/2019/09/09/Python%E4%B9%8B%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="AfullA">
-<meta property="og:description" content="动态语言与静态语言 静态类型语言在编译时便已确定变量的类型，而动态语言的变量类型要到程序运行的时候，待变量被赋予某个值之后，才会具有某种类型。 123String s &#x3D; &#39;hello&#39;    s &#x3D; &#39;hi&#39;    s &#x3D; 0 &#x2F;&#x2F;编译时会报错  123s &#x3D; &#39;hello&#39;s &#x3D; 0s &#x3D; [1, 2, 3] #可以给变量随意赋值  静态类型语言的优点首先是在编译时就能发现类型不匹配的错误，编">
+<meta property="og:description" content="动态语言与静态语言 静态类型语言在编译时便已确定变量的类型，而动态语言的变量类型要到程序运行的时候，待变量被赋予某个值之后，才会具有某种类型。 123String s &#x3D; &#39;hello&#39;    s &#x3D; &#39;hi&#39;    s &#x3D; 0 &#x2F;&#x2F;编译时会报错  123s &#x3D; &#39;hello&#39;s &#x3D; 0s &#x3D; [1, 2, 3] #可以给变量随意赋值">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-09-09T01:48:52.000Z">
-<meta property="article:modified_time" content="2020-10-13T10:22:00.000Z">
+<meta property="article:modified_time" content="2021-08-30T09:49:23.973Z">
 <meta property="article:author" content="AfullA">
 <meta property="article:tag" content="基础知识">
 <meta name="twitter:card" content="summary">
@@ -152,6 +152,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">'hello'</span></span><br><span class="line">    s = <span class="string">'hi'</span></span><br><span class="line">    s = <span class="number">0</span> <span class="comment">//编译时会报错</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'hello'</span></span><br><span class="line">s = <span class="number">0</span></span><br><span class="line">s = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">#可以给变量随意赋值</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <p>静态类型语言的优点首先是在编译时就能发现类型不匹配的错误，编辑器可以帮助我们提前避免程序在运行期间有可能发生的一些错误；其次，如果在程序中明确地规定了数据类型，编辑器还可以针对这些信息对程序进行一些优化工作，提高程序执行速度。静态类型语言的缺点首先是迫使程序员依照强契约来编写程序，为每个变量规定数据类型，归根结底只是辅助我们编写可靠性高的程序的一种手段，而不是编写程序的目的；其次，类型声明会增加更多的代码，在程序编写过程中，这些细节会让程序员的精力从思考业务逻辑上分散开来。</p>
 <p>动态类型语言的优点是编写的代码数量更少，看起来更加简洁，程序员可以把更多的精力放在业务逻辑上。动态类型语言的缺点是无法保证变量的类型，从而在程序运行期有可能发生跟类型相关的错误。</p>

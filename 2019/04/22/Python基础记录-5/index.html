@@ -16,7 +16,7 @@
 <meta property="og:description" content="作用域1234&gt;&gt;&gt; x &#x3D; 1&gt;&gt;&gt; scope &#x3D; vars()&gt;&gt;&gt; scope[&#39;x&#39;]1  全局作用域外，每个函数调用都将创建一个作用域。函数内部使用的变量称为局部变量（与之对应的是全局变量）。 globals返回一个包含全局变量的字典，locals返回一个包含局部变量的字典。 作用域嵌套应用：一个函数位于另一个函数中，而且外面的函数">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-04-22T03:21:54.000Z">
-<meta property="article:modified_time" content="2020-10-13T10:22:00.000Z">
+<meta property="article:modified_time" content="2021-08-30T09:53:57.288Z">
 <meta property="article:author" content="AfullA">
 <meta property="article:tag" content="基础知识">
 <meta name="twitter:card" content="summary">
@@ -152,6 +152,8 @@
 <p>全局作用域外，每个函数调用都将创建一个作用域。函数内部使用的变量称为局部变量（与之对应的是全局变量）。</p>
 <p><code>globals</code>返回一个包含全局变量的字典，<code>locals</code>返回一个包含局部变量的字典。</p>
 <p>作用域嵌套应用：一个函数位于另一个函数中，而且外面的函数返回里面的函数。闭包：存储其所在作用域的函数。</p>
+<a id="more"></a>
+
 <h5 id="面向对象设计"><a href="#面向对象设计" class="headerlink" title="面向对象设计"></a>面向对象设计</h5><p>对象：由属性和方法组成。属性是对象的变量，方法是存储在属性中的函数。与函数相比，关联方法总将其所属的对象作为第一个参数（通常为<code>self</code>）。</p>
 <p>类：表示一组对象，每个对象都属于特定的类。类的主要任务是定义其实例将包含的方法。</p>
 <p>多态：能够同样地对待不同类型的对象，即无需知道对象属于哪个类就可以调用其方法。</p>

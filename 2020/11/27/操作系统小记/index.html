@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://afulla.github.io/2020/11/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0/image-20201127173711484.png">
 <meta property="article:published_time" content="2020-11-27T03:55:58.000Z">
-<meta property="article:modified_time" content="2020-12-07T10:10:27.217Z">
+<meta property="article:modified_time" content="2021-08-30T09:42:25.139Z">
 <meta property="article:author" content="AfullA">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
@@ -153,6 +153,8 @@
 <p>（1）线程是进程的一个实体，一个进程可以拥有多个线程，多个线程也可以并发执行。一个没有线程的进程也可以看做是单线程的，同样线程也经常被看作是一种轻量级的进程。进程可以不依赖线程单独存在，而线程则不然。</p>
 <p>（2）进程是并发程序在一个数据集合上的一次执行过程，进程是系统进行资源分配和调度的独立单位，线程是进程的实体，它是比进程更小的能够独立执行的基本单元，线程自己不拥有任何系统资源，但是它可以访问其隶属进程的全部资源。</p>
 <p>（3）与进程的控制表PCB相似，线程也有自己的控制表TCB，但TCB中保存的线程状态比PCB表少得多。</p>
+<a id="more"></a>
+
 <p>进程的作用：为了提高CPU的执行率，为了避免等待而造成CPU空转以及其他计算机硬件资源的浪费</p>
 <p>线程的作用：为了减少进程切换和创建带来的开销，提高执行效率和节省资源</p>
 <p>为什么引入线程？</p>
@@ -237,7 +239,7 @@
 <li>管道通信系统（管道即连接读写进程以实现他们之间通信的共享文件（pipe文件，类似先进先出的队列，由一个进程写，另一进程读））。实际操作中，管道分为：匿名管道、命名管道。匿名管道是一个未命名的、单向管道，通过父进程和一个子进程之间传输数据。匿名管道只能实现本地机器上两个进程之间的通信，而不能实现跨网络的通信。命名管道不仅可以在本机上实现两个进程间的通信，还可以跨网络实现两个进程间的通信。</li>
 </ul>
 <p><strong>信号量、消息传递（管道、消息队列、套接字）和共享内存</strong></p>
-<a id="more"></a>
+<!--more-->
 
 <hr>
 <p><strong>临界资源</strong></p>

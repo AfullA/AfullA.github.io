@@ -227,17 +227,9 @@
 <h6 id="单元测试unittest框架"><a href="#单元测试unittest框架" class="headerlink" title="单元测试unittest框架"></a>单元测试unittest框架</h6><p>在unittest中有四个重要概念：Test Case、Test Suite、Test Runner、Test Fixture</p>
 <p>Test Case：最小的测试单元，用于检查特定输入集合的特定返回值，unittest提供了TestCase基类，我们创建的测试类需要继承该基类，它可以用来创建新的测试用例</p>
 <p>Test Suite：测试套件是测试用例、测试套件或两者的集合。用于组装一组要运行的测试。unittest提供了TestSuite类来创建测试套件</p>
-<p>Test Runner：Test Runner是一个组件，用于协调测试的执行并向用户提供结果。Test Runner可以使用图形界面、文本界面或返回特殊值来展示执行测试的结果。unittest提供了TextTestRunner类运行测试用例，为了生成HTML格式的测试报告，后面会选择使用HTMLTestRunner类</p>
-<p>Test Fixture：Test Fixture代表执行一个或多个测试所需的环境准备，以及关联的清理动作。例如，创建临时或代理数据库、目录，或启动服务器进程。unittest中提供了setUp()/tearDown()、setUpClass()/tearDownClass()等方法来完成这些操作</p>
-<ul>
-<li>setUpModule/tearDownModule：在整个模块的开始与结束时被执行</li>
-<li>setUpClass/tearDownClass：在测试类的开始与结束时被执行</li>
-<li>setUp/tearDown：在测试用例的开始与结束时被执行</li>
-</ul>
-<hr>
-<p>unittest默认根据ASCII码的顺序加载测试用例（数字与字母的顺序为0-9，A-Z，a-z），除了在命名上加以控制，也可以声明测试套件TestSuite类，通过addTest()方法按照一定的顺序来加载测试用例</p>
-<p>DDT（<a href="https://github.com/datadriventests/ddt），是针对" target="_blank" rel="noopener">https://github.com/datadriventests/ddt），是针对</a> unittest 单元测试框架设计的扩展库。允许使用不同的测试数据来运行一个测试用例，并将其展示为多个测试用例  </p>
-<h6 id="代码检查PyLint"><a href="#代码检查PyLint" class="headerlink" title="代码检查PyLint"></a>代码检查PyLint</h6><h6 id="性能分析profile与cProfile"><a href="#性能分析profile与cProfile" class="headerlink" title="性能分析profile与cProfile"></a>性能分析profile与cProfile</h6>
+        
+          <a class="article-more-a" href="/2019/05/09/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-7/#more">展开全文 >></a>
+        
       
 
       
@@ -308,13 +300,6 @@
       
         <h5 id="魔法方法、特性和迭代器"><a href="#魔法方法、特性和迭代器" class="headerlink" title="魔法方法、特性和迭代器"></a>魔法方法、特性和迭代器</h5><p>重写构造函数</p>
 <p>重写是继承机制的一个重要方面，对构造函数来说尤其重要。构造函数用于初始化新建对象。对大多数子类来说，除超类的初始化代码外，还需要有自己的初始化代码。重写构造函数时更有可能遇到 一个特别的问题：重写构造函数时，必须调用超类的构造函数，否则可能无法正确地初始化对象。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.hungry = <span class="literal">True</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.hungry:</span><br><span class="line">            print(<span class="string">"Ahhh.."</span>)</span><br><span class="line">            self.hungry = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"No,thanks!"</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = Bird()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b.eat()</span><br><span class="line">Ahhh..</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b.eat()</span><br><span class="line">No,thanks!</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SongBird</span><span class="params">(Bird)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().__init__()  //如果没有调用超类的构造函数，将不包含属性hungry，导致调用eat()方法时报错</span><br><span class="line">        self.sound = <span class="string">'Squawk'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sing</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.sound)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = SongBird()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.sing()</span><br><span class="line">Squawk</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.eat()</span><br><span class="line">Ahhh..</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.eat()</span><br><span class="line">No,thanks!</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/04/23/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-6/#more">展开全文 >></a>
         
@@ -391,15 +376,9 @@
 <p>全局作用域外，每个函数调用都将创建一个作用域。函数内部使用的变量称为局部变量（与之对应的是全局变量）。</p>
 <p><code>globals</code>返回一个包含全局变量的字典，<code>locals</code>返回一个包含局部变量的字典。</p>
 <p>作用域嵌套应用：一个函数位于另一个函数中，而且外面的函数返回里面的函数。闭包：存储其所在作用域的函数。</p>
-<h5 id="面向对象设计"><a href="#面向对象设计" class="headerlink" title="面向对象设计"></a>面向对象设计</h5><p>对象：由属性和方法组成。属性是对象的变量，方法是存储在属性中的函数。与函数相比，关联方法总将其所属的对象作为第一个参数（通常为<code>self</code>）。</p>
-<p>类：表示一组对象，每个对象都属于特定的类。类的主要任务是定义其实例将包含的方法。</p>
-<p>多态：能够同样地对待不同类型的对象，即无需知道对象属于哪个类就可以调用其方法。</p>
-<p>封装：对象可能隐藏其内部状态。在Python中，所有属性都是公有的。（要让方法或属性成为私有，名称前面加<code>__</code>）</p>
-<p>继承：一个类可以是一个或多个类的子类，子类继承超类的所有方法。（内置方法<code>issubclass</code>，特殊属性<code>__bases__</code>）</p>
-<p>抽象基类：使用模块<code>abc</code>可创建抽象基类。抽象基类用于指定子类必须提供哪些功能，却不实现这些功能。最重要特征是不能实例化。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> abc <span class="keyword">import</span> ABC, abstractmethod</span><br><span class="line">Class A(ABC):</span><br><span class="line"><span class="meta">    @abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2019/04/22/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-5/#more">展开全文 >></a>
+        
       
 
       
@@ -621,23 +600,9 @@
       
         <h5 id="ASCII，Unicode和UTF-8"><a href="#ASCII，Unicode和UTF-8" class="headerlink" title="ASCII，Unicode和UTF-8"></a>ASCII，Unicode和UTF-8</h5><p>”字符“的最佳定义是Unicode字符。从Python3的str对象中获取的元素是Unicode字符。</p>
 <p>字符的标识，即码位，是0-1114111的数字（十进制），在Unicode标准中以4-6个十六进制数字表示，而且加前缀“U+”。字符的具体表述取决于所用的编码（在码位和字节序列之间转换时使用的算法）。把码位转换成字节序列的过程是编码，把字节序列转换成码位的过程是解码。</p>
-<p>ASCII码</p>
-<p>内存和磁盘中，对象都是以二进制数字（0和1）表示的（这些数字每8个为一组，即一个字节byte），一个字节一共可以用来表示256种不同状态。ASCII码一共规定了128个字符编码。Python bytes字面量只支持ASCII标准中的128个字符，剩余的必须用转义序列表示，例如，\xf0表示十六进制值0xf0。</p>
-<p>Unocode解决传统字符编码方案的局限性，为每种语言中的每个字符设定统一且唯一的二进制代码，以满足跨语言、跨平台进行文本转换处理的需求。Unicode只是个符号集，规定了符号的二进制代码，却没规定这个二进制代码应该如何存储，会存在字节顺序的问题（怎么知道两个字节表示一个符号，而不是两个符号呢），也会存在空间浪费的问题（英文字母仅需一个字节，若规定两个字节表示，那么必有一字节是0）</p>
-<p>UTF-8</p>
-<p>如果主要处理的是互联网常见语言书写的文本，那么使用变长编码（对于不同字符，使用不同数量的字节进行编码）UTF-8即可。UTF-8编码解读：如果第一个字节的第一位是0，则这个字节单独就是一个字符；如果第一位是1，则连续有多少个1，就表示当前字符占用多少个字节。</p>
-<p>Python3默认编码方式为UTF-8(Unicode实现方式之一)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getdefaultencoding()</span><br><span class="line"><span class="string">'utf-8'</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name1 = <span class="string">'小美'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(name1)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>str转换成bytes</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name2 = name1.encode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name2</span><br><span class="line"><span class="string">b'\xe5\xb0\x8f\xe7\xbe\x8e'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(name2)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">bytes</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>bytes转换成str</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name3 = name2.decode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name3</span><br><span class="line"><span class="string">'小美'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(name3)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2019/04/18/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-2/#more">展开全文 >></a>
+        
       
 
       

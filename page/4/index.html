@@ -153,18 +153,9 @@
 <li>进程的创建、销毁和切换开销较大</li>
 <li>进程只能创建子进程，无法创建平级进程</li>
 </ul>
-<p>线程</p>
-<ul>
-<li>线程是CPU的基本调度单位</li>
-<li>一个进程一般包含多个线程，一个进程下的多个线程共享进程资源</li>
-<li>不同进程之间的线程相互不可见</li>
-<li>线程不能独立执行</li>
-<li>一个线程可以创建和撤销另外一个线程</li>
-</ul>
-<p>一个进程至少有一个线程，进程有自己独立的内存单元，而多个线程共享一个内存单元。</p>
-<p>Python标准库中所有阻塞型I/O函数都会释放GIL，允许其他线程运行。time.sleep()函数也会释放GIL。因此，尽管有GIL，Python线程还是能在I/O密集型应用中发挥作用。</p>
-<p>可使用<code>concurrent.futures</code>模块在CPU密集型作业中绕开GIL。</p>
-
+        
+          <a class="article-more-a" href="/2019/11/13/Python%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/#more">展开全文 >></a>
+        
       
 
       
@@ -247,27 +238,9 @@
       
         <p>并发编程一般使用多线程或者多进程来实现，对于CPU计算密集型任务，由于GIL的存在，通常使用多进程来实现，而对于IO密集型任务，可以通过线程调度来让线程在执行IO任务时让出GIL，从而实现表面上的并发。</p>
 <p>对于IO密集型任务还有一种选择就是协程，是运行在单线程中的“并发”，协程相比多线程的一大优势是省去了多线程之间的切换开销，获得了更高的效率。Python中的异步IO模块asyncio就是基本的协程模块。</p>
-<p>协程的切换不同于线程切换，是由程序自身控制的，没有切换的开销。协程不需要多线程的锁机制，因为都是在同一个线程中运行，所以没有同时访问数据的问题，执行效率比多线程高很多。可以这么简单地理解：进程/线程：操作系统提供的一种并发处理任务的能力；协程：在代码执行流程中人为地实现多任务并发，是单个线程内的任务调度。多线程和多进程体现的是操作系统的能力，协程体现的是程序员的流程控制能力。</p>
-<p><code>yield</code>的语法规则是：在<code>yield</code>这里暂停函数的执行，并返回<code>yield</code>后面表达式的值（默认为None），直到被<code>next()</code>方法再次调用时，从上次暂停的yield代码处继续往下执行。</p>
-<p>每个生成器都可以执行<code>send()</code>方法，为生成器内部的<code>yield</code>语句发送数据。此时yield语句不在只是<u>yield xxx</u>的形式，还可以是<u>var = yield xxx</u>的赋值形式。它同时具备两个功能，一是暂停并返回函数，二是接收外部send()方法发送过来的值，重新激活函数，并将这个值赋值给var变量。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">simple_coroutine</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">'-&gt;启动协程'</span>)</span><br><span class="line">	y = <span class="number">10</span></span><br><span class="line">	x = <span class="keyword">yield</span> y</span><br><span class="line">	print(<span class="string">'-&gt;协程接收到了x的值: '</span>, x)</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_coro = simple_coroutine()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret = next(my_coro)</span><br><span class="line">-&gt;启动协程</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(ret)</span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_coro.send(<span class="number">20</span>)</span><br><span class="line">-&gt;协程接收到了x的值:  20</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;pyshell#9&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    my_coro.send(<span class="number">20</span>)</span><br><span class="line">StopIteration</span><br></pre></td></tr></table></figure>
-
-<p>协程可以处于下面四个状态中的一个。当前状态可以导入inspect模块，使用inspect.getgeneratorstate(…)方法查看，该方法返回：</p>
-<ul>
-<li>‘GEN_CREATED’：等待开始执行</li>
-<li>‘GEN_RUNNING’：协程正在执行</li>
-<li>‘GEN_SUSPENDED’：在yield表达式处暂停</li>
-<li>‘GEN_CLOSED’：执行结束</li>
-</ul>
-<p>因为send()方法的参数会成为暂停的yield表达式的值，所以仅当协程处于暂停状态时才能调用send()方法，不过如果协程还没激活（状态是’GEN_CREATED’），就立即把None之外的值发给它，会出现TypeError。因此，始终要先调用<u>next(my_coro)</u>激活协程（也可以调用<u>my_coro.end(None)</u>），这一过程被称作预激活。</p>
-<p>通过<code>asyncio</code>可以轻松实现协程来完成异步IO操作。<code>@asyncio.coroutine</code>，asyncio模块中的装饰器，用于将一个生成器声明为协程。asyncio的使用可分三步走：</p>
-<ol>
-<li>创建事件循环</li>
-<li>指定循环模式并运行</li>
-<li>关闭循环</li>
-</ol>
-<p>通常使用<code>asyncio.get_event_loop()</code>方法创建一个循环。运行循环有两种方法：一是调用<code>run_until_complete()</code>方法，二是调用<code>run_forever()</code>方法。</p>
-
+        
+          <a class="article-more-a" href="/2019/11/11/Python%E4%B9%8B%E5%8D%8F%E7%A8%8B/#more">展开全文 >></a>
+        
       
 
       
@@ -492,38 +465,6 @@
       
         <p>迭代器模式：一种惰性获取数据项的方式，按需一次获取一个数据项</p>
 <p><code>yield</code>关键字用于构建生成器（generator），其作用与迭代器一样，所有生成器都是迭代器，因为生成器完全实现了迭代器接口。Python3中，生成器有广泛的用途，即使是内置的<code>range()</code>函数也返回一个类似生成器的对象，而以前则返回完整的列表。如果一定要让<code>range()</code>函数返回列表，那么必须明确指明</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line">range(<span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(range(<span class="number">1</span>, <span class="number">5</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
-
-<p>在Python中，所有集合都可以迭代。在Python语言内部，迭代器用于支持：</p>
-<ul>
-<li>for循环</li>
-<li>构建和扩展集合类型</li>
-<li>逐行遍历文本文件</li>
-<li>列表推导、字典推导和集合推导</li>
-<li>元组拆包</li>
-<li>调用函数时，使用*拆包实参</li>
-</ul>
-<p><strong>序列可以迭代的原因：<code>iter</code>函数</strong></p>
-<p>解释器需要迭代对象x时，会自动调用iter(x)</p>
-<ul>
-<li>检查对象是否实现了<code>__iter__</code>方法，如果实现了就调用它，获取一个迭代器。</li>
-<li>如果没有实现<code>__iter__</code>方法，但是实现了<code>__getitem__</code>方法，Python会创建一个迭代器，尝试按顺序（从索引0开始）获取元素。</li>
-<li>如果尝试失败，Python抛出TypeError异常，通常会提示“x object is not iterable”</li>
-</ul>
-<p>任何Python序列都可以迭代的原因是，它们都实现了<code>__getitem__</code>方法。</p>
-<p><strong>可迭代对象与迭代器的对比</strong></p>
-<p>可迭代对象：使用<code>iter</code>内置函数可以获取迭代器的对象。如果对象实现了能返回迭代器的<code>__iter__</code>方法，那么对象就是可迭代的。可迭代对象与迭代器的关系：Python从可迭代对象中获取迭代器。标准的迭代器接口有两个方法：</p>
-<ul>
-<li><code>__next__</code>：返回下一个可用元素，如果没有元素了，抛出StopIteration异常</li>
-<li><code>__iter__</code>：返回self，以便在应该使用可迭代对象的地方使用迭代器，例如for循环中</li>
-</ul>
-<p>迭代器：实现了无参数的<code>__next__</code>方法，返回序列中的下一个元素，如果没有元素了，那么抛出StopIteration异常。Python中的迭代器还实现了<code>__iter__</code>方法，因此迭代器也可以迭代。</p>
-<p>可迭代的对象一定不能是自身的迭代器。也就是说，可迭代的对象必须实现<code>__iter__</code>方法，但不能实现<code>__next__</code>方法。另一方面，迭代器应该一直可以迭代，迭代器的<code>__iter__</code>方法应该返回自身</p>
-<p><strong>生成器函数工作原理</strong></p>
-<p>只要Python函数的定义体中有<strong>yield</strong>关键字，该函数就是生成器函数。调用生成器函数时，会返回一个生成器对象。</p>
-<p><strong>生成器表达式</strong></p>
-<p>生成器表达式可以理解为列表推导式的惰性版本：不会迫切地构建列表，而是返回一个生成器，按需惰性生成元素。也就是说列表推导式是制造列表的工厂，那么生成器表达式就是制造生成器的工厂。</p>
-<p><strong>标准库中的生成器函数</strong></p>
         
           <a class="article-more-a" href="/2019/10/30/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-9/#more">展开全文 >></a>
         

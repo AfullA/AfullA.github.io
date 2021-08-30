@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://afulla.github.io">
   <title>Python基础记录(9) | AfullA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="迭代器模式：一种惰性获取数据项的方式，按需一次获取一个数据项 yield关键字用于构建生成器（generator），其作用与迭代器一样，所有生成器都是迭代器，因为生成器完全实现了迭代器接口。Python3中，生成器有广泛的用途，即使是内置的range()函数也返回一个类似生成器的对象，而以前则返回完整的列表。如果一定要让range()函数返回列表，那么必须明确指明 1234&gt;&gt;&gt;">
+  <meta name="description" content="迭代器模式：一种惰性获取数据项的方式，按需一次获取一个数据项 yield关键字用于构建生成器（generator），其作用与迭代器一样，所有生成器都是迭代器，因为生成器完全实现了迭代器接口。Python3中，生成器有广泛的用途，即使是内置的range()函数也返回一个类似生成器的对象，而以前则返回完整的列表。如果一定要让range()函数返回列表，那么必须明确指明">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础记录(9)">
 <meta property="og:url" content="https://afulla.github.io/2019/10/30/Python%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95-9/index.html">
 <meta property="og:site_name" content="AfullA">
-<meta property="og:description" content="迭代器模式：一种惰性获取数据项的方式，按需一次获取一个数据项 yield关键字用于构建生成器（generator），其作用与迭代器一样，所有生成器都是迭代器，因为生成器完全实现了迭代器接口。Python3中，生成器有广泛的用途，即使是内置的range()函数也返回一个类似生成器的对象，而以前则返回完整的列表。如果一定要让range()函数返回列表，那么必须明确指明 1234&gt;&gt;&gt;">
+<meta property="og:description" content="迭代器模式：一种惰性获取数据项的方式，按需一次获取一个数据项 yield关键字用于构建生成器（generator），其作用与迭代器一样，所有生成器都是迭代器，因为生成器完全实现了迭代器接口。Python3中，生成器有广泛的用途，即使是内置的range()函数也返回一个类似生成器的对象，而以前则返回完整的列表。如果一定要让range()函数返回列表，那么必须明确指明">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-10-30T02:13:12.000Z">
-<meta property="article:modified_time" content="2020-10-13T10:22:00.000Z">
+<meta property="article:modified_time" content="2021-08-30T09:53:15.331Z">
 <meta property="article:author" content="AfullA">
 <meta property="article:tag" content="基础知识">
 <meta property="article:tag" content="生成器">
@@ -150,6 +150,8 @@
       
         <p>迭代器模式：一种惰性获取数据项的方式，按需一次获取一个数据项</p>
 <p><code>yield</code>关键字用于构建生成器（generator），其作用与迭代器一样，所有生成器都是迭代器，因为生成器完全实现了迭代器接口。Python3中，生成器有广泛的用途，即使是内置的<code>range()</code>函数也返回一个类似生成器的对象，而以前则返回完整的列表。如果一定要让<code>range()</code>函数返回列表，那么必须明确指明</p>
+<a id="more"></a>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line">range(<span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(range(<span class="number">1</span>, <span class="number">5</span>))</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
 
 <p>在Python中，所有集合都可以迭代。在Python语言内部，迭代器用于支持：</p>
@@ -182,8 +184,6 @@
 <p><strong>生成器表达式</strong></p>
 <p>生成器表达式可以理解为列表推导式的惰性版本：不会迫切地构建列表，而是返回一个生成器，按需惰性生成元素。也就是说列表推导式是制造列表的工厂，那么生成器表达式就是制造生成器的工厂。</p>
 <p><strong>标准库中的生成器函数</strong></p>
-<a id="more"></a>
-
 <p><strong><code>os.walk</code></strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.walk(top, topdown=<span class="literal">True</span>, onerror=<span class="literal">None</span>, followlinks=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
 

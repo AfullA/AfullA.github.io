@@ -16,7 +16,7 @@
 <meta property="og:description" content="并发编程一般使用多线程或者多进程来实现，对于CPU计算密集型任务，由于GIL的存在，通常使用多进程来实现，而对于IO密集型任务，可以通过线程调度来让线程在执行IO任务时让出GIL，从而实现表面上的并发。 对于IO密集型任务还有一种选择就是协程，是运行在单线程中的“并发”，协程相比多线程的一大优势是省去了多线程之间的切换开销，获得了更高的效率。Python中的异步IO模块asyncio就是基本的协程">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-11-11T09:21:29.000Z">
-<meta property="article:modified_time" content="2020-10-13T10:22:00.000Z">
+<meta property="article:modified_time" content="2021-08-30T09:49:36.839Z">
 <meta property="article:author" content="AfullA">
 <meta property="article:tag" content="基础知识">
 <meta property="article:tag" content="协程">
@@ -150,6 +150,8 @@
       
         <p>并发编程一般使用多线程或者多进程来实现，对于CPU计算密集型任务，由于GIL的存在，通常使用多进程来实现，而对于IO密集型任务，可以通过线程调度来让线程在执行IO任务时让出GIL，从而实现表面上的并发。</p>
 <p>对于IO密集型任务还有一种选择就是协程，是运行在单线程中的“并发”，协程相比多线程的一大优势是省去了多线程之间的切换开销，获得了更高的效率。Python中的异步IO模块asyncio就是基本的协程模块。</p>
+<a id="more"></a>
+
 <p>协程的切换不同于线程切换，是由程序自身控制的，没有切换的开销。协程不需要多线程的锁机制，因为都是在同一个线程中运行，所以没有同时访问数据的问题，执行效率比多线程高很多。可以这么简单地理解：进程/线程：操作系统提供的一种并发处理任务的能力；协程：在代码执行流程中人为地实现多任务并发，是单个线程内的任务调度。多线程和多进程体现的是操作系统的能力，协程体现的是程序员的流程控制能力。</p>
 <p><code>yield</code>的语法规则是：在<code>yield</code>这里暂停函数的执行，并返回<code>yield</code>后面表达式的值（默认为None），直到被<code>next()</code>方法再次调用时，从上次暂停的yield代码处继续往下执行。</p>
 <p>每个生成器都可以执行<code>send()</code>方法，为生成器内部的<code>yield</code>语句发送数据。此时yield语句不在只是<u>yield xxx</u>的形式，还可以是<u>var = yield xxx</u>的赋值形式。它同时具备两个功能，一是暂停并返回函数，二是接收外部send()方法发送过来的值，重新激活函数，并将这个值赋值给var变量。</p>

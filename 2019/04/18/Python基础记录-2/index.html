@@ -16,7 +16,7 @@
 <meta property="og:description" content="ASCII，Unicode和UTF-8”字符“的最佳定义是Unicode字符。从Python3的str对象中获取的元素是Unicode字符。 字符的标识，即码位，是0-1114111的数字（十进制），在Unicode标准中以4-6个十六进制数字表示，而且加前缀“U+”。字符的具体表述取决于所用的编码（在码位和字节序列之间转换时使用的算法）。把码位转换成字节序列的过程是编码，把字节序列转换成码位的过">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-04-18T09:36:51.000Z">
-<meta property="article:modified_time" content="2021-08-14T07:55:27.717Z">
+<meta property="article:modified_time" content="2021-08-30T09:54:18.336Z">
 <meta property="article:author" content="AfullA">
 <meta property="article:tag" content="基础知识">
 <meta property="article:tag" content="编码">
@@ -150,6 +150,8 @@
       
         <h5 id="ASCII，Unicode和UTF-8"><a href="#ASCII，Unicode和UTF-8" class="headerlink" title="ASCII，Unicode和UTF-8"></a>ASCII，Unicode和UTF-8</h5><p>”字符“的最佳定义是Unicode字符。从Python3的str对象中获取的元素是Unicode字符。</p>
 <p>字符的标识，即码位，是0-1114111的数字（十进制），在Unicode标准中以4-6个十六进制数字表示，而且加前缀“U+”。字符的具体表述取决于所用的编码（在码位和字节序列之间转换时使用的算法）。把码位转换成字节序列的过程是编码，把字节序列转换成码位的过程是解码。</p>
+<a id="more"></a>
+
 <p>ASCII码</p>
 <p>内存和磁盘中，对象都是以二进制数字（0和1）表示的（这些数字每8个为一组，即一个字节byte），一个字节一共可以用来表示256种不同状态。ASCII码一共规定了128个字符编码。Python bytes字面量只支持ASCII标准中的128个字符，剩余的必须用转义序列表示，例如，\xf0表示十六进制值0xf0。</p>
 <p>Unocode解决传统字符编码方案的局限性，为每种语言中的每个字符设定统一且唯一的二进制代码，以满足跨语言、跨平台进行文本转换处理的需求。Unicode只是个符号集，规定了符号的二进制代码，却没规定这个二进制代码应该如何存储，会存在字节顺序的问题（怎么知道两个字节表示一个符号，而不是两个符号呢），也会存在空间浪费的问题（英文字母仅需一个字节，若规定两个字节表示，那么必有一字节是0）</p>
