@@ -16,7 +16,7 @@
 <meta property="og:description" content="作用域1234&gt;&gt;&gt; x &#x3D; 1&gt;&gt;&gt; scope &#x3D; vars()&gt;&gt;&gt; scope[&#39;x&#39;]1  全局作用域外，每个函数调用都将创建一个作用域。函数内部使用的变量称为局部变量（与之对应的是全局变量）。 globals返回一个包含全局变量的字典，locals返回一个包含局部变量的字典。 作用域嵌套应用：一个函数位于另一个函数中，而且外面的函数">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-04-22T03:21:54.000Z">
-<meta property="article:modified_time" content="2021-08-30T09:53:57.288Z">
+<meta property="article:modified_time" content="2021-09-03T09:52:56.761Z">
 <meta property="article:author" content="AfullA">
 <meta property="article:tag" content="基础知识">
 <meta name="twitter:card" content="summary">
@@ -151,7 +151,8 @@
 
 <p>全局作用域外，每个函数调用都将创建一个作用域。函数内部使用的变量称为局部变量（与之对应的是全局变量）。</p>
 <p><code>globals</code>返回一个包含全局变量的字典，<code>locals</code>返回一个包含局部变量的字典。</p>
-<p>作用域嵌套应用：一个函数位于另一个函数中，而且外面的函数返回里面的函数。闭包：存储其所在作用域的函数。</p>
+<p>作用域嵌套应用：一个函数位于另一个函数中，而且外面的函数返回里面的函数。</p>
+<p>闭包：存储其所在作用域的函数。闭包最大的特点是可以将父函数的变量与内部函数绑定，并返回绑定变量后的函数（即闭包），此时即便生成闭包的环境（父函数）已经释放，闭包仍然存在，这个过程很像类生成实例，不同额是父函数只在调用时执行，执行完毕后其环境就会释放，而类则在文件执行时创建，一般程序执行完毕后作用域才释放，因此对一些需要重用的功能且不足以定义为类的行为，使用闭包会比使用类占用更少的资源，且更灵活轻巧</p>
 <a id="more"></a>
 
 <h5 id="面向对象设计"><a href="#面向对象设计" class="headerlink" title="面向对象设计"></a>面向对象设计</h5><p>对象：由属性和方法组成。属性是对象的变量，方法是存储在属性中的函数。与函数相比，关联方法总将其所属的对象作为第一个参数（通常为<code>self</code>）。</p>
